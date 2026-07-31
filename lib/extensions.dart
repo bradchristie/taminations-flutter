@@ -45,6 +45,11 @@ final a = [
 T when<T>(List<Map<bool Function(),T>> exprs) =>
   exprs.firstWhere((item) => item.keys.first()).values.first;
 
+// Compare strings equating blanks with nulls
+bool isBlankOrNull(String? s) => (s == null) || s.isBlank;
+bool isSame(String? s1, String? s2) =>
+    (s1 == s2) || (isBlankOrNull(s1) && isBlankOrNull(s2));
+
 extension TamInt on int {
 
   double get d => toDouble();  // not sure if this is needed

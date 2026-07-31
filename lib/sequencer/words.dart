@@ -53,14 +53,12 @@ class Words {
     //  Build index of normalized animated calls for sequencer
     if (normalizedCallIndex.isEmpty) {
       for (var data in callIndex) {
-        for (var call in data.calls) {
-          if (call is AnimatedCall) {
+        for (var call in flattenAnimatedCallList(data.calls)) {
             call.level = LevelData.find(data.level)!;
             if (!call.notForSequencer) {
               var norm = call.title.norm.lc;
               normalizedCallIndex.putIfAbsent(norm, () => []).add(call);
             }
-          }
         }
       }
     }

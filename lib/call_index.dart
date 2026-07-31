@@ -23,7 +23,7 @@ import 'calls/a1/left.dart' as a1;
 import 'calls/a1/linear_cycle.dart' as a1;
 import 'calls/a1/lock_it.dart' as a1;
 import 'calls/a1/mix.dart' as a1;
-import 'calls/a1/pair_off.dart' as a1;
+import 'calls/plus/pair_off.dart' as plus;
 import 'calls/a1/pass_in.dart' as a1;
 import 'calls/a1/quarter_in.dart' as a1;
 import 'calls/a1/reverse.dart' as a1;
@@ -742,7 +742,7 @@ var callIndex = [
   CallEntry('Grand Drop','c2','c2/drop_in',c2.DropIn,),
   CallEntry('Grand Follow Your Neighbor','a1','a1/grand_follow_your_neighbor',a1.GrandFollowYourNeighbor,'a1/grand_follow_your_neighbor.mp3'),
   CallEntry('Grand Mix','c3a','c3a/grand_mix',c3a.GrandMix,),
-  CallEntry('Grand Quarter Thru','plus','plus/grand_quarter_thru',plus.GrandQuarterThru,'a1/grand_quarter_thru.mp3'),
+  CallEntry('Grand Quarter Thru','plus','plus/grand_quarter_thru',plus.GrandQuarterThru,'plus/grand_quarter_thru.mp3'),
   CallEntry('Grand Remake','a2','a2/remake',a2.Remake,'a2/grand_remake.mp3'),
   CallEntry('Grand Single Cross and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
   CallEntry('Grand Single Cross Trade and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
@@ -842,8 +842,7 @@ var callIndex = [
   CallEntry('Outlet','c2','c2/inlet',c2.Inlet,),
   CallEntry('Own the <anyone> <anything> By <anything>','c3a','c3a/own_the_anyone_anything_by_anything',c3a.OwnTheAnyoneAnythingByAnything,),
 
-  CallEntry('Pair Off','a1','a1/pair_off',a1.PairOff,'a1/pair_off.mp3'),
-  CallEntry('Pair Off','plus','plus/pair_off',a1.PairOff,'a1/pair_off.mp3'),
+  CallEntry('Pair Off','plus','plus/pair_off',plus.PairOff,'plus/pair_off.mp3'),
   CallEntry('Parallelogram Concept','c2','c2/parallelogram_concept',c2.ParallelogramConcept,),
   CallEntry('Partner Hinge','plus','plus/partner_hinge',plus.PartnerHinge,'plus/partner_hinge.mp3'),
   CallEntry('Partner Tag','plus','plus/partner_tag',plus.PartnerTag,'plus/partner_tag.mp3'),
@@ -1372,7 +1371,7 @@ var titleIndex = <String,String>{
     'c2/grand_chain_eight' : 'Grand Chain Eight',
     'a1/grand_follow_your_neighbor' : 'Grand Follow Your Neighbor',
     'c3a/grand_mix' : 'Grand Mix',
-    'ms/grand_quarter_thru' : 'Grand Quarter Thru',
+    'plus/grand_quarter_thru' : 'Grand Quarter Thru',
     'a2/remake' : 'Remake',
     'ms/grand_square' : 'Grand Square',
     'plus/grand_swing_thru' : 'Grand Swing Thru',
@@ -1442,7 +1441,7 @@ var titleIndex = <String,String>{
     'c2/once_removed_concept' : 'Once Removed Concept',
     'c3a/open_up_the_column' : 'Open Up the Column',
     'c3a/own_the_anyone_anything_by_anything' : 'Own the Anyone Anything By Anything',
-    'a1/pair_off' : 'Pair Off',
+    'plus/pair_off' : 'Pair Off',
     'c2/parallelogram_concept' : 'Parallelogram Concept',
     'a1/partner_hinge' : 'Partner Hinge ',
     'a1/partner_tag' : 'Partner Tag',
@@ -1476,7 +1475,7 @@ var titleIndex = <String,String>{
     'ms/pull_by' : 'Pull By',
     'c3b/quadruple_formation' : 'Quadruple Formation Concept',
     'a1/quarter_in' : 'Quarter In',
-    'ms/quarter_thru' : 'Quarter Thru',
+    'plus/quarter_thru' : 'Quarter Thru',
     'c3a/quick' : 'Quick',
     'c3a/rally' : 'Rally',
     'c1/scoot_and_ramble' : 'Scoot and Ramble',

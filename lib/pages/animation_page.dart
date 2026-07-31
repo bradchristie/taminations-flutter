@@ -45,6 +45,7 @@ class AnimationState extends fm.ChangeNotifier {
 }
 
 void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
+  print('in _startModel');
   final model = pp.Provider.of<DanceModel>(context,listen:false);
   var callEntry = callIndex.firstWhere((element) => element.link == tamState.link);
   var tamList = flattenAnimatedCallList(callEntry.calls)
@@ -54,11 +55,9 @@ void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleMo
     tam = tamList[tamState.animnum];
   else if (tamState.animname != null)
     tam = tamList.firstWhere((it) {
-      var fullname = it.title;
-      if (it.group.isEmpty && it.from.isNotBlank)
-        fullname += 'from' + it.from;
-      fullname = fullname.replaceAll('[^a-zA-Z0-9]'.r, '');
-      return fullname == tamState.animname;
+      return it.title == tamState.animname &&
+          isSame(it.group, tamState.animgroup) &&
+          isSame(it.from, tamState.animfrom);
     },orElse: () => tam);
   model.setAnimatedCall(tam, geometryType: Geometry.fromString(Settings.geometry).geometry);
   if (titleModel != null)

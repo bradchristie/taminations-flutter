@@ -57,11 +57,9 @@ class SecondLandscapePage extends fm.StatelessWidget {
                 tam = tamList[tamState.animnum];
               else if (tamState.animname != null)
                 tam = tamList.firstWhere((it) {
-                  var fullname = it.title;
-                  if (it.group.isEmpty && it.from.isNotBlank)
-                    fullname += 'from' + it.from;
-                  fullname = fullname.replaceAll('[^a-zA-Z0-9]'.r, '');
-                  return fullname == tamState.animname;
+                  return it.title == tamState.animname &&
+                  isSame(it.group, tamState.animgroup) &&
+                  isSame(it.from, tamState.animfrom);
                 },orElse: () => tam);
               model.setAnimatedCall(tam,
                   geometryType: Geometry.fromString(Settings.geometry).geometry);

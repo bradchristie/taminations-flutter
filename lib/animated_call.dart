@@ -26,15 +26,15 @@ import 'formation.dart';
 import 'level_data.dart';
 import 'math/path.dart';
 
-List<AnimatedCall> flattenAnimatedCallList(List<AnimatedCallListItem> list) {
+List<AnimatedCall> flattenAnimatedCallList(List<AnimatedCallItem> list) {
   var retval = <AnimatedCall>[];
   for (var item in list) {
     switch (item) {
       case AnimatedCall() :
         retval.add(item);
-      case AnimatedCallListGroupHeader():
+      case AnimatedCallGroup():
         retval.addAll(flattenAnimatedCallList(item.calls));
-      case AnimatedCallListCallHeader():
+      case AnimatedCallHeader():
         retval.addAll(flattenAnimatedCallList(item.calls));
     }
   }
@@ -42,21 +42,24 @@ List<AnimatedCall> flattenAnimatedCallList(List<AnimatedCallListItem> list) {
 }
 
 
-sealed class AnimatedCallListItem {
-
+sealed class AnimatedCallItem {
+  bool noDisplay;
+  AnimatedCallItem({this.noDisplay=false});
 }
 
-class AnimatedCallListGroupHeader extends AnimatedCallListItem {
-  String group = '';
-  List<AnimatedCallListItem> calls = [];
+class AnimatedCallGroup extends AnimatedCallItem {
+  String group;
+  List<AnimatedCallItem> calls;
+  AnimatedCallGroup(this.group,{ required this.calls });
 }
 
-class AnimatedCallListCallHeader extends AnimatedCallListItem {
-  String title = '';
-  List<AnimatedCallListItem> calls = [];
+class AnimatedCallHeader extends AnimatedCallItem {
+  String title;
+  List<AnimatedCallItem> calls;
+  AnimatedCallHeader(this.title,{ required this.calls });
 }
 
-class AnimatedCall extends AnimatedCallListItem {
+class AnimatedCall extends AnimatedCallItem {
 
   String title;
   String group;
@@ -67,7 +70,6 @@ class AnimatedCall extends AnimatedCallListItem {
   bool isPerimeter;
   bool isGenderSpecific;
   int difficulty;
-  bool noDisplay;
   bool notForSequencer;
   String actives;
   LevelData level;
@@ -93,14 +95,14 @@ class AnimatedCall extends AnimatedCallListItem {
         this.isAsymmetric = false,
         this.isGenderSpecific = false,
         this.notForSequencer = false,
-        this.noDisplay = false,
+        noDisplay = false,
         this.numbers = const ['1', '5', '2', '6', '3', '7', '4', '8',
           ' ',' ',' ',' ',' ',' ',' ',' '],
         this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4',
           ' ',' ',' ',' ',' ',' ',' ',' '],
         this.taminator = ''
       })
-      : formation = formation.copy(), paths = paths.clone() {
+      : formation = formation.copy(), paths = paths.clone(), super(noDisplay:noDisplay) {
     if (formation.asymmetric)
       isAsymmetric = true;
     if (paths.length == formation.dancers.length) {

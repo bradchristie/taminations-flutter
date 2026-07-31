@@ -1546,7 +1546,7 @@ class CallContext {
           d.path = d.path.changeBeats(d.path.beats + b);
         } else {
           //  Large change - add that number as needed by using the 'Stand' move
-          d.path = d.path + Stand.changeBeats(b).setFromCall(false);
+          d.path = d.path + StandAhead.changeBeats(b).setFromCall(false);
         }
       }
     }

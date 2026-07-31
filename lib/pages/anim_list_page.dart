@@ -57,6 +57,30 @@ class AnimListItem {
       this.difficulty = Difficulty.NONE});
 }
 
+fm.Color _headerColor(int indent) {
+  return indent > 0 ? fm.Color(0xffc080c0) : fm.Color(0xff804080);
+}
+
+void _selectAnimListItemNew({required String name, String? group, String? from, required TamState tamState, required HighlightState highlightState}) {
+  later(() {
+    highlightState.currentCall = ((group??'')+name)
+        .replaceAll('[^a-zA-Z0-9]'.r, '');
+    tamState.change(animname: name, animgroup: group, animfrom: from, animnum: -1);
+  });
+}
+
+List<fm.Widget> _widgetsFromList(List<AnimatedCallItem> callList, int indent) {
+  return callList
+      .where((call) => !call.noDisplay)
+      .map((call) {
+    return switch (call) {
+      AnimatedCallGroup() => AnimListGroupWidget(call,indent+1),
+      AnimatedCallHeader() => AnimListHeaderWidget(call,indent+1),
+      AnimatedCall() => AnimListItemWidget(call,indent+1)
+    };
+  }).toList();
+}
+
 class AnimListPage extends fm.StatelessWidget {
 
   @override
@@ -91,6 +115,144 @@ class AnimListPage extends fm.StatelessWidget {
   }
 }
 
+class AnimListHeaderWidget extends fm.StatefulWidget {
+  final AnimatedCallHeader header;
+  final int indent;
+  AnimListHeaderWidget(this.header, this.indent);
+
+  @override
+  fm.State<fm.StatefulWidget> createState() =>
+      AnimListHeaderWidgetState();
+}
+
+class AnimListHeaderWidgetState extends fm.State<AnimListHeaderWidget> {
+  final controller = fm.ExpansibleController();
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.ChangeNotifierProvider.value(
+      value: controller,
+      child: fm.ExpansionTile(
+        title: _AnimListTitleText(widget.header.title),
+        initiallyExpanded: true,
+        controller: controller,
+        collapsedBackgroundColor: _headerColor(widget.indent),
+        collapsedTextColor: Color.WHITE,
+        collapsedIconColor: Color.WHITE,
+        backgroundColor:  _headerColor(widget.indent),
+        textColor: Color.WHITE,
+        iconColor: Color.WHITE,
+        tilePadding: fm.EdgeInsets.only(left: 10+40.0*widget.indent),
+        children: _widgetsFromList(widget.header.calls,widget.indent)));
+  }
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+}
+
+class _AnimListTitleText extends fm.StatefulWidget {
+  final String title;
+  _AnimListTitleText(this.title);
+  @override
+  fm.State<fm.StatefulWidget> createState() {
+    return _AnimListTitleTextState();
+  }
+}
+class _AnimListTitleTextState extends fm.State<_AnimListTitleText> {
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    return pp.Consumer<fm.ExpansibleController>(
+      builder: (context,controller,_) {
+        var from = controller.isExpanded ? ' from' : '';
+        return fm.Text(widget.title + from, style: fm.TextStyle(fontSize: 20));
+      }
+    );
+  }
+
+}
+
+class AnimListGroupWidget extends fm.ExpansionTile {
+  final AnimatedCallGroup group;
+  AnimListGroupWidget(this.group, int indent) : super(
+      title: fm.Text(group.group,style:fm.TextStyle(fontSize: 20)),
+      initiallyExpanded: true,
+      collapsedBackgroundColor: _headerColor(indent),
+      collapsedTextColor: Color.WHITE,
+      collapsedIconColor: Color.WHITE,
+      backgroundColor:  _headerColor(indent),
+      textColor: Color.WHITE,
+      iconColor: Color.WHITE,
+      tilePadding: fm.EdgeInsets.only(left: 10+40.0*indent),
+      children: _widgetsFromList(group.calls,indent));
+}
+
+class AnimListItemWidget extends fm.StatefulWidget {
+  final AnimatedCall call;
+  final int indent;
+  final bool highlightSelected = true;
+  AnimListItemWidget(this.call,this.indent);
+  @override
+  fm.State<fm.StatefulWidget> createState() =>
+      _AnimListItemState();
+
+}
+
+class _AnimListItemState extends fm.State<AnimListItemWidget> {
+
+  @override
+  fm.Widget build(fm.BuildContext context) {
+    var backColor = Color.WHITE;
+    switch (widget.call.difficulty) {
+      case Difficulty.COMMON:
+        backColor = Color.COMMON;
+        break;
+      case Difficulty.HARDER:
+        backColor = Color.HARDER;
+        break;
+      case Difficulty.EXPERT:
+        backColor = Color.EXPERT;
+        break;
+    }
+    return fm.Container(
+        child: pp.Consumer2<TamState, HighlightState>(
+            builder: (context, tamState, highlightState, _) {
+              var isSelected = context.watch<AnimatedCall?>() == widget.call;
+              var text = widget.call.title;
+              if (widget.call.from.isNotBlank)
+                text = widget.call.from;
+              else if (widget.call.group.isNotBlank)
+                text = text.replaceFirst(widget.call.group, '').trim();
+              return fm.ListTile(
+                title: fm.Text(text,
+                    style: fm.TextStyle(fontSize: 20,
+                        color: isSelected ? Color.WHITE : Color.BLACK)),
+                  tileColor: isSelected ? Color.BLUE : backColor,
+                  hoverColor: isSelected ? Color.BLUE : backColor.darker(),
+                  dense: true,
+                  enabled: true,
+                  shape: fm.BoxBorder.fromLTRB(
+                      bottom: fm.BorderSide(color: Color.BLACK)
+                  ),
+                contentPadding: fm.EdgeInsets.only(left: 10+40.0*widget.indent),
+                onTap: () {
+                    setState(() {
+                      context.read<_AnimListState>().setSelectedItem(widget.call);
+                      _selectAnimListItemNew(
+                          name: widget.call.title,
+                          group: widget.call.group,
+                          from: widget.call.from,
+                          tamState: tamState,
+                          highlightState: highlightState);
+                    });
+                },
+              );
+            }
+        ));
+  }
+
+}
+
 class AnimListFrame extends fm.StatefulWidget {
   final String link;
   final bool highlightSelected;
@@ -108,6 +270,8 @@ class _AnimListState extends fm.State<AnimListFrame> {
   var hasDifficulty = false;
   var selectedItem = -1;
   final scrollController = fm.ScrollController();
+  List<fm.ExpansibleController> controllers = [];
+  AnimatedCall? _selectedCall;
 
   _AnimListState(this.link);
 
@@ -115,6 +279,33 @@ class _AnimListState extends fm.State<AnimListFrame> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     callEntry = callIndex.firstWhere((element) => element.link == link);
+    for (var c in controllers)
+      c.dispose();
+    controllers = List.generate(callEntry!.calls.length, (_) {
+      var c = fm.ExpansibleController();
+      c.addListener(() {
+        if (c.isExpanded) {
+          for (var c2 in controllers)
+            if (c2 != c && c2.isExpanded) {
+              c2.collapse();
+            }
+        }
+      });
+      return c;
+    });
+  }
+
+  @override
+  void dispose() {
+    for (var c in controllers)
+      c.dispose();
+    super.dispose();
+  }
+
+  void setSelectedItem(AnimatedCall call) {
+    setState(() {
+      _selectedCall = call;
+    });
   }
 
   fm.Widget oneLegendWidget(String text, Color c) =>
@@ -187,13 +378,29 @@ class _AnimListState extends fm.State<AnimListFrame> {
     final item = animListItems[index];
     later(() {
       highlightState.currentCall = item.title.replaceAll('[^a-zA-Z0-9]'.r, '');
-      //  this syncs the title
       tamState.change(animnum: item.animnumber, animname: item.fullname);
     });
   }
 
   fm.Widget buildNew(fm.BuildContext context) {
-    return fm.Column();
+    return pp.Provider.value(
+      value: _selectedCall,
+      child: pp.Provider.value(
+        value: this,
+        child: fm.Column(children: [
+          fm.Expanded(
+              child: fm.Scrollbar(
+                  thumbVisibility: TamUtils.platform() == 'web',
+                  thickness: 16,
+                  controller: scrollController,
+                  child: fm.ListView(
+                    controller: scrollController,
+                    children: _widgetsFromList(callEntry!.calls,-1),
+                  )
+          ))
+        ]),
+      ),
+    );
   }
 
   @override

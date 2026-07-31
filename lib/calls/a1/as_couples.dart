@@ -25,7 +25,7 @@ import '../a1/cross_trail_thru.dart' as a1;
 import '../a1/linear_cycle.dart' as a1;
 import '../a1/lock_it.dart' as a1;
 import '../a1/mix.dart' as a1;
-import '../a1/pair_off.dart' as a1;
+import '../plus/pair_off.dart' as a1;
 import '../a1/pass_in.dart' as a1;
 import '../plus/pass_the_sea.dart' as a1;
 import '../a1/quarter_in.dart' as a1;

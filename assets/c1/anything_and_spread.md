@@ -1,8 +1,8 @@
 
 # (Anything) and Spread
 
-In addition to the three ways [Spread](../plus/anything_and_spread.md) is used at
-Plus, there is a fourth way:
+In addition to the ways [Spread](../plus/anything_and_spread.md) is used at
+Plus, there is another way:
 
 If specific dancers are directed to Spread 
 (for example, "Everyone Trade, Boys Spread"),

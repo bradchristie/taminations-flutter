@@ -51,7 +51,8 @@ class SequencerCallsModel extends fm.ChangeNotifier {
     LevelData.A2 : false,
     LevelData.C1 : false,
     LevelData.C2 : false,
-    LevelData.C3A : false
+    LevelData.C3A : false,
+    LevelData.C3B : false
   };
   bool levelSelected(LevelData level) => _levelsSelected[level]!;
 
@@ -97,20 +98,21 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
 
               )),
             fm.Row(children: [
-              _LevelCheckbox(LevelData.PLUS),
+              _LevelCheckbox(LevelData.MS),
               _LevelCheckbox(LevelData.C1)
             ]),
             fm.Row(children: [
-              _LevelCheckbox(LevelData.A1),
+              _LevelCheckbox(LevelData.PLUS),
               _LevelCheckbox(LevelData.C2)
             ]),
             fm.Row(children: [
-              _LevelCheckbox(LevelData.A2),
+              _LevelCheckbox(LevelData.A1),
               _LevelCheckbox(LevelData.C3A)
             ]),
             fm.Row(children: [
-              _LevelCheckbox(LevelData.MS),
-            ])
+              _LevelCheckbox(LevelData.A2),
+              _LevelCheckbox(LevelData.C3B)
+            ]),
           ]);
         } ),
     );
