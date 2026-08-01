@@ -108,24 +108,28 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                     builder: (context, orientation) {
                       if (fm.MediaQuery.of(context).orientation == fm.Orientation.landscape) {
                         return
-                          fm.Scrollbar(
-                          controller: scrollController,
-                          thumbVisibility: TamUtils.platform().matches('web|windows'.r),
-                          thickness: 16,
-                          child:
-                          fm.GridView.builder(
+                          fm.Container(
+                            color: Color.LIGHTGRAY,
+                            child: fm.Scrollbar(
                             controller: scrollController,
-                            scrollDirection: fm.Axis.horizontal,
-                            gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
-                                maxCrossAxisExtent: 40,
-                                mainAxisSpacing: 1,
-                                childAspectRatio: 0.1
+                            thumbVisibility: TamUtils.platform().matches('web|windows'.r),
+                            thickness: 16,
+                            child:
+                            fm.GridView.builder(
+                              controller: scrollController,
+                              scrollDirection: fm.Axis.horizontal,
+                              padding: fm.EdgeInsets.fromLTRB(0, 0, 0, 20),
+                              gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
+                                  maxCrossAxisExtent: 40,
+                                  mainAxisSpacing: 1,
+                                  childAspectRatio: 0.1
+                              ),
+                              itemCount: callsSearched.length,
+                              itemBuilder:
+                                  (context,index) => itemBuilder(context,index,callsSearched,showLevel),
                             ),
-                            itemCount: callsSearched.length,
-                            itemBuilder:
-                                (context,index) => itemBuilder(context,index,callsSearched,showLevel),
-                          ),
-                        );
+                                                    ),
+                          );
                       }
                       else {
                         return
