@@ -23,6 +23,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/pages/anim_list_page.dart';
 
 import '../animated_call.dart';
 import '../beat_notifier.dart';
@@ -69,6 +70,9 @@ class PracticeModel {
       var calls = callIndex.where((call) => call.link == appState.link).first.calls;
       randomCall = flattenAnimatedCallList(calls);
     }
+    //  Filter out calls labeled EXPERT or noDisplay
+    randomCall = randomCall.where((call) =>
+        call.difficulty != Difficulty.EXPERT && !call.noDisplay).toList();
     final randomAnim = randomCall[Random().nextInt(randomCall.length)];
 
     titleModel.title = randomAnim.title;
