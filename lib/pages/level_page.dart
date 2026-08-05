@@ -52,16 +52,21 @@ class _TapDetector extends fm.StatelessWidget {
           builder: (context,appState,_) {
             var onTapFunction =  () {
               if (text == 'Practice')
-                appState.change(mainPage: MainPage.STARTPRACTICE);
+                appState.change(
+                    mainPage: MainPage.STARTPRACTICE,
+                    level: '');
               else if (text == 'Sequencer')
-                appState.change(mainPage: MainPage.SEQUENCER,
+                appState.change(
+                    mainPage: MainPage.SEQUENCER,
                     detailPage: DetailPage.NONE);
               else if (text == 'Settings')
                 appState.change(detailPage: DetailPage.SETTINGS);
               else if (text == 'About')
                 appState.change(detailPage: DetailPage.HELP);
               else
-                appState.change(detailPage: DetailPage.CALLS, level: text);
+                appState.change(
+                    detailPage: DetailPage.CALLS,
+                    level: text);
             };
             return fm.Material(
               color: color,

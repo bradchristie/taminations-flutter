@@ -35,8 +35,8 @@ final List<AnimatedCallItem> ChaseRight = [
           UmTurnRight.changeBeats(1.5).skew(-.5, 0.0) +
               Forward_2 +
               RunRight.changeBeats(2.5).skew(.5, 0.0),
-
-          RunRight.changeBeats(2.5) + Forward_3.changeBeats(3.5),
+          RunRight.changeBeats(2.5) +
+              Forward_3.changeBeats(3.5),
         ],
       ),
 
@@ -50,28 +50,27 @@ final List<AnimatedCallItem> ChaseRight = [
           UmTurnRight.changeBeats(1.5).skew(-1.0, 0.0) +
               Forward_4 +
               RunRight.changeBeats(2.5).skew(1.0, 0.0),
-
-          RunRight.changeBeats(2.5) + Forward_6.changeBeats(5.5),
+          RunRight.changeBeats(2.5) +
+              Forward_6.changeBeats(5.5),
         ],
       ),
 
       AnimatedCall(
         'Chase Right',
-        formation: Formation('Lines Facing Out'),
+        formation: Formation('Lines Facing Out Compact'),
         from: 'Lines Facing Out',
         difficulty: 1,
         paths: [
-          UmTurnRight.changeBeats(1.5).skew(-1.0, 0.0) +
-              Forward_2 +
-              RunRight.changeBeats(2.5).skew(1.0, 0.0),
-
-          RunRight.changeBeats(2.5) + Forward_4.changeBeats(3.5),
-
-          UmTurnRight.changeBeats(1.5).skew(-1.0, 0.0) +
-              Forward_2 +
-              RunRight.changeBeats(2.5).skew(1.0, 0.0),
-
-          RunRight.changeBeats(2.5) + Forward_4.changeBeats(3.5),
+          UmTurnRight.changeBeats(2).skew(-1.0, 0.0) +
+              Forward +
+              RunRight.changeBeats(3).skew(1.0, 0.0),
+          RunRight.changeBeats(3.5) +
+              Forward_3.changeBeats(2.5),
+          UmTurnRight.changeBeats(2).skew(-1.0, 0.0) +
+              Forward +
+              RunRight.changeBeats(3).skew(1.0, 0.0),
+          RunRight.changeBeats(3.5) +
+              Forward_3.changeBeats(2.5),
         ],
       ),
 
@@ -81,13 +80,16 @@ final List<AnimatedCallItem> ChaseRight = [
         from: 'Trade By',
         difficulty: 2,
         paths: [
-          UmTurnRight.changeBeats(1.5) + Forward_2 + FlipRight.changeBeats(1.5),
-
-          RunRight + Forward_2,
-
-          UmTurnRight.changeBeats(1.5) + Forward_2 + FlipRight.changeBeats(1.5),
-
-          FlipRight + Forward_2,
+          UmTurnRight.changeBeats(1.5) +
+              Forward_2 +
+              FlipRight.changeBeats(1.5),
+          RunRight +
+              Forward_2,
+          UmTurnRight.changeBeats(1.5) +
+              Forward_2 +
+              FlipRight.changeBeats(1.5),
+          FlipRight +
+              Forward_2,
         ],
       ),
 
@@ -201,25 +203,30 @@ final List<AnimatedCallItem> ChaseRight = [
         difficulty: 2,
         noDisplay: true,
         paths: [
-          RunLeft + Forward_6.changeBeats(5),
-
-          UmTurnLeft.changeBeats(1.5) + Forward_6.changeBeats(5) + FlipLeft.changeBeats(1.5),
+          RunLeft +
+              Forward_6.changeBeats(5),
+          UmTurnLeft.changeBeats(1.5) +
+              Forward_6.changeBeats(5) +
+              FlipLeft.changeBeats(1.5),
         ],
       ),
 
       AnimatedCall(
         'Left Chase',
-        formation: Formation('Lines Facing Out'),
+        formation: Formation('Lines Facing Out Compact'),
         from: 'Lines Facing Out',
         difficulty: 2,
         paths: [
-          RunLeft + Forward_4.changeBeats(3),
-
-          UmTurnLeft.changeBeats(1.5) + Forward_4.changeBeats(3) + FlipLeft.changeBeats(1.5),
-
-          RunLeft + Forward_4.changeBeats(3),
-
-          UmTurnLeft.changeBeats(1.5) + Forward_4.changeBeats(3) + FlipLeft.changeBeats(1.5),
+          RunLeft.changeBeats(3.5) +
+              Forward_3.changeBeats(2.5),
+          UmTurnLeft.changeBeats(2).skew(-1,0) +
+              Forward +
+              RunLeft.changeBeats(3).skew(1,0),
+          RunLeft.changeBeats(3.5) +
+              Forward_3.changeBeats(2.5),
+          UmTurnLeft.changeBeats(2).skew(-1,0) +
+              Forward +
+              RunLeft.changeBeats(3).skew(1,0),
         ],
       ),
 

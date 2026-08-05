@@ -45,7 +45,6 @@ class AnimationState extends fm.ChangeNotifier {
 }
 
 void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
-  print('in _startModel');
   final model = pp.Provider.of<DanceModel>(context,listen:false);
   var callEntry = callIndex.firstWhere((element) => element.link == tamState.link);
   var tamList = flattenAnimatedCallList(callEntry.calls)

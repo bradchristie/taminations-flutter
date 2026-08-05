@@ -65,7 +65,8 @@ void _selectAnimListItemNew({required String name, String? group, String? from, 
   later(() {
     highlightState.currentCall = ((group??'')+name)
         .replaceAll('[^a-zA-Z0-9]'.r, '');
-    tamState.change(animname: name, animgroup: group, animfrom: from, animnum: -1);
+    tamState.change(mainPage: MainPage.ANIMATIONS,
+        animname: name, animgroup: group, animfrom: from, animnum: -1);
   });
 }
 

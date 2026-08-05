@@ -98,7 +98,8 @@ class TutorialModel extends PracticeModel {
   ];
 
   static final mouseHints = [
-    'Use your mouse to move the dancer forward',
+    'Use your mouse to move the dancer forward.'
+    'The mouse does not need to be on the dancer, it can be anywhere on the dance floor.',
     'Now use your mouse to follow a turning path',
     'Normally your dancer turns to face the direction you are moving. '
         'Hold down the Shift key to keep your dancer from turning.',

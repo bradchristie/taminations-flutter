@@ -25,50 +25,48 @@ import '../../moves.dart';
   final List<AnimatedCall> Coordinate = [
 
     AnimatedCall('Coordinate',
-      formation:Formation('Column RH GBGB'),
-      from:'Right-Hand Columns',parts:'2;1;2.5',difficulty: 1,
-      paths:[
+        formation: Formation('Column RH GBGB'),
+        from: 'Right-Hand Columns',
+        parts: '2;1;2.5',
+        difficulty: 1,
+        paths: [
           RunRight.changeBeats(2) +
-          Forward +
-          SwingRight.changeBeats(2.5).scale(0.5,1.0),
-
-          Forward.changeBeats(2).scale(2.0,1.0) +
-          LeadRight +
-          Stand.changeBeats(2).changehands(0) +
-          LeadRight.changeBeats(2.5).scale(3.0,2.0),
-
+              Forward +
+              SwingRight.changeBeats(2.5).scale(0.5, 1.0).skew(0.5,0),
+          Forward.changeBeats(2).scale(2.0, 1.0) +
+              LeadRight +
+              Stand.changeBeats(2).changehands(0) +
+              LeadRight.changeBeats(2.5).scale(3.0, 2.5),
           Forward_2 +
-          Forward +
-          SwingRight.changeBeats(2.5).scale(0.5,1.0),
-
+              Forward +
+              SwingRight.changeBeats(2.5).scale(0.5, 1.0).skew(-0.5,0),
           Forward_2 +
-          Forward +
-          SwingRight.changeBeats(2.5).scale(0.5,1.0) +
-          ExtendLeft.changeBeats(2.5).scale(2.0,2.0)
-      ]),
+              Forward +
+              SwingRight.changeBeats(2.5).scale(0.5, 1.0) +
+              ExtendLeft.changeBeats(2.5).scale(1.5, 2.0)
+        ]),
 
     AnimatedCall('Coordinate',
-      formation:Formation('Column LH GBGB'),
-      from:'Left-Hand Columns',parts:'2;1;2.5',difficulty: 2,
-      paths:[
+        formation: Formation('Column LH GBGB'),
+        from: 'Left-Hand Columns',
+        parts: '2;1;2.5',
+        difficulty: 2,
+        paths: [
           Forward_2 +
-          Forward +
-          SwingLeft.changeBeats(2.5).scale(0.5,1.0) +
-          ExtendRight.changeBeats(2.5).scale(2.0,2.0),
-
+              Forward +
+              SwingLeft.changeBeats(2.5).scale(0.5, 1.0) +
+              ExtendRight.changeBeats(2.5).scale(1.5, 2.0),
           Forward_2 +
-          Forward +
-          SwingLeft.changeBeats(2.5).scale(0.5,1.0),
-
-          Forward.changeBeats(2).scale(2.0,1.0) +
-          LeadLeft +
-          Stand.changeBeats(2).changehands(0) +
-          LeadLeft.changeBeats(2.5).scale(3.0,2.0),
-
+              Forward +
+              SwingLeft.changeBeats(2.5).scale(0.5, 1.0).skew(-0.5,0),
+          Forward.changeBeats(2).scale(2.0, 1.0) +
+              LeadLeft +
+              Stand.changeBeats(2).changehands(0) +
+              LeadLeft.changeBeats(2.5).scale(3.0, 2.5),
           RunLeft.changeBeats(2) +
-          Forward +
-          SwingLeft.changeBeats(2.5).scale(0.5,1.0)
-      ]),
+              Forward +
+              SwingLeft.changeBeats(2.5).scale(0.5, 1.0).skew(0.5,0)
+        ]),
 
     AnimatedCall('Coordinate',
       formation:Formation('', dancers:[

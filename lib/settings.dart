@@ -224,6 +224,13 @@ class Settings extends fm.ChangeNotifier {
     _instance.notifyListeners();
   }
 
+  static bool get practiceSpecific =>
+      _instance.proxy.getBool('Practice Specific') ?? true;
+  static set practiceSpecific(bool value) {
+    _instance.proxy.setBool('Practice Specific', value);
+    _instance.notifyListeners();
+  }
+
   static String get startingFormation =>
       _instance.proxy.getString('Starting Formation') ?? 'Squared Set';
   static set startingFormation(String value) {

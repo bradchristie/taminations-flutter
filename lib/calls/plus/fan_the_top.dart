@@ -101,15 +101,14 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 2,
-      paths:[
-          ExtendLeft.changeBeats(3).scale(2.0,2.0) +
-          LeadRight.changeBeats(4.5).scale(3.0,3.0),
-
-          Forward_2.changeBeats(3) +
-          SwingLeft +
-          HingeLeft
+        paths:[
+          ExtendLeft.changeBeats(3).scale(1.5,2.0) +
+              LeadRight.changeBeats(4.5).scale(3.0,3.0),
+          Forward_1p5.changeBeats(3) +
+              SwingLeft +
+              HingeLeft
       ]),
 
     AnimatedCall('Fan the Top',
@@ -124,131 +123,107 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
-          LeadRight.changeBeats(4).scale(1.5,3.0),
-
-          HingeLeft.changeBeats(1.33) +
-          HingeLeft.changeBeats(1.33) +
-          HingeLeft.changeBeats(1.33).scale(0.5,1.0),
-
-          HingeLeft.changeBeats(1.33) +
-          HingeLeft.changeBeats(1.33) +
-          HingeLeft.changeBeats(1.33).scale(0.5,1.0),
-
-          LeadRight.changeBeats(4).scale(1.5,3.0)
+        LeadRight.changeBeats(4).scale(1,3),
+        HingeLeft.changeBeats(1.33).skew(0.25,0) +
+            HingeLeft.changeBeats(1.33).skew(0,-0.25) +
+            HingeLeft.changeBeats(1.33).scale(0.5,1.0),
+        HingeLeft.changeBeats(1.33).skew(-0.25,0) +
+            HingeLeft.changeBeats(1.33).skew(0,0.25) +
+            HingeLeft.changeBeats(1.33).scale(0.5,1.0),
+        LeadRight.changeBeats(4).scale(2,3)
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',difficulty: 2,
       paths:[
-          LeadLeft.changeBeats(4).scale(1.5,3.0),
-
-          HingeRight.changeBeats(1.33) +
-          HingeRight.changeBeats(1.33) +
-          HingeRight.changeBeats(1.33).scale(0.5,1.0),
-
-          HingeRight.changeBeats(1.33) +
-          HingeRight.changeBeats(1.33) +
-          HingeRight.changeBeats(1.33).scale(0.5,1.0),
-
-          LeadLeft.changeBeats(4).scale(1.5,3.0)
+        LeadLeft.changeBeats(4).scale(2,3),
+        HingeRight.changeBeats(1.33).skew(-0.25,0) +
+            HingeRight.changeBeats(1.33).skew(0,-0.25) +
+            HingeRight.changeBeats(1.33).scale(0.5,1.0),
+        HingeRight.changeBeats(1.33).skew(0.25,0) +
+            HingeRight.changeBeats(1.33).skew(0,0.25) +
+            HingeRight.changeBeats(1.33).scale(0.5,1.0),
+          LeadLeft.changeBeats(4).scale(1,3)
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 2,
       paths:[
-          LeadRight.changeBeats(4).scale(1.5,3.0),
-
-          HingeRight.changeBeats(1.33) +
-          HingeRight.changeBeats(1.33) +
-          HingeRight.changeBeats(1.33).scale(0.5,1.0),
-
-          HingeRight.changeBeats(1.33) +
-          HingeRight.changeBeats(1.33) +
-          HingeRight.changeBeats(1.33).scale(0.5,1.0),
-
-          LeadRight.changeBeats(4).scale(1.5,3.0)
+        LeadRight.changeBeats(4).scale(1,3),
+        HingeRight.changeBeats(1.33).skew(-0.25,0) +
+            HingeRight.changeBeats(1.33).skew(0,-0.25) +
+            HingeRight.changeBeats(1.33).scale(0.5,1.0),
+        HingeRight.changeBeats(1.33).skew(0.25,0) +
+            HingeRight.changeBeats(1.33).skew(0,0.25) +
+            HingeRight.changeBeats(1.33).scale(0.5,1.0),
+        LeadRight.changeBeats(4).scale(2,3)
       ]),
 
     AnimatedCall('Fan the Top',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
-          LeadLeft.changeBeats(4).scale(1.5,3.0),
-
-          HingeLeft.changeBeats(1.33) +
-          HingeLeft.changeBeats(1.33) +
-          HingeLeft.changeBeats(1.33).scale(0.5,1.0),
-
-          HingeLeft.changeBeats(1.33) +
-          HingeLeft.changeBeats(1.33) +
-          HingeLeft.changeBeats(1.33).scale(0.5,1.0),
-
-          LeadLeft.changeBeats(4).scale(1.5,3.0)
+        LeadLeft.changeBeats(4).scale(2,3),
+        HingeLeft.changeBeats(1.33).skew(0.25,0) +
+            HingeLeft.changeBeats(1.33).skew(0,-0.25) +
+            HingeLeft.changeBeats(1.33).scale(0.5,1.0),
+        HingeLeft.changeBeats(1.33).skew(-0.25,0) +
+            HingeLeft.changeBeats(1.33).skew(0,0.25) +
+            HingeLeft.changeBeats(1.33).scale(0.5,1.0),
+        LeadLeft.changeBeats(4).scale(1,3)
       ]),
 
     AnimatedCall('Fan the Top',
       formation:Formation('Tidal Wave RH BGGB'),
       from:'Right-Hand Tidal Wave',difficulty: 1,
       paths:[
-          LeadRight.changeBeats(4).scale(3.0,1.5),
-
-          SwingLeft.changeBeats(2.5).scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
-
-          SwingLeft.changeBeats(2.5).scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
-
-          LeadRight.changeBeats(4).scale(3.0,1.5)
+        LeadRight.changeBeats(4).scale(3,2),
+        SwingLeft.changeBeats(2.5).scale(0.5,0.5).skew(0,0.5) +
+            HingeLeft.scale(1.0,0.5),
+        SwingLeft.changeBeats(2.5).scale(0.5,0.5).skew(0,-0.5) +
+            HingeLeft.scale(1.0,0.5),
+        LeadRight.changeBeats(4).scale(3,1)
       ]),
 
     AnimatedCall('Fan the Top',
       formation:Formation('Tidal Wave LH BGGB'),
       from:'Left-Hand Tidal Wave',difficulty: 2,
       paths:[
-          LeadLeft.changeBeats(4).scale(3.0,1.5),
-
-          SwingRight.changeBeats(2.5).scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
-
-          SwingRight.changeBeats(2.5).scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
-
-          LeadLeft.changeBeats(4).scale(3.0,1.5)
+        LeadLeft.changeBeats(4).scale(3,2),
+        SwingRight.changeBeats(2.5).scale(0.5,0.5).skew(0,-0.5) +
+            HingeRight.scale(1.0,0.5),
+        SwingRight.changeBeats(2.5).scale(0.5,0.5).skew(0,0.5) +
+            HingeRight.scale(1.0,0.5),
+        LeadLeft.changeBeats(4).scale(3,1)
       ]),
 
     AnimatedCall('Fan the Top',
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Right-Hand Tidal Two-Face Line',difficulty: 2,
       paths:[
-          LeadRight.changeBeats(4).scale(3.0,1.5),
-
-          SwingRight.changeBeats(2.5).scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
-
-          SwingRight.changeBeats(2.5).scale(0.5,0.5) +
-          HingeRight.scale(1.0,0.5),
-
-          LeadRight.changeBeats(4).scale(3.0,1.5)
+        LeadRight.changeBeats(4).scale(3,2),
+        SwingRight.changeBeats(2.5).scale(0.5,0.5).skew(0,-0.5) +
+            HingeRight.scale(1.0,0.5),
+        SwingRight.changeBeats(2.5).scale(0.5,0.5).skew(0,0.5) +
+            HingeRight.scale(1.0,0.5),
+        LeadRight.changeBeats(4).scale(3,1)
       ]),
 
     AnimatedCall('Fan the Top',
       formation:Formation('Two-Faced Tidal Line LH'),
       from:'Left-Hand Tidal Two-Face Line',difficulty: 2,
       paths:[
-          LeadLeft.changeBeats(4).scale(3.0,1.5),
-
-          SwingLeft.changeBeats(2.5).scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
-
-          SwingLeft.changeBeats(2.5).scale(0.5,0.5) +
-          HingeLeft.scale(1.0,0.5),
-
-          LeadLeft.changeBeats(4).scale(3.0,1.5)
+        LeadLeft.changeBeats(4).scale(3,2),
+        SwingLeft.changeBeats(2.5).scale(0.5,0.5).skew(0,0.5) +
+            HingeLeft.scale(1.0,0.5),
+        SwingLeft.changeBeats(2.5).scale(0.5,0.5).skew(0,-0.5) +
+            HingeLeft.scale(1.0,0.5),
+        LeadLeft.changeBeats(4).scale(3,1)
       ]),
 
     AnimatedCall('Fan the Top',
@@ -274,19 +249,16 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       from:'Facing Lines',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,1.0) +
-          LeadRight.changeBeats(4).scale(3.0,2.0),
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          HingeLeft.scale(1.0,0.5) +
-          SwingLeft,
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          LeadRight.changeBeats(4).scale(3.0,1.5),
-
-          Forward_2 +
-          HingeLeft +
-          SwingLeft
+        ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+            LeadRight.changeBeats(4).scale(3,2),
+        ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+            SwingLeft.changeBeats(2.5).scale(0.5,0.5).skew(0,-0.5) +
+            HingeLeft.scale(1.0,0.5),
+        ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+            LeadRight.changeBeats(4).scale(3,1),
+        ExtendLeft.changeBeats(2).scale(2.0,0.5) +
+            SwingLeft.changeBeats(2.5).scale(0.5,0.5).skew(0,0.5) +
+            HingeLeft.scale(1.0,0.5),
       ]),
 
     AnimatedCall('Fan the Top',
@@ -418,14 +390,13 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Left Fan the Top',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 3,
       paths:[
-          Forward_2.changeBeats(3) +
-          CastRight,
-
-          ExtendRight.changeBeats(3).scale(2.0,2.0) +
-          LeadLeft.changeBeats(4.5).scale(3.0,3.0)
+        Forward_1p5.changeBeats(3) +
+            CastRight,
+        ExtendRight.changeBeats(3).scale(1.5,2.0) +
+            LeadLeft.changeBeats(4.5).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Left Fan the Top',
@@ -462,18 +433,16 @@ import '../../moves.dart';
       formation:Formation('Normal Lines'),
       from:'Facing Lines',difficulty: 2,
       paths:[
-          Forward_2 +
-          CastRight,
-
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
-          LeadLeft.changeBeats(4).scale(3.0,1.5),
-
-          ExtendRight.changeBeats(2).scale(2.0,0.5) +
-          HingeRight.scale(1.0,0.5) +
-          SwingRight,
-
-          ExtendRight.changeBeats(2).scale(2.0,1.0) +
-          LeadLeft.changeBeats(4).scale(3.0,2.0)
+        ExtendRight.changeBeats(2).scale(2.0,0.5) +
+            SwingRight.changeBeats(2.5).scale(0.5,0.5).skew(0,-0.5) +
+            HingeRight.scale(1.0,0.5),
+        ExtendRight.changeBeats(2).scale(2.0,0.5) +
+            LeadLeft.changeBeats(4).scale(3,1),
+        ExtendRight.changeBeats(2).scale(2.0,0.5) +
+            SwingRight.changeBeats(2.5).scale(0.5,0.5).skew(0,0.5) +
+            HingeRight.scale(1.0,0.5),
+        ExtendRight.changeBeats(2).scale(2.0,0.5) +
+            LeadLeft.changeBeats(4).scale(3,2),
       ]),
 
     AnimatedCall('Heads Fan the Top',

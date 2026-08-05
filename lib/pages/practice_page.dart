@@ -62,8 +62,13 @@ class PracticeModel {
     final levelDatum = LevelData.find(appState.level!)!;
     final levelCalls = _callsForLevel(levelDatum);
     //  Load that call and choose a random animation
-    final randomCall = levelCalls[Random().nextInt(levelCalls.length)]
+    var randomCall = levelCalls[Random().nextInt(levelCalls.length)]
         .where((tam) => !tam.noDisplay).toList();
+    //  But if specific call requested, use that
+    if (appState.link != null) {
+      var calls = callIndex.where((call) => call.link == appState.link).first.calls;
+      randomCall = flattenAnimatedCallList(calls);
+    }
     final randomAnim = randomCall[Random().nextInt(randomCall.length)];
 
     titleModel.title = randomAnim.title;

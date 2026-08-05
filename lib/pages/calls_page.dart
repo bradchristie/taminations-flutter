@@ -49,7 +49,7 @@ class CallsPage extends fm.StatelessWidget {
   @override
   fm.Widget build(fm.BuildContext context) {
     return Page(
-        child: CallsFrame()
+        child: CallsFrame(destination: MainPage.ANIMLIST)
     );
   }
 }
@@ -58,7 +58,8 @@ class CallsPage extends fm.StatelessWidget {
 //  CallsFrame contains a list or grid of calls
 //  and a search entry above to filter the calls
 class CallsFrame extends fm.StatefulWidget {
-
+  final MainPage destination;
+  const CallsFrame({super.key, required this.destination});
   @override
   _CallsFrameState createState() => _CallsFrameState();
 
@@ -161,8 +162,10 @@ class _CallsFrameState extends fm.State<CallsFrame> {
         builder: (context,tamState,_) {
           var onTapFunction = () {
             tamState.change(
-                mainPage: MainPage.ANIMLIST,
-                link: callsSearched[index].link
+                //  Either ANIMLIST or PRACTICE
+                mainPage: widget.destination,
+                //  link is used to find the page of calls
+                link: callsSearched[index].link,
             );
           };
          return fm.Material(

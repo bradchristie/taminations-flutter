@@ -40,7 +40,7 @@ class FirstLandscapePage extends fm.StatelessWidget {
             appState.detailPage == DetailPage.SETTINGS
                 ? SettingsFrame()
                 : appState.detailPage == DetailPage.CALLS
-                ? CallsFrame()
+                ? CallsFrame(destination: MainPage.ANIMLIST,)
                 : MarkdownFrame('info/about.html'));
           }
       ),
