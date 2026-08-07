@@ -552,10 +552,12 @@ final List<AnimatedCallItem> TandemConcept = [
         ],
       ),
 
+      AnimatedCallHeader('Follow Your Neighbor', calls: [
       AnimatedCall(
         'Tandem Follow Your Neighbor',
         formation: Formation('Column RH GBGB'),
         group: 'Tandem',
+        from: 'Right-Hand Columns',
         paths: [
           Forward_2 +
               CounterRotateRight(0, -2) +
@@ -583,7 +585,7 @@ final List<AnimatedCallItem> TandemConcept = [
         'Tandem Follow Your Neighbor',
         formation: Formation('Column LH GBGB'),
         group: 'Tandem',
-        noDisplay: true,
+        from: 'Left-Hand Columns',
         paths: [
           Forward_2 +
               CounterRotateLeft(2, 0).changehands(Hands.LEFT) +
@@ -607,6 +609,8 @@ final List<AnimatedCallItem> TandemConcept = [
         ],
       ),
 
+
+]),
       AnimatedCall(
         'Tandem Follow Your Neighbor',
         formation: Formation('Column LH GBGB'),
@@ -670,13 +674,20 @@ final List<AnimatedCallItem> TandemConcept = [
         formation: Formation('Double Pass Thru'),
         group: 'Tandem',
         paths: [
-          ExtendLeft.scale(1.0, 0.5) + Forward_4 + QuarterRight.skew(1.0, 0.5),
+          ExtendLeft.scale(1.0, 0.5) +
+              Forward_4 + QuarterRight.skew(1,0),
 
-          ExtendLeft.scale(1.0, 0.5) + Forward_2 + QuarterLeft.changeBeats(4).skew(1.0, -1.5),
+          ExtendLeft.scale(1.0, 0.5) +
+              Forward_2 +
+              QuarterLeft.changeBeats(4).skew(1, -1),
 
-          ExtendLeft.scale(1.0, 0.5) + Forward + LeadRight.changeBeats(4).scale(2.0, 3.5),
+          ExtendLeft.scale(1.0, 0.5) +
+              Forward +
+              LeadRight.changeBeats(4).scale(2, 3),
 
-          ExtendLeft.scale(1.0, 0.5) + Forward + QuarterLeft.changeBeats(4).skew(0.0, 2.5),
+          ExtendLeft.scale(1.0, 0.5) +
+              Forward +
+              QuarterLeft.changeBeats(4).skew(0, 2),
         ],
       ),
 
@@ -700,13 +711,14 @@ final List<AnimatedCallItem> TandemConcept = [
         formation: Formation('Column RH GBGB'),
         group: 'Tandem',
         paths: [
-          RunLeft.skew(-1.0, 0.0) + Forward_4.changeBeats(3),
-
-          Forward.changeBeats(2) + RunLeft,
-
-          Forward_2 + Pivotbackwardleft.changeBeats(4).skew(-1.0, 0.0),
-
-          Forward_2 + Pivotforwardright.changeBeats(4).scale(1.0, 0.5).skew(1.0, 0.0),
+          RunLeft.skew(-1.0, 0.0) +
+              Forward.changeBeats(3).scale(3.5, 1),
+          Forward.changeBeats(2) +
+              RunLeft.skew(-0.5,0),
+          Forward_2 +
+              Pivotbackwardleft.changeBeats(4).skew(-0.5, 0.0),
+          Forward_2 +
+              Pivotforwardright.changeBeats(4).scale(1.0, 0.5).skew(0.5, 0.0),
         ],
       ),
 
@@ -728,31 +740,121 @@ final List<AnimatedCallItem> TandemConcept = [
 
       AnimatedCall(
         'Tandem Quarter Thru',
-        formation: Formation(
-          '',
-          dancers: [
+        formation: Formation('', dancers: [
             Dancer.fromData(gender: Gender.GIRL, x: -1, y: 3, angle: 90),
             Dancer.fromData(gender: Gender.BOY, x: -1, y: 1, angle: 90),
             Dancer.fromData(gender: Gender.GIRL, x: -1, y: -1, angle: 90),
             Dancer.fromData(gender: Gender.BOY, x: -1, y: -3, angle: 90),
-          ],
-        ),
+          ]),
         group: 'Tandem',
         fractions: '2',
         paths: [
-          CounterRotateRight(0, -2).changehands(Hands.RIGHT).skew(0.0, -1.0),
-
-          CounterRotateRight(2, 0).changehands(Hands.RIGHT).skew(0.0, 1.0),
-
-          CounterRotateRight(0, -2).changehands(Hands.RIGHT).skew(0.0, -1.0) +
-              CounterRotateLeft(0, 2).changehands(Hands.LEFT).skew(-1.0, 0.0) +
-              CounterRotateLeft(0, 2).changehands(Hands.LEFT).skew(0.0, 1.0),
-
-          CounterRotateRight(2, 0).changehands(Hands.RIGHT).skew(0.0, 1.0) +
-              CounterRotateLeft(2, 0).changehands(Hands.LEFT).skew(1.0, 0.0) +
-              CounterRotateLeft(2, 0).changehands(Hands.LEFT).skew(0.0, -1.0),
+          CounterRotateRight(0, -2.5).changehands(Hands.RIGHT),
+          CounterRotateRight(2, 0.5).changehands(Hands.RIGHT),
+          CounterRotateRight(0, -2.5).changehands(Hands.RIGHT) +
+              CounterRotateLeft(-0.5, 2).changehands(Hands.LEFT) +
+              CounterRotateLeft(0, 2.5).changehands(Hands.LEFT),
+          CounterRotateRight(2, 0.5).changehands(Hands.RIGHT) +
+              CounterRotateLeft(2.5, 0).changehands(Hands.LEFT) +
+              CounterRotateLeft(2, -0.5).changehands(Hands.LEFT),
         ],
       ),
+
+      AnimatedCallHeader('Recycle', calls: [
+        AnimatedCall(
+          'Tandem Recycle',
+          formation: Formation('Ocean Waves RH BGGB Compact'),
+          from: 'Right-Hand Waves',
+          group: 'Tandem',
+          paths: [
+            CounterRotateRight(4.5,0).changeBeats(4) +
+                CounterRotateRight(4,0).changeBeats(4),
+            CounterRotateRight(-1,-2) +
+                CounterRotateRight(-1,-2) +
+                CounterRotateRight(-0.5,-1) +
+                QuarterRight.changeBeats(2),
+            CounterRotateRight(2,0) +
+                CounterRotateRight(1,0) +
+                CounterRotateRight(1.5,1) +
+                CounterRotateRight(2,2),
+            CounterRotateRight(1.5,-2).changeBeats(4) +
+                CounterRotateRight(2,-2).changeBeats(4)
+          ],
+        ),
+
+        AnimatedCall(
+          'Tandem Recycle',
+          formation: Formation('Ocean Waves LH BGGB Compact'),
+          from: 'Left-Hand Waves',
+          group: 'Tandem',
+          paths: [
+            CounterRotateLeft(1.5,2).changeBeats(4) +
+                CounterRotateLeft(2,2).changeBeats(4),
+            CounterRotateLeft(2,0) +
+                CounterRotateLeft(1,0) +
+                CounterRotateLeft(1.5,-1) +
+                CounterRotateLeft(2,-2),
+            CounterRotateLeft(-1,2) +
+                CounterRotateLeft(-1,2) +
+                CounterRotateLeft(-0.5,1) +
+                QuarterLeft.changeBeats(2),
+            CounterRotateLeft(4.5,0).changeBeats(4) +
+                CounterRotateLeft(4,0).changeBeats(4),
+          ],
+        ),
+
+        AnimatedCall(
+          'Tandem Recycle',
+          formation: Formation('Double Pass Thru'),
+          from: 'Double Pass Thru',
+          group: 'Tandem',
+          paths: [
+            CounterRotateRight(3,1).changeBeats(3) +
+                CounterRotateRight(1,1.5).changeBeats(3),
+            DodgeLeft +
+                ExtendLeft.changeBeats(3).scale(1.5,2),
+            CounterRotateRight(1,-0.5).changeBeats(3) +
+                CounterRotateRight(-0.5,-1.5).changeBeats(3),
+            DodgeLeft.skew(-0.5,0) +
+                ExtendLeft.changeBeats(3).scale(3,2)
+          ],
+        ),
+
+        AnimatedCall(
+          'Tandem Recycle',
+          formation: Formation('Column RH GBGB'),
+          group: 'Tandem',
+          from: 'Right-Hand Columns',
+          paths: [
+            CounterRotateRight(-1,-3).changeBeats(3).changehands(Hands.RIGHT) +
+                CounterRotateRight(1,-3.5).changeBeats(3).changehands(Hands.RIGHT),
+            CounterRotateRight(1,-1.5).changeBeats(3).changehands(Hands.RIGHT) +
+                CounterRotateRight(2.5,-0.5).changeBeats(3).changehands(Hands.RIGHT),
+            CounterRotateRight(1,-0.5).changeBeats(3).changehands(Hands.RIGHT) +
+                CounterRotateRight(-0.5,-1.5).changeBeats(3).changehands(Hands.RIGHT),
+            CounterRotateRight(3,1).changeBeats(3).changehands(Hands.RIGHT) +
+                CounterRotateRight(1,1.5).changeBeats(3).changehands(Hands.RIGHT),
+          ],
+        ),
+
+        AnimatedCall(
+          'Tandem Recycle',
+          formation: Formation('Column LH GBGB'),
+          group: 'Tandem',
+          from: 'Left-Hand Columns',
+          paths: [
+            CounterRotateLeft(3,-1).changeBeats(3).changehands(Hands.LEFT) +
+                CounterRotateLeft(1,-1.5).changeBeats(3).changehands(Hands.LEFT),
+            CounterRotateLeft(1,0.5).changeBeats(3).changehands(Hands.LEFT) +
+                CounterRotateLeft(-0.5,1.5).changeBeats(3).changehands(Hands.LEFT),
+            CounterRotateLeft(1,1.5).changeBeats(3).changehands(Hands.LEFT) +
+                CounterRotateLeft(2.5,0.5).changeBeats(3).changehands(Hands.LEFT),
+            CounterRotateLeft(-1,3).changeBeats(3).changehands(Hands.LEFT) +
+                CounterRotateLeft(1,3.5).changeBeats(3).changehands(Hands.LEFT),
+          ],
+        ),
+
+      ]),
 
       AnimatedCall(
         'Tandem Right and Left Thru',
@@ -790,13 +892,12 @@ final List<AnimatedCallItem> TandemConcept = [
         formation: Formation('Column LH GBGB'),
         group: 'Tandem',
         paths: [
-          Forward.changeBeats(2),
-
-          Forward_3.changeBeats(4),
-
-          Forward.changeBeats(2) + RunRight,
-
-          RunRight.skew(-1.0, 0.0) + Forward_4,
+          Forward_1p5.changeBeats(2),
+          Forward_2.changeBeats(4).skew(0.5, 0),
+          Forward.changeBeats(2) +
+              RunRight.skew(-0.5,0),
+          RunRight.skew(-1.0, 0.0) +
+              Forward_3.skew(0.5,0),
         ],
       ),
 
@@ -826,13 +927,13 @@ final List<AnimatedCallItem> TandemConcept = [
         formation: Formation('Completed Double Pass Thru'),
         group: 'Tandem',
         paths: [
-          FlipLeft.scale(1.0, 0.5).skew(-1.0, 0.0) + Forward_2.scale(0.6, 1.0),
-
+          FlipLeft.scale(1.0, 0.5).skew(-1.0, 0.0) +
+              Forward_2.scale(0.6, 1.0),
           FlipRight.changeBeats(5).scale(1.0, 0.5).skew(0.4, 0.0),
-
-          Forward.changeBeats(2) + FlipLeft.scale(1.0, 0.5),
-
-          Forward_3 + FlipRight.scale(1.0, 0.5).skew(0.7, 0.0),
+          Forward.changeBeats(2) +
+              FlipLeft.scale(1.0, 0.5),
+          Forward_3 +
+              FlipRight.scale(1.0, 0.5).skew(0.7, 0.0),
         ],
       ),
 
@@ -884,59 +985,63 @@ final List<AnimatedCallItem> TandemConcept = [
 
       AnimatedCall(
         'Tandem Swing Thru',
-        formation: Formation('Ocean Waves RH BGGB'),
+        formation: Formation('Ocean Waves RH BGGB Compact'),
         group: 'Tandem',
         fractions: '4',
         paths: [
-          CounterRotateRight(2, 0).changehands(Hands.RIGHT).skew(1.0, 0.0) +
-              CounterRotateRight(2, 0).changehands(Hands.RIGHT).skew(0.0, 1.0) +
-              CounterRotateLeft(2, 0).changehands(Hands.LEFT).skew(1.0, 0.0) +
-              CounterRotateLeft(2, 0).changehands(Hands.LEFT).skew(0.0, -1.0),
+          CounterRotateRight(2.5, 0).changehands(Hands.RIGHT) +
+              CounterRotateRight(2, 0.5).changehands(Hands.RIGHT) +
+              CounterRotateLeft(2.5, 0).changehands(Hands.LEFT) +
+              CounterRotateLeft(2, -0.5).changehands(Hands.LEFT),
 
-          CounterRotateRight(0, -2).changehands(Hands.RIGHT).skew(-1.0, 0.0) +
-              CounterRotateRight(0, -2).changehands(Hands.RIGHT).skew(0.0, -1.0),
+          CounterRotateRight(-0.5, -2).changehands(Hands.RIGHT) +
+              CounterRotateRight(0, -2.5).changehands(Hands.RIGHT),
 
-          CounterRotateRight(2, 0).changehands(Hands.RIGHT).skew(1.0, 0.0) +
-              CounterRotateRight(2, 0).changehands(Hands.RIGHT).skew(0.0, 1.0),
+          CounterRotateRight(2.5, 0).changehands(Hands.RIGHT) +
+              CounterRotateRight(2, 0.5).changehands(Hands.RIGHT),
 
-          CounterRotateRight(0, -2).changehands(Hands.RIGHT).skew(-1.0, 0.0) +
-              CounterRotateRight(0, -2).changehands(Hands.RIGHT).skew(0.0, -1.0) +
-              CounterRotateLeft(0, 2).changehands(Hands.LEFT).skew(-1.0, 0.0) +
-              CounterRotateLeft(0, 2).changehands(Hands.LEFT).skew(0.0, 1.0),
+          CounterRotateRight(-0.5, -2).changehands(Hands.RIGHT) +
+              CounterRotateRight(0, -2.5).changehands(Hands.RIGHT) +
+              CounterRotateLeft(-0.5, 2).changehands(Hands.LEFT) +
+              CounterRotateLeft(0, 2.5).changehands(Hands.LEFT),
+        ],
+      ),
+
+AnimatedCallHeader('Switch the Wave', calls: [
+      AnimatedCall(
+        'Tandem Switch the Wave',
+        formation: Formation('Ocean Waves RH BGGB Compact'),
+        from: 'Right-Hand Waves',
+        group: 'Tandem',
+        paths: [
+          Forward_3 +
+              RunRight.changeBeats(5).scale(1.0, 2.0),
+          RunRight +
+              Forward_3,
+          Forward_3 +
+              RunRight,
+          RunRight.changeBeats(5).scale(1.0, 2.0)
+              + Forward_3,
         ],
       ),
 
       AnimatedCall(
         'Tandem Switch the Wave',
-        formation: Formation('Ocean Waves RH BGGB'),
+        formation: Formation('Ocean Waves LH BGGB Compact'),
+        from: 'Left-Hand Waves',
         group: 'Tandem',
         paths: [
-          Forward_4.changeBeats(3) + RunRight.changeBeats(5).scale(1.0, 2.0),
-
-          RunRight + Forward_4.changeBeats(3),
-
-          Forward_4.changeBeats(3) + RunRight,
-
-          RunRight.changeBeats(5).scale(1.0, 2.0) + Forward_4.changeBeats(3),
+          RunLeft.changeBeats(5).scale(1.0, 2.0) +
+              Forward_3,
+          Forward_3 +
+              RunLeft,
+          RunLeft +
+              Forward_3,
+          Forward_3 +
+              RunLeft.changeBeats(5).scale(1.0, 2.0),
         ],
       ),
-
-      AnimatedCall(
-        'Tandem Switch the Wave',
-        formation: Formation('Ocean Waves LH BGGB'),
-        group: 'Tandem',
-        noDisplay: true,
-        paths: [
-          RunLeft.changeBeats(5).scale(1.0, 2.0) + Forward_4.changeBeats(3),
-
-          Forward_4.changeBeats(3) + RunLeft,
-
-          RunLeft + Forward_4.changeBeats(3),
-
-          Forward_4.changeBeats(3) + RunLeft.changeBeats(5).scale(1.0, 2.0),
-        ],
-      ),
-
+]),
       AnimatedCall(
         'Tandem Touch 1/4',
         formation: Formation('Double Pass Thru'),
