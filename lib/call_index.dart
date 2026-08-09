@@ -1,4 +1,5 @@
 import 'call_entry.dart';
+import 'calls/ms/single_circle_to_a_wave.dart' as ms;
 import 'calls/a1/any_hand_concept.dart' as a1;
 import 'calls/a1/anything_and_cross.dart' as a1;
 import 'calls/a1/as_couples.dart' as a1;
@@ -971,9 +972,10 @@ var callIndex = [
   CallEntry('Shakedown','c1','c1/shakedown',c1.Shakedown,),
   CallEntry('Shazam','c2','c2/shazam',c2.Shazam,),
   CallEntry('Shoot the Star','plus','plus/shoot_the_star',plus.ShootTheStar,'ms/shoot_the_star.mp3'),
-  CallEntry('Siamese Concept','c1','c1/siamese_concept',c1.SiameseConcept,),
-  CallEntry('Sidetrack','c3b','c3b/sidetrack',c3b.Sidetrack,),
-  CallEntry('Single Bounce','c2','c2/bounce',c2.Bounce,),
+  CallEntry('Siamese Concept','c1','c1/siamese_concept',c1.SiameseConcept),
+  CallEntry('Sidetrack','c3b','c3b/sidetrack',c3b.Sidetrack),
+  CallEntry('Single Bounce','c2','c2/bounce',c2.Bounce),
+  CallEntry('Single Circle to a Wave','ms','ms/single_circle_to_a_wave',ms.SingleCircleToAWave),
   CallEntry('Single Concept','c3a','c3a/single_concept',c3a.SingleConcept,),
   CallEntry('Single Cross and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
   CallEntry('Single Cross Trade and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
