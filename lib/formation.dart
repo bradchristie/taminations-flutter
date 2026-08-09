@@ -1326,6 +1326,13 @@ class Formation {
       Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
     ]),
 
+    Formation('Wave of 6',dancers:[
+      Dancer.fromData(gender:Gender.BOY,x:0.8,y:0,angle:90),
+      Dancer.fromData(gender:Gender.GIRL,x:2.4,y:0,angle:270),
+      Dancer.fromData(gender:Gender.BOY,x:4.0,y:0,angle:90),
+      Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
+    ]),
+
     Formation('H Zero',dancers:[
       Dancer.fromData(gender:Gender.BOY,x:0,y:1,angle:0),
       Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),

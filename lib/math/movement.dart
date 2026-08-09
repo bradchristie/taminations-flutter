@@ -154,17 +154,19 @@ class Movement extends Cloneable<Movement> {
   Movement skew(double x, double y) =>
       Movement(beats,hands,btranslate.skew(x, y), brotate, fromCall: fromCall);
 
-  /// Return a new Movement with the final facing position turned
-  /// by a specific radians
+  /// Return a new Movement with the final facing position
+  /// turned by a specific radians
   Movement twist(double adif) {
-    if (adif.abs() < 0.02)
-      return clone();
-    var a = brotate.angle(1.0) + adif;
-    var p1 = Vector(0,0);
-    var cp1 = Vector(0.55,0);
-    var p2 = Vector(sin(a)*a.sign,(1-cos(a))*a.sign);
-    var cp2 = p2 - Vector(0.55*cos(a),0.55*sin(a));
-    var brot = Bezier([p1,cp1,cp2,p2]);
+    //  The current final angle is set by the end point
+    //  and 2nd control point of the rotation bezier
+    var a0 = (brotate.p2 - brotate.cp2).angle;
+    //  Adjust by turning this angle
+    a0 = a0 + adif;
+    //  Keep the same distance between p2 and cp2
+    var len = (brotate.p2 - brotate.cp2).length;
+    //  Compute the new position of cp2 from the adjusted angle
+    var cp2new = brotate.p2 - Vector(len,0).rotate(a0);
+    var brot = Bezier([brotate.p1,brotate.cp1,cp2new,brotate.p2]);
     return Movement(beats,hands,btranslate,brot,fromCall:fromCall);
   }
 

@@ -159,6 +159,6 @@ with other calls where a larger action is reduced to just two dancers.
 A wider variety of Command Examples are often used when calling
 to English-speaking dancers (for example, “Circle up 2, go halfway round”).
 
-See [Single Circle to a Wave](../plus/single_circle_to_a_wave.md) in the Ocean Wave Family for the definition of that call
+See [Single Circle to a Wave](single_circle_to_a_wave.md) in the Ocean Wave Family for the definition of that call
 
 ###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

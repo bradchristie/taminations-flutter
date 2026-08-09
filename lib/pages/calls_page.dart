@@ -60,6 +60,7 @@ final newCalls = [
   'Triple Trade',
   // new Mainstream calls (not in SSD)
   'Quarter Tag',
+  'Single Circle to a Wave',
   'Spin the Top',
   'Three Quarter Tag',
 ];

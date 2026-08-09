@@ -63,6 +63,10 @@ class Bezier extends CubicBezier implements Cloneable<Bezier> {
   double get cy2 => points[2].y;
   double get x2 => points[3].x;
   double get y2 => points[3].y;
+  Vector get p1 => Vector(x1,y1);
+  Vector get cp1 => Vector(cx1,cy1);
+  Vector get cp2 => Vector(cx2,cy2);
+  Vector get p2 => Vector(x2,y2);
 
   double angle(double t) {
     var v = derivativeAt(t);
