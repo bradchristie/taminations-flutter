@@ -22,7 +22,7 @@ import '../common.dart';
 
 class Little extends Action with ButCall {
 
-  @override final level = LevelData.C1;
+  @override var level = LevelData.C1;
   @override var helplink = 'c1/scoot_and_little';
   @override var butCall = 'Peel and Trail';
 
@@ -68,12 +68,15 @@ class Little extends Action with ButCall {
 
     //  More to do for Rally
     if (name.contains('Rally')) {
+      level = LevelData.C3A;
       var isRight = ctx.outer(4).every((d) => d.isCenterRight);
       var isLeft = ctx.outer(4).every((d) => d.isCenterLeft);
       if (!isLeft && !isRight)
         throw CallError('Outer 4 not in tandem after Little');
       var roll = isRight ? 'Right' : 'Left';
+      var center4 = ctx.center(4);
       ctx.applyCalls('Center 4 $butCall While Outer 4 $roll Roll to a Wave');
+      ctx.checkCenters(centersToCheck: center4);
     }
 
   }
