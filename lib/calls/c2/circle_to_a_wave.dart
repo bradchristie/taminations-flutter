@@ -29,12 +29,12 @@ import '../../moves.dart';
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',parts:'2.25',
       paths:[
-          EighthRight.skew(0.5,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          EighthRight.changehands(Hands.GRIPBOTH).skew(0.5,0.0) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.767,1.767),
 
           EighthLeft.skew(0.5,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(3).skew(1.05,1.767)
       ]),
 
@@ -43,19 +43,19 @@ import '../../moves.dart';
       from:'Normal Lines',parts:'2.25',
       paths:[
           EighthRight.skew(0.5,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.414,1.414),
 
           EighthLeft.skew(0.5,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthRight.changeBeats(3).skew(1.414,1.414),
 
           EighthRight.skew(0.5,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.414,1.414),
 
           EighthLeft.skew(0.5,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthRight.changeBeats(3).skew(1.414,1.414)
       ]),
 
@@ -64,19 +64,19 @@ import '../../moves.dart';
       from:'Eight Chain Thru',parts:'2.25',
       paths:[
           EighthRight +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.767,1.767),
 
           EighthLeft +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthRight.changeBeats(3).skew(1.05,1.767),
 
           EighthRight.skew(0.05,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthLeft.changeBeats(3).skew(1.767,1.767),
 
           EighthLeft.skew(0.05,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.GRIPBOTH) +
           EighthRight.changeBeats(3).skew(1.05,1.767)
       ]),
 
@@ -85,13 +85,13 @@ import '../../moves.dart';
       group:' ',parts:'3.75',
       paths:[
           EighthRight.skew(0.5,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(3).skew(1.767,1.767),
 
           EighthLeft.skew(0.5,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(3).skew(1.05,1.767)
       ]),
 
@@ -160,11 +160,11 @@ import '../../moves.dart';
           DodgeLeft,
 
           EighthRight.changehands(Hands.RIGHT) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(3).skew(1.414,1.414),
 
           EighthLeft.changehands(Hands.LEFT) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(3).skew(1.414,1.414)
       ]),
 
@@ -174,20 +174,20 @@ import '../../moves.dart';
       paths:[
           Stand.changeBeats(5) +
           EighthRight.changeBeats(2).changehands(Hands.RIGHT).skew(2.0,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(3).skew(1.414,1.414),
 
           Stand.changeBeats(5) +
           EighthLeft.changeBeats(2).changehands(Hands.LEFT).skew(2.0,0.0) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(3).skew(1.414,1.414),
 
           EighthRight.changehands(Hands.RIGHT) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthLeft.changeBeats(5).skew(2.818,2.818),
 
           EighthLeft.changehands(Hands.LEFT) +
-          CounterRotateLeft(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
+          CounterRotateRight(sqrt(2),sqrt(2)).changeBeats(1.5).changehands(Hands.BOTH) +
           EighthRight.changeBeats(5).skew(0.0,2.828)
       ]),
   ];
