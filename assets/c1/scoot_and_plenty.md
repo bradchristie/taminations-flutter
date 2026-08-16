@@ -3,11 +3,13 @@
 
 ## Plenty
 
+Parts: 3
+
 From 1/4 Tag or 3/4 Tag: This call has 3 parts:
 
 1. ***[Little](scoot_and_little.md)***
 2. ***[Split Circulate 2](../ms/circulate.md)*** (formerly called "Turn the Star 1/2")
-3. ***Ends [Counter Rotate 1/4](counter_rotate.md) and [Roll](../plus/anything_and_roll.md) while the centers 1/2 [Zoom](../b2/zoom.md) to form a wave***
+3. ***Ends [Counter Rotate 1/4](counter_rotate.md) and [Roll](../plus/anything_and_roll.md) while the centers 1/2 [Zoom](../ms/zoom.md) to form a wave***
 
 Ends in a 1/4 Tag.
 
@@ -20,7 +22,7 @@ Ends in a 1/4 Tag.
 
 Notes: The caller can vary the number of Split Circulates
 (for example, "Plenty, do 3 Split Circulates", 
-"Plenty, but Split Circulate 3". 
+"Plenty, but Split Circulate 3").
 If the caller wants to replace the Split Circulates with a different call,
 they should name the replaced part explicitly (for example, 
 "Plenty, Replace the Split Circulates with …").
@@ -33,16 +35,22 @@ Since the first part is a Little, the outside dancers normally begin with
 a Quarter Right but the caller can tell them to quarter in a different
 direction (for example, "Plenty, Outsides Face In",
 "Left Plenty" (the outsides quarter left),
-"Right Plenty" (the outsides quarter right).
+"Right Plenty" (the outsides quarter right)).
 
 ## Scoot and Plenty
+
+Parts: 4
 
 From a 1/4 Tag: [Scoot Back](../ms/scoot_back.md), then
 Right Plenty or Left Plenty, depending on the hand with
 which the Scoot Back was done. The outsides can also
 take a direction, as in "Scoot and Plenty, Outsides Out."
 
+Note: This call is defined to have 4 parts: the Scoot Back and the 3 parts of Right Plenty or Left Plenty
+
 ## Left Scoot and Plenty
+
+Parts: 4
 
 From a Left-Hand Quarter Tag only: 
 (This usage is to be avoided, except when helping the
@@ -78,7 +86,7 @@ the outside dancers go to the right.
 Use "Scoot Chain Thru and Left Plenty" 
 to have the outside dancers go to the left.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
 
 <!-- Parts
 Plenty1

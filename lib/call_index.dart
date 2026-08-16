@@ -105,7 +105,6 @@ import 'calls/c1/jaywalk.dart' as c1;
 import 'calls/c1/linear_action.dart' as c1;
 import 'calls/c1/magic_column_formation.dart' as c1;
 import 'calls/c1/make_magic.dart' as c1;
-import 'calls/c1/o_formation.dart' as c1;
 import 'calls/c1/pass_the_axle.dart' as c1;
 import 'calls/c1/percolate.dart' as c1;
 import 'calls/c1/phantom_formation.dart' as c1;
@@ -829,7 +828,7 @@ var callIndex = [
 
   CallEntry('Nuclear Reaction','c3b','c3b/nuclear_reaction',c3b.NuclearReaction,),
 
-  CallEntry('O Formation / Concept','c1','c1/o_formation',c1.OFormation,),
+  CallEntry('O Formation / Concept','c1','c1/butterfly_formation',c1.ButterflyFormation,),
   CallEntry('Ocean Wave','ms','ms/ocean_wave',
       ms.OceanWave,),
   CallEntry('Ocean Wave Rule','ms','ms/ocean_wave_rule',ms.OceanWaveRule,),

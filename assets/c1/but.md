@@ -4,7 +4,7 @@
 This syntax describes a specific modification to \<main call> 
 in which one or more parts of \<main call> are replaced with <anything>. 
 Some call definitions describe what "But" means when used
-with that call. (See Percolate, for example.) 
+with that call. (See [Percolate](percolate.md), for example.) 
 Otherwise, "But" means that the Centers replace their
 last part of \<main call> with \<anything> 
 while the other dancers complete \<main call> normally.
@@ -13,9 +13,9 @@ it must occur only in the
 center, and it must not involve interacting with the other dancers.
 
 Example Calls:
-- Chain Reaction But 2/3 Recycle (replace the Cast Off 3/4)
-- Mini Busy But Cut the Diamond (replace Flip the Diamond)
-- Load the Boat But Spin the Top (replace the Centers’ final Pass Thru)
+- [Chain Reaction](../a1/chain_reaction.md) But 2/3 Recycle (replace the Cast Off 3/4)
+- [Mini Busy](../a2/mini_busy.md) But Cut the Diamond (replace Flip the Diamond)
+- [Load the Boat](../plus/load_the_boat.md) But Spin the Top (replace the Centers’ final Pass Thru)
 
 Notes:
 
@@ -33,7 +33,8 @@ Notes:
    shorthand replacement for the phrase "Centers Replace the Last Part With"
    and may be used whenever that phrase would be clear.
  
-3. Calls such as Chain Reaction and Tally Ho have their last part defined 
+3. Calls such as [Chain Reaction](../a1/chain_reaction.md) and 
+   [Tally Ho](tally_ho.md) have their last part defined 
    by terms other than "Centers", such as 
    "Those who meet Cast Off 3/4 while the others move up." The dancers who
    "meet" and finish the call in the center are considered Centers 
@@ -41,21 +42,22 @@ Notes:
  
 4. "But" may only be used with 8-dancer calls, and the calls must have 
    multiple parts for the dancers who finish in the center. 
-   For example, it is not proper to use "But" with Acey Deucey
-   or Trade By because the Centers have only one part.
+   For example, it is not proper to use "But" with [Acey Deucey](../plus/acey_deucey.md)
+   or [Trade By](../ms/trade_by.md) because the Centers have only one part.
  
 5. Some calls that do have a "clear last part for the Centers" may be confusing 
    to use with the simple "But" because they have been traditionally modified 
    in a different way. For example:
-   - "Spin the Windmill". The Centers do have a clear last part (Cast Off 3/4) 
+   - "[Spin the Windmill](../a2/spin_the_windmill.md)". The Centers do have a clear last part (Cast Off 3/4) 
      but callers more frequently modify the Outsides’ part.
-   - "Plenty". The Centers do have a clear last part (1/2 Zoom), 
+   - "[Plenty](scoot_and_plenty.md)". The Centers do have a clear last part (1/2 Zoom), 
      but callers more frequently modify the Split Circulates.
    
    Using a simple "But" with these calls to replace the Centers’ last part 
    would likely be confusing to the dancers and is not recommended. 
    Instead, callers should use more explicit terminology, such as 
    "Spin the Windmill Left, Centers replace the Cast Off 3/4 with \<anything>."
+   
    Other calls with alternative common modifications include 
-   Square the Bases and Pass the Axle. 
+   [Square the Bases](square_the_bases.md) and [Pass the Axle](pass_the_axle.md). 
    Please refer to those call definitions for the proper use of “But” with those calls.

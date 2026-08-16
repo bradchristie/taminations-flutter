@@ -1,10 +1,13 @@
 
 # Square the Bases
 
-From Facing Lines: (This call has 3 parts.)
+Parts: 3
+
+From Facing Lines:
 1. Centers [Square Thru 3](../ms/square_thru.md) while the Ends [Pass Thru](../ms/pass_thru.md) and [Ends Bend](../a1/ends_bend.md) 
 2. [Split Square Thru 2](../a1/split_square_thru.md)
-3. [Trade By](../b2/trade_by.md).
+3. [Trade By](../ms/trade_by.md).
+
 Ends in an Eight Chain Thru formation.
 
 > 
@@ -28,4 +31,4 @@ Callers may also refer to the numbered parts; for example,
 "Square the Bases, Replace the second part with \<anything>," or 
 "Square the Bases, Replace the last two parts with \<anything>."
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

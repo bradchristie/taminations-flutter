@@ -4,7 +4,7 @@
 A Phantom is a non-existent dancer with whom real dancers may
 be asked to work. A Phantom formation (for example, after
 "Heads [Wheel Thru](../a1/wheel_thru.md), 
-[Swing Thru](../b2/swing_thru.md), Heads [Hinge](../ms/hinge.md)") has the
+[Swing Thru](../ms/swing_thru.md), Heads [Hinge](../ms/hinge.md)") has the
 dancers arranged as shown below. Some of the dancers
 are in Lines at the head, and some are in Lines at the
 side. Dancers acts as though they are in
@@ -40,4 +40,4 @@ Common applications include Couples Circulate, Cross Over
 Circulate, Tag the Line, Turn and Deal, Wheel and Deal, Ferris Wheel,
 Acey Deucey, Trade the Wave, Recycle, Ah So, Circulate, and Trade Circulate.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

@@ -6,12 +6,12 @@ real body between them. There is one space between all
 bodies in a Block: in front, in back, left and right.
 
 In Blocks you can do only 4-person calls (or sequences of
-calls) that start and end in a 2x2 formation. for example, [Partner Trade](../b2/trade.md), 
+calls) that start and end in a 2x2 formation. for example, [Partner Trade](../ms/trade.md), 
 [Partner Tag](../plus/partner_tag.md), [Pass Thru](../ms/pass_thru.md),
-[Touch 1/4](../b2/touch_a_quarter.md), 
+[Touch a Quarter](../ms/touch_a_quarter.md), 
 [Star Thru](../ms/star_thru.md), [Square Thru](../ms/square_thru.md), 
 [Wheel Thru](../a1/wheel_thru.md), etc. When doing a call in a
-block, dancers work only with the dancers in their own
+Block, dancers work only with the dancers in their own
 Block; all Block calls start and end on the same 4 spots on
 the floor,
 for example, "In Your Block, [Walk and Dodge](../plus/walk_and_dodge.md)":
@@ -33,4 +33,4 @@ for example, "In Your Block, [Square Chain Thru](../a1/square_chain_thru.md)":
 > ![alt](block_formation_2c.png)
 > 
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

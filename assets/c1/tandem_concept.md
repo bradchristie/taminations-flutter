@@ -3,8 +3,9 @@
 
 Similar to the "As Couples" concept, but the two dancers
 that work as a unit are a Tandem. Nobody ever comes
-between the dancers in a tandem. For example, 
-"Tandem [Swing Thru](../b2/swing_thru.md)":
+between the dancers in a tandem. 
+
+For example, "Tandem [Swing Thru](../ms/swing_thru.md)":
 
 > 
 > ![alt](tandem_concept_1a.png)
@@ -20,6 +21,6 @@ or "Tandem [Quarter Thru](../plus/quarter_thru.md)":
 > ![alt](tandem_concept_2c.png)
 > 
 
-Common applications include Touch 1/4, Hinge, Scoot Back, Swing Thru, Walk and Dodge.
+Common applications include Touch a Quarter, Hinge, Scoot Back, Swing Thru, Walk and Dodge.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

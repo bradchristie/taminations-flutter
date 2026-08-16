@@ -3,6 +3,8 @@
 
 ## Cross Chain Thru
 
+Parts: 2
+
 From Eight Chain Thru: All [Right Pull By](../ms/pull_by.md), then the Ends
 [Courtesy Turn](../ms/courtesy_turn.md) while the Centers [Left Hand Star 1/2](../ms/star.md) to
 end in another Eight Chain Thru formation. The Star ends
@@ -17,6 +19,8 @@ same as Cross Chain and Roll.
 
 ## Cross Chain And Roll
 
+Parts: 2
+
 From Eight Chain Thru: All [Right Pull By](../ms/pull_by.md). The Outsides
 [Courtesy Turn](../ms/courtesy_turn.md) and
 [Roll](../plus/anything_and_roll.md) while the Centers
@@ -26,4 +30,4 @@ From Eight Chain Thru: All [Right Pull By](../ms/pull_by.md). The Outsides
 > ![alt](cross_chain_and_roll.png)
 >
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

@@ -4,15 +4,18 @@
 From any appropriate formation (half the dancers must
 be Centers and half must be Outsides): The Centers do the
 call in their group, while the Outsides work with each
-other and do the call around the outside. The 
-diagrams show who works with whom on a Concentric
-call:
+other and do the call around the outside.  The first set of
+diagrams, showing seven starting formations, illustrates
+who works with whom on a Concentric call. These are not
+the only possibilities; other starting formations may be
+used, as long as it is clear which dancers work together and
+each group can do the specified call.
 
 > 
 > ![alt](concentric_1.png)
 > 
 
-The last two formations shown are really the same; the
+The bottom two formations shown are really the same; the
 grouping on the left is used if the caller only says
 "Concentric..." and the Concentric call can be done from a 1x4.
 The grouping on the right is used when the caller says
@@ -126,11 +129,20 @@ Concentric [Square Thru 3](../ms/square_thru.md):
 > ![alt](concentric_13b.png)
 >
 
-Common applications include:
-- From starting Double Pass Thru: Concentric Star Thru, Concentric Slide Thru, Concentric Pass In,
-  Concentric Pass Out, Concentric Touch 1/4
-- From Completed Double Pass Thru: Concentric Chase Right, Concentric Shakedown
-- From Tidal Wave: Concentric Recycle, Concentric Ah So
-- From Tidal Line: Concentric Wheel and Deal, Concentric Turn and Deal, Concentric 1/2 Tag
+The following example begins from Concentric Z’s. Dancers 1, 4, 5 and 8 are in the Center Z.
+Concentric Z’s are not commonly used and can be difficult for the dancers to see because a Center
+Line, Wave, or Column is also present. Caller judgment is required.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+>
+> ![alt](concentric_14a.png)
+> ![alt](concentric_14b.png)
+>
+
+Common applications include:
+- From starting Double Pass Thru: Star Thru, Slide Thru, Pass In,
+  Pass Out, Touch a Quarter
+- From Completed Double Pass Thru: Chase Right, Shakedown
+- From Tidal Wave: Recycle, Ah So
+- From Tidal Line: Wheel and Deal, Turn and Deal, 1/2 Tag
+
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

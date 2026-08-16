@@ -5,14 +5,14 @@
 
 From a Line, centers facing the same way, and genders
 arranged appropriately: The Centers step forward and 
-[Partner Trade](../b2/trade.md) while the Ends Face, move in, and 
+[Partner Trade](../ms/trade.md) while the Ends Face, move in, and 
 [Star Thru](../ms/star_thru.md). This is a gender-dependent call (because of the Star
 Thru).
 
 ## Twist and \<anything>
 
 From a Line, centers facing the same way: 
-The Centers step forward and [Partner Trade](../b2/trade.md)
+The Centers step forward and [Partner Trade](../ms/trade.md)
 while the Ends Face, move in, and do the \<anything> call--which will involve 
 only the original Ends unless otherwise
 specified For example, 
@@ -48,4 +48,4 @@ Twist and Nothing:
 > ![alt](twist_and_anything_4b.png)
 >
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

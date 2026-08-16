@@ -84,7 +84,8 @@ class CallsFrame extends fm.StatefulWidget {
 }
 
 class _CallsFrameState extends fm.State<CallsFrame> {
-  String search = '';
+  var search = '';
+  var newCallsOnly = false;
   var scrollController = fm.ScrollController();
 
   @override
@@ -100,86 +101,98 @@ class _CallsFrameState extends fm.State<CallsFrame> {
         final showLevel = RegExp('(adv|cha|all)').hasMatch(levelDatum.dir);
         final calls = callIndex.where((it) => levelDatum.selector(it.level)).toList();
         //  Do any search to filter the calls
-        final callsSearched = calls
+        var callsSearched = calls
             .where((call) => call.title.toLowerCase().contains(search))
             .toList();
-        return fm.Column(
-          children: [
-            fm.TextField(
-              decoration: fm.InputDecoration.collapsed(
-                filled: true,
-                fillColor: Color.WHITE,
-                hintText: 'Search calls',
-              ),
-              enableSuggestions: false,
-              style: fm.TextStyle(fontSize: 24),
-              onChanged: (value) {
-                setState(() {
-                  search = value.toLowerCase();
-                });
-              },
-            ),
-
-            if (tamState.level == 'Plus' || tamState.level == 'Mainstream')
-              fm.Container(
-                color: Color.FLOOR,
-                alignment: fm.Alignment.centerLeft,
-                padding: fm.EdgeInsets.fromLTRB(20, 10, 20, 10),
-                child: fm.Text(
-                  tamState.level == 'Plus'
-                      ? 'Calls added to Plus in 2026'
-                      : 'Calls not in the former SSD program',
-                  style: fm.TextStyle(
-                    // fontWeight: fm.FontWeight.bold,
-                    fontSize: 20,
-                  ),
+        if (tamState.level == 'Plus' || tamState.level == 'Mainstream') {
+          if (newCallsOnly)
+            callsSearched = callsSearched.where(
+                    (call) => newCalls.contains(call.title)).toList();
+        }
+        return fm.Container(
+          color: Color.LIGHTGRAY,
+          child: fm.Column(
+            children: [
+              fm.TextField(
+                decoration: fm.InputDecoration.collapsed(
+                  filled: true,
+                  fillColor: Color.WHITE,
+                  hintText: 'Search calls',
                 ),
+                enableSuggestions: false,
+                style: fm.TextStyle(fontSize: 24),
+                onChanged: (value) {
+                  setState(() {
+                    search = value.toLowerCase();
+                  });
+                },
               ),
 
-            fm.Expanded(
-              //  Test to see if we are landscape or portrait
-              //  Landscape gets a grid, portrait gets a list
-              child: fm.OrientationBuilder(
-                builder: (context, orientation) {
-                  if (fm.MediaQuery.of(context).orientation == fm.Orientation.landscape) {
-                    return fm.Container(
-                      color: Color.LIGHTGRAY,
-                      child: fm.Scrollbar(
-                        controller: scrollController,
+              if (tamState.level == 'Plus' || tamState.level == 'Mainstream')
+                fm.Row(
+                  children: [
+                    fm.Container(
+                      color: Color.FLOOR,
+                      alignment: fm.Alignment.centerLeft,
+                      padding: fm.EdgeInsets.fromLTRB(20, 10, 20, 10),
+                      child:
+                        Button(newCallsOnly
+                            ? 'Show All Calls'
+                            : 'Show New Calls Only',
+                            onPressed: () {
+                              setState(() {
+                                newCallsOnly = !newCallsOnly;
+                              });
+                            }
+                        )
+                    ),
+                  ],
+                ),
+
+              fm.Expanded(
+                //  Test to see if we are landscape or portrait
+                //  Landscape gets a grid, portrait gets a list
+                child: fm.OrientationBuilder(
+                  builder: (context, orientation) {
+                    if (fm.MediaQuery.of(context).orientation == fm.Orientation.landscape) {
+                      return fm.Container(
+                        child: fm.Scrollbar(
+                          controller: scrollController,
+                          thumbVisibility: TamUtils.platform().matches('web|windows'.r),
+                          thickness: 16,
+                          child: fm.GridView.builder(
+                            controller: scrollController,
+                            scrollDirection: fm.Axis.horizontal,
+                            padding: fm.EdgeInsets.fromLTRB(0, 0, 0, 20),
+                            gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 40,
+                              mainAxisSpacing: 1,
+                              childAspectRatio: 0.1,
+                            ),
+                            itemCount: callsSearched.length,
+                            itemBuilder: (context, index) =>
+                                itemBuilder(context, index, callsSearched, showLevel),
+                          ),
+                        ),
+                      );
+                    } else {
+                      return fm.Scrollbar(
                         thumbVisibility: TamUtils.platform().matches('web|windows'.r),
                         thickness: 16,
-                        child: fm.GridView.builder(
+                        controller: scrollController,
+                        child: fm.ListView.builder(
                           controller: scrollController,
-                          scrollDirection: fm.Axis.horizontal,
-                          padding: fm.EdgeInsets.fromLTRB(0, 0, 0, 20),
-                          gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: 40,
-                            mainAxisSpacing: 1,
-                            childAspectRatio: 0.1,
-                          ),
                           itemCount: callsSearched.length,
                           itemBuilder: (context, index) =>
                               itemBuilder(context, index, callsSearched, showLevel),
                         ),
-                      ),
-                    );
-                  } else {
-                    return fm.Scrollbar(
-                      thumbVisibility: TamUtils.platform().matches('web|windows'.r),
-                      thickness: 16,
-                      controller: scrollController,
-                      child: fm.ListView.builder(
-                        controller: scrollController,
-                        itemCount: callsSearched.length,
-                        itemBuilder: (context, index) =>
-                            itemBuilder(context, index, callsSearched, showLevel),
-                      ),
-                    );
-                  }
-                },
+                      );
+                    }
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );

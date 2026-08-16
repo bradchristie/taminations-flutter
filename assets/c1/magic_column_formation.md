@@ -3,7 +3,7 @@
 
 A Magic Column consists of the Ends of one column and the
 Centers of the other column. The dancers act as though
-they were in a column together, beginning and ending on
+they were in a Column together, beginning and ending on
 those four spots.
 
 Do the call as usual, but if you move from End to Center or
@@ -63,4 +63,4 @@ isolation.
 Note: At C-1 this concept is restricted to 
 Right or Left-Hand Magic Columns only.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

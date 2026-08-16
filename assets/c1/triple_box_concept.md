@@ -24,17 +24,17 @@ Examples of Triple Box / Column / Line / Wave usage:
 > 
 
 Common Triple Box calls are Circulate, Counter Rotate, Right and
-Left Thru, Scoot Back, Shakedown, Touch 1/4, Walk and Dodge, and Wheel Thru. 
+Left Thru, Scoot Back, Shakedown, Touch a Quarter, Walk and Dodge, and Wheel Thru. 
 
 Common Triple Wave or Line calls are Swing Thru, Mix, and Switch the Wave.  
 
-Common Triple Column calls are Pass and Roll, Touch 1/4, 
+Common Triple Column calls are Pass and Roll, Touch a Quarter, 
 and Dixie Style to a Wave.
 
-When using this concept to execute a call, 
+When using this concept to execute a call,
 the "set" is the group of four dancers.
 Dancers execute all calls as if only these four dancers are on the floor.
 For example, in Triple Box Pass In, dancers Pass Thru
 and then turn to face the center of their Triple Box.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
