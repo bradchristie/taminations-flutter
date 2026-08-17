@@ -15,8 +15,8 @@ the Centers Left Touch, and the Centers
 Teaching Hint: From all three formations, 
 some callers tell the dancers to change the action as follows, 
 claiming it gives a higher success rate: Instead of stepping
-to a Left-Hand Wave, the dancers will [Left Touch 1/4](../b2/touch_a_quarter.md), 
+to a Left-Hand Wave, the dancers will [Left Touch 1/4](../ms/touch_a_quarter.md), 
 then in each Box, those
 looking out will [Turn Back](../ms/turn_back.md) in body-flow direction.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

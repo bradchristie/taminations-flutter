@@ -11,7 +11,7 @@ From Parallel Lines or Two-Faced Lines composed entirely of Couples:
 
 From Parallel Lines or Two-Faced Lines composed entirely of Couples:
 ***[Couples Hinge](../ms/hinge.md)***;
-***very centers [Trade](../b2/trade.md)***;
+***very centers [Trade](../ms/trade.md)***;
 ***[As Couples](../a1/as_couples.md) [Step and Fold](../c1/step_and_fold.md)***.
 
 ## Grand Cross Trade and Wheel
@@ -31,7 +31,7 @@ then ***[Step and Fold](../c1/step_and_fold.md).***
 
 From any Non-T-Bone Box of four:
 All [Hinge](../ms/hinge.md),
-centers [Trade](../b2/trade.md),
+centers [Trade](../ms/trade.md),
 [Step and Fold](../c1/step_and_fold.md).
 
 ## Grand Single Cross and Wheel
@@ -43,11 +43,11 @@ as Ends of the Grand Wave Fold, and all adjust to end in Parallel 3-and-1 Lines.
 
 From Columns, Eight Chain Thru or Trade-By:
 All [Hinge](../ms/hinge.md),
-Center Six [Trade](../b2/trade.md) and
+Center Six [Trade](../ms/trade.md) and
 Step Forward, as Ends of the Grand Wave [Fold](../ms/fold.md),
 and all adjust to end in Parallel 3-and-1 Lines.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
 
 <!-- Parts
 CrossandWheel1

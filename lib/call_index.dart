@@ -1137,7 +1137,7 @@ var callIndex = [
   CallEntry('Two-Thirds Recycle','c1','c1/recycle',c1.Recycle,),
   CallEntry('Twosome Concept','c3a','c3a/twosome_concept',c3a.TwosomeConcept,),
 
-  CallEntry('Unwrap Family','c2','c2/unwrap',c2.Unwrap,),
+  CallEntry('Unwrap','c2','c2/unwrap',c2.Unwrap,),
 
   CallEntry('Veer Left / Right','ms','ms/veer',ms.Veer,),
   CallEntry('Vertical <anything>','c2','c2/vertical_anything',c2.VerticalAnything,),

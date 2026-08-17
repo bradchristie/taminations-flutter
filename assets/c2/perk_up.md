@@ -6,9 +6,9 @@ From Parallel Waves:
 then ***[1/2 Split Circulate](../ms/circulate.md)***.
 The new Centers ***[Hinge](../ms/hinge.md),
 [Circulate](../ms/circulate.md), and
-[Trade](../b2/trade.md) with each other,
+[Trade](../ms/trade.md) with each other,
 while the new Ends
 [Circulate](../ms/circulate.md) twice***. 
 Finishes in Two-Faced Lines.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

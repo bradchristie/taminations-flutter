@@ -10,10 +10,10 @@ From Parallel Lines or Waves, a Tidal Wave, etc.: This concept can apply to
 ***then Each Half does the call***,
 ***then Centers only do the call***.
 For example: Crazy Flutter Wheel--From lines of
-Four Facing: All [Flutter Wheel](../b2/flutterwheel.md), Center Four
-[Flutter Wheel](../b2/flutterwheel.md), 
-all [Flutter Wheel](../b2/flutterwheel.md),
-Center Four [Flutter Wheel](../b2/flutterwheel.md), to end in Facing Lines.
+Four Facing: All [Flutter Wheel](../ms/flutterwheel.md), Center Four
+[Flutter Wheel](../ms/flutterwheel.md), 
+all [Flutter Wheel](../ms/flutterwheel.md),
+Center Four [Flutter Wheel](../ms/flutterwheel.md), to end in Facing Lines.
 
 Example: Crazy Mix--From a Tidal Wave: Each Wave does a 
 [Mix](../a1/mix.md), Center Wave does a
@@ -36,7 +36,7 @@ then ***Centers only do the call***, then
 ***Each Half does the call***.
 
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
 
 <!-- Parts
 \d*Crazy.*1
