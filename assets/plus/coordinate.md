@@ -6,7 +6,7 @@ Starting formation - Columns. (at Plus, Columns only)
 ***[Circulate](../ms/circulate.md)***.
 ***Then 1/2 (Half) Circulate.***.
 ***The center six (three adjacent
-pairs) [Trade](../b2/trade.md)***.
+pairs) [Trade](../ms/trade.md)***.
 ***The very center two dancers release handholds and walk
 diagonally outward without turning, while the two lonesome dancers
 walk ahead, moving in a quarter circle.***

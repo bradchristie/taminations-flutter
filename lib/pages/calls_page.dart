@@ -128,6 +128,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                 },
               ),
 
+/*
               if (tamState.level == 'Plus' || tamState.level == 'Mainstream')
                 fm.Row(
                   children: [
@@ -148,6 +149,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                     ),
                   ],
                 ),
+*/
 
               fm.Expanded(
                 //  Test to see if we are landscape or portrait

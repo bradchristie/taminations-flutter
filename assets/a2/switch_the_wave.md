@@ -3,8 +3,8 @@
 
 Timing: 6
 
-From a Wave: Centers [Run](../b2/run.md),
-while the ends [Cross Run](../b2/run.md).
+From a Wave: Centers [Run](../ms/run.md),
+while the ends [Cross Run](../ms/run.md).
 
 > 
 > ![alt](switch_the_wave_1a.png)![alt](switch_the_wave_1b.png)  

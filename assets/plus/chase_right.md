@@ -3,7 +3,7 @@
 
 Starting formation - Two Couples Back-to-Back. 
 
-Each right-hand dancer does an exaggerated [Zoom](../b2/zoom.md) action, moving into the position
+Each right-hand dancer does an exaggerated [Zoom](../ms/zoom.md) action, moving into the position
 previously occupied by the right-hand dancer behind him, to finish facing in the same
 direction as when he started the Zoom action. (The net result is the same as if the
 right-hand dancer had done a right face [U Turn Back](../ms/turn_back.md) &

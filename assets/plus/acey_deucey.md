@@ -3,7 +3,7 @@
 
 Starting formation - Parallel Waves or Two-Faced Lines.
 
-Center 4 [Trade](../b2/trade.md) while the others
+Center 4 [Trade](../ms/trade.md) while the others
 [Circulate](../ms/circulate.md).
 
 Other formations are also acceptable. There must be 4 centers

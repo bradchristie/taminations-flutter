@@ -3,12 +3,12 @@
 
 Timing: 6
 
-From Waves only: Leads [Trade](../b2/trade.md), while the trailing center
+From Waves only: Leads [Trade](../ms/trade.md), while the trailing center
 [Circulates](../ms/circulate.md) to the nearest end
 of the other wave, and the trailing end [Circulates](../ms/circulate.md) 
 to the nearest center of the other wave.
 
-From Two-Faced Lines only: The Leads [Partner Trade](../b2/trade.md), 
+From Two-Faced Lines only: The Leads [Partner Trade](../ms/trade.md), 
 while the trailers Diagonal [Pass Thru](../ms/pass_thru.md) with each other.
 
 > 

@@ -4,7 +4,7 @@
 Starting formation - Any Diamond. 
 
 The centers of the diamond do a [Diamond Circulate](diamond_circulate.md) to the next position in their
-diamond, while the points [Run](../b2/run.md) ("Flip" 180°) into the nearest center
+diamond, while the points [Run](../ms/run.md) ("Flip" 180°) into the nearest center
 position and join hands to become the centers of the forming wave or line. When
 "flipping" a facing diamond, the points always take the inside path, and the
 centers always take the outside path. 

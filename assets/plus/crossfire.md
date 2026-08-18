@@ -3,7 +3,7 @@
 
 Starting formation - Two faced line, Parallel lines of four, Inverted Line(s). 
 
-As the centers begin to [Trade](../b2/trade.md), the ends 
+As the centers begin to [Trade](../ms/trade.md), the ends 
 [Cross Fold](../ms/fold.md). Upon completing their Trade, the
 centers release hands and step straight forward forming an ocean wave or mini-wave with
 the dancers they are facing. If the Trade leaves the original centers facing no one, they

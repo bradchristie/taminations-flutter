@@ -4,7 +4,7 @@
 Timing: 4
 
 From a Couple or Mini-Wave only: With each dancer taking the part of an entire couple,
-do a [Wheel and Deal](../b2/wheel_and_deal.md). This call cannot be fractionalized.
+do a [Wheel and Deal](../ms/wheel_and_deal.md). This call cannot be fractionalized.
 
 For teaching: You can think of this as a [Hinge](../ms/hinge.md) and
 [Roll](../plus/anything_and_roll.md). However, this call has only

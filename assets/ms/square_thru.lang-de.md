@@ -42,7 +42,7 @@ Wie bei Right and Left Grand sollten T채nzer die jeweils andere Hand f체r das n�
  
 Left Square Thru (1, 2, 3, 4) ist 채hnlich zu Square Thru (1, 2, 3, 4), doch beginnt Left Square Thru mit der linken Hand. Danach wechseln sich rechte und linke Hand wiederum ab. Die Ansage Left ist notwendig. Zum Beispiel: Heads Lead Right, Circle To A Line, Left Square Thru 4, Left Allemande.
 
-Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) kann f체r diese Figur angewendet werden.
+Die [Ocean Wave Rule](ocean_wave_rule.md) kann f체r diese Figur angewendet werden.
 
 Diese Figur kann 체ber 4 H채nde hinaus fortgef체hrt werden (beispielsweise: Square Thru 5).
 

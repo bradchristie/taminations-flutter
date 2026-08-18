@@ -9,7 +9,7 @@ moving end dancers, and turn one-quarter in (90°) to stand beside the third per
 passed, facing the center of the set as a couple. Simultaneously, the center four dancers
 ***[Pass Thru](../ms/pass_thru.md),***
 ***turn their backs to their momentary partners,***
-***[Partner Trade](../b2/trade.md) with their new***
+***[Partner Trade](../ms/trade.md) with their new***
 partners, and
 ***[Pass Thru](../ms/pass_thru.md).***
 

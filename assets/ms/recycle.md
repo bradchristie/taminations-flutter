@@ -29,7 +29,7 @@ establish a couple handhold once they are approximately facing the same directio
 
 ### Comments
 
-The [Facing Couples Rule](../b2/facing_couples_rule.md) does not apply.
+The [Facing Couples Rule](facing_couples_rule.md) does not apply.
 From Facing Couples, the call Recycle has a different
 definition that is not part of the Mainstream program.
 

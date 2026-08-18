@@ -49,7 +49,7 @@ keinen Kreis formieren, wie bei einem Wrong Way Grand.
 
 ### Bemerkungen
 
-Die [Ocean Wave Rule](../b2/ocean_wave_rule.md) gilt für dieses Kommando.
+Die [Ocean Wave Rule](../ms/ocean_wave_rule.md) gilt für dieses Kommando.
 
 Im Basic und Mainstream Programm ist der Courtesy Turn darauf beschränkt, dass ein Mann eine Frau
 dreht. Daher ist Eight Chain Thru im Mainstream nach Heads Square Thru 4, Sides Half Sashay unzulässig.

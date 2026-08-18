@@ -6,7 +6,7 @@ Timing: 10
 From Right-Hand (Left-Hand) Box Circulate formation:
 ***[Scoot Back](../ms/scoot_back.md)***.
 ***Those facing in Left (Right)
-[Touch 1/4](../b2/touch_a_quarter.md)
+[Touch 1/4](../ms/touch_a_quarter.md)
 with each other, while those facing out
 [Quarter Right](../a1/quarter_in.md)
 (Left)***. Ends in a Wave.
@@ -16,8 +16,8 @@ with each other, while those facing out
 > 
 
 From Single 1/4 Tag:
-[Extend](../b2/extend.md),
-[Trade](../b2/trade.md),
+[Extend](../ms/extend.md),
+[Trade](../ms/trade.md),
 and then Weave the same way you would from Box Circulate formation.
 
 > 

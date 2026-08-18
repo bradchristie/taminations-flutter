@@ -6,22 +6,22 @@ Timing: 12
 From Waves: Those facing out do a
 [Scoot Back](../ms/scoot_back.md),
 while those facing in
-[Extend](../b2/extend.md),
+[Extend](../ms/extend.md),
 [Swing](slip.md),
 [Slip](slip.md),
 [Swing](slip.md), and
-[Extend](../b2/extend.md). Ends in Waves.
+[Extend](../ms/extend.md). Ends in Waves.
 
 > 
 > ![alt](scoot_chain_thru_1a.png)![alt](scoot_chain_thru_1b.png)![alt](scoot_chain_thru_1c.png)![alt](scoot_chain_thru_1d.png)![alt](scoot_chain_thru_1e.png)![alt](scoot_chain_thru_1f.png)
 > 
 
 From 1/4 Tag: All
-[Extend](../b2/extend.md),
+[Extend](../ms/extend.md),
 [Swing](slip.md),
 [Slip](slip.md),
 [Swing](slip.md), and
-[Extend](../b2/extend.md). Ends in 3/4 Tag.
+[Extend](../ms/extend.md). Ends in 3/4 Tag.
 
 
 > 
@@ -29,7 +29,7 @@ From 1/4 Tag: All
 > 
 
 For teaching: The centers' part can be thought of as a
-[Swing Thru](../b2/swing_thru.md)
+[Swing Thru](../ms/swing_thru.md)
 1½ and Extend or Left Swing Thru 1½ and Extend,
 depending on what hand
 was held in the wave.

@@ -53,7 +53,7 @@ that it is started with the left hand and hands are alternating thereafter;
 the word "Left" is required.
 E.g., Heads Lead Right, Circle To A Line, Left Square Thru 4, Left Allemande.
 
-The [Ocean Wave Rule](../b2/ocean_wave_rule.md) applies to this call.
+The [Ocean Wave Rule](ocean_wave_rule.md) applies to this call.
 
 The movement can be continued beyond 4 hands (for example, Square Thru 5).
 

@@ -5,7 +5,7 @@ Timing: 10
 
 From Diamonds:
 ***All [Diamond Circulate](../plus/diamond_circulate.md)***,
-***the very centers [Trade](../b2/trade.md)***,
+***the very centers [Trade](../ms/trade.md)***,
 ***and [Cast Off 3/4](../ms/cast_off_three_quarters.md) with the
 adjacent ends of the wave***. Ends in Parallel Waves or Lines.
 

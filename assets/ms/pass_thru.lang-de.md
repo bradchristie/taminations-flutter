@@ -27,7 +27,7 @@ Die rechte Schulter des Herrn ist leicht nach vorne gedreht während die rechten
 
 ### Bemerkungen
 
-Pass Thru ist korrekt aus einer Right-Hand Mini-Wave, aufgrund der [Ocean Wave Rule](../b2/ocean_wave_rule.md) 
+Pass Thru ist korrekt aus einer Right-Hand Mini-Wave, aufgrund der [Ocean Wave Rule](ocean_wave_rule.md) 
 und entspricht einem Step Thru.
 
 Pass Thru ist ungeeignet aus Left-Hand Mini-Waves, wegen des linksschultrigen Vorbeigehens. Stattdessen ist Step Thru zu verwenden.

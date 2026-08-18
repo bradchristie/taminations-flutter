@@ -8,7 +8,7 @@ From Waves: ***All [Circulate](../ms/circulate.md),***
 [ Cast Off 3/4](../ms/cast_off_three_quarters.md)
 while the ends [Circulate](../ms/circulate.md) 1/2, to create a star between two mini-waves.***
 ***The star turns half, while those in
-the mini-waves [Trade](../b2/trade.md).***
+the mini-waves [Trade](../ms/trade.md).***
 ***Those who meet
 [Cast Off 3/4](../ms/cast_off_three_quarters.md),
 while the others move up (as in [Chain Reaction](../a1/chain_reaction.md)) 

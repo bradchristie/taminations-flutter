@@ -3,7 +3,7 @@
 
 Starting formation - Any four-dancer ocean wave. 
 
-Dancers facing the same direction in the wave [Trade](../b2/trade.md) with each other. Right-hand waves
+Dancers facing the same direction in the wave [Trade](../ms/trade.md) with each other. Right-hand waves
 become left-hand waves and vice versa. Ends of the wave become centers and vice versa. 
 
 STYLING: As in any trade, dancers first step slightly forward to clear the wave before turning toward dancer with whom they are trading. Assume  hands up position in basic ocean wave styling.

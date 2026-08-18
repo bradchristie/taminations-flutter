@@ -26,14 +26,14 @@ of the set. This is a good call for using a demonstration square.
 
 Timing: 6
 
-From an Hourglass: The points slide together and [Trade](../b2/trade.md), while the others
+From an Hourglass: The points slide together and [Trade](../ms/trade.md), while the others
 [Hourglass Circulate](hourglass_circulate.md). Ends in Parallel Lines or Waves.
 
 ### Flip the Hourglass
 
 Timing: 4
 
-From an Hourglass: The points [ Run](../b2/run.md) to the nearest center (Flip in as
+From an Hourglass: The points [ Run](../ms/run.md) to the nearest center (Flip in as
 for [Flip the Diamond](../plus/flip_the_diamond.md)), while the others
 [Hourglass Circulate](hourglass_circulate.md).
 

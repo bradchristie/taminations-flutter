@@ -4,9 +4,9 @@
 Timing: 8
 
 From an Ocean Wave or Inverted Line: ends and adjacent centers Turn
-1/2; Centers [Cross Run](../b2/run.md); resulting Centers
-[Trade](../b2/trade.md). The
-[Facing Couples Rule](../b2/facing_couples_rule.md) applies to this call.
+1/2; Centers [Cross Run](../ms/run.md); resulting Centers
+[Trade](../ms/trade.md). The
+[Facing Couples Rule](../ms/facing_couples_rule.md) applies to this call.
 
 Note: There are two ways in which Swing and
 Mix is not simply the call

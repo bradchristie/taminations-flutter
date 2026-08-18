@@ -20,7 +20,7 @@ they Left Touch before doing the Swing, Slip, and Cast Off 3/4.
 
   
 For teaching: You can describe the centers' part as
-[Swing Thru](../b2/swing_thru.md) and
+[Swing Thru](../ms/swing_thru.md) and
 [Cast Off 3/4](../ms/cast_off_three_quarters.md), 
 or as Left Swing Thru and Cast Off 3/4, depending on the
 handedness of the wave.

@@ -19,7 +19,7 @@ it is possible for only those on the outside path (dancers numbered 1, 2, 3, 4 i
 >
 
 STYLING: Styling is the same as previously described for the basics
-[pass thru](../ms/pass_thru.md) and  [partner trade](../b2/trade.md).
+[pass thru](../ms/pass_thru.md) and  [partner trade](../ms/trade.md).
 Dancers in center use basic ocean wave styling.
 Outside dancers join hands in  couple handhold.
 

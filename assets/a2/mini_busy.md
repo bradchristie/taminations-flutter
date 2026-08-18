@@ -5,7 +5,7 @@ Timing: 6
 
 From Parallel Two-Faced Lines:
 The trailers ***[As Couples](../a1/as_couples.md)
-[Extend](../b2/extend.md)***,
+[Extend](../ms/extend.md)***,
 have ***the center two
 [Hinge](../ms/hinge.md)***,
 and ***[Flip the Diamond](../plus/flip_the_diamond.md)***.
