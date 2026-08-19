@@ -137,6 +137,7 @@ class AnimatedCall extends AnimatedCallItem {
     );
   }
 
+
   XmlElement toXml() => XmlElement('tam'.xml,<XmlAttribute>[
     XmlAttribute('title'.xml, title),
     if (from.isNotEmpty)
@@ -173,5 +174,14 @@ class AnimatedCall extends AnimatedCallItem {
     if (taminator.isNotEmpty)
       XmlElement('taminator'.xml,[],[XmlText(taminator)])
   ]);
+
+}
+
+extension AnimatedCallList on List<AnimatedCallItem> {
+
+  AnimatedCall findCall(String title) =>
+    flattenAnimatedCallList(this)
+        .where((call) => call.title == title).first;
+
 
 }

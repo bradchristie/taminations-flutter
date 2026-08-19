@@ -72,11 +72,11 @@ void _selectAnimListItemNew({required String name, String? group, String? from, 
 
 List<fm.Widget> _widgetsFromList(List<AnimatedCallItem> callList, int indent) {
   return callList
-      .where((call) => !call.noDisplay)
-      .map((call) {
+      .where((call) => !call.noDisplay).toList()
+      .mapIndexed((i,call) {
     return switch (call) {
-      AnimatedCallGroup() => AnimListGroupWidget(call,indent+1),
-      AnimatedCallHeader() => AnimListHeaderWidget(call,indent+1),
+      AnimatedCallGroup() => AnimListGroupWidget(call,indent+1,i<2),
+      AnimatedCallHeader() => AnimListHeaderWidget(call,indent+1,i<2),
       AnimatedCall() => AnimListItemWidget(call,indent+1)
     };
   }).toList();
@@ -119,7 +119,8 @@ class AnimListPage extends fm.StatelessWidget {
 class AnimListHeaderWidget extends fm.StatefulWidget {
   final AnimatedCallHeader header;
   final int indent;
-  AnimListHeaderWidget(this.header, this.indent);
+  final bool initiallyExpanded;
+  AnimListHeaderWidget(this.header, this.indent, this.initiallyExpanded);
 
   @override
   fm.State<fm.StatefulWidget> createState() =>
@@ -134,11 +135,12 @@ class AnimListHeaderWidgetState extends fm.State<AnimListHeaderWidget> {
       value: controller,
       child: fm.ExpansionTile(
         title: _AnimListTitleText(widget.header.title),
-        initiallyExpanded: true,
+        initiallyExpanded: widget.initiallyExpanded,
         controller: controller,
         collapsedBackgroundColor: _headerColor(widget.indent),
         collapsedTextColor: Color.WHITE,
         collapsedIconColor: Color.WHITE,
+        dense: true,
         backgroundColor:  _headerColor(widget.indent),
         textColor: Color.WHITE,
         iconColor: Color.WHITE,
@@ -170,14 +172,13 @@ class _AnimListTitleTextState extends fm.State<_AnimListTitleText> {
       }
     );
   }
-
 }
 
 class AnimListGroupWidget extends fm.ExpansionTile {
   final AnimatedCallGroup group;
-  AnimListGroupWidget(this.group, int indent) : super(
+  AnimListGroupWidget(this.group, int indent, bool initiallyExpanded) : super(
       title: fm.Text(group.group,style:fm.TextStyle(fontSize: 20)),
-      initiallyExpanded: true,
+      initiallyExpanded: initiallyExpanded,
       collapsedBackgroundColor: _headerColor(indent),
       collapsedTextColor: Color.WHITE,
       collapsedIconColor: Color.WHITE,
@@ -228,14 +229,17 @@ class _AnimListItemState extends fm.State<AnimListItemWidget> {
                 title: fm.Text(text,
                     style: fm.TextStyle(fontSize: 20,
                         color: isSelected ? Color.WHITE : Color.BLACK)),
-                  tileColor: isSelected ? Color.BLUE : backColor,
-                  hoverColor: isSelected ? Color.BLUE : backColor.darker(),
-                  dense: true,
-                  enabled: true,
-                  shape: fm.BoxBorder.fromLTRB(
-                      bottom: fm.BorderSide(color: Color.BLACK)
-                  ),
+                tileColor: isSelected ? Color.BLUE : backColor,
+                hoverColor: isSelected ? Color.BLUE : backColor.darker(),
+                dense: true,
+
+                horizontalTitleGap: 0,
+                enabled: true,
+                shape: fm.BoxBorder.fromLTRB(
+                    bottom: fm.BorderSide(color: Color.BLACK)
+                ),
                 contentPadding: fm.EdgeInsets.only(left: 10+40.0*widget.indent),
+                minVerticalPadding: 0,
                 onTap: () {
                     setState(() {
                       context.read<_AnimListState>().setSelectedItem(widget.call);
