@@ -138,12 +138,7 @@ import '../../moves.dart';
 
     AnimatedCall('Pass and Roll Your Neighbor',
         from:'Tidal Column',
-        formation: Formation('',dancers:[
-          Dancer.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
-          Dancer.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
-          Dancer.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
-          Dancer.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
-        ]),
+        formation: Formation('Tidal Eight Chain Thru'),
         paths: [
           ExtendLeft.scale(.5,0.5) +
               Forward +
@@ -287,12 +282,7 @@ import '../../moves.dart';
 
     AnimatedCall('Left Pass and Roll Your Neighbor',
         from:'Tidal Column',
-        formation: Formation('',dancers:[
-          Dancer.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
-          Dancer.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
-          Dancer.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
-          Dancer.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
-        ]),
+        formation: Formation('Tidal Eight Chain Thru'),
         paths: [
           ExtendRight.scale(.5,0.5) +
               Forward +

@@ -565,7 +565,7 @@ abstract class CodedCall extends Call {
 
     'PairOff'.ri: (name) => PairOff(name),
     'PartnerTag'.ri: (name) => PartnerTag(name),
-    'PassandRoll(Your(Cross)?Neighbor)?'.ri: (name) => PassAndRoll(name),
+    'PassandRoll(Your((Criss)?Cross)?Neighbor)?'.ri: (name) => PassAndRoll(name),
     'Pass(In|Out)'.ri: (name) => PassInOut(name),
     'PasstheAxle(CastOff34)?'.ri: (name) => PassTheAxle(name),
     'PasstheOcean'.ri: (name) => PassTheOcean(name),

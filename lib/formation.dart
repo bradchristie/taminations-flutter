@@ -1298,6 +1298,13 @@ class Formation {
       Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:0),
     ]),
 
+    Formation('Tidal Eight Chain Thru',dancers:[
+      Dancer.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
+      Dancer.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
+      Dancer.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
+      Dancer.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
+    ]),
+
     Formation('I-Beam', dancers:[
       Dancer.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
       Dancer.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),

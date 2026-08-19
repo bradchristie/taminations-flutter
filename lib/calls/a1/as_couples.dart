@@ -835,8 +835,7 @@ import '../c3b/bingo.dart' as c3b;
       tam.title == 'As Couples Cross Extend').first.xref(title: 'As Couples Cross Extend').xref(group: 'As Couples (C-1)'),
     c1.CrossRoll.where((tam) =>
       tam.title == 'As Couples Cross Roll').first.xref(title: 'As Couples Cross Roll').xref(group: 'As Couples (C-1)'),
-    c1.CrossYourNeighbor.where((tam) =>
-      tam.title == 'As Couples Cross Your Neighbor').first.xref(title: 'As Couples Cross Your Neighbor').xref(group: 'As Couples (C-1)'),
+    c1.CrossYourNeighbor.findCall('As Couples Cross Your Neighbor') .xref(title: 'As Couples Cross Your Neighbor').xref(group: 'As Couples (C-1)'),
     c1.DixieDiamond.where((tam) =>
       tam.title == 'As Couples Dixie Diamond').first.xref(title: 'As Couples Dixie Diamond').xref(group: 'As Couples (C-1)'),
     c1.FollowThru.where((tam) =>
@@ -867,8 +866,7 @@ import '../c3b/bingo.dart' as c3b;
       tam.title == 'As Couples Zing').first.xref(title: 'As Couples Zing').xref(group: 'As Couples (C-1)'),
     c2.Bounce.where((tam) =>
       tam.title == 'As Couples Bounce the Ends').first.xref(title: 'As Couples Bounce the Ends').xref(group: 'As Couples (C-2)'),
-    c2.CrissCrossYourNeighbor.where((tam) =>
-      tam.title == 'As Couples Criss Cross Your Neighbor').first.xref(title: 'As Couples Criss Cross Your Neighbor').xref(group: 'As Couples (C-2)'),
+    c2.CrissCrossYourNeighbor.findCall('As Couples Criss Cross Your Neighbor').xref(title: 'As Couples Criss Cross Your Neighbor').xref(group: 'As Couples (C-2)'),
     c2.CrossBack.where((tam) =>
       tam.title == 'As Couples Cross Back').first.xref(title: 'As Couples Cross Back').xref(group: 'As Couples (C-2)'),
     c2.PeelToADiamond.where((tam) =>

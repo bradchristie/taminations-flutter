@@ -1113,9 +1113,7 @@ AnimatedCallHeader('Switch the Wave', calls: [
       c1.CrossRoll.where(
         (tam) => tam.title == 'Tandem Cross Roll',
       ).first.xref(title: 'Tandem Cross Roll').xref(group: 'Tandem (C-1)'),
-      c1.CrossYourNeighbor.where(
-        (tam) => tam.title == 'Tandem Cross Your Neighbor',
-      ).first.xref(title: 'Tandem Cross Your Neighbor').xref(group: 'Tandem (C-1)'),
+      c1.CrossYourNeighbor.findCall('Tandem Cross Your Neighbor').xref(title: 'Tandem Cross Your Neighbor').xref(group: 'Tandem (C-1)'),
       c1.FollowThru.where(
         (tam) => tam.title == 'Tandem Follow Thru',
       ).first.xref(title: 'Tandem Follow Thru').xref(group: 'Tandem (C-1)'),
@@ -1152,9 +1150,8 @@ AnimatedCallHeader('Switch the Wave', calls: [
       c2.Bounce.where(
         (tam) => tam.title == 'Tandem Bounce the Centers',
       ).first.xref(title: 'Tandem Bounce the Centers').xref(group: 'Tandem (C-2)'),
-      c2.CrissCrossYourNeighbor.where(
-        (tam) => tam.title == 'Tandem Criss Cross Your Neighbor',
-      ).first.xref(title: 'Tandem Criss Cross Your Neighbor').xref(group: 'Tandem (C-2)'),
+      c2.CrissCrossYourNeighbor.findCall('Tandem Criss Cross Your Neighbor',
+      ).xref(title: 'Tandem Criss Cross Your Neighbor').xref(group: 'Tandem (C-2)'),
       c2.CrossBack.where(
         (tam) => tam.title == 'Tandem Cross Back',
       ).first.xref(title: 'Tandem Cross Back').xref(group: 'Tandem (C-2)'),

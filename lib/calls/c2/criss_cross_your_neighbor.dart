@@ -22,309 +22,328 @@ import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
 
-  final List<AnimatedCall> CrissCrossYourNeighbor = [
+final List<AnimatedCallItem> CrissCrossYourNeighbor = [
+  AnimatedCallHeader(
+    'Criss Cross Your Neighbor',
+    calls: [
+      AnimatedCall(
+        'Criss Cross Your Neighbor',
+        formation: Formation('Box RH'),
+        from: 'Right-Hand Box',
+        paths: [
+          ExtendRight.changeBeats(2).scale(2.0, 1.75) +
+              SwingLeft.scale(0.75, 0.75) +
+              LeadLeft.changeBeats(3).scale(3.0, 0.75),
 
-    AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formation('Box RH'),
-      from:'Right-Hand Box',
-      paths:[
-          ExtendRight.changeBeats(2).scale(2.0,1.75) +
-          SwingLeft.scale(0.75,0.75) +
-          LeadLeft.changeBeats(3).scale(3.0,0.75),
+          RunRight.scale(1.0, 1.5) + Forward_2 + LeadRight.changeBeats(3).scale(1.0, 2.0),
+        ],
+      ),
 
-          RunRight.scale(1.0,1.5) +
-          Forward_2 +
-          LeadRight.changeBeats(3).scale(1.0,2.0)
-      ]),
+      AnimatedCall(
+        'Criss Cross Your Neighbor',
+        formation: Formation('Box LH'),
+        from: 'Left-Hand Box',
+        paths: [
+          RunLeft.scale(1.0, 1.5) + Forward_2 + LeadLeft.changeBeats(3).scale(1.0, 2.0),
 
-    AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formation('Box LH'),
-      from:'Left-Hand Box',
-      paths:[
-          RunLeft.scale(1.0,1.5) +
-          Forward_2 +
-          LeadLeft.changeBeats(3).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).scale(2.0, 1.75) +
+              SwingRight.scale(0.75, 0.75) +
+              LeadRight.changeBeats(3).scale(3.0, 0.75),
+        ],
+      ),
 
-          ExtendLeft.changeBeats(2).scale(2.0,1.75) +
-          SwingRight.scale(0.75,0.75) +
-          LeadRight.changeBeats(3).scale(3.0,0.75)
-      ]),
+      AnimatedCall(
+        'Criss Cross Your Neighbor',
+        formation: Formation('Ocean Waves RH BGBG'),
+        from: 'Right-Hand Waves',
+        paths: [
+          ExtendRight.changeBeats(2).scale(2.0, 1.5) +
+              SwingLeft.scale(0.5, 0.5) +
+              LeadLeft.changeBeats(3).scale(3.0, 0.5),
 
-    AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formation('Ocean Waves RH BGBG'),
-      from:'Right-Hand Waves',
-      paths:[
-          ExtendRight.changeBeats(2).scale(2.0,1.5) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(3).scale(3.0,0.5),
+          RunRight.scale(1.0, 1.5) + Forward_2 + LeadRight.changeBeats(3).scale(1.0, 2.0),
 
-          RunRight.scale(1.0,1.5) +
-          Forward_2 +
-          LeadRight.changeBeats(3).scale(1.0,2.0),
+          ExtendRight.changeBeats(2).scale(2.0, 1.5) +
+              SwingLeft.scale(0.5, 0.5) +
+              LeadLeft.changeBeats(3).scale(3.0, 0.5),
 
-          ExtendRight.changeBeats(2).scale(2.0,1.5) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(3).scale(3.0,0.5),
+          RunRight.scale(1.0, 1.25) + Forward_2 + LeadRight.changeBeats(3).scale(1.0, 1.5),
+        ],
+      ),
 
-          RunRight.scale(1.0,1.25) +
-          Forward_2 +
-          LeadRight.changeBeats(3).scale(1.0,1.5)
-      ]),
+      AnimatedCall(
+        'Criss Cross Your Neighbor',
+        formation: Formation('Ocean Waves LH BGBG'),
+        from: 'Left-Hand Waves',
+        paths: [
+          RunLeft.scale(1.0, 1.25) + Forward_2 + LeadLeft.changeBeats(3).scale(1.0, 1.5),
 
-    AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formation('Ocean Waves LH BGBG'),
-      from:'Left-Hand Waves',
-      paths:[
-          RunLeft.scale(1.0,1.25) +
-          Forward_2 +
-          LeadLeft.changeBeats(3).scale(1.0,1.5),
+          ExtendLeft.changeBeats(2).scale(2.0, 1.5) +
+              SwingRight.scale(0.5, 0.5) +
+              LeadRight.changeBeats(3).scale(3.0, 0.5),
 
-          ExtendLeft.changeBeats(2).scale(2.0,1.5) +
-          SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(3).scale(3.0,0.5),
+          RunLeft.scale(1.0, 1.5) + Forward_2 + LeadLeft.changeBeats(3).scale(1.0, 2.0),
 
-          RunLeft.scale(1.0,1.5) +
-          Forward_2 +
-          LeadLeft.changeBeats(3).scale(1.0,2.0),
+          ExtendLeft.changeBeats(2).scale(2.0, 1.5) +
+              SwingRight.scale(0.5, 0.5) +
+              LeadRight.changeBeats(3).scale(3.0, 0.5),
+        ],
+      ),
 
-          ExtendLeft.changeBeats(2).scale(2.0,1.5) +
-          SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(3).scale(3.0,0.5)
-      ]),
+      AnimatedCall(
+        'Criss Cross Your Neighbor',
+        formation: Formation('Column RH GBGB'),
+        from: 'Right-Hand Columns',
+        paths: [
+          RunRight.changeBeats(4).scale(1.0, 1.5) + LeadRight.changeBeats(4).scale(1.5, 2.0),
 
-    AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formation('Column RH GBGB'),
-      from:'Right-Hand Columns',
-      paths:[
-          RunRight.changeBeats(4).scale(1.0,1.5) +
-          LeadRight.changeBeats(4).scale(1.5,2.0),
+          ExtendRight.changeBeats(2).scale(1.0, 1.5) +
+              SwingLeft.scale(0.5, 0.5) +
+              LeadLeft.changeBeats(3).scale(1.5, 0.5),
 
-          ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(3).scale(1.5,0.5),
+          RunRight.changeBeats(4).scale(0.5, 1.5) + LeadRight.changeBeats(4).scale(1.5, 2.0),
 
-          RunRight.changeBeats(4).scale(0.5,1.5) +
-          LeadRight.changeBeats(4).scale(1.5,2.0),
+          ExtendRight.changeBeats(2).scale(1.0, 1.5) +
+              SwingLeft.scale(0.5, 0.5) +
+              LeadLeft.changeBeats(3).scale(1.5, 0.5),
+        ],
+      ),
 
-          ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(3).scale(1.5,0.5)
-      ]),
+      AnimatedCall(
+        'Criss Cross Your Neighbor',
+        formation: Formation('Column LH GBGB'),
+        from: 'Left-Hand Columns',
+        paths: [
+          ExtendLeft.changeBeats(2).scale(1.0, 1.5) +
+              SwingRight.scale(0.5, 0.5) +
+              LeadRight.changeBeats(3).scale(1.5, 0.5),
 
-    AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formation('Column LH GBGB'),
-      from:'Left-Hand Columns',
-      paths:[
-          ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(3).scale(1.5,0.5),
+          RunLeft.changeBeats(4).scale(0.5, 1.5) + LeadLeft.changeBeats(4).scale(1.5, 2.0),
 
-          RunLeft.changeBeats(4).scale(0.5,1.5) +
-          LeadLeft.changeBeats(4).scale(1.5,2.0),
+          ExtendLeft.changeBeats(2).scale(1.0, 1.5) +
+              SwingRight.scale(0.5, 0.5) +
+              LeadRight.changeBeats(3).scale(1.5, 0.5),
 
-          ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(3).scale(1.5,0.5),
+          RunLeft.changeBeats(4).scale(1.0, 1.5) + LeadLeft.changeBeats(4).scale(1.5, 2.0),
+        ],
+      ),
 
-          RunLeft.changeBeats(4).scale(1.0,1.5) +
-          LeadLeft.changeBeats(4).scale(1.5,2.0)
-      ]),
+      AnimatedCall(
+        'Criss Cross Your Neighbor',
+        formation: Formation('T-Bone URUR'),
+        from: 'Right-Handed T-Bones',
+        paths: [
+          ExtendRight.changeBeats(2).scale(1.0, 1.5) +
+              SwingLeft.scale(0.5, 0.5) +
+              LeadLeft.changeBeats(3).scale(2.5, 0.5),
 
-    AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formation('T-Bone URUR'),
-      from:'Right-Handed T-Bones',
-      paths:[
-          ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(3).scale(2.5,0.5),
+          LeadLeft.scale(0.5, 1.0) + RunLeft.changeBeats(6).scale(2.0, 1.25),
 
-          LeadLeft.scale(0.5,1.0) +
-          RunLeft.changeBeats(6).scale(2.0,1.25),
+          ExtendRight.changeBeats(2).scale(1.0, 1.5) +
+              SwingLeft.scale(0.5, 0.5) +
+              LeadLeft.changeBeats(3).scale(2.5, 0.5),
 
-          ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(3).scale(2.5,0.5),
+          LeadLeft.scale(0.5, 1.0) + RunLeft.changeBeats(6).scale(2.0, 1.25),
+        ],
+      ),
 
-          LeadLeft.scale(0.5,1.0) +
-          RunLeft.changeBeats(6).scale(2.0,1.25)
-      ]),
+      AnimatedCall(
+        'Criss Cross Your Neighbor',
+        formation: Formation('T-Bone LULU'),
+        from: 'Left-Handed T-Bones',
+        paths: [
+          LeadRight.scale(0.5, 1.0) + RunRight.changeBeats(6).scale(2.0, 1.25),
 
-    AnimatedCall('Criss Cross Your Neighbor',
-      formation:Formation('T-Bone LULU'),
-      from:'Left-Handed T-Bones',
-      paths:[
-          LeadRight.scale(0.5,1.0) +
-          RunRight.changeBeats(6).scale(2.0,1.25),
+          ExtendLeft.changeBeats(2).scale(1.0, 1.5) +
+              SwingRight.scale(0.5, 0.5) +
+              LeadRight.changeBeats(3).scale(2.5, 0.5),
 
-          ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(3).scale(2.5,0.5),
+          LeadRight.scale(0.5, 1.0) + RunRight.changeBeats(6).scale(2.0, 1.25),
 
-          LeadRight.scale(0.5,1.0) +
-          RunRight.changeBeats(6).scale(2.0,1.25),
+          ExtendLeft.changeBeats(2).scale(1.0, 1.5) +
+              SwingRight.scale(0.5, 0.5) +
+              LeadRight.changeBeats(3).scale(2.5, 0.5),
+        ],
+      ),
+    ],
+  ),
 
-          ExtendLeft.changeBeats(2).scale(1.0,1.5) +
-          SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(3).scale(2.5,0.5)
-      ]),
+  AnimatedCallHeader(
+    'Chase Your Criss Cross Neighbor',
+    calls: [
+      AnimatedCall(
+        'Chase Your Criss Cross Neighbor',
+        formation: Formation('Couples Facing Out Compact'),
+        from: 'Back-to-Back Couples',
+        paths: [
+          UmTurnRight.skew(-3, 0) +
+              RunRight.scale(1.0, 1.5) +
+              Forward_1p5 +
+              LeadRight.changeBeats(3).scale(1.0, 2.0),
 
+          RunRight +
+              ExtendRight.changeBeats(2).scale(1.5, 1.75) +
+              SwingLeft.scale(0.75, 0.75) +
+              LeadLeft.changeBeats(3).scale(3.0, 0.75),
+        ],
+      ),
 
-    AnimatedCall('Chase Your Criss Cross Neighbor',
-    formation: Formation('Couples Facing Out Compact'),
-    from: 'Back-to-Back Couples',
-    paths: [
-      UmTurnRight.skew(-3, 0) +
-          RunRight.scale(1.0,1.5) +
-          Forward_1p5 +
-          LeadRight.changeBeats(3).scale(1.0,2.0),
-
-      RunRight +
-          ExtendRight.changeBeats(2).scale(1.5,1.75) +
-          SwingLeft.scale(0.75,0.75) +
-          LeadLeft.changeBeats(3).scale(3.0,0.75),
-
-    ]),
-
-    AnimatedCall('Chase Your Criss Cross Neighbor',
+      AnimatedCall(
+        'Chase Your Criss Cross Neighbor',
         formation: Formation('Lines Facing Out Compact'),
         from: 'Lines Facing Out',
         paths: [
           UmTurnRight.skew(-3, 0) +
-              RunRight.scale(1.0,1.25) +
+              RunRight.scale(1.0, 1.25) +
               Forward_1p5 +
-              LeadRight.changeBeats(3).scale(1.0,1.5),
+              LeadRight.changeBeats(3).scale(1.0, 1.5),
 
           RunRight +
-              ExtendRight.changeBeats(2).scale(1.5,1.75) +
-              SwingLeft.scale(0.75,0.75) +
-              LeadLeft.changeBeats(3).scale(3.0,0.75),
+              ExtendRight.changeBeats(2).scale(1.5, 1.75) +
+              SwingLeft.scale(0.75, 0.75) +
+              LeadLeft.changeBeats(3).scale(3.0, 0.75),
 
           UmTurnRight.skew(-3, 0) +
-              RunRight.scale(1.0,1.5) +
+              RunRight.scale(1.0, 1.5) +
               Forward_1p5 +
-              LeadRight.changeBeats(3).scale(1.0,2.0),
+              LeadRight.changeBeats(3).scale(1.0, 2.0),
 
           RunRight +
-              ExtendRight.changeBeats(2).scale(1.5,1.75) +
-              SwingLeft.scale(0.75,0.75) +
-              LeadLeft.changeBeats(3).scale(3.0,0.75),
+              ExtendRight.changeBeats(2).scale(1.5, 1.75) +
+              SwingLeft.scale(0.75, 0.75) +
+              LeadLeft.changeBeats(3).scale(3.0, 0.75),
+        ],
+      ),
 
-        ]),
-
-    AnimatedCall('Chase Your Criss Cross Neighbor',
+      AnimatedCall(
+        'Chase Your Criss Cross Neighbor',
         formation: Formation('Trade By'),
         from: 'Trade By',
         paths: [
           UmTurnRight.skew(-1.5, 0) +
-              RunRight.changeBeats(5).scale(1.0,1.5) +
-              LeadRight.changeBeats(3).scale(1.0,2.0),
+              RunRight.changeBeats(5).scale(1.0, 1.5) +
+              LeadRight.changeBeats(3).scale(1.0, 2.0),
 
           RunRight +
-              ExtendRight.changeBeats(2).scale(1,1.75) +
-              SwingLeft.scale(0.75,0.75) +
-              LeadLeft.changeBeats(3).scale(1.5,0.75),
+              ExtendRight.changeBeats(2).scale(1, 1.75) +
+              SwingLeft.scale(0.75, 0.75) +
+              LeadLeft.changeBeats(3).scale(1.5, 0.75),
 
           UmTurnRight.skew(-2, 0) +
-              RunRight.changeBeats(4.5).scale(1.0,1.5) +
+              RunRight.changeBeats(4.5).scale(1.0, 1.5) +
               Forwardp5 +
-              LeadRight.changeBeats(3).scale(1.0,2.0),
+              LeadRight.changeBeats(3).scale(1.0, 2.0),
 
           RunRight.scale(.5, 1) +
-              ExtendRight.changeBeats(2).scale(1,1.75) +
-              SwingLeft.scale(0.75,0.75) +
-              LeadLeft.changeBeats(3).scale(1.5,0.75),
+              ExtendRight.changeBeats(2).scale(1, 1.75) +
+              SwingLeft.scale(0.75, 0.75) +
+              LeadLeft.changeBeats(3).scale(1.5, 0.75),
+        ],
+      ),
+    ],
+  ),
 
-        ]),
-
-    AnimatedCall('Left Chase Your Criss Cross Neighbor',
+  AnimatedCallHeader(
+    'Left Chase Your Criss Cross Neighbor',
+    calls: [
+      AnimatedCall(
+        'Left Chase Your Criss Cross Neighbor',
         formation: Formation('Couples Facing Out Compact'),
         from: 'Back-to-Back Couples',
         paths: [
           RunLeft +
-              ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-              SwingRight.scale(0.75,0.75) +
-              LeadRight.changeBeats(3).scale(3.0,0.75),
+              ExtendLeft.changeBeats(2).scale(1.5, 1.75) +
+              SwingRight.scale(0.75, 0.75) +
+              LeadRight.changeBeats(3).scale(3.0, 0.75),
 
           UmTurnLeft.skew(-3, 0) +
-              RunLeft.scale(1.0,1.5) +
+              RunLeft.scale(1.0, 1.5) +
               Forward_1p5 +
-              LeadLeft.changeBeats(3).scale(1.0,2.0),
+              LeadLeft.changeBeats(3).scale(1.0, 2.0),
+        ],
+      ),
 
-        ]),
-
-    AnimatedCall('Left Chase Your Criss Cross Neighbor',
+      AnimatedCall(
+        'Left Chase Your Criss Cross Neighbor',
         formation: Formation('Lines Facing Out Compact'),
         from: 'Lines Facing Out',
         paths: [
           RunLeft +
-              ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-              SwingRight.scale(0.75,0.75) +
-              LeadRight.changeBeats(3).scale(3.0,0.75),
+              ExtendLeft.changeBeats(2).scale(1.5, 1.75) +
+              SwingRight.scale(0.75, 0.75) +
+              LeadRight.changeBeats(3).scale(3.0, 0.75),
 
           UmTurnLeft.skew(-3, 0) +
-              RunLeft.scale(1.0,1.5) +
+              RunLeft.scale(1.0, 1.5) +
               Forward_1p5 +
-              LeadLeft.changeBeats(3).scale(1.0,2.0),
+              LeadLeft.changeBeats(3).scale(1.0, 2.0),
 
           RunLeft +
-              ExtendLeft.changeBeats(2).scale(1.5,1.75) +
-              SwingRight.scale(0.75,0.75) +
-              LeadRight.changeBeats(3).scale(3.0,0.75),
+              ExtendLeft.changeBeats(2).scale(1.5, 1.75) +
+              SwingRight.scale(0.75, 0.75) +
+              LeadRight.changeBeats(3).scale(3.0, 0.75),
 
           UmTurnLeft.skew(-3, 0) +
-              RunLeft.scale(1.0,1.25) +
+              RunLeft.scale(1.0, 1.25) +
               Forward_1p5 +
-              LeadLeft.changeBeats(3).scale(1.0,1.5),
+              LeadLeft.changeBeats(3).scale(1.0, 1.5),
+        ],
+      ),
 
-        ]),
-
-    AnimatedCall('Left Chase Your Criss Cross Neighbor',
+      AnimatedCall(
+        'Left Chase Your Criss Cross Neighbor',
         formation: Formation('Trade By'),
         from: 'Trade By',
         paths: [
           RunLeft +
-              ExtendLeft.changeBeats(2).scale(1,1.75) +
-              SwingRight.scale(0.75,0.75) +
-              LeadRight.changeBeats(3).scale(1.5,0.75),
+              ExtendLeft.changeBeats(2).scale(1, 1.75) +
+              SwingRight.scale(0.75, 0.75) +
+              LeadRight.changeBeats(3).scale(1.5, 0.75),
 
           UmTurnLeft.skew(-1.5, 0) +
-              RunLeft.changeBeats(5).scale(1.0,1.5) +
-              LeadLeft.changeBeats(3).scale(1.0,2.0),
+              RunLeft.changeBeats(5).scale(1.0, 1.5) +
+              LeadLeft.changeBeats(3).scale(1.0, 2.0),
 
           RunLeft.scale(.5, 1) +
-              ExtendLeft.changeBeats(2).scale(1,1.75) +
-              SwingRight.scale(0.75,0.75) +
-              LeadRight.changeBeats(3).scale(1.5,0.75),
+              ExtendLeft.changeBeats(2).scale(1, 1.75) +
+              SwingRight.scale(0.75, 0.75) +
+              LeadRight.changeBeats(3).scale(1.5, 0.75),
 
           UmTurnLeft.skew(-2, 0) +
-              RunLeft.changeBeats(4.5).scale(1.0,1.5) +
+              RunLeft.changeBeats(4.5).scale(1.0, 1.5) +
               Forwardp5 +
-              LeadLeft.changeBeats(3).scale(1.0,2.0),
+              LeadLeft.changeBeats(3).scale(1.0, 2.0),
+        ],
+      ),
+    ],
+  ),
 
-        ]),
-
-
-    AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
+  AnimatedCallHeader(
+    'Pass and Roll Your Criss Cross Neighbor',
+    calls: [
+      AnimatedCall(
+        'Pass and Roll Your Criss Cross Neighbor',
         formation: Formation('Single Eight Chain Thru'),
         from: 'Single Eight Chain Thru',
         paths: [
-          ExtendLeft.scale(1,.5) +
+          ExtendLeft.scale(1, .5) +
               Forward_2 +
               SwingRight.scale(.5, .5) +
               Forward +
               LeadRight +
               RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
 
-          ExtendLeft.scale(1,.5) +
-              RunRight.changeBeats(5).scale(.5,.5) +
+          ExtendLeft.scale(1, .5) +
+              RunRight.changeBeats(5).scale(.5, .5) +
               Forward +
               ExtendRight +
               SwingLeft.scale(.5, .5) +
-              LeadLeft.changeBeats(2).scale(3,.5)
+              LeadLeft.changeBeats(2).scale(3, .5),
+        ],
+      ),
 
-        ]),
-
-    AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
+      AnimatedCall(
+        'Pass and Roll Your Criss Cross Neighbor',
         formation: Formation('Eight Chain Thru'),
         from: 'Eight Chain Thru',
         paths: [
@@ -343,22 +362,58 @@ import '../../moves.dart';
               RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
 
           ExtendLeft +
-              RunRight.changeBeats(5).scale(.5,.5) +
+              RunRight.changeBeats(5).scale(.5, .5) +
               Forward +
               ExtendRight +
               SwingLeft.scale(.5, .5) +
-              LeadLeft.changeBeats(2).scale(3,.5),
+              LeadLeft.changeBeats(2).scale(3, .5),
 
           Forward +
-              RunRight.changeBeats(5).scale(.5,.5) +
+              RunRight.changeBeats(5).scale(.5, .5) +
               Forward +
               ExtendRight +
               SwingLeft.scale(.5, .5) +
-              LeadLeft.changeBeats(2).scale(3,.5)
+              LeadLeft.changeBeats(2).scale(3, .5),
+        ],
+      ),
 
-        ]),
+      AnimatedCall(
+        'Pass and Roll Your Criss Cross Neighbor',
+        formation: Formation('Tidal Eight Chain Thru'),
+        from: 'Tidal Eight Chain Thru',
+        paths: [
+          ExtendLeft.scale(0.5, 0.5) +
+              Forward +
+              SwingRight.scale(.5, .5) +
+              Forwardp5 +
+              LeadRight.changeBeats(2.5).scale(0.5,1) +
+              RunRight.changeBeats(4.5).scale(1.5, 0.75).skew(-.5, 0),
 
-    AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
+          ExtendLeft.scale(0.5, 0.5) +
+              RunRight.changeBeats(5).scale(.5, .5) +
+              Forwardp5 +
+              ExtendRight.scale(0.5,1) +
+              SwingLeft.scale(.5, .5) +
+              LeadLeft.changeBeats(2).scale(1.5, .5),
+
+          ExtendLeft.scale(0.5, 0.5) +
+              RunRight.changeBeats(5).scale(.5, .5) +
+              Forwardp5 +
+              ExtendRight.scale(0.5,1) +
+              SwingLeft.scale(.5, .5) +
+              LeadLeft.changeBeats(2).scale(1.5, .5),
+
+          ExtendLeft.scale(0.5, 0.5) +
+              Forward +
+              SwingRight.scale(.5, .5) +
+              Forwardp5 +
+              LeadRight.changeBeats(2.5).scale(0.5,1) +
+              RunRight.changeBeats(4.5).scale(1.5, 0.75).skew(-.5, 0),
+        ],
+      ),
+
+      AnimatedCall(
+        'Pass and Roll Your Criss Cross Neighbor',
         formation: Formation('Ocean Waves RH BGGB'),
         from: 'Right-Hand Waves',
         paths: [
@@ -368,11 +423,11 @@ import '../../moves.dart';
               LeadRight +
               RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
 
-          RunRight.changeBeats(5).scale(.5,.5) +
+          RunRight.changeBeats(5).scale(.5, .5) +
               Forward +
               ExtendRight +
               SwingLeft.scale(.5, .5) +
-              LeadLeft.changeBeats(2).scale(3,.5),
+              LeadLeft.changeBeats(2).scale(3, .5),
 
           Forward_2 +
               SwingRight.scale(.5, .5) +
@@ -380,35 +435,42 @@ import '../../moves.dart';
               LeadRight +
               RunRight.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
 
-          RunRight.changeBeats(5).scale(.5,1) +
+          RunRight.changeBeats(5).scale(.5, 1) +
               Forward +
               ExtendRight +
               SwingLeft.scale(.5, .5) +
-              LeadLeft.changeBeats(2).scale(3,.5),
+              LeadLeft.changeBeats(2).scale(3, .5),
+        ],
+      ),
+    ],
+  ),
 
-        ]),
-
-    AnimatedCall('Left Pass and Roll Your Criss Cross Neighbor',
+  AnimatedCallHeader(
+    'Left Pass and Roll Your Criss Cross Neighbor',
+    calls: [
+      AnimatedCall(
+        'Left Pass and Roll Your Criss Cross Neighbor',
         formation: Formation('Single Eight Chain Thru'),
         from: 'Single Eight Chain Thru',
         paths: [
-          ExtendRight.scale(1,.5) +
+          ExtendRight.scale(1, .5) +
               Forward_2 +
               SwingLeft.scale(.5, .5) +
               Forward +
               LeadLeft +
               RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
 
-          ExtendRight.scale(1,.5) +
-              RunLeft.changeBeats(5).scale(.5,.5) +
+          ExtendRight.scale(1, .5) +
+              RunLeft.changeBeats(5).scale(.5, .5) +
               Forward +
               ExtendLeft +
               SwingRight.scale(.5, .5) +
-              LeadRight.changeBeats(2).scale(3,.5)
+              LeadRight.changeBeats(2).scale(3, .5),
+        ],
+      ),
 
-        ]),
-
-    AnimatedCall('Left Pass and Roll Your Criss Cross Neighbor',
+      AnimatedCall(
+        'Left Pass and Roll Your Criss Cross Neighbor',
         formation: Formation('Eight Chain Thru'),
         from: 'Eight Chain Thru',
         paths: [
@@ -427,30 +489,66 @@ import '../../moves.dart';
               RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
 
           Forward +
-              RunLeft.changeBeats(5).scale(.5,.5) +
+              RunLeft.changeBeats(5).scale(.5, .5) +
               Forward +
               ExtendLeft +
               SwingRight.scale(.5, .5) +
-              LeadRight.changeBeats(2).scale(3,.5),
+              LeadRight.changeBeats(2).scale(3, .5),
 
           ExtendRight +
-              RunLeft.changeBeats(5).scale(.5,.5) +
+              RunLeft.changeBeats(5).scale(.5, .5) +
               Forward +
               ExtendLeft +
               SwingRight.scale(.5, .5) +
-              LeadRight.changeBeats(2).scale(3,.5)
+              LeadRight.changeBeats(2).scale(3, .5),
+        ],
+      ),
 
-        ]),
+      AnimatedCall(
+        'Left Pass and Roll Your Criss Cross Neighbor',
+        formation: Formation('Tidal Eight Chain Thru'),
+        from: 'Tidal Eight Chain Thru',
+        paths: [
+          ExtendRight.scale(0.5, 0.5) +
+              Forward +
+              SwingLeft.scale(.5, .5) +
+              Forwardp5 +
+              LeadLeft.changeBeats(2.5).scale(0.5,1) +
+              RunLeft.changeBeats(4.5).scale(1.5, 0.75).skew(-.5, 0),
 
-    AnimatedCall('Left Pass and Roll Your Criss Cross Neighbor',
+          ExtendRight.scale(0.5, 0.5) +
+              RunLeft.changeBeats(5).scale(.5, .5) +
+              Forwardp5 +
+              ExtendLeft.scale(0.5,1) +
+              SwingRight.scale(.5, .5) +
+              LeadRight.changeBeats(2).scale(1.5, .5),
+
+          ExtendRight.scale(0.5, 0.5) +
+              RunLeft.changeBeats(5).scale(.5, .5) +
+              Forwardp5 +
+              ExtendLeft.scale(0.5,1) +
+              SwingRight.scale(.5, .5) +
+              LeadRight.changeBeats(2).scale(1.5, .5),
+
+          ExtendRight.scale(0.5, 0.5) +
+              Forward +
+              SwingLeft.scale(.5, .5) +
+              Forwardp5 +
+              LeadLeft.changeBeats(2.5).scale(0.5,1) +
+              RunLeft.changeBeats(4.5).scale(1.5, 0.75).skew(-.5, 0),
+        ],
+      ),
+
+      AnimatedCall(
+        'Left Pass and Roll Your Criss Cross Neighbor',
         formation: Formation('Ocean Waves LH BGGB'),
         from: 'Left-Hand Waves',
         paths: [
-          RunLeft.changeBeats(5).scale(.5,1) +
+          RunLeft.changeBeats(5).scale(.5, 1) +
               Forward +
               ExtendLeft +
               SwingRight.scale(.5, .5) +
-              LeadRight.changeBeats(2).scale(3,.5),
+              LeadRight.changeBeats(2).scale(3, .5),
 
           Forward_2 +
               SwingLeft.scale(.5, .5) +
@@ -458,185 +556,196 @@ import '../../moves.dart';
               LeadLeft +
               RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
 
-          RunLeft.changeBeats(5).scale(.5,.5) +
+          RunLeft.changeBeats(5).scale(.5, .5) +
               Forward +
               ExtendLeft +
               SwingRight.scale(.5, .5) +
-              LeadRight.changeBeats(2).scale(3,.5),
+              LeadRight.changeBeats(2).scale(3, .5),
 
           ExtendLeft.changeBeats(2).scale(2, 1) +
               SwingLeft.scale(.5, .5) +
               Forward +
               LeadLeft +
               RunLeft.changeBeats(4.5).scale(1.5, 1.5).skew(-.5, 0),
-
-        ]),
-
-    AnimatedCall('All 8 Criss Cross Your Neighbor',
-      formation:Formation('Static MiniWaves RH'),
-      group:' ',
-      paths:[
-          ExtendRight.changeBeats(4).scale(3.0,2.0) +
+        ],
+      ),
+    ],
+  ),
+  AnimatedCall(
+    'All 8 Criss Cross Your Neighbor',
+    formation: Formation('Static MiniWaves RH'),
+    group: ' ',
+    paths: [
+      ExtendRight.changeBeats(4).scale(3.0, 2.0) +
           SwingLeft +
-          LeadLeft.changeBeats(4).scale(3.0,1.0),
+          LeadLeft.changeBeats(4).scale(3.0, 1.0),
 
-          RunRight.changeBeats(4.5).scale(1.0,1.5).skew(-1.0,0.0) +
+      RunRight.changeBeats(4.5).scale(1.0, 1.5).skew(-1.0, 0.0) +
           Forward_3 +
           LeadRight +
           ExtendRight.changeBeats(2),
 
-          ExtendRight.changeBeats(4).scale(3.0,2.0) +
+      ExtendRight.changeBeats(4).scale(3.0, 2.0) +
           SwingLeft +
-          LeadLeft.changeBeats(4).scale(3.0,1.0),
+          LeadLeft.changeBeats(4).scale(3.0, 1.0),
 
-          RunRight.changeBeats(4.5).scale(1.0,1.5).skew(-1.0,0.0) +
+      RunRight.changeBeats(4.5).scale(1.0, 1.5).skew(-1.0, 0.0) +
           Forward_3 +
           LeadRight +
-          ExtendRight.changeBeats(2)
-      ]),
+          ExtendRight.changeBeats(2),
+    ],
+  ),
 
-    AnimatedCall('As Couples Criss Cross Your Neighbor',
-      formation:Formation('Two-Faced Lines RH'),
-      group:' ',
-      paths:[
-          ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0,3.5) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(3).scale(2.5,0.5),
+  AnimatedCall(
+    'As Couples Criss Cross Your Neighbor',
+    formation: Formation('Two-Faced Lines RH'),
+    group: ' ',
+    paths: [
+      ExtendRight.changeBeats(3).changehands(Hands.RIGHT).scale(2.0, 3.5) +
+          SwingLeft.scale(0.5, 0.5) +
+          LeadLeft.changeBeats(3).scale(2.5, 0.5),
 
-          ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0,2.5) +
-          SwingLeft.scale(1.5,1.5) +
-          LeadLeft.changeBeats(3).scale(3.5,1.5),
+      ExtendRight.changeBeats(3).changehands(Hands.LEFT).scale(2.0, 2.5) +
+          SwingLeft.scale(1.5, 1.5) +
+          LeadLeft.changeBeats(3).scale(3.5, 1.5),
 
-          RunRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,1.5) +
+      RunRight.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0, 1.5) +
           Forward_2 +
-          LeadRight.changeBeats(3).scale(0.5,2.0),
+          LeadRight.changeBeats(3).scale(0.5, 2.0),
 
-          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,3.0) +
+      RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0, 3.0) +
           Forward_2 +
-          LeadRight.changeBeats(3).scale(1.5,3.0)
-      ]),
+          LeadRight.changeBeats(3).scale(1.5, 3.0),
+    ],
+  ),
 
-    AnimatedCall('Tandem Criss Cross Your Neighbor',
-      formation:Formation('Column RH GBGB'),
-      group:' ',
-      paths:[
-          RunRight.changeBeats(5).scale(1.0,2.0).skew(-1.0,0.0) +
+  AnimatedCall(
+    'Tandem Criss Cross Your Neighbor',
+    formation: Formation('Column RH GBGB'),
+    group: ' ',
+    paths: [
+      RunRight.changeBeats(5).scale(1.0, 2.0).skew(-1.0, 0.0) +
           Forward_2 +
-          LeadRight.changeBeats(2).scale(1.0,2.0) +
+          LeadRight.changeBeats(2).scale(1.0, 2.0) +
           Forward_2,
 
+      Forward_2 +
+          RunRight.changeBeats(5).scale(1.0, 2.0).skew(-1.0, 0.0) +
           Forward_2 +
-          RunRight.changeBeats(5).scale(1.0,2.0).skew(-1.0,0.0) +
+          LeadRight.changeBeats(2).scale(1.0, 2.0),
+
+      ExtendRight.changeBeats(2).scale(1.0, 2.0) +
+          Forward +
+          CounterRotateLeft(0, 2).changehands(Hands.LEFT) +
+          CounterRotateLeft(0, 2).changehands(Hands.LEFT) +
+          Forward +
+          LeadLeft.changeBeats(3).scale(1.0, 2.0),
+
+      Forward +
+          ExtendRight.changeBeats(2).scale(1.0, 2.0) +
+          CounterRotateLeft(2, 0).changehands(Hands.LEFT) +
+          CounterRotateLeft(2, 0).changehands(Hands.LEFT) +
+          Forward +
+          QuarterLeft.changeBeats(3).skew(3.0, 0.0),
+    ],
+  ),
+
+  AnimatedCall(
+    'Concentric Criss Cross Your Neighbor',
+    formation: Formation('Column RH GBGB'),
+    group: ' ',
+    paths: [
+      LeadRight +
+          LeadRight.changeBeats(6).scale(4.0, 4.0) +
+          LeadRight.changeBeats(5).scale(2.5, 4.0),
+
+      RunRight.changeBeats(4).scale(0.5, 1.25) + LeadRight.changeBeats(4).scale(1.5, 1.5),
+
+      ExtendRight.changeBeats(2).scale(1.0, 1.5) +
+          SwingLeft.scale(0.5, 0.5) +
+          LeadLeft.changeBeats(3).scale(1.5, 0.5),
+
+      LeadRight.scale(0.5, 1.0) +
+          LeadLeft.changeBeats(3).scale(2.5, 3.0) +
+          LeadLeft.changeBeats(3).scale(2.0, 2.5) +
+          LeadLeft.changeBeats(3).scale(2.0, 2.5) +
+          LeadLeft.changeBeats(3).scale(3.5, 2.0),
+    ],
+  ),
+
+  AnimatedCall(
+    'Pass and Roll Your Criss Cross Neighbor',
+    formation: Formation('Eight Chain Thru'),
+    group: ' ',
+    paths: [
+      ExtendLeft.scale(1.0, 0.5) +
           Forward_2 +
-          LeadRight.changeBeats(2).scale(1.0,2.0),
-
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
+          SwingRight.scale(0.5, 0.5) +
           Forward +
-          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
-          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
-          Forward +
-          LeadLeft.changeBeats(3).scale(1.0,2.0),
-
-          Forward +
-          ExtendRight.changeBeats(2).scale(1.0,2.0) +
-          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
-          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
-          Forward +
-          QuarterLeft.changeBeats(3).skew(3.0,0.0)
-      ]),
-
-    AnimatedCall('Concentric Criss Cross Your Neighbor',
-      formation:Formation('Column RH GBGB'),
-      group:' ',
-      paths:[
-          LeadRight +
-          LeadRight.changeBeats(6).scale(4.0,4.0) +
-          LeadRight.changeBeats(5).scale(2.5,4.0),
-
-          RunRight.changeBeats(4).scale(0.5,1.25) +
-          LeadRight.changeBeats(4).scale(1.5,1.5),
-
-          ExtendRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(3).scale(1.5,0.5),
-
-          LeadRight.scale(0.5,1.0) +
-          LeadLeft.changeBeats(3).scale(2.5,3.0) +
-          LeadLeft.changeBeats(3).scale(2.0,2.5) +
-          LeadLeft.changeBeats(3).scale(2.0,2.5) +
-          LeadLeft.changeBeats(3).scale(3.5,2.0)
-      ]),
-
-    AnimatedCall('Pass and Roll Your Criss Cross Neighbor',
-      formation:Formation('Eight Chain Thru'),
-      group:' ',
-      paths:[
-          ExtendLeft.scale(1.0,0.5) +
-          Forward_2 +
-          SwingRight.scale(0.5,0.5) +
-          Forward +
-          ExtendRight.scale(1.0,0.5) +
+          ExtendRight.scale(1.0, 0.5) +
           RunRight +
-          LeadRight.changeBeats(3).scale(3.0,1.0),
+          LeadRight.changeBeats(3).scale(3.0, 1.0),
 
-          ExtendLeft.scale(1.0,0.5) +
+      ExtendLeft.scale(1.0, 0.5) +
           Forward_2 +
-          SwingRight.scale(0.5,0.5) +
+          SwingRight.scale(0.5, 0.5) +
           Forward_2 +
-          RunRight.changeBeats(4).scale(1.0,0.75) +
-          LeadRight.changeBeats(3).scale(3.0,2.0),
+          RunRight.changeBeats(4).scale(1.0, 0.75) +
+          LeadRight.changeBeats(3).scale(3.0, 2.0),
 
-          ExtendLeft.scale(1.0,0.5) +
+      ExtendLeft.scale(1.0, 0.5) +
           Forward +
-          FlipRight.scale(1.0,0.5) +
+          FlipRight.scale(1.0, 0.5) +
           Forward_2 +
           ExtendRight.changeBeats(2) +
-          SwingLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(2).scale(3.0,1.5),
+          SwingLeft.scale(0.5, 0.5) +
+          LeadLeft.changeBeats(2).scale(3.0, 1.5),
 
-          ExtendLeft.scale(1.0,0.5) +
+      ExtendLeft.scale(1.0, 0.5) +
           Forward +
-          FlipRight.scale(1.0,0.5) +
+          FlipRight.scale(1.0, 0.5) +
           Forward_2 +
           ExtendRight.changeBeats(2) +
-          SwingLeft.scale(0.5,0.5) +
-          QuarterLeft.changeBeats(2).skew(3.0,-0.5)
-      ]),
+          SwingLeft.scale(0.5, 0.5) +
+          QuarterLeft.changeBeats(2).skew(3.0, -0.5),
+    ],
+  ),
 
-    AnimatedCall('Left Pass and Roll Your Criss Cross Neighbor',
-      formation:Formation('Eight Chain Thru'),
-      group:' ',
-      paths:[
-          ExtendRight.scale(1.0,0.5) +
+  AnimatedCall(
+    'Left Pass and Roll Your Criss Cross Neighbor',
+    formation: Formation('Eight Chain Thru'),
+    group: ' ',
+    paths: [
+      ExtendRight.scale(1.0, 0.5) +
           Forward_2 +
-          SwingLeft.scale(0.5,0.5) +
+          SwingLeft.scale(0.5, 0.5) +
           Forward_2 +
-          RunLeft.changeBeats(4).scale(1.0,0.75) +
-          LeadLeft.changeBeats(3).scale(3.0,2.0),
+          RunLeft.changeBeats(4).scale(1.0, 0.75) +
+          LeadLeft.changeBeats(3).scale(3.0, 2.0),
 
-          ExtendRight.scale(1.0,0.5) +
+      ExtendRight.scale(1.0, 0.5) +
           Forward_2 +
-          SwingLeft.scale(0.5,0.5) +
+          SwingLeft.scale(0.5, 0.5) +
           Forward +
-          ExtendLeft.scale(1.0,0.5) +
+          ExtendLeft.scale(1.0, 0.5) +
           RunLeft +
-          LeadLeft.changeBeats(3).scale(3.0,1.0),
+          LeadLeft.changeBeats(3).scale(3.0, 1.0),
 
-          ExtendRight.scale(1.0,0.5) +
+      ExtendRight.scale(1.0, 0.5) +
           Forward +
-          FlipLeft.scale(1.0,0.5) +
+          FlipLeft.scale(1.0, 0.5) +
           Forward_2 +
           ExtendLeft.changeBeats(2) +
-          SwingRight.scale(0.5,0.5) +
-          QuarterRight.changeBeats(2).skew(3.0,0.5),
+          SwingRight.scale(0.5, 0.5) +
+          QuarterRight.changeBeats(2).skew(3.0, 0.5),
 
-          ExtendRight.scale(1.0,0.5) +
+      ExtendRight.scale(1.0, 0.5) +
           Forward +
-          FlipLeft.scale(1.0,0.5) +
+          FlipLeft.scale(1.0, 0.5) +
           Forward_2 +
           ExtendLeft.changeBeats(2) +
-          SwingRight.scale(0.5,0.5) +
-          LeadRight.changeBeats(2).scale(3.0,1.5)
-      ]),
-  ];
-
+          SwingRight.scale(0.5, 0.5) +
+          LeadRight.changeBeats(2).scale(3.0, 1.5),
+    ],
+  ),
+];

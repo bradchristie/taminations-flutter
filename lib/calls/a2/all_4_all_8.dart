@@ -2084,8 +2084,7 @@ import '../c3a/mini_chase.dart' as c3a;
       tam.title == 'All 8 Chase Your Neighbor').first.xref(title: 'All 8 Chase Your Neighbor').xref(group: 'All 8 (C-1)'),
     c1.CrossAndTurn.where((tam) =>
       tam.title == 'All 8 Cross and Turn').first.xref(title: 'All 8 Cross and Turn').xref(group: 'All 8 (C-1)'),
-    c1.CrossYourNeighbor.where((tam) =>
-      tam.title == 'All 8 Cross Your Neighbor').first.xref(title: 'All 8 Cross Your Neighbor').xref(group: 'All 8 (C-1)'),
+    c1.CrossYourNeighbor.findCall('All 8 Cross Your Neighbor').xref(title: 'All 8 Cross Your Neighbor').xref(group: 'All 8 (C-1)'),
     c1.DixieDiamond.where((tam) =>
       tam.title == 'All 8 Dixie Diamond').first.xref(title: 'All 8 Dixie Diamond').xref(group: 'All 8 (C-1)'),
     c1.DixieSashay.where((tam) =>
@@ -2116,8 +2115,7 @@ import '../c3a/mini_chase.dart' as c3a;
       tam.title == 'All 8 Left Wheel Fan Thru').first.xref(title: 'All 8 Left Wheel Fan Thru').xref(group: 'All 8 (C-1)'),
     c2.Rotate.where((tam) =>
       tam.title == 'All 4 Couples Rotate 1/2').first.xref(title: 'All 4 Couples Rotate 1/2').xref(group: 'All 4 Couples (C-2)'),
-    c2.CrissCrossYourNeighbor.where((tam) =>
-      tam.title == 'All 8 Criss Cross Your Neighbor').first.xref(title: 'All 8 Criss Cross Your Neighbor').xref(group: 'All 8 (C-2)'),
+    c2.CrissCrossYourNeighbor.findCall('All 8 Criss Cross Your Neighbor').xref(title: 'All 8 Criss Cross Your Neighbor').xref(group: 'All 8 (C-2)'),
     c2.CrossBack.where((tam) =>
       tam.title == 'All 8 Cross Back').first.xref(title: 'All 8 Cross Back').xref(group: 'All 8 (C-2)'),
     c2.PeelToADiamond.where((tam) =>

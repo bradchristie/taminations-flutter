@@ -1190,8 +1190,7 @@ import '../c3a/mini_chase.dart' as c3a;
       tam.title == 'Concentric Bounce the Boys').first.xref(title: 'Concentric Bounce the Boys').xref(group: 'Concentric (C-2)'),
     c2.CircleToAWave.where((tam) =>
       tam.title == 'Concentric Circle to a Wave').first.xref(title: 'Concentric Circle to a Wave').xref(group: 'Concentric (C-2)'),
-    c2.CrissCrossYourNeighbor.where((tam) =>
-      tam.title == 'Concentric Criss Cross Your Neighbor').first.xref(title: 'Concentric Criss Cross Your Neighbor').xref(group: 'Concentric (C-2)'),
+    c2.CrissCrossYourNeighbor.findCall('Concentric Criss Cross Your Neighbor').xref(title: 'Concentric Criss Cross Your Neighbor').xref(group: 'Concentric (C-2)'),
     c2.PeelToADiamond.where((tam) =>
       tam.title == 'Concentric Peel to a Diamond').first.xref(title: 'Concentric Peel to a Diamond').xref(group: 'Concentric (C-2)'),
     c2.CrossTheK.where((tam) =>
