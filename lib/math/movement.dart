@@ -187,7 +187,8 @@ class Movement extends Cloneable<Movement> {
         fromCall: fromCall);
   }
 
-  bool isStand() => btranslate.isIdentity() && brotate.isIdentity();
+  bool isStand() => btranslate.isIdentity() &&
+      brotate.angle(1.0).isAround(0);
 
   XmlElement toXML()  => XmlElement('movement'.xml,<XmlAttribute>[
     XmlAttribute('hands'.xml, Hands.getName(hands)),
