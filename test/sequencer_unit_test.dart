@@ -3289,6 +3289,7 @@ Wave-based Triangle Reshape
 Cut the Galaxy
 Girls Run
 Cast Off Three Quarters
+Adjust to Static Square
 Half Sashay
 Sides Pair Off
 Pass Thru
