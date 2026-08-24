@@ -1017,14 +1017,14 @@ import '../../moves.dart';
       group:' ',
       paths:[
           CounterRotateRight(0,-4).changehands(Hands.RIGHT) +
-          CounterRotateRight(0,-4).changehands(Hands.RIGHT).skew(0.0,-1.0),
+          CounterRotateRight(0,-4.5).changehands(Hands.RIGHT),
 
-          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(1.0,0.0),
+          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(2.0,2.0).skew(0.5,0.0),
 
-          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,0.0),
+          UmTurnRight.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-0.5,0.0),
 
-          CounterRotateLeft(2,2).changehands(Hands.RIGHT) +
-          CounterRotateLeft(2,2).changehands(Hands.RIGHT).skew(0.0,1.0)
+          CounterRotateRight(2,2).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,2.5).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Triple Box Recycle',
