@@ -1089,7 +1089,7 @@ AnimatedCallHeader('Switch the Wave', calls: [
     ],
   ),
 
-  AnimatedCallHeader(
+  AnimatedCallGroup(
     'Tandem (C-1)',
     calls: [
       c1.Recycle.where(
@@ -1144,7 +1144,7 @@ AnimatedCallHeader('Switch the Wave', calls: [
     ],
   ),
 
-  AnimatedCallHeader(
+  AnimatedCallGroup(
     'Tandem (C-2)',
     calls: [
       c2.Bounce.where(
@@ -1176,7 +1176,7 @@ AnimatedCallHeader('Switch the Wave', calls: [
     ],
   ),
 
-  AnimatedCallHeader(
+  AnimatedCallGroup(
     'Tandem (C-3A)',
     calls: [
       c3a.CoupleUp.where(
@@ -1200,7 +1200,7 @@ AnimatedCallHeader('Switch the Wave', calls: [
     ],
   ),
 
-  AnimatedCallHeader(
+  AnimatedCallGroup(
     'Tandem (C-3B)',
     calls: [
       c3b.Bingo.where(
