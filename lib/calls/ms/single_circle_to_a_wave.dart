@@ -35,15 +35,15 @@ import '../../moves.dart';
         ]),
 
     AnimatedCall('Single Circle to a Wave',
-      formation:Formation('Facing Couples'),
+      formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
       paths:[
-          Forward.scale(1.3,0.3) +
+          Forward.scale(0.8,0.3) +
           ssqtr +
           ssqtr +
           Forward.scale(0.7,0.7),
 
-          Forward.scale(1.3,0.3) +
+          Forward.scale(0.8,0.3) +
           ssqtr +
           ssqtr +
           ExtendLeft.scale(0.7,2.0)

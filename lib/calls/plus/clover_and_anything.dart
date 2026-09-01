@@ -37,41 +37,6 @@ import '../../moves.dart';
           LeadLeft
       ]),
 
-    AnimatedCall('Clover and Lockit',
-      formation:Formation('3/4 Tag'),
-      group:' ',
-      taminator: 'Not in Plus 2026',
-      paths:[
-          LeadRight.scale(1.0,1.5) +
-          LeadRight.scale(1.5,1.5) +
-          LeadRight.scale(1.5,1.0),
-
-          LeadLeft.scale(1.0,1.5) +
-          LeadLeft.scale(1.5,1.5) +
-          LeadLeft.scale(1.5,1.0),
-
-          LeadRight.changeBeats(4).scale(3.0,3.0),
-
-          HingeLeft.changeBeats(4)
-      ]),
-
-    AnimatedCall('Clover and Lock It',
-      formation:Formation('3/4 Tag LH'),
-      group:' ',noDisplay: true,
-      paths:[
-          LeadRight.scale(1.0,1.5) +
-          LeadRight.scale(1.5,1.5) +
-          LeadRight.scale(1.5,1.0),
-
-          LeadLeft.scale(1.0,1.5) +
-          LeadLeft.scale(1.5,1.5) +
-          LeadLeft.scale(1.5,1.0),
-
-          LeadLeft.changeBeats(4).scale(3.0,3.0),
-
-          HingeRight.changeBeats(4)
-      ]),
-
     AnimatedCall('Clover and Pass the Ocean',
       formation:Formation('Trade By'),
       group:' ',
@@ -112,33 +77,26 @@ import '../../moves.dart';
           ExtendLeft.scale(1.0,0.5)
       ]),
 
-    AnimatedCall('Clover and Square Chain Thru',
-      formation:Formation('Trade By'),
-      group:' ',
-        taminator: 'Not in Plus 2026',
-      paths:[
-          LeadRight.scale(1.0,1.5) +
-          LeadRight.scale(1.5,1.5) +
-          LeadRight.scale(1.5,1.0),
+    AnimatedCall('Clover and Swing Thru',
+        formation:Formation('T-Bone RDDL'),
+        group:' ',
+        paths:[
+          Forward_2 +
+              Forward.changeBeats(1.5) +
+              SwingRight,
+          Forward_2 +
+              ExtendLeft.changeBeats(1.5).scale(1,1.5) +
+              SwingRight.scale(1, 0.75) +
+              SwingLeft,
+          LeadRight.scale(2.0,1.5) +
+              LeadRight.scale(1.5,0.5) +
+              LeadRight.scale(1.5,1.0),
 
-          LeadLeft.scale(1.0,1.5) +
-          LeadLeft.scale(1.5,1.5) +
-          LeadLeft.scale(1.5,1.0),
+          LeadLeft.scale(2.0,1.5) +
+              LeadLeft.scale(1.5,0.5) +
+              LeadLeft.scale(1.5,1.0),
 
-          PullLeft.scale(0.5,0.5) +
-          LeadLeft.changeBeats(2).scale(3.0,0.5) +
-          SwingLeft +
-          SwingRight.scale(0.75,0.75) +
-          SwingLeft.scale(0.75,0.75) +
-          ExtendLeft.scale(1.0,1.5),
-
-          PullLeft.scale(0.5,0.5) +
-          LeadRight.changeBeats(2).scale(1.0,1.5) +
-          SwingLeft +
-          Stand.changeBeats(3) +
-          SwingLeft.scale(0.75,0.75) +
-          Forward
-      ]),
+        ]),
 
     AnimatedCall('Clover and Trade',
       formation:Formation('Completed Double Pass Thru'),
@@ -157,46 +115,6 @@ import '../../moves.dart';
           RunRight
       ]),
 
-    AnimatedCall('Clover and Triple Star Thru',
-      formation:Formation('', dancers:[
-        Dancer.fromData(gender:Gender.GIRL,x:1,y:1,angle:0),
-        Dancer.fromData(gender:Gender.BOY,x:1,y:-1,angle:0),
-        Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
-        Dancer.fromData(gender:Gender.BOY,x:-1,y:-3,angle:90),
-  ]),
-      group:' ',isGenderSpecific:true,
-        taminator: 'Not in Plus 2026',
-      paths:[
-          Forward +
-          LeadLeft.changeBeats(2.5).scale(1.5,1.5) +
-          LeadLeft.changeBeats(2.5).scale(1.5,1.0) +
-          LeadLeft.changeBeats(2).scale(1.5,1.0) +
-          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
-          QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
-
-          Forward +
-          LeadRight.changeBeats(2.5).scale(1.5,1.5) +
-          LeadRight.changeBeats(2.5).scale(1.5,1.0) +
-          LeadRight.changeBeats(2).scale(1.5,1.0) +
-          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
-          QuarterRight.changeBeats(1.5).skew(1.0,-1.5),
-
-          Forward_2 +
-          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
-          QuarterLeft.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
-          QuarterRight.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
-          QuarterLeft.changeBeats(1.5).skew(1.0,0.5),
-
-          Forward_2 +
-          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
-          QuarterRight.changeBeats(1.5).skew(1.0,-0.5) +
-          ExtendRight.changeBeats(1.5).changehands(Hands.LEFT).scale(1.0,0.5) +
-          QuarterLeft.changeBeats(1.5).skew(1.0,0.5) +
-          ExtendLeft.changeBeats(1.5).changehands(Hands.RIGHT).scale(1.0,0.5) +
-          QuarterRight.changeBeats(1.5).skew(1.0,-1.5)
-      ]),
 
   ];
 

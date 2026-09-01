@@ -102,21 +102,4 @@ import '../../moves.dart';
           LeadLeft.changeBeats(3).scale(3.0,0.5)
       ]),
 
-    AnimatedCall('As Couples Pass the Sea',
-      formation:Formation('Normal Lines'),
-      from:'Lines',group:' ',
-      taminator: 'Not in Plus 2026',
-      paths:[
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
-          LeadRight.changeBeats(4).scale(1.5,3.5),
-
-          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
-          LeadRight.changeBeats(4).scale(0.5,2.5),
-
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
-          LeadLeft.changeBeats(4).scale(2.5,0.5),
-
-          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
-          LeadLeft.changeBeats(4).scale(3.5,1.5)
-      ]),
   ];

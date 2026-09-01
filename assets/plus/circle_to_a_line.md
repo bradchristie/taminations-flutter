@@ -14,9 +14,9 @@ Eight Chain Thru
 
 ### Dance action
 
-Each group of facing couples [Circle Left](../ms/circle.md) 1/2 (180 degrees).
-The left-side dancer in the new outside couple releases the left handhold and
-slides sideways to the left to become the left end of a One-faced Line
+Each group of Facing Couples [Circle Left](../ms/circle.md) 1/2 (180 degrees).
+The left-side dancer in the new Outside Couple releases the left handhold and
+slides sideways to the left to become the left end of a One-Faced Line
 (which faces the line formed by the other four dancers).
 All other handholds are maintained. The other dancers continue circling,
 gradually blending into the One-Faced Line by unwinding the circle.
@@ -25,11 +25,13 @@ left-turning twirl, walking under an arch made with the adjacent dancer,
 similar in action to a California Twirl.
 
 ### Ending formation
-
 Facing Lines
 
-### Timing
+>
+> ![alt](circle_to_a_line.png)
+>
 
+### Timing
 8
 
 ### Styling
@@ -45,6 +47,11 @@ Some callers identify who "breaks" (that is, who lets go with the left hand to b
 
 This definition gives the proper way that Circle to a Line should be danced and styled. There are other dance actions in popular use (with the same ending result). Dancers and callers should be aware that they may encounter these variations and that this call requires cooperation to be danced successfully.
 
+For **Reverse Circle to a Line**, Facing Couples Circle Right 1/2,
+the right-side dancer in the new
+Outside Couple slides sideways to the right,
+and the final dancer does a right-turning twirl.
+
 Some callers extend Circle To A Line (designating different dancers to break, or circling a different amount), while others think such extensions are improper. In any case, there has never been consensus on how they work, and these applications require workshopping.
 
-###### @ Copyright 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1997, 2001-2026 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication. 1994, 2000-2023 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

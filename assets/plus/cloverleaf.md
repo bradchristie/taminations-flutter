@@ -2,8 +2,9 @@
 # Cloverleaf
 
 The general action of a Cloverleaf has the active dancers walking in a 3/4 circle, staying in their own
-quadrant of the set. A cloverleaf ramp at a highway intersection or the edge of one leaf of a four-leaf clover
-gives a good visual picture of the dance path.
+quadrant of the set. The edge of one leaf of a four-leaf clover gives a good visual picture of
+the dance path. Some places have highway intersections that are called a “Cloverleaf” because
+they use the same symmetrical shape of four looping roadways.
 
 ## Cloverleaf (Everyone Active)
 
@@ -50,8 +51,7 @@ without dropping the arm in between.
 ## Cloverleaf (Two Couples Only Active)
 
 ### Starting formation
-
-Anywhere two couples are facing out of the set (e.g., Trade By)
+Anywhere two Couples are facing out of the set (for example, Trade By)
 
 ### Command examples
 
@@ -61,32 +61,30 @@ Anywhere two couples are facing out of the set (e.g., Trade By)
 #### Squared set: Sides Pass Thru and Cloverleaf; Heads Square Thru 2 and Cloverleaf; New centers Right and Left Thru; Double Pass Thru; Ends Cloverleaf; others Partner Trade; You're Home
 
 ### Dance action
-
 The designated dancers must be facing out of the set. If they are in the center of the set, they
-first step forward. Next they separate and move away from each other in a three quarter (270 degrees)
-circle. When they meet another dancer from the other side of the square, they become a couple facing
+first step forward. Next they Separate and move away from each other in a 3/4 (270 degrees)
+circle. When they meet another dancer from the other side of the square, they become a Couple facing
 in. If no one else is in front of them, they can finish in the center,
-just as the leads normally would for Everyone Cloverleaf.
+just as the Leads normally would for Everyone Cloverleaf. When the non-designated dancers are a
+Couple facing in, they will move into the center if not already there.
 
-When the inactive dancers are a couple facing in, they will move into the center.
 
 ### Ending formation
-
 Various. The active dancers will be Couples facing in.
 
 ### Timing
-
-Active dancers: 6 (or, if they move into the middle, 8);
-Inactive dancers: 0 (if they start as centers) or 2 (if they start as ends).
+Designated dancers: 6 (or, if they move into the middle, 8);  
+Non-Designated dancers: 0 (if they start as Centers) or 2 (if they start as Ends).
 
 ### Styling
-
 Arms are held in natural dance position, skirt work optional. As dancers meet each other, they
-use a couple handhold.
+use a Couple handhold.
 
 ### Comment
-
 The next call is often directed to the inactive dancers and can commence while the active
 dancers are still dancing their Cloverleaf.
 
-###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+Note that Two Couples Active applications of Cloverleaf can often be called using
+[“Clover and (anything)"](clover_and_anything.md).
+
+###### @ Copyright 1997, 2001-2026 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication. 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

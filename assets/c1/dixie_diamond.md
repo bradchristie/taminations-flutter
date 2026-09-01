@@ -4,7 +4,7 @@
 Parts: 2
 
 From Facing Couples or Facing Tandems: 
-***[Dixie Style to a Wave](../ms/dixie_style.md)***; 
+***[Dixie Style to a Wave](../plus/dixie_style.md)***; 
 ***the Centers [Hinge](../ms/hinge.md) while the Ends
 [U-Turn Back](../ms/turn_back.md)***
 (turning toward each other). Ends in a Right-Hand Diamond.

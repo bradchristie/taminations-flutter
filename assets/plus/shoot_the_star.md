@@ -1,43 +1,42 @@
 
 # Shoot The Star
+# Shoot The Star Full Around
 
 ### Starting formations
-
 Thar in motion, Wrong Way Thar in motion
 
 ### Command examples
-
 (The first five command examples start from a Thar with men as the centers)
-#### Shoot The Star; Right And Left Grand
-#### Shoot The Star To Another Thar, Go Forward 2, Men Swing In To A Backup Star
-#### Shoot The Star Go All The Way Around, Give Corner Right, Men Swing In To A Wrong Way Thar
-#### Shoot The Star A Full Turn, Go Backwards 3, Right, Left, Right, Boys Wheel In To A Wrong Way Thar
-#### Shoot The Star A Full Turn, This Way Go Forward 3, Right, Left, Right; Allemande Left
+#### Shoot The Star; Right and Left Grand
+#### Shoot The Star to Another Thar, Go Forward 2, Men Swing In to a Backup Star
+#### Shoot The Star Go all the way around, give Corner Right, Men Swing In to a Wrong Way Thar
+#### Shoot The Star A Full Turn, go Backwards 3, Right, Left, Right, Boys Wheel In to a Wrong Way Thar
+#### Shoot The Star a Full Turn, this way Go Forward 3, Right, Left, Right; Allemande Left
+####
 #### (From a Wrong Way Thar) Shoot The Star, Go Forward 2, With A Left And Right, To Another Wrong Way Thar
 
 ### Dance action
-
 Centers dancers drop the
-inside handholds forming the star as each center dancer and the
-adjacent outside dancer Arm Turn 1/2 and Step Thru. If Full Around is
-directed, the Arm Turn is a full turn (360 degrees).
+inside handholds forming the Star as each Center dancer and the
+adjacent Outside dancer Arm Turn 1/2 and Step Thru. If Full Around is
+directed, the Arm Turn is a Full Turn (360 degrees).
+
+>
+> ![alt](shoot_the_star.png)
+>
 
 ### Ending formation
-
 Right and Left Grand Circle
 
 ### Timing
-
 4; full around: 6
 
 ### Styling
-
-A forearm hold is used for the Arm
-Turn. Other hands are in natural dance position and available for the
-next call. Women can continue to use skirt work during the Arm Turn.
+A forearm hold is used for the Arm Turn. 
+Other hands are in natural dance position and available for the
+next call. Ladies can continue to use skirt work during the Arm Turn.
 
 ### Comment
-
 The [Facing Couples Rule](../ms/facing_couples_rule.md) does not apply to this call.
 
 After Shoot the Star, the caller sometimes indicates that
@@ -58,8 +57,10 @@ direction you are facing" and never use the words "Back" or
 confuse dancers. See the fourth and fifth command examples above.
 
 Some callers adapt Shoot the Star as a way to Cast Off 3/4 and
-get an Alamo Ring, e.g., "Shoot The Star 3/4 To An Alamo Ring" or
-simply "Shoot The Star To An Alamo Ring". Shoot the Star can also
+get an Alamo Ring. For example, "Shoot The Star 3/4 To An Alamo Ring" or
+simply "Shoot The Star To An Alamo Ring".
+
+Shoot the Star can also
 blend into the next call, e.g., "Shoot The Star, 4 Ladies Chain."
 
-###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1997, 2001-2026 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication. 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

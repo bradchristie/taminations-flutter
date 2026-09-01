@@ -27,11 +27,8 @@ import '../a1/lock_it.dart' as a1;
 import '../a1/mix.dart' as a1;
 import '../plus/pair_off.dart' as a1;
 import '../a1/pass_in.dart' as a1;
-import '../plus/pass_the_sea.dart' as a1;
 import '../a1/quarter_in.dart' as a1;
-import '../plus/quarter_thru.dart' as a1;
 import '../a1/right_roll_to_a_wave.dart' as a1;
-import '../plus/scoot_and_dodge.dart' as a1;
 import '../a1/square_chain_thru.dart' as a1;
 import '../a1/swap_around.dart' as a1;
 import '../a1/turn_and_deal.dart' as a1;
@@ -403,6 +400,24 @@ import '../c3b/bingo.dart' as c3b;
           LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,1.5)
       ]),
 
+    AnimatedCall('As Couples Pass the Sea',
+        formation:Formation('Normal Lines'),
+        group:'As Couples (with calls through Plus)',
+        taminator: 'Not in Plus 2026',
+        paths:[
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+              LeadRight.changeBeats(4).scale(1.5,3.5),
+
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+              LeadRight.changeBeats(4).scale(0.5,2.5),
+
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+              LeadLeft.changeBeats(4).scale(2.5,0.5),
+
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+              LeadLeft.changeBeats(4).scale(3.5,1.5)
+        ]),
+
     AnimatedCall('As Couples Peel Off',
       formation:Formation('Two-Faced Lines RH'),
       group:'As Couples (with calls through Plus)',
@@ -759,28 +774,66 @@ import '../c3b/bingo.dart' as c3b;
       tam.title == 'As Couples Pass In').first.xref(title: 'As Couples Pass In').xref(group: 'As Couples (with A-1 calls)'),
     a1.PassIn.where((tam) =>
       tam.title == 'As Couples Pass Out').first.xref(title: 'As Couples Pass Out').xref(group: 'As Couples (with A-1 calls)'),
-    a1.PassTheSea.where((tam) =>
-      tam.title == 'As Couples Pass the Sea').first.xref(title: 'As Couples Pass the Sea').xref(group: 'As Couples (with A-1 calls)'),
     a1.QuarterIn.where((tam) =>
       tam.title == 'As Couples Quarter In').first.xref(title: 'As Couples Quarter In').xref(group: 'As Couples (with A-1 calls)'),
     a1.QuarterIn.where((tam) =>
       tam.title == 'As Couples Quarter Out').first.xref(title: 'As Couples Quarter Out').xref(group: 'As Couples (with A-1 calls)'),
-    a1.QuarterThru.where((tam) =>
-      tam.title == 'As Couples Quarter Thru').first.xref(title: 'As Couples Quarter Thru').xref(group: 'As Couples (with A-1 calls)'),
+
+    AnimatedCall('As Couples Quarter Thru',
+        formation:Formation('Two-Faced Lines RH'),
+        group:' ',parts:'3',
+        paths:[
+          HingeRight.changeBeats(3).scale(1.5,3.0) +
+              SwingLeft.changeBeats(4).scale(0.5,0.5),
+
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+              SwingLeft.changeBeats(4).scale(1.5,1.5),
+
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0),
+
+          HingeRight.changeBeats(3).scale(1.5,3.0)
+        ]),
+
     a1.SwapAround.where((tam) =>
       tam.title == 'As Couples Reverse Swap Around').first.xref(title: 'As Couples Reverse Swap Around').xref(group: 'As Couples (with A-1 calls)'),
     a1.RightRollToAWave.where((tam) =>
       tam.title == 'As Couples Right Roll to a Wave' && tam.from == 'Lines Facing Out').first.xref(title: 'As Couples Right Roll to a Wave (from lines facing out)').xref(group: 'As Couples (with A-1 calls)'),
     a1.RightRollToAWave.where((tam) =>
       tam.title == 'As Couples Right Roll to a Wave' && tam.from == 'Two-Faced Lines').first.xref(title: 'As Couples Right Roll to a Wave (from two-faced lines)').xref(group: 'As Couples (with A-1 calls)'),
-    a1.ScootAndDodge.where((tam) =>
-      tam.title == 'As Couples Scoot and Dodge').first.xref(title: 'As Couples Scoot and Dodge').xref(group: 'As Couples (with A-1 calls)'),
+    AnimatedCall('As Couples Scoot and Dodge',
+        formation:Formation('Two-Faced Lines RH'),
+        from:'Right-Hand Two-Faced Lines',group:' ',
+        paths:[
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
+              SwingRight.scale(1.5,1.5) +
+              ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
+
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
+              SwingRight.scale(0.5,0.5) +
+              ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
+
+          DodgeRight.changeBeats(5).changehands(Hands.LEFT).scale(1.0,2.0),
+
+          DodgeRight.changeBeats(5).changehands(Hands.RIGHT).scale(1.0,2.0)
+        ]),
     a1.SquareChainThru.where((tam) =>
       tam.title == 'As Couples Square Chain Thru').first.xref(title: 'As Couples Square Chain Thru').xref(group: 'As Couples (with A-1 calls)'),
     a1.SwapAround.where((tam) =>
       tam.title == 'As Couples Swap Around').first.xref(title: 'As Couples Swap Around').xref(group: 'As Couples (with A-1 calls)'),
-    a1.QuarterThru.where((tam) =>
-      tam.title == 'As Couples 3/4 Thru').first.xref(title: 'As Couples 3/4 Thru').xref(group: 'As Couples (with A-1 calls)'),
+    AnimatedCall('As Couples 3/4 Thru',
+        formation:Formation('Two-Faced Lines RH'),
+        from:'Two-Faced Lines',group:' ',parts:'9',
+        paths:[
+          CastRight.changeBeats(9).scale(1.5,3.0),
+
+          CastRight.changeBeats(9).changehands(Hands.BOTH).scale(0.5,1.0),
+
+          CastRight.changeBeats(9).changehands(Hands.BOTH).scale(0.5,1.0) +
+              SwingLeft.changeBeats(4).scale(1.5,1.5),
+
+          CastRight.changeBeats(9).scale(1.5,3.0) +
+              SwingLeft.changeBeats(4).scale(0.5,0.5)
+        ]),
     a1.TurnAndDeal.where((tam) =>
       tam.title == 'As Couples Turn and Deal' && tam.from == 'Right-Hand Tidal Line').first.xref(title: 'As Couples Turn and Deal (from right-hand tidal line)').xref(group: 'As Couples (with A-1 calls)'),
     a1.TurnAndDeal.where((tam) =>

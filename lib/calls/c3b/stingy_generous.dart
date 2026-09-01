@@ -21,7 +21,8 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
-import '../plus/quarter_thru.dart' as a1;
+import '../plus/quarter_thru.dart' as plus;
+import '../plus/three_quarter_thru.dart' as plus;
 
   final List<AnimatedCall> StingyGenerous = [
 
@@ -180,7 +181,7 @@ import '../plus/quarter_thru.dart' as a1;
           RunLeft.changeBeats(4) +
           Forward_2
       ]),
-    a1.QuarterThru.where((tam) =>
+    plus.ThreeQuarterThru.where((tam) =>
       tam.title == '3/4 Thru' && tam.from == 'Ocean Waves').first.xref(title: 'Generous Swing Thru').xref(group: 'Generous'),
 
     AnimatedCall('Stingy Cut the Diamond',
@@ -267,7 +268,7 @@ import '../plus/quarter_thru.dart' as a1;
           SwingLeft +
           Forward
       ]),
-    a1.QuarterThru.where((tam) =>
+    plus.QuarterThru.where((tam) =>
       tam.title == 'Quarter Thru' && tam.from == 'Right-Hand Waves').first.xref(title: 'Stingy Swing Thru').xref(group: 'Stingy'),
 
     AnimatedCall('Finally Stingy Spin the Top',

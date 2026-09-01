@@ -6,7 +6,7 @@ Thru or Single Double Pass Thru formation, as appropriate) then do the
 \<anything> call. In counting fractions, the Vertical is counted as a single
 part. 
 
-Vertical [Dixie Style to a Wave](../ms/dixie_style.md): 
+Vertical [Dixie Style to a Wave](../plus/dixie_style.md): 
 
 > 
 > ![alt](vertical_anything_1.png)

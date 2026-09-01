@@ -1,4 +1,30 @@
+/*
+
+  Taminations Square Dance Animations
+  Copyright (C) 2026 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+import 'calls/plus/grand_three_quarter_thru.dart' as plus;
+import 'calls/plus/three_quarter_thru.dart' as plus;
 import 'call_entry.dart';
+import 'calls/plus/reverse.dart' as plus;
+import 'calls/plus/pass_the_ocean.dart' as plus;
+import 'calls/plus/left.dart' as plus;
+import 'calls/plus/swing_thru.dart' as plus;
 import 'calls/ms/single_circle_to_a_wave.dart' as ms;
 import 'calls/a1/any_hand_concept.dart' as a1;
 import 'calls/a1/anything_and_cross.dart' as a1;
@@ -746,7 +772,7 @@ var callIndex = [
   CallEntry('Grand Single Cross Trade and Wheel','c2','c2/cross_and_wheel',c2.CrossAndWheel,),
   CallEntry('Grand Square','ms','ms/grand_square',ms.GrandSquare,'ms/grand_square.mp3'),
   CallEntry('Grand Swing Thru','plus','plus/grand_swing_thru',plus.GrandSwingThru,'plus/grand_swing_thru.mp3'),
-  CallEntry('Grand Three Quarter Thru','plus','plus/grand_quarter_thru',plus.GrandQuarterThru,),
+  CallEntry('Grand Three Quarter Thru','plus','plus/grand_three_quarter_thru',plus.GrandThreeQuarterThru,),
 
   CallEntry('Half Sashay','ms','ms/sashay',ms.Sashay,),
   CallEntry('Half Tag','ms','ms/fraction_tag',ms.FractionTag,'ms/half_tag.mp3'),
@@ -791,6 +817,7 @@ var callIndex = [
   CallEntry('Latch On','c3a','c3a/latch_on',c3a.LatchOn,),
   CallEntry('Lateral Substitute','c2','c2/lateral_substitute',c2.LateralSubstitute,),
   CallEntry('Lead Right / Left','ms','ms/lead_right',ms.LeadRight,'ms/lead_right.mp3'),
+  CallEntry('Left','plus','plus/left',plus.Left,),
   CallEntry('Left','a1','a1/left',a1.Left,),
   CallEntry('Left Arm Turn','ms','ms/arm_turns',ms.ArmTurns,),
   CallEntry('Left Chase','plus','plus/chase_right',plus.ChaseRight,'plus/chase_right.mp3'),
@@ -852,6 +879,8 @@ var callIndex = [
   CallEntry('Pass Out','a1','a1/pass_in',a1.PassIn,'a1/pass_out.mp3'),
   CallEntry('Pass the Axle','c1','c1/pass_the_axle',c1.PassTheAxle,),
   CallEntry('Pass the Ocean','ms','ms/pass_the_ocean',ms.PassTheOcean,'ms/pass_the_ocean.mp3'),
+  CallEntry('Pass the Ocean','plus','plus/pass_the_ocean',
+      plus.PassTheOcean,'ms/pass_the_ocean.mp3'),
   CallEntry('Pass the Sea','plus','plus/pass_the_sea',plus.PassTheSea,'plus/pass_the_sea.mp3'),
   CallEntry('Pass Thru','ms','ms/pass_thru',ms.PassThru,'ms/pass_thru.mp3'),
   CallEntry('Pass to the Center','plus','plus/pass_to_the_center',plus.PassToTheCenter,'ms/pass_to_the_center.mp3'),
@@ -904,6 +933,7 @@ var callIndex = [
   CallEntry('Replace','c1','c1/replace',c1.Replace,),
   CallEntry('Reset','c3b','c3b/reset',c3b.Reset,),
   CallEntry('Reshape the Triangle','c2','c2/reshape_the_triangle',c2.ReshapeTheTriangle,),
+  CallEntry('Reverse','plus','plus/reverse',plus.Reverse,),
   CallEntry('Reverse','a1','a1/reverse',a1.Reverse,),
   CallEntry('Reverse Checkpoint <anything> By <anything>','c3b','c3b/reverse_checkpoint',c3b.ReverseCheckpoint,),
   CallEntry('Reverse Crazy Concept','c2','c2/crazy_concept',c2.CrazyConcept,),
@@ -1065,6 +1095,8 @@ var callIndex = [
   CallEntry('Swing the Fractions','c1','c1/swing_the_fractions',c1.SwingTheFractions,),
   CallEntry('Swing Thru','ms','ms/swing_thru',
       ms.SwingThru,'ms/swing_thru.mp3'),
+  CallEntry('Swing Thru','plus','plus/swing_thru',
+      plus.SwingThru,'ms/swing_thru.mp3'),
   CallEntry('Swing-O-Late','c3b','c3b/swing_o_late',c3b.SwingOLate,),
   CallEntry('Switch the Line','c1','c1/switch_the_line',c1.SwitchTheLine,),
   CallEntry('Switch the Wave','a2','a2/switch_the_wave',a2.SwitchTheWave,'a2/switch_the_wave.mp3'),
@@ -1093,7 +1125,7 @@ var callIndex = [
   CallEntry('Thirdly','c3b','c3b/secondly_thirdly_fourthly',c3b.SecondlyThirdlyFourthly,),
   CallEntry('Three by Two Acey Deucey','c1','c1/three_by_two_acey_deucey',c1.ThreeByTwoAceyDeucey,),
   CallEntry('Three Quarter Tag','ms','ms/fraction_tag',ms.FractionTag,),
-  CallEntry('Three Quarter Thru','plus','plus/quarter_thru',plus.QuarterThru,),
+  CallEntry('Three Quarter Thru','plus','plus/three_quarter_thru',plus.ThreeQuarterThru,),
   CallEntry('Touch a Half / Three Quarters','a1','a1/touch_12',
       a1.Touch_12,),
   CallEntry('Touch a Quarter','ms','ms/touch_a_quarter',ms.TouchAQuarter,'ms/touch_a_quarter.mp3'),
@@ -1146,7 +1178,7 @@ var callIndex = [
   CallEntry('Vertical Tag Your Neighbor','c2','c2/any_tagging_call_your_neighbor',c2.AnyTaggingCallYourNeighbor,),
 
   CallEntry('Walk and Dodge','plus','plus/walk_and_dodge',plus.WalkAndDodge,'ms/walk_and_dodge.mp3'),
-  CallEntry('Walk Around','plus','plus/all_around_the_corner',plus.AllAroundTheCorner,'plus/walk_around_the_corner.mp3'),
+  CallEntry('Walk Around the Corner','plus','plus/all_around_the_corner',plus.AllAroundTheCorner,'plus/walk_around_the_corner.mp3'),
   CallEntry('Walk Out to a Wave','c2','c2/walk_out_to_a_wave',c2.WalkOutToAWave,),
   CallEntry('Wave the anyone','c3b','c3b/wave_the_anyone',c3b.WaveTheAnyone,),
   CallEntry('Weave','c1','c1/anything_and_weave',c1.AnythingAndWeave,),

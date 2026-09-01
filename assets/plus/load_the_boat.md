@@ -1,20 +1,40 @@
 
 # Load the Boat
 
-Starting formation - Lines of four, with centers facing in, and
-the ends of each line facing the same (in or out) direction. 
+### Starting formation
+Lines of Four, with Centers facing in, and
+the Ends of each Line facing the same (In or Out) direction. 
 
-The end dancers move forward around the outside, passing right shoulders with three
-moving end dancers, and turn one-quarter in (90°) to stand beside the third person
-passed, facing the center of the set as a couple. Simultaneously, the center four dancers
+### Dance action
+The End dancers move forward around the outside, passing right shoulders with three
+moving End dancers, and turn 1/4 in to stand beside the third person
+passed, facing the center of the set as a Couple. Simultaneously, the Center Four dancers
 ***[Pass Thru](../ms/pass_thru.md),***
-***turn their backs to their momentary partners,***
-***[Partner Trade](../ms/trade.md) with their new***
-partners, and
+***Turn their backs to their momentary partners,***
+***[Partner Trade](../ms/trade.md) with their **new** ***
+Partners, and
 ***[Pass Thru](../ms/pass_thru.md).***
 
-STYLING: The end dancers, while moving on the outside, leave enough room for the center dancers to work comfortably. Arms are held in  natural dance position throughout the action, blending into the appropriate hand position for the next call.
+### Ending formations
+Facing Lines end in Eight Chain Thru formation. Inverted Lines with Ends
+Facing Out ends in a 2×4 T-Bone with the Centers Facing Out and the Ends Facing towards the
+Centers.
 
-Timing: 12
+>
+> ![alt](load_the_boat-1a.png)
+> ![alt](load_the_boat-1b.png)
+> ![alt](load_the_boat-1c.png)
+> ![alt](load_the_boat-1d.png)
+> ![alt](load_the_boat-1e.png)
+>
 
-###### @ Copyright 1997, 2001-2025 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+### Timing
+12
+
+### Styling
+The End dancers, while moving on the outside, leave enough room for the Center dancers to work comfortably. Arms are held in  natural dance position throughout the action, blending into the appropriate hand position for the next call.
+
+### Comment
+The Ocean Wave Rule applies to Load the Boat
+
+###### @ Copyright 1997, 2001-2026 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication. 1997, 2001-2025 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

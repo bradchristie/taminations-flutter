@@ -21,65 +21,56 @@
 import '../../animated_call.dart';
 import '../../common_dart.dart';
 import '../../moves.dart';
-import '../a2/all_4_all_8.dart' as a2;
 
   final List<AnimatedCall> ScootAndDodge = [
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
-          SwingRight.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25),
-
-          DodgeRight
+        ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
+            SwingRight.scale(0.75,0.75) +
+            ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
+        DodgeRight
       ]),
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
-          DodgeLeft,
-
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
-          SwingLeft.scale(0.75,0.75) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25)
+        DodgeLeft,
+        ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
+            SwingLeft.scale(0.75,0.75) +
+            ExtendRight.changeBeats(1.5).scale(1.5,0.25)
       ]),
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formation('Ocean Waves RH BGBG'),
+      formation:Formation('Ocean Waves RH BGBG Compact'),
       from:'Right-Hand Waves',
-      paths:[
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
-          SwingRight.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25),
-
+        paths:[
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
+              SwingRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
           DodgeRight,
-
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25) +
-          SwingRight.scale(0.75,0.75) +
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25),
-
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
+              SwingRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
           DodgeRight
-      ]),
+        ]),
 
     AnimatedCall('Scoot and Dodge',
-      formation:Formation('Ocean Waves LH BGBG'),
+      formation:Formation('Ocean Waves LH BGBG Compact'),
       from:'Left-Hand Waves',
-      paths:[
+        paths:[
           DodgeLeft,
-
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
-          SwingLeft.scale(0.75,0.75) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25),
-
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
+              SwingLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1.5,0.25),
           DodgeLeft,
-
-          ExtendLeft.changeBeats(1.5).scale(2.0,0.25) +
-          SwingLeft.scale(0.75,0.75) +
-          ExtendRight.changeBeats(1.5).scale(2.0,0.25)
-      ]),
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
+              SwingLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1.5,0.25)
+        ]),
 
     AnimatedCall('Scoot and Dodge',
       formation:Formation('Column RH GBGB'),
@@ -115,23 +106,35 @@ import '../a2/all_4_all_8.dart' as a2;
           DodgeLeft
       ]),
 
-    AnimatedCall('As Couples Scoot and Dodge',
-      formation:Formation('Two-Faced Lines RH'),
-      from:'Right-Hand Two-Faced Lines',group:' ',
-      paths:[
-          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
-          SwingRight.scale(1.5,1.5) +
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
+    AnimatedCall('Boys Scoot Girls Dodge',
+        formation:Formation('Normal Lines Compact'),
+        group: ' ',
+        isGenderSpecific: true,
+        paths:[
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
+              SwingRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
+          DodgeLeft,
+          ExtendRight.changeBeats(1.5).scale(1.5,0.25) +
+              SwingRight.scale(0.75,0.75) +
+              ExtendLeft.changeBeats(1.5).scale(1.5,0.25),
+          DodgeLeft
+        ]),
 
-          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
-          SwingRight.scale(0.5,0.5) +
-          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
+    AnimatedCall('Girls Scoot Boys Dodge',
+        formation:Formation('Normal Lines Compact'),
+        group: ' ',
+        isGenderSpecific: true,
+        paths:[
+          DodgeRight,
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
+              SwingLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1.5,0.25),
+          DodgeRight,
+          ExtendLeft.changeBeats(1.5).scale(1.5,0.25) +
+              SwingLeft.scale(0.75,0.75) +
+              ExtendRight.changeBeats(1.5).scale(1.5,0.25),
+        ]),
 
-          DodgeRight.changeBeats(5).changehands(Hands.LEFT).scale(1.0,2.0),
-
-          DodgeRight.changeBeats(5).changehands(Hands.RIGHT).scale(1.0,2.0)
-      ]),
-    a2.All4All8.where((tam) =>
-      tam.title == 'All 8 Scoot and Dodge' && tam.from == 'Static Mini-Waves').first.xref(title: 'All 8 Scoot and Dodge').xref(group: ' '),
   ];
 
