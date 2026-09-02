@@ -114,7 +114,7 @@ class _StartPracticeRadioGroup extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) {
     return fm.Container(
         color: Color.FLOOR,
-        margin: fm.EdgeInsets.only(left:20, bottom:10),
+        margin: fm.EdgeInsets.only(left:10, bottom:0),
         child: fm.RadioGroup(
           onChanged: onChanged,
           groupValue: groupValue,
@@ -158,9 +158,9 @@ class _StartPracticeLeftColumnState extends fm.State<_StartPracticeLeftColumn> {
   @override
   fm.Widget build(fm.BuildContext context) {
     return fm.Container(
-      margin: fm.EdgeInsets.only(left:20,top:20),
-      child: fm.Column(
-        crossAxisAlignment: fm.CrossAxisAlignment.stretch,
+      margin: fm.EdgeInsets.only(left:10,top:10),
+      child: fm.ListView(
+        //crossAxisAlignment: fm.CrossAxisAlignment.stretch,
         children: [
           fm.Text(
               'Choose a Gender', style: fm.TextStyle(fontSize: 20)),
@@ -330,7 +330,8 @@ class _StartPracticeFrameState extends fm.State<StartPracticeFrame> {
                       child: _StartPracticeLeftColumn(),
                     ),
                     fm.Expanded(
-                      child: (tamstate.level ?? '').isBlank
+                      child: (tamstate.level ?? '').isBlank ||
+                             !Settings.practiceSpecific
                           ? _StartPracticeRightColumn()
                           : _StartPracticeCallsColumn()
                     )
