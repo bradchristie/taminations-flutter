@@ -55,6 +55,7 @@ final List<AnimatedCall> Left = [
   AnimatedCall('Left Pass Thru',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',difficulty: 1,
+      notForSequencer: true,
       fractions: '1',
       group: 'Left',
       paths:[
