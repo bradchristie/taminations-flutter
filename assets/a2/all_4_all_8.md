@@ -5,9 +5,9 @@ From the general versions of Static Square, Circle, and Thar: These concepts are
 calls (or calls using fewer dancers), and allow all eight dancers to do the call at once. 
 Each group of 4 dancers works with themselves as though the other group were not there.
 
-When the dancers would normally walk through the middle of the square (e.g. as part of a Pass Thru
+When the dancers would normally walk through the middle of the square (for example, as part of a Pass Thru
 or Pull By), they walk around the perimeter instead. All the hand actions and shoulder passes are
-the same as for the basic call. However, passing the other dancers (e.g., heads passing sides)
+the same as for the basic call. However, passing the other dancers (for example, heads passing sides)
 alternates between right shoulders and left shoulders. An example of this shoulder passing can be
 found in All 4 Couples Right and Left Thru.
 
@@ -18,8 +18,8 @@ avoid collisions. Examples of this can be found in All 8 Swing Thru and All 8 Di
 
 Some calls contain both traffic patterns. From a Squared Set, All 4 Couples Square Chain Thru would
 be danced as a pass your corner right shoulder, Right Pull By, pass the next left shoulder, step to
-Left-Hand Wave with the next, all arm turn 1/2 by the left, center 4 star 1/2 by the right, 
-all left turn thru and pass the next left shoulders. 
+Left-Hand Wave with the next, all Arm Turn 1/2 by the left, center 4 Star 1/2 by the right, 
+all Left Turn Thru and pass the next left shoulders. 
 Ends in a Squared Set with everyone facing out. The dancers
 who started on the head spots are now on the side spots.
 
@@ -35,7 +35,7 @@ Otherwise, "All Eight" is used.
 
 From a Static Square with everyone facing out, those at the head position Chase Right
 while those at the side position also Chase Right. All action is clockwise around the
-outside of the set. Ends on static square spots with dancers in right-hand mini-waves.
+outside of the set. Ends on static square spots with dancers in Right-Hand Mini-Waves.
 
 > 
 > ![alt](all_4_all_8_1a.png)![alt](all_4_all_8_1b.png)
@@ -62,7 +62,7 @@ All Four Couples Touch 1/4:
 
 **All 8 Dixie Style To A Wave** Timing: 8
 
-From a Static Square, the right hand dancers step forward and to the left to become the
+From a Static Square, the right-hand dancers step forward and to the left to become the
 lead dancer in a Tandem. Lead dancers join right hands in a star and Pull By. All Left
 Touch 1/4. Ends in a Thar Star.
 
@@ -104,4 +104,4 @@ Teaching hints to tell the dancers:
 3. At the end of the call you must adjust (without turning) to the nearest static square footprints of the wall you are facing. 
 4. If you end on Thar spots, you don't adjust. 
 
-###### @ Copyright 1982, 1986-1988, 1995, 2001-2025. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1982, 1986-1988, 1995, 2001-2026. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

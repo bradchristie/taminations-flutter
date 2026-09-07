@@ -29,7 +29,7 @@ For Teaching: You can describe this as:
 Leads [ Cross Run](../b2/run.md) as trailers (do their part of)
 [Couples Circulate](../ms/circulate.md) and [ Half Sashay](../ms/sashay.md) 
 as they go. However, it is far more effective to
-re-introduce the idea of circulate paths (already used at Basic), and use it to describe
+re-introduce the idea of circulate paths (already used at Mainstream), and use it to describe
 the call.
 
-###### @ Copyright 1982, 1986-1988, 1995, 2001-2025. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1982, 1986-1988, 1995, 2001-2026. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

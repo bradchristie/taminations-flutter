@@ -15,7 +15,7 @@ or following one. For example, the call is not proper from an Inverted Box.
 
 The left-hand version of Remake is called "Left Remake".
 
-The name of the formation may be added at the end of the call (e.g., Remake The Wave)
+The name of the formation may be added at the end of the call (for example, Remake The Wave)
 as a help to the dancers but doing so is optional.
 
 If there are two side-by-side formations, each of which can do the call, dancers don't
@@ -50,7 +50,7 @@ Without stopping, they release holds at the completion of the half
 turn and, with the other arm, ***turn the next dancer three-quarters
 (270 degrees) to form another Thar or Wrong-Way Thar***.
 
-###### @ Copyright 1982, 1986-1988, 1995, 2001-2025. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1982, 1986-1988, 1995, 2001-2026. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
 
 <!-- Parts
 Remake1

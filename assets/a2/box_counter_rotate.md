@@ -6,8 +6,8 @@ Timing: 1/4: 4
 [*At Advanced these calls are proper only from Boxes or Diamonds as described below.*]
 
 The Counter Rotate action involves dancers moving forward a specified amount around a center
-point. At Advanced, this action is restricted to a Diamond or a 2x2 Box (for example, Right-Hand
-Box, Left-Hand Box, Facing Couples, or Back-to-Back Couples). The first word(s) in the call must
+point. *At Advanced, this action is restricted to a Diamond or a 2x2 Box (for example, Right-Hand
+Box, Left-Hand Box, Facing Couples, or Back-to-Back Couples).* The first word(s) in the call must
 identify the 4-dancer formation(s) either explicitly such as “Center Box Counter Rotate” or
 “Center Diamond Counter Rotate”, or implicitly such as “Split Counter Rotate” or “Transfer and
 Box Counter Rotate”.
@@ -84,4 +84,4 @@ Example: Center Box Counter Rotate and Roll:
 > ![alt](box_counter_rotate_3a.png)![alt](box_counter_rotate_3b.png)
 >
 
-###### @ Copyright 1982, 1986-1988, 1995, 2001-2025. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1982, 1986-1988, 1995, 2001-2026. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

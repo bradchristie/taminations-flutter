@@ -18,6 +18,7 @@
 
 */
 
+import 'calls/a1/coordinate.dart' as a1;
 import 'calls/plus/grand_three_quarter_thru.dart' as plus;
 import 'calls/plus/three_quarter_thru.dart' as plus;
 import 'call_entry.dart';
@@ -632,6 +633,7 @@ var callIndex = [
   CallEntry('Concentric Concept','c1','c1/concentric_concept',c1.ConcentricConcept,),
   CallEntry('Contour the Line','c3b','c3b/contour_the_line',c3b.ContourTheLine,),
   CallEntry('Coordinate','plus','plus/coordinate',plus.Coordinate,'plus/coordinate.mp3'),
+  CallEntry('Coordinate','a1','a1/coordinate',a1.Coordinate,'plus/coordinate.mp3'),
   CallEntry('Counter','c2','c2/counter',c2.Counter,),
   CallEntry('Counterpoint','c3b','c3b/counterpoint',c3b.Counterpoint,),
   CallEntry('Counter Rotate','c1','c1/counter_rotate',c1.CounterRotate,),

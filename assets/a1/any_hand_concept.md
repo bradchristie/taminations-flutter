@@ -10,15 +10,18 @@ The parts of the (anything) call are all done in the same order, and for each Tu
 the same fraction is used, but the hand used may be different and the dance action may be
 modified.
 
-Starting formation: Inverted Line(s), Inverted Box(es), Diamond(s). 
+### Starting formation 
+Inverted Line(s), Inverted Box(es), Diamond(s). 
 Every partner pair must be in a Right-Hand or Left-Hand Mini-Wave.
 
 > 
 > ![alt](any_hand_concept_1a.png)![alt](any_hand_concept_1b.png)
 >
 
-Dance action: The first Turn in the series is performed by each pair of partners, who become
+### Dance action
+The first Turn in the series is performed by each pair of partners, who become
 active and Turn the appropriate amount by whichever hand (Right or Left) connects them.
+
 For every Turn in the series after the first, 
 if a dancer was active on the previous Turn and can
 now use the other hand to hold the hand of a different dancer, then both those dancers become
@@ -59,7 +62,8 @@ Example #4: Any Hand Remake
 > ![alt](any_hand_concept_5a.png)![alt](any_hand_concept_5b.png)![alt](any_hand_concept_5c.png)![alt](any_hand_concept_5d.png)
 >
 
-Comments: The call Any Hand (anything) is proper only if there are at least
+### Comments
+The call Any Hand (anything) is proper only if there are at least
 two dancers active for each Turn in the series.
 
 If the (anything) call is a 4-dancer call, then Any Hand (anything)
@@ -81,6 +85,9 @@ Example #6: Any Hand Grand Three-Quarter Thru
 >
 > ![alt](any_hand_concept_7a.png)![alt](any_hand_concept_7b.png)![alt](any_hand_concept_7c.png)
 >
+
+If any dancers use Cast Off to replace a Turn because they are in a Couple, all the usual rules for
+Cast Off apply, including how it is danced from a Tidal Line or Line of 6.
 
 Example #7: Any Hand Grand Remake
 
@@ -125,4 +132,4 @@ Example #10: Any Hand Swing and Mix (same dance action as for Swing and Mix)
 >
 
 
-###### @ Copyright 1982, 1986-1988, 1995, 2001-2025. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1982, 1986-1988, 1995, 2001-2026. Bill Davis, John Sybalsky, and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
