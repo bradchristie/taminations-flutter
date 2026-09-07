@@ -23,25 +23,16 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.110 built 2026-08-23
+## Taminations version 1.6.111 built 2026-09-07
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Use new Mainstream and Plus lists
-* Make some scrollbars easier to use on desktops
-* Add feature to select a specific call to Practice
-* Update C-1 and C-2 definitions
-* More animations for Tandem concept
-* Accordion lists for grouping calls with many animations
-* Fix animations for Single Circle to a Wave and Tandem Box Recycle
+* Update Plus and C-2 definitions from Callerlab
+* Fixes for the Practice user interface
 * Sequencer:
-  - Code for Pair Off
-  - Better logic for Spread as used in C-1
-  - Fix some cases of dancers excessively turning
-  - Fix some uses of Rally
-
+  - Fix Square the Set
 
 
 For a detailed history of changes, view the
