@@ -7,6 +7,11 @@ From Right-Hand Columns (of 6 or 8).
 ***Those who can Turn 3/4 (270 degrees) by the Right***,
 then ***those who can Turn 1/2 (180 degrees) by the Left***.
 
+>
+> ![alt](grand_three_quarter_thru-1a.png)
+> ![alt](grand_three_quarter_thru-1b.png)
+> 
+
 ### Ending formations
 Right-Hand Columns end in a Right-Hand Tidal Wave.
 

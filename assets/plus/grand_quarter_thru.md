@@ -14,8 +14,11 @@ then ***those who can Turn 1/2 (180 degrees) by the Left***.
 Right-Hand Columns end in a Right-Hand Tidal Wave.
 
 >
-> ![alt](grand_three_quarter_thru-1a.png)
-> ![alt](grand_three_quarter_thru-1b.png)
+> ![alt](grand_quarter_thru-1a.png)
+> ![alt](grand_quarter_thru-1b.png)
+>
+> ![alt](grand_quarter_thru-1c.png)
+> ![alt](grand_quarter_thru-1d.png)
 >
 
 Grand Quarter Thru is defined to begin with a Right Turn. If the caller wants the action to begin
