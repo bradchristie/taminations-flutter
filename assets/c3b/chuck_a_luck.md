@@ -1,5 +1,5 @@
 
-# Chuck-A-Luck, Cross Check-A-Luck
+# Chuck-A-Luck, Cross Chuck-A-Luck
 
 From Parallel Lines with the Centers Back-to-Back.
 
