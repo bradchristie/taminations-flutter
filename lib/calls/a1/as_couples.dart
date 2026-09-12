@@ -25,7 +25,6 @@ import '../a1/cross_trail_thru.dart' as a1;
 import '../a1/linear_cycle.dart' as a1;
 import '../a1/lock_it.dart' as a1;
 import '../a1/mix.dart' as a1;
-import '../plus/pair_off.dart' as a1;
 import '../a1/pass_in.dart' as a1;
 import '../a1/quarter_in.dart' as a1;
 import '../a1/right_roll_to_a_wave.dart' as a1;
@@ -382,6 +381,19 @@ import '../c3b/bingo.dart' as c3b;
           Forward_4 +
           BelleWheel.scale(1.0,-1.0).skew(0.0,1.5)
       ]),
+
+    AnimatedCall('As Couples Pair Off',
+        formation:Formation('Normal Lines'),
+        group:'As Couples (with calls through Plus)',
+        paths:[
+          BackHingeRight,
+
+          HingeLeft,
+
+          HingeRight,
+
+          BackHingeLeft
+        ]),
 
     AnimatedCall('As Couples Pass the Ocean',
       formation:Formation('Normal Lines'),
@@ -768,8 +780,6 @@ import '../c3b/bingo.dart' as c3b;
       tam.title == 'As Couples Lockit').first.xref(title: 'As Couples Lockit').xref(group: 'As Couples (with A-1 calls)'),
     a1.Mix.where((tam) =>
       tam.title == 'As Couples Mix').first.xref(title: 'As Couples Mix').xref(group: 'As Couples (with A-1 calls)'),
-    a1.PairOff.where((tam) =>
-      tam.title == 'As Couples Pair Off').first.xref(title: 'As Couples Pair Off').xref(group: 'As Couples (with A-1 calls)'),
     a1.PassIn.where((tam) =>
       tam.title == 'As Couples Pass In').first.xref(title: 'As Couples Pass In').xref(group: 'As Couples (with A-1 calls)'),
     a1.PassIn.where((tam) =>
