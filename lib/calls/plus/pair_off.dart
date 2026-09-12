@@ -94,18 +94,5 @@ import '../../moves.dart';
           QuarterRight.changeBeats(2.5).skew(1.0,0.0)
       ]),
 
-    AnimatedCall('As Couples Pair Off',
-      formation:Formation('Normal Lines'),
-      from:'Lines',group:' ',
-      taminator: 'Not in Plus 2026',
-      paths:[
-          BackHingeRight,
-
-          HingeLeft,
-
-          HingeRight,
-
-          BackHingeLeft
-      ]),
   ];
 
