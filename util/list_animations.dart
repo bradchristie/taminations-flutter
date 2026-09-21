@@ -31,7 +31,7 @@ void main() async {
 class ListAnimations extends fm.StatefulWidget {
 
   static Future<XmlDocument> getXMLAsset(String filename) async =>
-      rootBundle.loadString('assets/${TamUtils.linkSSD(filename)}.xml').then((text) =>
+      rootBundle.loadString('assets/filename.xml').then((text) =>
           XmlDocument.parse(text));
 
   static Future<void> listAnimations() async {

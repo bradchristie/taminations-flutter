@@ -222,7 +222,7 @@ class _MarkdownFrameState extends fm.State<MarkdownFrame> {
     //  Fix image links
         .replaceAllMapped(
           r'!\[alt\]\(([^)]*)'.rm,
-          (m) => '![alt](resource:assets/${TamUtils.linkSSD('$_dir/${m[1]!}')}')
+          (m) => '![alt](resource:assets/${'$_dir/${m[1]!}'}')
     //  Interpret encodings
         .replaceAll('\\<','<')
     //  Highlight current part
