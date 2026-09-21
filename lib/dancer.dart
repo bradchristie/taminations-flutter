@@ -202,7 +202,7 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
   static final _boyNames = ['Adam','Brad','Carl','David',
     'Eric','Frank',
     'Gary','Hank',
-    'John','Kevin','Larry',
+    'John','Kevin','Larry','Kyle',
     'Mark','Paul','Ray','Scott','Tim','Wally'];
   static final _girlNames = ['Alice','Barb','Carol','Donna',
     'Helen', 'Karen','Irene','Janet','Linda','Mary','Nancy',
