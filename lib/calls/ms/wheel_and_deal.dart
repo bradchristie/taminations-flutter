@@ -376,43 +376,6 @@ import '../../moves.dart';
 
         ]),
 
-    AnimatedCall('Left Wheel and Deal',
-      formation:Formation('Lines Facing Out'),
-      from:'Lines Facing Out',difficulty: 3,noDisplay: true,
-      paths:[
-          RunLeft.changeBeats(4).changehands(Hands.LEFT).scale(2.0,2.0).skew(1.0,0.0),
 
-          UmTurnLeft.changeBeats(4).changehands(Hands.RIGHT).skew(1.0,0.0),
-
-          UmTurnRight.changeBeats(4).changehands(Hands.LEFT).skew(-1.0,0.0),
-
-          RunRight.changeBeats(4).changehands(Hands.RIGHT).scale(1.0,2.0).skew(-1.0,0.0)
-      ]),
-
-    AnimatedCall('Left Wheel and Deal',
-      formation:Formation('Tidal Line RH'),
-      from:'Tidal Line',difficulty: 3,noDisplay: true,
-      paths:[
-          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,1.25).skew(-2.0,0.0),
-
-          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-2.0,0.5),
-
-          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
-
-          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,1.25).skew(2.0,0.0)
-      ]),
-
-    AnimatedCall('Left Wheel and Deal',
-      formation:Formation('Tidal Line LH'),
-      from:'Left-Hand Tidal Line',difficulty: 3,noDisplay: true,
-      paths:[
-          UmTurnLeft.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,-0.5),
-
-          RunLeft.changeBeats(4).changehands(Hands.GRIPLEFT).scale(1.0,1.25).skew(2.0,0.0),
-
-          RunRight.changeBeats(4).changehands(Hands.GRIPRIGHT).scale(1.0,1.25).skew(-2.0,0.0),
-
-          UmTurnRight.changeBeats(4).changehands(Hands.GRIPLEFT).skew(-2.0,0.5)
-      ]),
   ];
 

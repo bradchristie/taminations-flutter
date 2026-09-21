@@ -1046,7 +1046,7 @@ class Formation {
       Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
     ]),
 
-    Formation('Zero Box', dancers:[
+    Formation('Corner Box', dancers:[
       Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
       Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
       Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
