@@ -18,7 +18,7 @@ Left Thru”, “Sides Right and Left Thru”), or doesn't matter because the ne
 (for example, “Heads Pass Thru, Separate, Around 1 to a Line”).
 
 Some callers who want the active dancers to remain in the center precede the call with a “Heads Move In”,
-“Heads Move Forward”, or “Heads Move into the Center”. For example, “Heads Move In and Square Thru 3”
+“Heads Move Forward”, or “Heads Move into the Center.” For example, “Heads Move In and Square Thru 3”
 would have the Heads remain in the center instead of returning to Squared Set spots.
 
 *Timing:* Moving into the center adds 2 beats to the timing for the move.
