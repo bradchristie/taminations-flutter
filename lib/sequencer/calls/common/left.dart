@@ -43,7 +43,6 @@ class Left extends CodedCall {
     var leftCall = ctx.findImplementor<IsLeft>(startFrom:this)
     ?? thrower<IsLeft>(CallError('Unable to find call that can apply Left'));
     leftCall.isLeft = true;
-    leftCall.raiseLevel(LevelData.PLUS);
     return;
   }
 
