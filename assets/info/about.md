@@ -23,17 +23,16 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.111 built 2026-09-07
+## Taminations version 1.6.112 built 2026-09-21
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update Plus and C-2 definitions from Callerlab
-* Fixes for the Practice user interface
+* Update Mainstream calls with the new definitions
+* Rearrange some animations to match the new programs
 * Sequencer:
-  - Fix Square the Set
-
+  - Fix some calls that were showing the incorrect level
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
