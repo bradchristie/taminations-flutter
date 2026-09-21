@@ -239,8 +239,8 @@ class TamUtils {
 
   static String platform() {
     try {
-      final platform = LocalPlatform();
-      return platform.operatingSystem;
+      final platform = Platform();
+      return platform.nativePlatform!.operatingSystem;
       //  Currently web returns LocalPlatform but does not have
       //  an operating system so .operatingSystem throws UnsupportedError
     } on UnsupportedError catch (_) { }
