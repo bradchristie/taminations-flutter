@@ -7,9 +7,6 @@ Taminations is written and maintained by
 [Brad Christie](mailto:brad@bradchristie.com),
 webmaster of the [Tam Twirlers Square Dance Club](http://www.tamtwirlers.org/).
 
-For a list of SSD calls in teaching order, with one example animation
-for each call, look at the [SSD web page](https://www.tamtwirlers.org/taminations/ssd.html).
-
 Taminations is not affiliated with
 [CALLERLAB](http://www.callerlab.org/). For official and complete
 definitions, refer to the
