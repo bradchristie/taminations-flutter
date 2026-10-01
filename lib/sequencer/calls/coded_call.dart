@@ -582,8 +582,8 @@ abstract class CodedCall extends Call {
     'Point'.ri: (name) => Points(name),
     'Prefer(the)($specifier)+'.ri: (name) => Prefer(name),
     'Promenade(Home)?'.ri: (name) => PromenadeHome(name),
-    'Swing(Your)?Corner(and)?Promenade(Home)?'.ri: (name) => PromenadeHome(name),
-    'Promenade(Home)?(With)?(Your)?Corner'.ri: (name) => PromenadeHome(name),
+    'Swing(Your)?(Corner|RightHandGirl)(and)?Promenade(Home)?'.ri: (name) => PromenadeHome(name),
+    'Promenade(Home)?(With)?(Your)?(Corner|RightHandGirl)'.ri: (name) => PromenadeHome(name),
     '(Right)?PullBy'.ri: (name) => PullBy(name),
 
     '14(In|Out)'.ri: (name) => QuarterInOut(name),
