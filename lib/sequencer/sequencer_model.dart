@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2026 Brad Christie
+  Copyright (C) 2024 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ class SequencerModel extends fm.ChangeNotifier {
 
   List<SequencerCall> calls = [];
   List<SequencerCall> _savedCalls = [];
-  String _startingFormation = 'Squared Set'; // overridden by Settings
+  String _startingFormation = 'Squared Set'; // overriden by Settings
   String _savedStartingFormation = '';
   String get startingFormation => _startingFormation;
   String partString = '';
@@ -53,7 +53,7 @@ class SequencerModel extends fm.ChangeNotifier {
   double animateFrom = 0.0;
 
   SequencerModel([fm.BuildContext? context]) :
-        animation = SequencerDanceModel(context) {
+        animation = DanceModel(context) {
     animation.addListener(() {
       _updateCurrentCall();
     });
@@ -300,7 +300,7 @@ class SequencerModel extends fm.ChangeNotifier {
       if (!isComment(lastCall.name)) {
         var totalBeats = calls.fold<double>(0.0,(a,b) => a + b.beats);
         for (var d in animation.dancers) {
-          while (d.path.beats.isGreaterThan(totalBeats,delta: 0.01))
+          while (d.path.beats.isGreaterThan(totalBeats))
             d.path.pop();
         }
       }
@@ -314,6 +314,9 @@ class SequencerModel extends fm.ChangeNotifier {
     } else if (_savedCalls.isNotEmpty)
       undoReset();
   }
+
+  /// Public accessor for formation-aware call filtering in the calls panel.
+  CallContext contextFromCurrentFormation() => _contextFromAnimation();
 
   CallContext _contextFromAnimation() {
     var ctx = CallContext.fromFormation(Formation(startingFormation));
@@ -354,11 +357,14 @@ class SequencerModel extends fm.ChangeNotifier {
         animation.dancers[i].path += ctx.dancers[i].path;
     }
     animation.recalculate();
+    /*
+    for (var d in animation.dancers) {
+      var a = d.orbitAngle(animation.beats).toDegrees.s;
+      print('Orbit Angle $d = $a');
+    } */
   }
 
   void _interpretOneLine(String line) {
-    //  Remove quotes
-    line = line.replaceAll('[\'"]'.ri, '');
     //  Replace abbreviations
     line = AbbreviationsModel.replaceAbbreviations(line);
     //  Remember the current beat, we will animate from here
@@ -369,6 +375,11 @@ class SequencerModel extends fm.ChangeNotifier {
     //  run each one separately
     for (var oneCall in line.split(';'))
       _interpretOneCall(oneCall);
+    //  Play whatever has been added
+    if (animation.beats > animateFrom) {
+      animation.goToBeat(animateFrom);
+      animation.doPlay();
+    }
   }
 
   void _interpretOneCall(String call) {
@@ -407,8 +418,6 @@ class SequencerModel extends fm.ChangeNotifier {
       setPaths(call, settings);
     else if (call.lc.trim().startsWith('help'))
       showHelp(call);
-    else if (call.lc.trim().startsWith('random'))
-      randomLines(call);
 
     else {
       var prevbeats = animation.beats;
@@ -450,15 +459,11 @@ class SequencerModel extends fm.ChangeNotifier {
             level: cctx.level));
         _updateParts();
         _savedCalls = [];
-      } else {
-        errorString = 'That did not do anything';
       }
-      //  Play whatever has been added
-      animation.goToBeat(animateFrom);
-      animation.doPlay();
       later(() {
         notifyListeners();
       });
+
     }
   }
 
@@ -533,15 +538,6 @@ class SequencerModel extends fm.ChangeNotifier {
       }
     }
     animation.goToEnd();
-  }
-
-  //  Set the starting formation to random facing lines
-  void randomLines(String call) {
-    if (Formation.checkRandomDancers(call)) {
-      Settings.startingFormation = Formation.randomFormationName(call);
-      reset();
-    } else
-      throw CallError('Dancer numbers not valid');
   }
 
 }
