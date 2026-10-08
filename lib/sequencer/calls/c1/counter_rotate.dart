@@ -39,14 +39,15 @@ class CounterRotate extends Action {
     for (var d in ctx.dancers) {
       d.path = d.path.changeBeats(maxBeats);
     }
+    ctx.noSnap();
   }
 
   @override
   Path performOne(Dancer d, CallContext ctx) {
     var da = d.angleToOrigin;
     //  Counter Rotate not possible if dancer is looking
-    //  directly at the center of the square
-    if (da.isAround(0.0))
+    //  directly at or away from the center of the square
+    if (da.isAround(0.0) || da.isAround(pi))
       throw CallError('Dancer $d cannot Counter Rotate');
     //  Compute points for Bezier
     var anginc = pi/6.0 * da.sign;

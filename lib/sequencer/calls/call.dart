@@ -27,7 +27,7 @@ abstract class Call {
   String get helplink => 'info/sequencer';
   String get norm => normalizeCall(name);
   bool nextCallCoded = false;
-  var level = LevelData.B1;
+  var level = LevelData.MS;
   Rolling roll = Rolling.ANY;
 
   Call(String s) : name=s.capWords();

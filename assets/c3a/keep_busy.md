@@ -3,9 +3,9 @@
 **Parts for Trailers:** 4  
 
 From Parallel Two-Faced Lines:
-Leaders [Couples Circulate](../b1/circulate.md)
+Leaders [Couples Circulate](../ms/circulate.md)
 [With The Flow](../c1/with_the_flow.md)
-as Trailers ***[1/2 Circulate](../b1/circulate.md)***,
+as Trailers ***[1/2 Circulate](../ms/circulate.md)***,
 ***Very Centers [Hinge](../ms/hinge.md)***,
 ***[Flip The Diamond](../plus/flip_the_diamond.md)***,
 ***[Step & Fold](../c1/step_and_fold.md)***.

@@ -2,7 +2,7 @@
 # \<anything> Concept
 
 Any call that begins with everyone doing a
-[Circulate](../b1/circulate.md) can be
+[Circulate](../ms/circulate.md) can be
 modified by replacing the initial Circulate with another call. For
 example, [Chase Right](../plus/chase_right.md)
 [Perk Up](../c2/perk_up.md) means Chase Right then complete the
@@ -35,4 +35,4 @@ At C-2, this concept is used with the following calls:
 [Percolate](../c1/percolate.md),
 [Perk Up](../c2/perk_up.md).
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

@@ -1,6 +1,8 @@
 
 # Chain Reaction
 
+Parts: 4
+
 At C-1, the restrictions from the Advanced Program on the
 formations from which you may call [Chain Reaction](../a1/chain_reaction.md) are
 removed. In effect, this adds 1/4 Lines and a Two-Faced
@@ -27,4 +29,4 @@ Two-Faced Line between Mini-Waves:
 > ![alt](chain_reaction_2e.png)
 >
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

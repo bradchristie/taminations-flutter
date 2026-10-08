@@ -160,10 +160,10 @@ import '../../moves.dart';
           RunLeft.changeBeats(3).skew(-2.0,0.0),
 
           Forward_2 +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT),
 
           Forward_2 +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Trail to a Diamond',
@@ -304,10 +304,10 @@ import '../../moves.dart';
           RunRight.changeBeats(4).scale(1.0,2.0).skew(-2.0,0.0),
 
           Forward_2 +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT),
 
           Forward_2 +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT)
       ]),
   ];
 

@@ -5,7 +5,7 @@
 
 From a R-H Mini-Wave Box, a Diamond with the Centers in a R-H Mini-Wave,
 or other applicable formations:
-***Those who can, [Right Arm Turn 1/4](../b1/allemande.md) (or 3/4)***;
+***Those who can, [Right Arm Turn 1/4](../ms/allemande.md) (or 3/4)***;
 in the resulting Line or Wave the ***centers [Cross Run](../b2/run.md)***;
 then ***the new centers [Trade](../b2/trade.md)***.
 Ends in a Line or Wave.

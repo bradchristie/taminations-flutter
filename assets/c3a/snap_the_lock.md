@@ -2,8 +2,8 @@
 # Snap the Lock
 
 From Parallel Lines:
-***[Partner Tag](../a1/partner_tag.md)***;
-***Outsides [Partner Tag](../a1/partner_tag.md)
+***[Partner Tag](../plus/partner_tag.md)***;
+***Outsides [Partner Tag](../plus/partner_tag.md)
 as Centers Touch***,
 ***[Lock It](../a1/lock_it.md)***,
 ***Step Thru***.

@@ -2,7 +2,7 @@
 # Bias Circulate
 
 From Parallel Waves or other applicable formations:
-Leaders [Circulate](../b1/circulate.md), while the Trailers,
+Leaders [Circulate](../ms/circulate.md), while the Trailers,
 instead of doing a normal Circulate to the spot directly in front of them,
 go to the spot Once Removed, to the right or left,
 from the spot directly in front of them.

@@ -283,10 +283,10 @@ import '../../moves.dart';
           LeadRight,
 
           Forward_2 +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT),
 
           Forward_2 +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT)
+          CounterRotateRight(2,0).changehands(Hands.RIGHT)
       ]),
 
     AnimatedCall('Transfer and Box Transfer',

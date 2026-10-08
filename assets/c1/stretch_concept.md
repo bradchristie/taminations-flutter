@@ -6,31 +6,33 @@ used as a prefix, applied to two- or four-person calls only.
 Do the 2- or 4-person call as usual, but the people who end
 in the center move to the center spots farthest from the
 dancers they had been working with (by moving along the
-long axis of the formation). For example, Stretch [Recycle](../ms/recycle.md):
+long axis of the formation).
+
+Stretch [Recycle](../ms/recycle.md):
 
 > 
 > ![alt](stretch_concept_1.png)
 > 
 
-or Stretch [Shakedown](shakedown.md)
+Stretch [Shakedown](shakedown.md)
 
 > 
 > ![alt](stretch_concept_2.png)
 > 
 
-or Stretch [Turn and Deal](../a1/turn_and_deal.md)
+Stretch [Turn and Deal](../a1/turn_and_deal.md)
 
 > 
 > ![alt](stretch_concept_3.png)
 > 
 
-or Stretch [Touch 1/4](../b2/touch_a_quarter.md)
+Stretch [Touch a Quarter](../ms/touch_a_quarter.md)
 
 > 
 > ![alt](stretch_concept_4.png)
 > 
 
-or Stretch Touch:
+Stretch Touch:
 
 > 
 > ![alt](stretch_concept_5.png)
@@ -49,7 +51,7 @@ because after the Swing Thru, the centers would have to
 move along the short axis of the formation to get away
 from the ends.
 
-Similarly, one may not call "Centers Stretch Touch 1/4"
+Similarly, one may not call "Centers Stretch Touch a Quarter"
 from here
 
 > 
@@ -57,10 +59,10 @@ from here
 > 
 
 because the centers weren't working with the ends on
-the Touch 1/4.
+the Touch a Quarter.
 
 Note: The examples above are here only to clarify the
-definition. They don't necessarily represent good usage--
+definition. They do not necessarily represent good usage--
 particularly "Stretch Turn and Deal" from Left-Hand
 Two-Faced Lines. 
 
@@ -71,4 +73,4 @@ Common applications include
 coming to the center actually going to the far center spots,
 rather than first completing the move on their own side.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

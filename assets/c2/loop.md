@@ -1,5 +1,5 @@
 
-# Right / Left Loop 1, 2, 3
+# Right / Left / In / Out Loop \<N>
 
 From any appropriate formation: Each designated dancer does a 
 Run around \<N> adjacent positions, in the direction specified, 
@@ -30,7 +30,7 @@ of the motion toward or away from the center of the overall set.
 
 Boys In Loop 2:
 
->
+>XS
 > ![alt](loop_3a.png)
 > ![alt](loop_3b.png)
 >
@@ -53,4 +53,4 @@ Everyone Left Loop 0:
 The Same Position Rule does not apply; \<direction> Loop \<N> is not proper
 if it would cause two dancers to occupy the same spot.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

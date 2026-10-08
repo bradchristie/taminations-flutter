@@ -3,14 +3,14 @@
 
 From Columns: #1 dancers [Transfer](../a1/transfer_the_column.md)
 ([Trail Off](../a2/trail_off.md),
-[Circulate](../b1/circulate.md),
+[Circulate](../ms/circulate.md),
 [1/4 In](../a1/quarter_in.md)) as others
-1/2 [Circulate](../b1/circulate.md) and
+1/2 [Circulate](../ms/circulate.md) and
 [Trade](../b2/trade.md); in the new Center Columns #1
 dancers [Transfer](../a2/box_transfer.md)
 ([Trail Off](../a2/trail_off.md) &
 [Roll](../plus/anything_and_roll.md)) as the others 1/2
-[Circulate](../b1/circulate.md) and
+[Circulate](../ms/circulate.md) and
 [Hinge](../ms/hinge.md);
 all [Extend](../b2/extend.md).
 Ends in Parallel Waves.

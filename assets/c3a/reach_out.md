@@ -3,9 +3,9 @@
 
 From a Mini-Wave Box, Tandem
 Couples, or applicable 2 x 2 T-Bones:
-Trailers 1/2 [Box Circulate](../b1/circulate.md)
+Trailers 1/2 [Box Circulate](../ms/circulate.md)
 and Phantom Run outward (Reverse Flip)
-as Leaders [Box Circulate](../b1/circulate.md) once and a half.
+as Leaders [Box Circulate](../ms/circulate.md) once and a half.
 A Mini-Wave Box ends in
 a Wave; a 2 x 2 T-Bone usually ends in a Diamond; Tandem
 Couples ends in a One-Faced Line.

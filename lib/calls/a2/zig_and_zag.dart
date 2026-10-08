@@ -120,21 +120,6 @@ import '../../moves.dart';
           QuarterLeft.changeBeats(2).skew(1.0,0.0)
       ]),
 
-    AnimatedCall('Zig',
-      formation:Formation('3/4 Tag'),
-      from:'Three Quarters Tag',
-      taminator: '''Here the dancers adjust to form diamonds.
-    ''',
-      paths:[
-          QuarterRight.skew(0.0,-1.0),
-
-          QuarterRight.skew(0.0,1.0),
-
-          Path(),
-
-          Path()
-      ]),
-
     AnimatedCall('As Couples Zig Zag',
       formation:Formation('Two-Faced Lines RH'),
       group:'As Couples',

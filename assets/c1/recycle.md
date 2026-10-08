@@ -26,6 +26,8 @@ ending in the center. This ends in a 1/4 Tag.
 
 ## 2/3 Recycle
 
+Parts: 2
+
 From a Wave only: Do the first two parts of Recycle, that is,
 [Centers Fold](../ms/fold.md) (and all adjust to a Box Circulate formation),
 then [Box Counter Rotate 1/4](../a2/box_counter_rotate.md).
@@ -38,10 +40,10 @@ then [Box Counter Rotate 1/4](../a2/box_counter_rotate.md).
 
 From Box Circulate formation:
 Without letting go hands with the Leaders, the Trailers
-[Extend](../b2/extend.md) and
-[U-Turn Back](../b1/turn_back.md), to end with their original
+[Extend](../ms/extend.md) and
+[U-Turn Back](../ms/turn_back.md), to end with their original
 outside hands joined. The Leaders follow along, becoming
-the ends of the resulting Wave.
+the Ends of the resulting Wave.
 
 >
 > ![alt](box_split_recycle_1.png)
@@ -70,10 +72,10 @@ Where not otherwise ambiguous, it is permissible to call
 simply, "Recycle" when you mean "Split Recycle", "Box Recycle" 
 or "Facing Recycle".
 For example, from Columns, you could call
-"Outsides [Partner Tag](../a1/partner_tag.md)
+"Outsides [Partner Tag](../plus/partner_tag.md)
 while the centers Recycle" and the meaning is clear.
 From Parallel Waves, though, "Recycle" and "Split Recycle"
 are different because the first applies Recycle to
 each Wave and the second applies Recycle to each Box.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

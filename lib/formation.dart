@@ -1,21 +1,22 @@
 /*
- * *     Copyright 2024 Brad Christie
- *
- *     This file is part of Taminations.
- *
- *     Taminations is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU Affero General Public License as published
- *     by the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     Taminations is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU Affero General Public License for more details.
- *
- *     You should have received a copy of the GNU Affero General Public License
- *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
- */
+
+  Taminations Square Dance Animations
+  Copyright (C) 2026 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
 
 
 import 'dart:math';
@@ -1046,7 +1047,7 @@ class Formation {
       Dancer.fromData(gender:Gender.GIRL,x:-1,y:1,angle:180),
     ]),
 
-    Formation('Zero Box', dancers:[
+    Formation('Corner Box', dancers:[
       Dancer.fromData(gender:Gender.BOY,x:-3,y:1,angle:0),
       Dancer.fromData(gender:Gender.GIRL,x:-3,y:-1,angle:0),
       Dancer.fromData(gender:Gender.BOY,x:-1,y:-1,angle:180),
@@ -1298,6 +1299,13 @@ class Formation {
       Dancer.fromData(gender:Gender.GIRL,x:0,y:-.5,angle:0),
     ]),
 
+    Formation('Tidal Eight Chain Thru',dancers:[
+      Dancer.fromData(gender: Gender.BOY, x: .5, y: 0, angle: 0),
+      Dancer.fromData(gender: Gender.GIRL, x: 1.5, y: 0, angle: 180),
+      Dancer.fromData(gender: Gender.BOY, x: 2.5, y: 0, angle: 0),
+      Dancer.fromData(gender: Gender.GIRL, x: 3.5, y: 0, angle: 180),
+    ]),
+
     Formation('I-Beam', dancers:[
       Dancer.fromData(gender:Gender.BOY,x:-1,y:-3.5,angle:90),
       Dancer.fromData(gender:Gender.GIRL,x:1,y:-3.5,angle:90),
@@ -1324,6 +1332,13 @@ class Formation {
       Dancer.fromData(gender:Gender.GIRL,x:1,y:-3,angle:90),
       Dancer.fromData(gender:Gender.BOY,x:0,y:-3,angle:180),
       Dancer.fromData(gender:Gender.GIRL,x:1,y:0,angle:0),
+    ]),
+
+    Formation('Wave of 6',dancers:[
+      Dancer.fromData(gender:Gender.BOY,x:0.8,y:0,angle:90),
+      Dancer.fromData(gender:Gender.GIRL,x:2.4,y:0,angle:270),
+      Dancer.fromData(gender:Gender.BOY,x:4.0,y:0,angle:90),
+      Dancer.fromData(gender:Gender.GIRL,x:0,y:3,angle:0),
     ]),
 
     Formation('H Zero',dancers:[

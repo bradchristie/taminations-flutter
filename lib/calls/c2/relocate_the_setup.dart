@@ -30,22 +30,22 @@ import '../../moves.dart';
       paths:[
           LeadRight.changeBeats(4.5).scale(3.0,3.0),
 
-          CounterRotateRight_5_m1.changeBeats(4.5),
+          CounterRotateRight(5,-1).changeBeats(4.5),
 
           CastLeft,
 
-          CounterRotateRight_1_m5.changeBeats(4.5)
+          CounterRotateRight(1,-5).changeBeats(4.5)
       ]),
 
     AnimatedCall('Relocate the Diamond',
       formation:Formation('Diamonds RH PTP Girl Points'),
       from:'Point to Point Diamonds',
       paths:[
-          CounterRotateRight_4_2.changeBeats(4.5).changehands(Hands.RIGHT),
+          CounterRotateRight(4,2).changeBeats(4.5).changehands(Hands.RIGHT),
 
           CastLeft,
 
-          CounterRotateRight_m2_m4.changeBeats(4.5).changehands(Hands.RIGHT),
+          CounterRotateRight(-2,-4).changeBeats(4.5).changehands(Hands.RIGHT),
 
           LeadRight.changeBeats(4.5).scale(5.0,5.0)
       ]),
@@ -59,11 +59,11 @@ import '../../moves.dart';
   ]),
       from:'Right-Hand Hourglass',
       paths:[
-          CounterRotateRight_1_m5.changeBeats(4.5),
+          CounterRotateRight(1,-5).changeBeats(4.5),
 
           LeadRight.changeBeats(4.5).scale(3.0,3.0),
 
-          CounterRotateRight_5_m1.changeBeats(4.5),
+          CounterRotateRight(5,-1).changeBeats(4.5),
 
           CastRight
       ]),
@@ -72,12 +72,12 @@ import '../../moves.dart';
       formation:Formation('Hourglass Facing RH Box'),
       from:'Facing Hourglass',
       paths:[
-          CounterRotateRight_1_m5.changeBeats(4.5),
+          CounterRotateRight(1,-5).changeBeats(4.5),
 
           LeadLeft.changeBeats(3).scale(2.0,2.0) +
           ExtendRight.changeBeats(1.5),
 
-          CounterRotateRight_5_m1.changeBeats(4.5),
+          CounterRotateRight(5,-1).changeBeats(4.5),
 
           CastLeft
       ]),
@@ -86,7 +86,7 @@ import '../../moves.dart';
       formation:Formation('Quarter Tag'),
       from:'Quarter Tag',
       paths:[
-          CounterRotateRight_4_2.changeBeats(4.5),
+          CounterRotateRight(4,2).changeBeats(4.5),
 
           ExtendRight.changeBeats(3).scale(3.0,1.0) +
           QuarterLeft.changeBeats(1.5).skew(1.0,-1.0),

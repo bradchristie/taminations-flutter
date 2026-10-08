@@ -7,9 +7,6 @@ Taminations is written and maintained by
 [Brad Christie](mailto:brad@bradchristie.com),
 webmaster of the [Tam Twirlers Square Dance Club](http://www.tamtwirlers.org/).
 
-For a list of SSD calls in teaching order, with one example animation
-for each call, look at the [SSD web page](https://www.tamtwirlers.org/taminations/ssd.html).
-
 Taminations is not affiliated with
 [CALLERLAB](http://www.callerlab.org/). For official and complete
 definitions, refer to the
@@ -23,16 +20,16 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.108 built 2026-06-03
+## Taminations version 1.6.112 built 2026-09-21
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Better animations for Grand Chain Eight
+* Update Mainstream calls with the new definitions
+* Rearrange some animations to match the new programs
 * Sequencer:
-  * Don't try to repair unusual formations after Fold/Cross Fold
-  * Fix some uses of Fascinating
+  - Fix some calls that were showing the incorrect level
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

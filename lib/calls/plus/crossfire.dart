@@ -70,67 +70,55 @@ import '../../moves.dart';
 
 
     AnimatedCall('Crossfire',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',difficulty: 1,
       paths:[
-          RunRight.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0),
-
-          SwingRight +
-          Forward,
-
-          SwingRight +
-          Forward,
-
-          RunRight.changeBeats(4).scale(2.0,2.0).skew(1.0,0.0)
+          RunRight.changeBeats(4).scale(1.0,2.0).skew(0.5,0.0),
+          SwingRight.skew(-0.5,0) +
+              Forward,
+          SwingRight.skew(0.5,0) +
+              Forward,
+          RunRight.changeBeats(4).scale(2.0,2.0).skew(1.5,0.0)
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',difficulty: 2,
       paths:[
-          RunLeft.changeBeats(4).scale(2.0,2.0).skew(1.0,0.0),
-
-          SwingLeft +
-          Forward,
-
-          SwingLeft +
-          Forward,
-
-          RunLeft.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0)
+          RunLeft.changeBeats(4).scale(2.0,2.0).skew(1.5,0.0),
+          SwingLeft.skew(0.5,0) +
+              Forward,
+          SwingLeft.skew(-0.5,0) +
+              Forward,
+          RunLeft.changeBeats(4).scale(1.0,2.0).skew(0.5,0.0)
       ]),
 
     AnimatedCall('Crossfire',
       formation:Formation('Two-Faced Tidal Line RH'),
       from:'Tidal Two-Faced Line',difficulty: 1,
       paths:[
-          RunRight.changeBeats(5).skew(2.0,-0.5),
-
+          RunRight.changeBeats(5).skew(1.5,-0.5),
           SwingRight.scale(0.75,0.75) +
-          Forward_2,
-
+              Forward_2.scale(0.75,1),
           SwingRight.scale(0.75,0.75) +
-          Forward_2,
-
-          RunRight.changeBeats(5).skew(2.0,-0.5)
+              Forward_2.scale(0.75,1),
+          RunRight.changeBeats(5).skew(1.5,-0.5)
       ]),
 
     AnimatedCall('Crossfire',
       formation:Formation('Two-Faced Tidal Line LH'),
       from:'Tidal Left-Hand Two-Faced Line',difficulty: 2,
       paths:[
-          RunLeft.changeBeats(5).skew(2.0,0.5),
-
+          RunLeft.changeBeats(5).skew(1.5,0.5),
           SwingLeft.scale(0.75,0.75) +
-          Forward_2,
-
+              Forward_2.scale(0.75, 1),
           SwingLeft.scale(0.75,0.75) +
-          Forward_2,
-
-          RunLeft.changeBeats(5).skew(2.0,0.5)
+              Forward_2.scale(0.75,1),
+          RunLeft.changeBeats(5).skew(1.5,0.5)
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',difficulty: 2,
       taminator: '''
       There is some controversy over this particular case.
@@ -138,40 +126,37 @@ import '../../moves.dart';
       so this case ends in a double pass thru formation.
     ''',
       paths:[
-          RunLeft.changeBeats(5).scale(1.0,2.0).skew(1.0,0.0),
-
+          RunLeft.changeBeats(5).scale(0.75,2.0).skew(1.5,0.0),
           FlipLeft +
-          Forward_2,
-
+              Forward_2.scale(0.75,1),
           RunRight +
-          ExtendLeft_2,
-
-          RunRight.changeBeats(5).scale(2.0,2.0).skew(1.0,0.0)
+              ExtendLeft.changeBeats(2).scale(1.5,2),
+          RunRight.changeBeats(5).scale(1.5,2.0).skew(1.5,0.0)
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formation('Inverted Lines Ends Facing Out'),
+      formation:Formation('Inverted Lines Ends Facing Out Compact'),
       from:'Inverted Lines, Centers Facing In',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0) +
           Forward.changeBeats(2),
 
-          RunRight.changeBeats(4).skew(1.0,0.0) +
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          RunRight.changeBeats(4).skew(0.5,0.0) +
+          ExtendLeft.changeBeats(2).scale(0.5,2.0),
 
-          FlipLeft.changeBeats(4).skew(1.0,0.0) +
-          Forward.changeBeats(2),
+          FlipLeft.changeBeats(4).skew(0.5,0.0) +
+          Forwardp5.changeBeats(2),
 
           RunRight.changeBeats(4).scale(2.0,2.0).skew(1.0,0.0) +
           ExtendLeft.changeBeats(2).scale(1.0,2.0)
       ]),
 
     AnimatedCall('Crossfire',
-      formation:Formation('Inverted Lines Ends Facing In'),
+      formation:Formation('Inverted Lines Ends Facing In Compact'),
       from:'Inverted Lines, Centers Facing Out',difficulty: 3,
       paths:[
-          RunRight.changeBeats(4).scale(1.0,2.0).skew(1.0,0.0) +
-          ExtendLeft.changeBeats(2).scale(1.0,2.0),
+          RunRight.changeBeats(4).scale(1.0,2.0).skew(0.5,0.0) +
+          ExtendLeft.changeBeats(2).scale(0.5,2.0),
 
           FlipLeft.changeBeats(4).skew(1.0,0.0) +
           Forward.changeBeats(2),
@@ -179,8 +164,8 @@ import '../../moves.dart';
           RunRight.changeBeats(4).skew(1.0,0.0) +
           ExtendLeft.changeBeats(2).scale(1.0,2.0),
 
-          FlipLeft.changeBeats(4).scale(0.75,2.0).skew(1.0,0.0) +
-          Forward.changeBeats(2)
+          FlipLeft.changeBeats(4).scale(0.75,2.0).skew(0.5,0.0) +
+          Forwardp5.changeBeats(2)
       ]),
 
     AnimatedCall('Crossfire',
@@ -200,13 +185,10 @@ import '../../moves.dart';
       formation:Formation('Tidal Line RH'),
       from:'Tidal Line',difficulty: 3,
       paths:[
-          RunRight.changeBeats(5).scale(2.0,1.0).skew(2.0,-0.5),
-
-          RunRight.changeBeats(5).skew(-2.0,0.5),
-
-          FlipLeft.changeBeats(5).skew(-2.0,-0.5),
-
-          RunLeft.changeBeats(5).skew(2.0,0.5)
+          RunRight.changeBeats(5).scale(2.0,1.0).skew(1.5,-0.5),
+          RunRight.changeBeats(5).skew(-1.5,0.5),
+          FlipLeft.changeBeats(5).skew(-1.5,-0.5),
+          RunLeft.changeBeats(5).skew(1.5,0.5)
       ]),
 
     AnimatedCall('Crossfire',

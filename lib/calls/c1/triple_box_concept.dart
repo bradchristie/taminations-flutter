@@ -59,17 +59,17 @@ import '../../moves.dart';
   ]),
       group:'Triple Box',
       paths:[
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
-          CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(1.0,0.0),
 
-          CounterRotateLeft_2_0.skew(1.0,0.0),
+          CounterRotateLeft(2,0).skew(1.0,0.0),
 
-          CounterRotateRight_2_0.skew(1.0,0.0),
+          CounterRotateRight(2,0).skew(1.0,0.0),
 
-          CounterRotateRight_0_m2.skew(-1.0,0.0),
+          CounterRotateRight(0,-2).skew(-1.0,0.0),
 
-          CounterRotateLeft_0_2.skew(-1.0,0.0)
+          CounterRotateLeft(0,2).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Triple Box Dixie Style to a Wave',

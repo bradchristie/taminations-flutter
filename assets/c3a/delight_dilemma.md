@@ -7,7 +7,7 @@
 
 From a 3/4 Tag or other applicable formations:
 Outsides 1/4 Right (if Delight) or 1/4 Left (if Dilemma) and
-[Circulate](../b1/circulate.md)
+[Circulate](../ms/circulate.md)
 twice as the Centers
 (stepping to a wave if necessary)
 ***[Swing](../a2/slip.md)***,

@@ -28,35 +28,23 @@ class LevelData implements Comparable<LevelData> {
 
   bool selector(String text) => text.startsWith(selectorString.r);
 
-  static final BMS = LevelData('Basic and Mainstream', 'bms', '(b|ms)');
-  static const B1 = LevelData('Basic 1', 'b1', 'b1');
-  static final B2 = LevelData('Basic 2', 'b2', 'b2');
-  static final MS = LevelData('Mainstream', 'ms', 'ms');
-  static final SSD = LevelData('SSD', 'ssd', 'ssd');
-  static final MS26 = LevelData('Mainstream 2026','m26','m26');
-  static final PLUS = LevelData('Plus', 'plus', 'plus');
-  static final P26 = LevelData('Plus 2026', 'p26', 'p26');
-  static final ADV = LevelData('Advanced', 'adv', 'a');
-  static final A1 = LevelData('A-1', 'a1', 'a1');
-  static final A2 = LevelData('A-2', 'a2', 'a2');
-  static final CHALLENGE = LevelData('Challenge', 'cha', 'c');
-  static final C1 = LevelData('C-1', 'c1', 'c1');
-  static final C2 = LevelData('C-2', 'c2', 'c2');
-  static final C3A = LevelData('C-3A', 'c3a', 'c3a');
-  static final C3B = LevelData('C-3B', 'c3b', 'c3b');
-  static final INDEX = LevelData('Index of All Calls', 'all', '[^s]');
-  static final NONE = LevelData('','x','x');  // for sequencer commands
+  static const MS = LevelData('Mainstream', 'ms', 'ms');
+  static const PLUS = LevelData('Plus', 'plus', 'plus');
+  static const ADV = LevelData('Advanced', 'adv', 'a');
+  static const A1 = LevelData('A-1', 'a1', 'a1');
+  static const A2 = LevelData('A-2', 'a2', 'a2');
+  static const CHALLENGE = LevelData('Challenge', 'cha', 'c');
+  static const C1 = LevelData('C-1', 'c1', 'c1');
+  static const C2 = LevelData('C-2', 'c2', 'c2');
+  static const C3A = LevelData('C-3A', 'c3a', 'c3a');
+  static const C3B = LevelData('C-3B', 'c3b', 'c3b');
+  static const INDEX = LevelData('Index of All Calls', 'all', '[^s]');
+  static const NONE = LevelData('','x','x');  // for sequencer commands
 
   static final List<LevelData> _data = [
-    LevelData.BMS,
-    LevelData.B1,
     LevelData.NONE,
-    LevelData.B2,
     LevelData.MS,
-    LevelData.SSD,
-    LevelData.MS26,
     LevelData.PLUS,
-    LevelData.P26,
     LevelData.ADV,
     LevelData.A1,
     LevelData.A2,

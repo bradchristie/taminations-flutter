@@ -23,6 +23,7 @@ import 'dart:io';
 import 'package:taminations/call_index.dart';
 import 'package:taminations/formation.dart';
 import 'package:taminations/moves.dart';
+import 'package:taminations/animated_call.dart';
 
 void main() async {
   clean();
@@ -84,7 +85,7 @@ Future<void> writeAnimations() async {
     callXML.writeln('<?xml version="1.0"?>');
     callXML.writeln('<!DOCTYPE tamination SYSTEM "tamination.dtd">');
     callXML.writeln('<tamination title="${callEntry.title}">');
-    for (var call in callEntry.calls)
+    for (var call in flattenAnimatedCallList(callEntry.calls))
       callXML.writeln('\n  '+call.toXml().toXmlString(pretty: true, level: 1));
     callXML.writeln('\n</tamination>');
     await callXML.flush();

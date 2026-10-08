@@ -64,8 +64,10 @@ class CallContext {
     Formation('Quarter Tag') : 1.5,
     Formation('Tidal Line RH') : 1.0,
     Formation('Squared Set') : 1.0,
+    Formation('Wave of 6') : 1.0,
     Formation('I-Beam') : 1.0,
     Formation('Separated Columns') : 1.0,
+    Formation('Alamo Wave') : 1.0,
   };
 
   static var twoCoupleFormations = {
@@ -106,7 +108,7 @@ class CallContext {
 
   late List<Dancer> dancers;
   String callname = '';
-  LevelData level = LevelData.find('b1')!;
+  LevelData level = LevelData.find('ms')!;
   List<Call> callstack = [];
   List<List<Dancer>> groups = [];
   Map<double,List<Dancer>> xSlices = {};
@@ -129,10 +131,12 @@ class CallContext {
   //  Create a context from an array of dancers
   CallContext.fromDancers(List<Dancer> dancers, {withPaths=false}) {
     this.dancers = dancers.map((d) {
+      var dtx = d.tx;
       d.animate(withPaths?0:d.beats);
       var d2 = d.clone();
       if (withPaths)
         d2.path = d.path;
+      d.tx = dtx;
       return d2;
     }).toList().center();
     if (!dancers.areDancersOrdered())
@@ -1546,7 +1550,7 @@ class CallContext {
           d.path = d.path.changeBeats(d.path.beats + b);
         } else {
           //  Large change - add that number as needed by using the 'Stand' move
-          d.path = d.path + Stand.changeBeats(b).setFromCall(false);
+          d.path = d.path + StandAhead.changeBeats(b).setFromCall(false);
         }
       }
     }

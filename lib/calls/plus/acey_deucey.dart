@@ -25,221 +25,173 @@ import '../../moves.dart';
   final List<AnimatedCall> AceyDeucey = [
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
-          Forward_4,
-
+          Forward_3.changeBeats(4),
           SwingLeft.changeBeats(4),
-
           SwingLeft.changeBeats(4),
-
           RunRight.changeBeats(4).scale(2.0,3.0)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('Ocean Waves LH BGGB'),
+      formation:Formation('Ocean Waves LH BGGB Compact'),
       from:'Left-Hand Waves',fractions:'2',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
-
           SwingRight.changeBeats(4),
-
           SwingRight.changeBeats(4),
-
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('Two-Faced Lines RH'),
+      formation:Formation('Two-Faced Lines RH Compact'),
       from:'Right-Hand Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
-          Forward_4,
-
+          Forward_3.changeBeats(4),
           SwingRight.changeBeats(4),
-
           SwingRight.changeBeats(4),
-
           RunRight.changeBeats(4).scale(2.0,3.0)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('Two-Faced Lines LH'),
+      formation:Formation('Two-Faced Lines LH Compact'),
       from:'Left-Hand Two-Faced Lines',fractions:'2',difficulty: 1,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
-
           SwingLeft.changeBeats(4),
-
           SwingLeft.changeBeats(4),
-
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('Normal Lines'),
+      formation:Formation('Normal Lines Compact'),
       from:'Lines Facing In',fractions:'2',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
-
-          RunRight.changeBeats(4).scale(1.2,1.0),
-
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5),
+          RunRight.changeBeats(4),
           FlipLeft.changeBeats(4),
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('Lines Facing Out'),
+      formation:Formation('Lines Facing Out Compact'),
       from:'Lines Facing Out',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
-
           FlipLeft.changeBeats(4),
-
           RunRight.changeBeats(4),
-
           RunRight.changeBeats(4).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('Inverted Lines Ends Facing In'),
+      formation:Formation('Inverted Lines Ends Facing In Compact'),
       from:'Inverted Lines, Ends Facing In',fractions:'2',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
-
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5),
           FlipLeft.changeBeats(4),
-
           RunRight.changeBeats(4),
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('Inverted Lines Ends Facing Out'),
+      formation:Formation('Inverted Lines Ends Facing Out Compact'),
       from:'Inverted Lines, Ends Facing Out',fractions:'2',difficulty: 2,
       paths:[
           LeadLeft.changeBeats(2).scale(2.0,3.0) +
-          LeadLeft.changeBeats(2).scale(3.0,2.0),
-
+              LeadLeft.changeBeats(2).scale(3.0,2.0),
           RunRight.changeBeats(4),
-
           FlipLeft.changeBeats(4),
-
           LeadRight.changeBeats(2).scale(3.0,3.0) +
-          LeadRight.changeBeats(2).scale(3.0,3.0)
+              LeadRight.changeBeats(2).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('3 and 1 Lines #1'),
+      formation:Formation('3 and 1 Lines #1 Compact'),
       from:'3 and 1 Lines #1',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(1.5,3.0),
-
           RunRight.changeBeats(4),
-
           FlipLeft.changeBeats(4),
-
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('3 and 1 Lines #2'),
+      formation:Formation('3 and 1 Lines #2 Compact'),
       from:'3 and 1 Lines #2',fractions:'2',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
-
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5),
           SwingLeft.changeBeats(4),
-
           SwingLeft.changeBeats(4),
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('3 and 1 Lines #3'),
+      formation:Formation('3 and 1 Lines #3 Compact'),
       from:'3 and 1 Lines #3',fractions:'2',difficulty: 2,
       paths:[
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5),
-
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5),
           SwingRight.changeBeats(4),
-
           SwingRight.changeBeats(4),
-
-          ExtendLeft.changeBeats(2).scale(2.0,0.5) +
-          ExtendRight.changeBeats(2).scale(2.0,0.5)
+          ExtendLeft.changeBeats(2).scale(1.5,0.5) +
+              ExtendRight.changeBeats(2).scale(1.5,0.5)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('3 and 1 Lines #4'),
+      formation:Formation('3 and 1 Lines #4 Compact'),
       from:'3 and 1 Lines #4',fractions:'2',difficulty: 2,
       paths:[
-          Forward_4,
-
+          Forward_3.changeBeats(4),
           RunRight.changeBeats(4),
-
           FlipLeft.changeBeats(4),
-
           RunRight.changeBeats(4).scale(1.5,3.0)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('3 and 1 Lines #5'),
+      formation:Formation('3 and 1 Lines #5 Compact'),
       from:'3 and 1 Lines #5',fractions:'2',difficulty: 2,
       paths:[
-          Forward_4,
-
+          Forward_3.changeBeats(4),
           FlipLeft.changeBeats(4),
-
           RunRight.changeBeats(4),
-
           RunRight.changeBeats(4).scale(2.0,3.0)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('3 and 1 Lines #6'),
+      formation:Formation('3 and 1 Lines #6 Compact'),
       from:'3 and 1 Lines #6',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
-
           SwingRight.changeBeats(4),
-
           SwingRight.changeBeats(4),
-
           RunRight.changeBeats(4).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('3 and 1 Lines #7'),
+      formation:Formation('3 and 1 Lines #7 Compact'),
       from:'3 and 1 Lines #7',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
-
           SwingLeft.changeBeats(4),
-
           SwingLeft.changeBeats(4),
-
           RunRight.changeBeats(4).scale(3.0,3.0)
       ]),
 
     AnimatedCall('Acey Deucey',
-      formation:Formation('3 and 1 Lines #8'),
+      formation:Formation('3 and 1 Lines #8 Compact'),
       from:'3 and 1 Lines #8',fractions:'2',difficulty: 2,
       paths:[
           RunLeft.changeBeats(4).scale(2.0,3.0),
-
           FlipLeft.changeBeats(4),
-
           RunRight.changeBeats(4),
-
-          Forward_4
+          Forward_3.changeBeats(4)
       ]),
 
     AnimatedCall('Acey Deucey',
@@ -680,22 +632,19 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Acey Deucey Once and a Half',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',fractions:'4',difficulty: 2,
       taminator: '''A common variation.
       Note that the center 4 dancers form a diamond.''',
       paths:[
-          Forward_4 +
-          LeadRight.changeBeats(2).scale(3.0,3.0),
-
+          Forward_3.changeBeats(4) +
+              LeadRight.changeBeats(2).scale(2.5,3.0),
           SwingLeft.changeBeats(4) +
-          HingeLeft.changeBeats(2),
-
+              HingeLeft.changeBeats(2).scale(0.75, 1),
           SwingLeft.changeBeats(4) +
-          HingeLeft.changeBeats(2),
-
+              HingeLeft.changeBeats(2),
           RunRight.changeBeats(4).scale(2.0,3.0) +
-          Forward_2
+              Forward_2.scale(0.75, 1)
       ]),
   ];
 

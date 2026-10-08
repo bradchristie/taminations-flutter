@@ -1,21 +1,22 @@
 /*
- * *     Copyright 2024 Brad Christie
- *
- *     This file is part of Taminations.
- *
- *     Taminations is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU Affero General Public License as published
- *     by the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     Taminations is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU Affero General Public License for more details.
- *
- *     You should have received a copy of the GNU Affero General Public License
- *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
- */
+
+  Taminations Square Dance Animations
+  Copyright (C) 2026 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
 
 import '../common.dart';
 
@@ -74,7 +75,7 @@ class TheAxle extends Action with CallWithParts, ButCall {
   @override final level = LevelData.C1;
   @override var butCall = 'Swing';
   @override var help = '''The Axle is a 3-part call:
-  1.  Centers Pass Thru, others Cross Cast Back
+  1.  Centers Pass Thru if they can, others Cross Cast Back
   2.  Swing
   3.  Centers Trade
 Part 2 can be replace with [But] Cast Off 3/4
@@ -85,7 +86,10 @@ Part 3 can be replaced with But (another call)''';
 
   @override
    void performPart1(CallContext ctx) {
-    ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
+    if (ctx.center(4).every((d) => d.isFacingIn))
+      ctx.applyCalls('Centers Pass Thru While Ends Cross Cast Back');
+    else
+      ctx.applyCalls('Ends Cross Cast Back');
     ctx.matchStandardFormation();
   }
 

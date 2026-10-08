@@ -179,6 +179,9 @@ class _DirectedDancersSpread extends Action {
 
   @override
   void performCall(CallContext ctx) {
+    //  Only for directed dancers, not everyone
+    if (ctx.actives.length == ctx.dancers.length)
+      throw CallError('Cannot Spread from this formation.');
     ctx.extendPaths();
     for (var d in ctx.dancers) {
       if (d.isActive) {

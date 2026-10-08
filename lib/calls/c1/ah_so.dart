@@ -402,11 +402,11 @@ import '../../moves.dart';
       formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',group:' ',
       paths:[
-          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.0) +
-          CounterRotateRight_2_0.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.5),
+          CounterRotateRight(2,0).changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.0) +
+          CounterRotateRight(2,0).changeBeats(4).changehands(Hands.GRIPRIGHT).skew(2.0,0.5),
 
-          CounterRotateRight_m1_m3.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,1.0) +
-          CounterRotateRight_m1_m3.changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,0.5),
+          CounterRotateRight(-1,-3).changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,1.0) +
+          CounterRotateRight(-1,-3).changeBeats(4).changehands(Hands.GRIPRIGHT).skew(-1.0,0.5),
 
           UmTurnRight.changeBeats(8).changehands(Hands.GRIPRIGHT).skew(0.5,0.0),
 

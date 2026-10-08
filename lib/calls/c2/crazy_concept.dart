@@ -140,22 +140,22 @@ import '../c2/cross_the_k.dart' as c2;
       paths:[
           LeadRight.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,1.5).skew(0.0,-1.0) +
           Stand.changeBeats(2) +
-          CounterRotateRight_2_0 +
+          CounterRotateRight(2,0) +
           Stand.changeBeats(2.5),
 
           LeadRight.changeBeats(2).changehands(Hands.BOTH).scale(1.0,0.5).skew(0.0,-1.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
           QuarterLeft.changeBeats(2.5).skew(0.0,2.0),
 
           QuarterRight.changeBeats(2).changehands(Hands.BOTH).skew(1.0,0.5) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
           Stand.changeBeats(2.5),
 
           QuarterRight.changeBeats(2).changehands(Hands.RIGHT).skew(3.0,-0.5) +
           Stand.changeBeats(2) +
-          CounterRotateRight_0_m2 +
+          CounterRotateRight(0,-2) +
           ExtendLeft +
           LeadRight
       ]),

@@ -57,12 +57,12 @@ import '../../moves.dart';
       paths:[
           LeadLeft.changeBeats(3).changehands(Hands.LEFT).scale(1.5,3.0) +
           QuarterLeft.changeBeats(1.5).skew(-1.0,0.5) +
-          CounterRotateRight_4_2.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0) +
+          CounterRotateRight(4,2).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,1.0) +
           QuarterRight.changeBeats(2).skew(-0.2,0.0),
 
           LeadLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
           LeadRight.changeBeats(1.5).scale(1.0,0.5) +
-          CounterRotateRight_m2_m4.changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0) +
+          CounterRotateRight(-2,-4).changeBeats(4).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           QuarterRight.changeBeats(2).skew(0.2,0.0),
 
           LeadLeft.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +

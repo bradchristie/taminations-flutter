@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
+<!--
+
+  Taminations Square Dance Animations
+  Copyright (C) 2026 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<tamination title="Split Two">
+
+  <tam title="Centers Split the Outside Couple"
+       formation="Eight Chain Thru" group=" " actives="Centers">
+    <path>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Centers Split Two" formation="Eight Chain Thru"
+       group=" " display="none" actives="Centers">
+    <path>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Right" scaleY=".5"/>
+      <move select="Extend Left" scaleY=".5"/>
+    </path>
+    <path>
+      <move select="Extend Left" scaleY=".5"/>
+      <move select="Extend Right" scaleY=".5"/>
+    </path>
+  </tam>
+
+  <tam title="Centers Split the Outside Couple, Separate, Go Around One to a Line"
+       from="Pass Thru" group=" "
+       formation="Eight Chain Thru"
+       actives="Centers">
+    <path>
+      <move select="Dodge Left" beats="1" scaleX=".25" scaleY=".25" offsetX=".5" />
+      <move select="Dodge Right" beats="1" scaleX=".25" scaleY=".25" offsetX=".5" />
+    </path>
+    <path>
+      <move select="Dodge Right" beats="1" scaleX=".25" scaleY=".25" offsetX=".5" />
+      <move select="Dodge Left" beats="1" scaleX=".25" scaleY=".25" offsetX=".5" />
+    </path>
+    <path>
+      <move select="Extend Right" offsetX=".5" offsetY=".5" />
+      <move select="Run Left" offsetX="-.5" offsetY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" offsetX=".5" offsetY="-.5" />
+      <move select="Run Right" offsetX="-.5" offsetY="-.5" />
+    </path>
+  </tam>
+
+</tamination>

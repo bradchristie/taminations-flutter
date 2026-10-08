@@ -2,8 +2,8 @@
 # Cross By
 
 From a Thar, Wrong-Way Thar, or Parallel Waves:
-1/2 [Circulate](../b1/circulate.md),
-[Sashaying](../b1/sashay.md) as you go, and joining opposite
+1/2 [Circulate](../ms/circulate.md),
+[Sashaying](../ms/sashay.md) as you go, and joining opposite
 hands from initial handhold. Ends in a Wrong-Way Thar,
 Thar, or Wave between vertical Mini-Waves.
 
@@ -11,4 +11,4 @@ Thar, or Wave between vertical Mini-Waves.
 > ![alt](cross_by.png)
 >
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

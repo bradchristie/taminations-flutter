@@ -8,7 +8,7 @@ Outside 4 Cast Off 3/4 and
 [Vertical 1/2 Tag](../c1/vertical_tag.md)
 (if Ocean) or Cross Concentric Vertical Left 1/2 Tag
 (if Sea) as the others Hinge,
-[Partner Tag](../a1/partner_tag.md),
+[Partner Tag](../plus/partner_tag.md),
 [Press Ahead](../c1/press.md),
 and individually turn 1/4 toward the given *direction* or do the *anything* call.
 

@@ -309,13 +309,13 @@ import '../c2/turn_to_a_line.dart' as c2;
       formation:Formation('O RH'),
       group:'"O"',
       paths:[
-          CounterRotateRight_2_0.changeBeats(4).skew(0.0,2.0),
+          CounterRotateRight(2,0).changeBeats(4).skew(0.0,2.0),
 
-          CounterRotateRight_0_m2.changeBeats(4),
+          CounterRotateRight(0,-2).changeBeats(4),
 
-          CounterRotateRight_0_m2.changeBeats(4).skew(0.0,-4.0),
+          CounterRotateRight(0,-2).changeBeats(4).skew(0.0,-4.0),
 
-          CounterRotateRight_2_0.changeBeats(4).skew(0.0,-2.0)
+          CounterRotateRight(2,0).changeBeats(4).skew(0.0,-2.0)
       ]),
 
     AnimatedCall('"O" Swap Around',

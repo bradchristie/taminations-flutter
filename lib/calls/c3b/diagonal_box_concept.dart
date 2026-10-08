@@ -47,12 +47,12 @@ import '../../moves.dart';
       paths:[
           LeadRight.changeBeats(5).scale(3.0,4.0),
 
-          CounterRotateRight_0_m2.changeBeats(5).skew(-1.0,0.0),
+          CounterRotateRight(0,-2).changeBeats(5).skew(-1.0,0.0),
 
           LeadLeft.changeBeats(2).scale(1.0,2.0) +
           RunRight.skew(2.0,0.0),
 
-          CounterRotateRight_0_m2.changeBeats(5).skew(-1.0,0.0)
+          CounterRotateRight(0,-2).changeBeats(5).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Diagonal Box Scoot Back',

@@ -70,12 +70,12 @@ class SquareTheSet extends Action {
       ahome = pi*3/2;
 
     //  Calculate the difference to that position and angle
-    //  from dancer's current location and facing directiown
+    //  from dancer's current location and facing direction
     var tohome = [xhome,yhome].v - d.location;
     var angle = d.tx.angle;
     tohome = tohome.rotate(-angle);
     var adiff = ahome.angleDiff(angle);
-    var turn = Stand.skew(tohome.x,tohome.y);
+    var turn = StandAhead.skew(tohome.x,tohome.y);
     var move = turn.pop().twist(adiff);
     return Path.fromMovement(move).changeBeats(2);
   }

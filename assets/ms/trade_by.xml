@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
+<!--
+
+  Taminations Square Dance Animations
+  Copyright (C) 2026 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<tamination title="Trade By">
+
+  <tam title="Trade By"
+       from="Trade By"
+       formation="Trade By"
+       difficulty="1">
+    <path>
+      <move select="Flip Left" beats="4"/>
+    </path>
+    <path>
+      <move select="Run Right" beats="4"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleY=".5" />
+    </path>
+  </tam>
+
+  <tam title="Trade By"
+       from="3/4 Tag"
+       formation="3/4 Tag"
+       difficulty="2">
+    <path>
+      <move select="Flip Left" beats="4" />
+    </path>
+    <path>
+      <move select="Run Right" beats="4" />
+    </path>
+    <path>
+      <move select="Extend Right" beats="4" scaleY="2" />
+    </path>
+    <path>
+      <move select="Forward" beats="4" />
+    </path>
+  </tam>
+
+  <tam title="Trade By"
+       from="T-Bones"
+       formation="T-Bone LUUR"
+       difficulty="2">
+    <path>
+      <move select="Run Right" beats="4"/>
+    </path>
+    <path>
+      <move select="Flip Left" beats="4"/>
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleY=".5" />
+    </path>
+    <path>
+      <move select="Extend Left" beats="2" scaleY=".5" />
+      <move select="Extend Right" beats="2" scaleY=".5" />
+    </path>
+  </tam>
+
+</tamination>

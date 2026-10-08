@@ -157,10 +157,10 @@ import '../../moves.dart';
       from:'Static Square',group:'   ',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateLeft_4_2.skew(-1.0,0.0),
+          CounterRotateLeft(4,2).skew(-1.0,0.0),
 
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateLeft_2_4.skew(-1.0,0.0),
+          CounterRotateLeft(2,4).skew(-1.0,0.0),
 
           Forward_2.changehands(Hands.RIGHT),
 
@@ -176,10 +176,10 @@ import '../../moves.dart';
           Forward_2.changehands(Hands.LEFT),
 
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateLeft_4_2.skew(-1.0,0.0),
+          CounterRotateLeft(4,2).skew(-1.0,0.0),
 
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateLeft_2_4.skew(-1.0,0.0)
+          CounterRotateLeft(2,4).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Heads Single Rotate 1/2',
@@ -187,12 +187,12 @@ import '../../moves.dart';
       from:'Static Square',group:'   ',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateLeft_4_2.skew(-1.0,0.0) +
-          CounterRotateLeft_4_2.skew(0.0,-0.5),
+          CounterRotateLeft(4,2).skew(-1.0,0.0) +
+          CounterRotateLeft(4,2).skew(0.0,-0.5),
 
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateLeft_2_4.skew(-1.0,0.0) +
-          CounterRotateLeft_2_4.skew(0.0,0.5),
+          CounterRotateLeft(2,4).skew(-1.0,0.0) +
+          CounterRotateLeft(2,4).skew(0.0,0.5),
 
           Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
@@ -208,12 +208,12 @@ import '../../moves.dart';
           Forward_2.changehands(Hands.LEFT).skew(-0.5,0.0),
 
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateLeft_4_2.skew(-1.0,0.0) +
-          CounterRotateLeft_4_2.skew(0.0,-0.5),
+          CounterRotateLeft(4,2).skew(-1.0,0.0) +
+          CounterRotateLeft(4,2).skew(0.0,-0.5),
 
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateLeft_2_4.skew(-1.0,0.0) +
-          CounterRotateLeft_2_4.skew(0.0,0.5)
+          CounterRotateLeft(2,4).skew(-1.0,0.0) +
+          CounterRotateLeft(2,4).skew(0.0,0.5)
       ]),
 
     AnimatedCall('Heads Reverse Single Rotate 1/4',
@@ -221,10 +221,10 @@ import '../../moves.dart';
       from:'Static Square',group:'    ',
       paths:[
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_2_m4.skew(-1.0,0.0),
+          CounterRotateRight(2,-4).skew(-1.0,0.0),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_4_m2.skew(-1.0,0.0),
+          CounterRotateRight(4,-2).skew(-1.0,0.0),
 
           Forward_2.changehands(Hands.RIGHT),
 
@@ -240,10 +240,10 @@ import '../../moves.dart';
           Forward_2.changehands(Hands.LEFT),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_2_m4.skew(-1.0,0.0),
+          CounterRotateRight(2,-4).skew(-1.0,0.0),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_4_m2.skew(-1.0,0.0)
+          CounterRotateRight(4,-2).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('Heads Reverse Single Rotate 1/2',
@@ -251,12 +251,12 @@ import '../../moves.dart';
       from:'Static Square',group:'    ',
       paths:[
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_2_m4.skew(-1.0,0.0) +
-          CounterRotateRight_2_m4.skew(0.0,-0.5),
+          CounterRotateRight(2,-4).skew(-1.0,0.0) +
+          CounterRotateRight(2,-4).skew(0.0,-0.5),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_4_m2.skew(-1.0,0.0) +
-          CounterRotateRight_4_m2.skew(0.0,0.5),
+          CounterRotateRight(4,-2).skew(-1.0,0.0) +
+          CounterRotateRight(4,-2).skew(0.0,0.5),
 
           Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
@@ -272,12 +272,12 @@ import '../../moves.dart';
           Forward_2.changehands(Hands.RIGHT).skew(-0.5,0.0),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_2_m4.skew(-1.0,0.0) +
-          CounterRotateRight_2_m4.skew(0.0,-0.5),
+          CounterRotateRight(2,-4).skew(-1.0,0.0) +
+          CounterRotateRight(2,-4).skew(0.0,-0.5),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateRight_4_m2.skew(-1.0,0.0) +
-          CounterRotateRight_4_m2.skew(0.0,0.5)
+          CounterRotateRight(4,-2).skew(-1.0,0.0) +
+          CounterRotateRight(4,-2).skew(0.0,0.5)
       ]),
   ];
 

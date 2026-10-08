@@ -348,11 +348,11 @@ import '../../moves.dart';
       paths:[
           Pivotforwardright.changeBeats(4).scale(1.0,0.5),
 
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT),
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT),
 
           Pivotbackwardleft.changeBeats(4)
       ]),

@@ -30,12 +30,12 @@ import '../../moves.dart';
       paths:[
           LeadRight +
           Forward_4.changeBeats(3) +
-          CounterRotateRight_m1_m3 +
+          CounterRotateRight(-1,-3) +
           ExtendRight,
 
           RunRight +
           LeadRight +
-          CounterRotateRight_3_1 +
+          CounterRotateRight(3,1) +
           Forward_2 +
           ExtendRight
       ]),
@@ -46,23 +46,23 @@ import '../../moves.dart';
       paths:[
           LeadRight +
           Forward +
-          CounterRotateRight_2_0 +
+          CounterRotateRight(2,0) +
           Forward +
           ExtendRight.scale(0.5,1.0),
 
           LeadRight +
           Forward +
-          CounterRotateRight_0_m2 +
+          CounterRotateRight(0,-2) +
           ExtendRight.scale(0.5,1.0),
 
           LeadRight +
           Forward +
-          CounterRotateRight_0_m2 +
+          CounterRotateRight(0,-2) +
           ExtendRight.scale(0.5,1.0),
 
           LeadRight +
           Forward +
-          CounterRotateRight_2_0 +
+          CounterRotateRight(2,0) +
           Forward +
           ExtendRight.scale(0.5,1.0)
       ]),

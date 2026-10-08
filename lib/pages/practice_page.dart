@@ -23,6 +23,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart' as fm;
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/pages/anim_list_page.dart';
 
 import '../animated_call.dart';
 import '../beat_notifier.dart';
@@ -52,7 +53,7 @@ class PracticeModel {
 
   List<List<AnimatedCall>> _callsForLevel(LevelData level) {
     var calls = callIndex.where((item) => item.level == level.dir);
-    return calls.map((e) => e.calls).toList();
+    return  calls.map((e) => flattenAnimatedCallList(e.calls)).toList();
   }
 
   Future<bool> nextAnimation(fm.BuildContext context, DanceModel danceModel) async {
@@ -62,8 +63,16 @@ class PracticeModel {
     final levelDatum = LevelData.find(appState.level!)!;
     final levelCalls = _callsForLevel(levelDatum);
     //  Load that call and choose a random animation
-    final randomCall = levelCalls[Random().nextInt(levelCalls.length)]
+    var randomCall = levelCalls[Random().nextInt(levelCalls.length)]
         .where((tam) => !tam.noDisplay).toList();
+    //  But if specific call requested, use that
+    if (appState.link != null) {
+      var calls = callIndex.where((call) => call.link == appState.link).first.calls;
+      randomCall = flattenAnimatedCallList(calls);
+    }
+    //  Filter out calls labeled EXPERT or noDisplay
+    randomCall = randomCall.where((call) =>
+        call.difficulty != Difficulty.EXPERT && !call.noDisplay).toList();
     final randomAnim = randomCall[Random().nextInt(randomCall.length)];
 
     titleModel.title = randomAnim.title;

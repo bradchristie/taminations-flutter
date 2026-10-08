@@ -25,13 +25,9 @@ import '../a1/cross_trail_thru.dart' as a1;
 import '../a1/linear_cycle.dart' as a1;
 import '../a1/lock_it.dart' as a1;
 import '../a1/mix.dart' as a1;
-import '../a1/pair_off.dart' as a1;
 import '../a1/pass_in.dart' as a1;
-import '../a1/pass_the_sea.dart' as a1;
 import '../a1/quarter_in.dart' as a1;
-import '../a1/quarter_thru.dart' as a1;
 import '../a1/right_roll_to_a_wave.dart' as a1;
-import '../a1/scoot_and_dodge.dart' as a1;
 import '../a1/square_chain_thru.dart' as a1;
 import '../a1/swap_around.dart' as a1;
 import '../a1/turn_and_deal.dart' as a1;
@@ -246,23 +242,23 @@ import '../c3b/bingo.dart' as c3b;
       paths:[
           Stand.changeBeats(2).changehands(Hands.RIGHT) +
           ExtendRight.changeBeats(3).changehands(Hands.RIGHT) +
-          CounterRotateRight_3_m1.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
-          CounterRotateRight_3_m1.changeBeats(3).changehands(Hands.RIGHT).skew(2.0,1.0),
+          CounterRotateRight(3,-1).changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
+          CounterRotateRight(3,-1).changeBeats(3).changehands(Hands.RIGHT).skew(2.0,1.0),
 
           Stand.changeBeats(2).changehands(Hands.LEFT) +
           Forward.changeBeats(3).changehands(Hands.LEFT) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.BOTH).skew(0.0,1.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.BOTH).skew(1.0,1.0),
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.BOTH).skew(0.0,1.0) +
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.BOTH).skew(1.0,1.0),
 
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,2.5) +
           BelleWheel.scale(0.5,-0.5).skew(1.0,-0.5) +
-          CounterRotateRight_1_2.changeBeats(3).changehands(Hands.BOTH) +
-          CounterRotateRight_1_2.changeBeats(3).changehands(Hands.BOTH),
+          CounterRotateRight(1,2).changeBeats(3).changehands(Hands.BOTH) +
+          CounterRotateRight(1,2).changeBeats(3).changehands(Hands.BOTH),
 
           ExtendLeft.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,3.5) +
           BeauWheel.scale(0.5,-0.5).skew(1.0,-0.5) +
-          CounterRotateRight_0_3.changeBeats(3).changehands(Hands.LEFT) +
-          CounterRotateRight_0_3.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0)
+          CounterRotateRight(0,3).changeBeats(3).changehands(Hands.LEFT) +
+          CounterRotateRight(0,3).changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0)
       ]),
 
     AnimatedCall('As Couples Follow Your Neighbor',
@@ -386,6 +382,19 @@ import '../c3b/bingo.dart' as c3b;
           BelleWheel.scale(1.0,-1.0).skew(0.0,1.5)
       ]),
 
+    AnimatedCall('As Couples Pair Off',
+        formation:Formation('Normal Lines'),
+        group:'As Couples (with calls through Plus)',
+        paths:[
+          BackHingeRight,
+
+          HingeLeft,
+
+          HingeRight,
+
+          BackHingeLeft
+        ]),
+
     AnimatedCall('As Couples Pass the Ocean',
       formation:Formation('Normal Lines'),
       group:'As Couples (with calls through Plus)',
@@ -402,6 +411,24 @@ import '../c3b/bingo.dart' as c3b;
           ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
           LeadLeft.changeBeats(4).changehands(Hands.LEFT).scale(1.5,1.5)
       ]),
+
+    AnimatedCall('As Couples Pass the Sea',
+        formation:Formation('Normal Lines'),
+        group:'As Couples (with calls through Plus)',
+        taminator: 'Not in Plus 2026',
+        paths:[
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+              LeadRight.changeBeats(4).scale(1.5,3.5),
+
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+              LeadRight.changeBeats(4).scale(0.5,2.5),
+
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,0.5) +
+              LeadLeft.changeBeats(4).scale(2.5,0.5),
+
+          ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,1.5) +
+              LeadLeft.changeBeats(4).scale(3.5,1.5)
+        ]),
 
     AnimatedCall('As Couples Peel Off',
       formation:Formation('Two-Faced Lines RH'),
@@ -458,23 +485,23 @@ import '../c3b/bingo.dart' as c3b;
       paths:[
           ExtendRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(2.0,3.5) +
           BeauWheel.scale(0.5,0.5).skew(1.0,0.5) +
-          CounterRotateLeft_0_m3.changeBeats(3).changehands(Hands.RIGHT) +
-          CounterRotateLeft_0_m3.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0),
+          CounterRotateLeft(0,-3).changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateLeft(0,-3).changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0),
 
           ExtendRight.changeBeats(2).changehands(Hands.GRIPLEFT).scale(2.0,2.5) +
           BelleWheel.scale(0.5,0.5).skew(1.0,0.5) +
-          CounterRotateLeft_1_m2.changeBeats(3).changehands(Hands.BOTH) +
-          CounterRotateLeft_1_m2.changeBeats(3).changehands(Hands.BOTH),
+          CounterRotateLeft(1,-2).changeBeats(3).changehands(Hands.BOTH) +
+          CounterRotateLeft(1,-2).changeBeats(3).changehands(Hands.BOTH),
 
           Stand.changeBeats(2).changehands(Hands.RIGHT) +
           Forward.changeBeats(3).changehands(Hands.RIGHT) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.BOTH).skew(0.0,-1.0) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.BOTH).skew(1.0,-1.0),
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.BOTH).skew(0.0,-1.0) +
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.BOTH).skew(1.0,-1.0),
 
           Stand.changeBeats(2).changehands(Hands.LEFT) +
           ExtendLeft.changeBeats(3).changehands(Hands.LEFT) +
-          CounterRotateLeft_3_1.changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
-          CounterRotateLeft_3_1.changeBeats(3).changehands(Hands.LEFT).skew(2.0,-1.0)
+          CounterRotateLeft(3,1).changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
+          CounterRotateLeft(3,1).changeBeats(3).changehands(Hands.LEFT).skew(2.0,-1.0)
       ]),
 
     AnimatedCall('As Couples Right and Left Thru',
@@ -753,34 +780,70 @@ import '../c3b/bingo.dart' as c3b;
       tam.title == 'As Couples Lockit').first.xref(title: 'As Couples Lockit').xref(group: 'As Couples (with A-1 calls)'),
     a1.Mix.where((tam) =>
       tam.title == 'As Couples Mix').first.xref(title: 'As Couples Mix').xref(group: 'As Couples (with A-1 calls)'),
-    a1.PairOff.where((tam) =>
-      tam.title == 'As Couples Pair Off').first.xref(title: 'As Couples Pair Off').xref(group: 'As Couples (with A-1 calls)'),
     a1.PassIn.where((tam) =>
       tam.title == 'As Couples Pass In').first.xref(title: 'As Couples Pass In').xref(group: 'As Couples (with A-1 calls)'),
     a1.PassIn.where((tam) =>
       tam.title == 'As Couples Pass Out').first.xref(title: 'As Couples Pass Out').xref(group: 'As Couples (with A-1 calls)'),
-    a1.PassTheSea.where((tam) =>
-      tam.title == 'As Couples Pass the Sea').first.xref(title: 'As Couples Pass the Sea').xref(group: 'As Couples (with A-1 calls)'),
     a1.QuarterIn.where((tam) =>
       tam.title == 'As Couples Quarter In').first.xref(title: 'As Couples Quarter In').xref(group: 'As Couples (with A-1 calls)'),
     a1.QuarterIn.where((tam) =>
       tam.title == 'As Couples Quarter Out').first.xref(title: 'As Couples Quarter Out').xref(group: 'As Couples (with A-1 calls)'),
-    a1.QuarterThru.where((tam) =>
-      tam.title == 'As Couples Quarter Thru').first.xref(title: 'As Couples Quarter Thru').xref(group: 'As Couples (with A-1 calls)'),
+
+    AnimatedCall('As Couples Quarter Thru',
+        formation:Formation('Two-Faced Lines RH'),
+        group:' ',parts:'3',
+        paths:[
+          HingeRight.changeBeats(3).scale(1.5,3.0) +
+              SwingLeft.changeBeats(4).scale(0.5,0.5),
+
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0) +
+              SwingLeft.changeBeats(4).scale(1.5,1.5),
+
+          HingeRight.changeBeats(3).changehands(Hands.BOTH).scale(0.5,1.0),
+
+          HingeRight.changeBeats(3).scale(1.5,3.0)
+        ]),
+
     a1.SwapAround.where((tam) =>
       tam.title == 'As Couples Reverse Swap Around').first.xref(title: 'As Couples Reverse Swap Around').xref(group: 'As Couples (with A-1 calls)'),
     a1.RightRollToAWave.where((tam) =>
       tam.title == 'As Couples Right Roll to a Wave' && tam.from == 'Lines Facing Out').first.xref(title: 'As Couples Right Roll to a Wave (from lines facing out)').xref(group: 'As Couples (with A-1 calls)'),
     a1.RightRollToAWave.where((tam) =>
       tam.title == 'As Couples Right Roll to a Wave' && tam.from == 'Two-Faced Lines').first.xref(title: 'As Couples Right Roll to a Wave (from two-faced lines)').xref(group: 'As Couples (with A-1 calls)'),
-    a1.ScootAndDodge.where((tam) =>
-      tam.title == 'As Couples Scoot and Dodge').first.xref(title: 'As Couples Scoot and Dodge').xref(group: 'As Couples (with A-1 calls)'),
+    AnimatedCall('As Couples Scoot and Dodge',
+        formation:Formation('Two-Faced Lines RH'),
+        from:'Right-Hand Two-Faced Lines',group:' ',
+        paths:[
+          ExtendRight.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5) +
+              SwingRight.scale(1.5,1.5) +
+              ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,1.5),
+
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5) +
+              SwingRight.scale(0.5,0.5) +
+              ExtendLeft.changeBeats(2).changehands(Hands.LEFT).scale(2.0,0.5),
+
+          DodgeRight.changeBeats(5).changehands(Hands.LEFT).scale(1.0,2.0),
+
+          DodgeRight.changeBeats(5).changehands(Hands.RIGHT).scale(1.0,2.0)
+        ]),
     a1.SquareChainThru.where((tam) =>
       tam.title == 'As Couples Square Chain Thru').first.xref(title: 'As Couples Square Chain Thru').xref(group: 'As Couples (with A-1 calls)'),
     a1.SwapAround.where((tam) =>
       tam.title == 'As Couples Swap Around').first.xref(title: 'As Couples Swap Around').xref(group: 'As Couples (with A-1 calls)'),
-    a1.QuarterThru.where((tam) =>
-      tam.title == 'As Couples 3/4 Thru').first.xref(title: 'As Couples 3/4 Thru').xref(group: 'As Couples (with A-1 calls)'),
+    AnimatedCall('As Couples 3/4 Thru',
+        formation:Formation('Two-Faced Lines RH'),
+        from:'Two-Faced Lines',group:' ',parts:'9',
+        paths:[
+          CastRight.changeBeats(9).scale(1.5,3.0),
+
+          CastRight.changeBeats(9).changehands(Hands.BOTH).scale(0.5,1.0),
+
+          CastRight.changeBeats(9).changehands(Hands.BOTH).scale(0.5,1.0) +
+              SwingLeft.changeBeats(4).scale(1.5,1.5),
+
+          CastRight.changeBeats(9).scale(1.5,3.0) +
+              SwingLeft.changeBeats(4).scale(0.5,0.5)
+        ]),
     a1.TurnAndDeal.where((tam) =>
       tam.title == 'As Couples Turn and Deal' && tam.from == 'Right-Hand Tidal Line').first.xref(title: 'As Couples Turn and Deal (from right-hand tidal line)').xref(group: 'As Couples (with A-1 calls)'),
     a1.TurnAndDeal.where((tam) =>
@@ -835,8 +898,7 @@ import '../c3b/bingo.dart' as c3b;
       tam.title == 'As Couples Cross Extend').first.xref(title: 'As Couples Cross Extend').xref(group: 'As Couples (C-1)'),
     c1.CrossRoll.where((tam) =>
       tam.title == 'As Couples Cross Roll').first.xref(title: 'As Couples Cross Roll').xref(group: 'As Couples (C-1)'),
-    c1.CrossYourNeighbor.where((tam) =>
-      tam.title == 'As Couples Cross Your Neighbor').first.xref(title: 'As Couples Cross Your Neighbor').xref(group: 'As Couples (C-1)'),
+    c1.CrossYourNeighbor.findCall('As Couples Cross Your Neighbor') .xref(title: 'As Couples Cross Your Neighbor').xref(group: 'As Couples (C-1)'),
     c1.DixieDiamond.where((tam) =>
       tam.title == 'As Couples Dixie Diamond').first.xref(title: 'As Couples Dixie Diamond').xref(group: 'As Couples (C-1)'),
     c1.FollowThru.where((tam) =>
@@ -867,8 +929,7 @@ import '../c3b/bingo.dart' as c3b;
       tam.title == 'As Couples Zing').first.xref(title: 'As Couples Zing').xref(group: 'As Couples (C-1)'),
     c2.Bounce.where((tam) =>
       tam.title == 'As Couples Bounce the Ends').first.xref(title: 'As Couples Bounce the Ends').xref(group: 'As Couples (C-2)'),
-    c2.CrissCrossYourNeighbor.where((tam) =>
-      tam.title == 'As Couples Criss Cross Your Neighbor').first.xref(title: 'As Couples Criss Cross Your Neighbor').xref(group: 'As Couples (C-2)'),
+    c2.CrissCrossYourNeighbor.findCall('As Couples Criss Cross Your Neighbor').xref(title: 'As Couples Criss Cross Your Neighbor').xref(group: 'As Couples (C-2)'),
     c2.CrossBack.where((tam) =>
       tam.title == 'As Couples Cross Back').first.xref(title: 'As Couples Cross Back').xref(group: 'As Couples (C-2)'),
     c2.PeelToADiamond.where((tam) =>

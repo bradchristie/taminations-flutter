@@ -29,11 +29,11 @@ import '../../moves.dart';
       group:' ',parts:'3;2',
       paths:[
           DodgeRight.skew(1.0,0.0) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0),
 
           RunRight.skew(1.0,0.0) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
           QuarterRight.skew(0.0,1.0)
       ]),
 

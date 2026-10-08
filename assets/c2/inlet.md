@@ -9,7 +9,7 @@ left-end dancers facing out: The Lead End and adjacent dancer (Outer-Actives)
 as the Trailing End and the adjacent dancer (Inner-Actives)
 [Split](../c1/recycle.md) or
 [Facing Couples Recycle](../a2/recycle.md), 
-adjusting to end in a Center Wave. Ends in a 1/4 tag formation. 
+adjusting to end in a Center Wave. Ends in a 1/4 Tag formation. 
 (Note: Applicable Parallel 3-and-1 Lines are those in which both Ends
 are Beaus and in which the Out-Facing Beau and the adjacent dancer are in a
 Mini-Wave.)
@@ -24,4 +24,4 @@ Four, they [Split](../c1/recycle.md) or
 considered inappropriate to call Outlet from a Left-Hand 1/4 Tag formation
 where the Outsides are both facing in.)
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

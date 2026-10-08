@@ -115,11 +115,11 @@ import '../../moves.dart';
           DodgeLeft +
           SwingLeft,
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT) +
           LeadRight +
           ExtendLeft.changeBeats(4.5).scale(2.0,1.0),
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT) +
           Forward.changeBeats(1.5) +
           RunRight.scale(1.0,2.0),
 

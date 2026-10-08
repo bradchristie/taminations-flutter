@@ -118,13 +118,13 @@ import '../c2/cross_the_k.dart' as c2;
       formation:Formation('Two-Faced Lines RH Compact'),
       group:'(From lines) Once Removed',
       paths:[
-          CounterRotateRight_2_0.scale(1.25,1.0),
+          CounterRotateRight(2,0).scale(1.25,1.0),
 
-          CounterRotateRight_2_0.scale(1.25,1.0),
+          CounterRotateRight(2,0).scale(1.25,1.0),
 
-          CounterRotateRight_0_m2.scale(1.0,2.0).skew(-0.5,0.0),
+          CounterRotateRight(0,-2).scale(1.0,2.0).skew(-0.5,0.0),
 
-          CounterRotateRight_0_m2.scale(1.0,2.0).skew(-0.5,0.0)
+          CounterRotateRight(0,-2).scale(1.0,2.0).skew(-0.5,0.0)
       ]),
 
     AnimatedCall('Once Removed Partner Trade',

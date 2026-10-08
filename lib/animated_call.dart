@@ -26,7 +26,40 @@ import 'formation.dart';
 import 'level_data.dart';
 import 'math/path.dart';
 
-class AnimatedCall {
+List<AnimatedCall> flattenAnimatedCallList(List<AnimatedCallItem> list) {
+  var retval = <AnimatedCall>[];
+  for (var item in list) {
+    switch (item) {
+      case AnimatedCall() :
+        retval.add(item);
+      case AnimatedCallGroup():
+        retval.addAll(flattenAnimatedCallList(item.calls));
+      case AnimatedCallHeader():
+        retval.addAll(flattenAnimatedCallList(item.calls));
+    }
+  }
+  return retval;
+}
+
+
+sealed class AnimatedCallItem {
+  bool noDisplay;
+  AnimatedCallItem({this.noDisplay=false});
+}
+
+class AnimatedCallGroup extends AnimatedCallItem {
+  String group;
+  List<AnimatedCallItem> calls;
+  AnimatedCallGroup(this.group,{ required this.calls });
+}
+
+class AnimatedCallHeader extends AnimatedCallItem {
+  String title;
+  List<AnimatedCallItem> calls;
+  AnimatedCallHeader(this.title,{ required this.calls });
+}
+
+class AnimatedCall extends AnimatedCallItem {
 
   String title;
   String group;
@@ -37,7 +70,6 @@ class AnimatedCall {
   bool isPerimeter;
   bool isGenderSpecific;
   int difficulty;
-  bool noDisplay;
   bool notForSequencer;
   String actives;
   LevelData level;
@@ -57,20 +89,20 @@ class AnimatedCall {
         this.fractions = '',
         this.difficulty = 0,
         this.actives = '',
-        this.level = LevelData.B1,
+        this.level = LevelData.MS,
         this.isPerimeter = false,
         this.isExact = false,
         this.isAsymmetric = false,
         this.isGenderSpecific = false,
         this.notForSequencer = false,
-        this.noDisplay = false,
+        noDisplay = false,
         this.numbers = const ['1', '5', '2', '6', '3', '7', '4', '8',
           ' ',' ',' ',' ',' ',' ',' ',' '],
         this.coupleNumbers = const ['1', '3', '1', '3', '2', '4', '2', '4',
           ' ',' ',' ',' ',' ',' ',' ',' '],
         this.taminator = ''
       })
-      : formation = formation.copy(), paths = paths.clone() {
+      : formation = formation.copy(), paths = paths.clone(), super(noDisplay:noDisplay) {
     if (formation.asymmetric)
       isAsymmetric = true;
     if (paths.length == formation.dancers.length) {
@@ -92,18 +124,19 @@ class AnimatedCall {
       group: group ?? this.group,
       parts: parts,
       fractions: fractions,
-      difficulty: difficulty ?? this.difficulty,
+      difficulty: 0,
       actives: actives,
       isPerimeter: isPerimeter,
       isExact: isExact,
       isAsymmetric: isAsymmetric,
       isGenderSpecific: isGenderSpecific,
-      notForSequencer: notForSequencer ?? this.notForSequencer,
+      notForSequencer: true,
       noDisplay: noDisplay,
       numbers: numbers,
       coupleNumbers: coupleNumbers
     );
   }
+
 
   XmlElement toXml() => XmlElement('tam'.xml,<XmlAttribute>[
     XmlAttribute('title'.xml, title),
@@ -141,5 +174,14 @@ class AnimatedCall {
     if (taminator.isNotEmpty)
       XmlElement('taminator'.xml,[],[XmlText(taminator)])
   ]);
+
+}
+
+extension AnimatedCallList on List<AnimatedCallItem> {
+
+  AnimatedCall findCall(String title) =>
+    flattenAnimatedCallList(this)
+        .where((call) => call.title == title).first;
+
 
 }

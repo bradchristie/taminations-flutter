@@ -29,23 +29,23 @@ final List<AnimatedCall> FirstLastHalfConcept = [
       group: ' ',
       parts: '4;2',
       paths: [
-        CounterRotateRight_5_m1.changeBeats(4) +
-            CounterRotateRight_2_0.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0) +
-            CounterRotateRight_4_2 +
+        CounterRotateRight(5,-1).changeBeats(4) +
+            CounterRotateRight(2,0).changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0) +
+            CounterRotateRight(4,2) +
             QuarterRight.changeBeats(2).skew(0, 1),
 
-        CounterRotateLeft_m1_3.changeBeats(4) +
-            CounterRotateRight_0_m2.changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0) +
-            CounterRotateRight_m2_m4 +
+        CounterRotateLeft(-1,3).changeBeats(4) +
+            CounterRotateRight(0,-2).changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+            CounterRotateRight(-2,-4) +
             QuarterRight.changeBeats(2).skew(0, 1),
 
-        CounterRotateLeft_3_m1.changeBeats(4) +
-            CounterRotateRight_2_0.changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0) +
+        CounterRotateLeft(3,-1).changeBeats(4) +
+            CounterRotateRight(2,0).changeBeats(2).changehands(Hands.RIGHT).skew(1.0,0.0) +
             HingeRight.changeBeats(2).scale(0.5, 1) +
             LeadRight.changeBeats(2).scale(1.5, 1.5),
 
-        CounterRotateRight_1_m5.changeBeats(4) +
-            CounterRotateRight_0_m2.changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+        CounterRotateRight(1,-5).changeBeats(4) +
+            CounterRotateRight(0,-2).changeBeats(2).changehands(Hands.RIGHT).skew(-1.0,0.0) +
             HingeRight.changeBeats(2).scale(0.5, 1) +
             HingeLeft.changeBeats(2).scale(.5, .5)
       ]),
@@ -62,23 +62,23 @@ final List<AnimatedCall> FirstLastHalfConcept = [
       paths: [
         RunRight.skew(-2, -.5) +
             LeadRight.scale(1, .5) +
-            CounterRotateRight_2_0 +
-            CounterRotateLeft_2_0 +
-            CounterRotateLeft_2_0,
+            CounterRotateRight(2,0) +
+            CounterRotateLeft(2,0) +
+            CounterRotateLeft(2,0),
 
         DodgeRight.scale(1, .25) +
             QuarterLeft.skew(-1, .5) +
-            CounterRotateRight_0_m2,
+            CounterRotateRight(0,-2),
 
         RunRight.skew(-2, -.5) +
             LeadRight.scale(1, .5) +
-            CounterRotateRight_2_0,
+            CounterRotateRight(2,0),
 
         DodgeRight.scale(1, .25) +
             QuarterLeft.skew(-1, .5) +
-            CounterRotateRight_0_m2 +
-            CounterRotateLeft_0_2 +
-            CounterRotateLeft_0_2
+            CounterRotateRight(0,-2) +
+            CounterRotateLeft(0,2) +
+            CounterRotateLeft(0,2)
 
       ])
 

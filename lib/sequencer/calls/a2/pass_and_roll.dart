@@ -1,21 +1,22 @@
 /*
- * *     Copyright 2024 Brad Christie
- *
- *     This file is part of Taminations.
- *
- *     Taminations is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU Affero General Public License as published
- *     by the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     Taminations is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU Affero General Public License for more details.
- *
- *     You should have received a copy of the GNU Affero General Public License
- *     along with Taminations.  If not, see <http://www.gnu.org/licenses/>.
- */
+
+  Taminations Square Dance Animations
+  Copyright (C) 2026 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
 
 import '../common.dart';
 
@@ -26,12 +27,13 @@ class PassAndRoll extends Action with CallWithParts, IsLeft {
   final bool isNeighbor;
   final String dir;
   final bool isCross;
+  final bool isCriss;
   @override var help = '''Pass and Roll is a 4-part call:
   1.  Pass Thru
   2.  Centers Turn Thru, Others Turn Back
   3.  Pass Thru
   4.  Centers Pass Thru, all Right Roll to a Wave
-Variations: (Left) Pass and Roll (Your (Cross) Neighbor)''';
+Variations: (Left) Pass and Roll (Your ((Criss) Cross) Neighbor)''';
   @override String get helplink {
     if (isCross)
       return 'c1/cross_your_neighbor';
@@ -43,9 +45,30 @@ Variations: (Left) Pass and Roll (Your (Cross) Neighbor)''';
   PassAndRoll(super.name) :
         dir = name.startsWith('Left') ? 'Left' : 'Right',
         isNeighbor = name.endsWith('Neighbor'),
-        isCross = name.contains('Cross') {
+        isCross = name.contains('Cross'),
+        isCriss = name.contains('Criss') {
     if (isCross)
       level = LevelData.C1;
+    if (isCriss)
+      level = LevelData.C2;
+  }
+
+  @override
+  void performCall(CallContext ctx) {
+    if (ctx.dancers.length == 8 && ctx.isOnAxis()) {
+      var d1 = ctx.dancers.where((d) =>
+          d.location.x.isGreaterThan(0) || d.location.y.isGreaterThan(0)).toList();
+      var d2 = ctx.dancers - d1;
+      ctx.subContext(d1, (ctx2) {
+        ctx2.dancers.center();
+        performCall(ctx2);
+      });
+      ctx.subContext(d2, (ctx2) {
+        ctx2.dancers.center();
+        performCall(ctx2);
+      });
+    } else
+      super.performCall(ctx);
   }
 
   @override
@@ -73,6 +96,8 @@ Variations: (Left) Pass and Roll (Your (Cross) Neighbor)''';
           'While Outer $n Face $dir Face $dir Face $dir');
     else
       ctx.applyCalls('Center $n $left Pass Thru','$dir Roll to a Wave');
+    if (isCriss)
+      ctx.applyCalls('Spread');
   }
 
 }

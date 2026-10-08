@@ -32,32 +32,32 @@ final List<AnimatedCall> ReverseEcho = [
             HingeLeft.scale(1.0,0.5) +
             SwingLeft +
 
-            CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0) +
-            CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-1.0) +
-            CounterRotateRight_1_m5.changeBeats(9),
+            CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+            CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-1.0) +
+            CounterRotateRight(1,-5).changeBeats(9),
 
         SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
             LeadRight.changeBeats(4.5).scale(3.0,1.5) +
-            CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0) +
-            CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,1.0) +
-            CounterRotateLeft_3_m1.changeBeats(3) +
-            CounterRotateLeft_3_m1.changeBeats(3) +
-            CounterRotateLeft_3_m1.changeBeats(3),
+            CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(1.0,0.0) +
+            CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,1.0) +
+            CounterRotateLeft(3,-1).changeBeats(3) +
+            CounterRotateLeft(3,-1).changeBeats(3) +
+            CounterRotateLeft(3,-1).changeBeats(3),
 
         SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
             LeadRight.changeBeats(4.5).scale(3.0,1.5) +
-            CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(-1.0,0.0) +
-            CounterRotateRight_0_m2.changehands(Hands.RIGHT).skew(0.0,-1.0) +
-            CounterRotateLeft_m1_3.changeBeats(3) +
-            CounterRotateLeft_m1_3.changeBeats(3) +
-            CounterRotateLeft_m1_3.changeBeats(3),
+            CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+            CounterRotateRight(0,-2).changehands(Hands.RIGHT).skew(0.0,-1.0) +
+            CounterRotateLeft(-1,3).changeBeats(3) +
+            CounterRotateLeft(-1,3).changeBeats(3) +
+            CounterRotateLeft(-1,3).changeBeats(3),
 
         SwingRight.changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
             HingeLeft.scale(1.0,0.5) +
             SwingLeft +
-            CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(1.0,0.0) +
-            CounterRotateRight_2_0.changehands(Hands.RIGHT).skew(0.0,1.0) +
-            CounterRotateRight_5_m1.changeBeats(9),
+            CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(1.0,0.0) +
+            CounterRotateRight(2,0).changehands(Hands.RIGHT).skew(0.0,1.0) +
+            CounterRotateRight(5,-1).changeBeats(9),
 
 ]),
 

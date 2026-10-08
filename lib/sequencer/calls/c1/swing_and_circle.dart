@@ -69,7 +69,8 @@ class AnythingAndCircle extends Action {
     ctx.canDoYourPart = false;
     for (var i=0; i<count; i++) {
       try {
-        ctx.subContext(ctx.centerWaveOf4()!,
+        ctx.subContext(ctx.centerWaveOf4()
+                ?? thrower(CallError('No center wave of 4')),
             (ctx2) => ctx2.applyCalls(anyCall)
         );
         ctx.extendPaths();

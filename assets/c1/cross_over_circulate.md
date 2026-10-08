@@ -6,10 +6,10 @@ which allows additional starting formations.
 
 In one motion, Circulate and Half Sashay (do your part).
 During the call, if two dancers would occupy the same space and
-they are facing the same direction, the belle goes in front of the beau;
+they are facing the same direction, the Belle goes in front of the Beau;
 if they are facing each other, they pass right shoulders.
 
 From Facing Couples (for example, Facing Lines or an Eight Chain Thru formation),
 Crossover Circulate is danced as a Cross Trail Thru and cannot be fractionalized.
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

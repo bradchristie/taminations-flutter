@@ -47,37 +47,31 @@ import '../../moves.dart';
       ]),
 
     AnimatedCall('Explode the Wave',
-      formation:Formation('Ocean Waves RH BGGB'),
+      formation:Formation('Ocean Waves RH BGGB Compact'),
       from:'Right-Hand Waves',difficulty: 1,
       paths:[
-          LeadRight.changeBeats(3).scale(1.5,2.0) +
-          ExtendRight.changeBeats(3).scale(3.0,0.5),
-
-          LeadLeft.changeBeats(3).scale(0.5,2.0) +
-          ExtendRight.changeBeats(3).scale(1.0,0.5),
-
-          LeadLeft.changeBeats(3).scale(0.5,2.0) +
-          ExtendRight.changeBeats(3).scale(1.0,0.5),
-
-          LeadRight.changeBeats(3).scale(1.5,2.0) +
-          ExtendRight.changeBeats(3).scale(3.0,0.5)
+          LeadRight.changeBeats(3).scale(1,2) +
+              ExtendRight.changeBeats(3).scale(2.5,0.5),
+          LeadLeft.changeBeats(3).scale(1,2) +
+              ExtendRight.changeBeats(3).scale(0.5,0.5),
+          QuarterLeft.changeBeats(3).skew(0,2) +
+              ExtendRight.changeBeats(3).scale(0.5,0.5),
+          LeadRight.changeBeats(3).scale(2,2) +
+              ExtendRight.changeBeats(3).scale(2.5,0.5)
       ]),
 
     AnimatedCall('Explode the Wave',
-      formation:Formation('Ocean Waves LH GBBG'),
+      formation:Formation('Ocean Waves LH GBBG Compact'),
       from:'Left-Hand Waves',difficulty: 1,
       paths:[
-          LeadLeft.changeBeats(3).scale(0.5,2.0) +
-          ExtendRight.changeBeats(3).scale(3.0,0.5),
-
-          LeadRight.changeBeats(3).scale(1.5,2.0) +
-          ExtendRight.changeBeats(3).scale(1.0,0.5),
-
-          LeadRight.changeBeats(3).scale(1.5,2.0) +
-          ExtendRight.changeBeats(3).scale(1.0,0.5),
-
-          LeadLeft.changeBeats(3).scale(0.5,2.0) +
-          ExtendRight.changeBeats(3).scale(3.0,0.5)
+          LeadLeft.changeBeats(3).scale(1,2) +
+              ExtendRight.changeBeats(3).scale(2.5,0.5),
+          LeadRight.changeBeats(3).scale(1,2) +
+              ExtendRight.changeBeats(3).scale(0.5,0.5),
+          LeadRight.changeBeats(3).scale(2,2) +
+              ExtendRight.changeBeats(3).scale(0.5,0.5),
+          QuarterLeft.changeBeats(3).skew(0,2.0) +
+              ExtendRight.changeBeats(3).scale(2.5,0.5)
       ]),
 
     AnimatedCall('Explode the Wave',

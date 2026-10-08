@@ -60,10 +60,16 @@ class TamState extends fm.ChangeNotifier {
   String? get level => _level;
   String? _link;
   String? get link => _link;
+
   int _animnum;
   int get animnum => _animnum;
   String? _animname;
   String? get animname => _animname;
+  String? _animgroup;
+  String? get animgroup => _animgroup;
+  String? _animfrom;
+  String? get animfrom => _animfrom;
+
   MainPage? _mainPage;
   MainPage? get mainPage => _mainPage;
   DetailPage? _detailPage;
@@ -90,6 +96,8 @@ class TamState extends fm.ChangeNotifier {
     link,
     animnum = -1,
     animname,
+    animgroup,
+    animfrom,
     mainPage = MainPage.LEVELS,
     detailPage = DetailPage.NONE,
     this.embed = false,
@@ -103,7 +111,8 @@ class TamState extends fm.ChangeNotifier {
   }) : _level=level, _link=link, _animnum=animnum, _animname=animname,
         _mainPage=mainPage, _detailPage=detailPage;
 
-  void change({String? level, String? link, int? animnum, String? animname,
+  void change({String? level, String? link,
+    int? animnum, String? animname, String? animgroup, String? animfrom,
     MainPage? mainPage, DetailPage? detailPage,
     bool? embed, bool? play, bool? loop, bool? grid, bool? definition, String? axes,
     String? formation, String? calls, String? helplink}) {
@@ -119,8 +128,21 @@ class TamState extends fm.ChangeNotifier {
     }
     animname = params['animname'] ?? animname;
     if (!(animname ?? '').isBlank) {
+      if (animname != _animname) {
+        _animgroup = null;
+        _animfrom = null;
+      }
       _animname = animname;
     }
+    animgroup = params['animgroup'] ?? animgroup;
+    if (!(animgroup ?? '').isBlank) {
+      _animgroup = animgroup;
+    }
+    animfrom = params['animfrom'] ?? animfrom;
+    if (!(animfrom ?? '').isBlank) {
+      _animfrom = animfrom;
+    }
+
     _mainPage = mainPage ?? _mainPage;
     _detailPage = detailPage ?? _detailPage;
     this.embed = embed ?? this.embed;
@@ -142,6 +164,8 @@ class TamState extends fm.ChangeNotifier {
     if (level != null && level!.isNotEmpty) 'level=$level',
     if (animnum >= 0) 'animnum=$animnum',
     if ((animname ?? '').isNotBlank) 'animname=$animname',
+    if ((animgroup ?? '').isNotBlank) 'animgroup=$animgroup',
+    if ((animfrom ?? '').isNotBlank) 'animfrom=$animfrom',
     if (link != null && link!.isNotEmpty) 'link=$link',
     if (mainPage != null) 'main=${mainPage!.name}',
     if (detailPage != null && detailPage!=DetailPage.NONE)

@@ -154,13 +154,13 @@ import '../../moves.dart';
       formation:Formation('Column RH GBGB'),
       group:' ',
       paths:[
-          CounterRotateLeft_0_2 +
-          CounterRotateLeft_0_2 +
-          CounterRotateLeft_0_2,
+          CounterRotateLeft(0,2) +
+          CounterRotateLeft(0,2) +
+          CounterRotateLeft(0,2),
 
-          CounterRotateLeft_2_0 +
-          CounterRotateLeft_2_0 +
-          CounterRotateLeft_2_0,
+          CounterRotateLeft(2,0) +
+          CounterRotateLeft(2,0) +
+          CounterRotateLeft(2,0),
 
           Forward +
           LeadRight.changeBeats(3).scale(1.0,2.0) +

@@ -48,13 +48,13 @@ import '../c3a/mini_chase.dart' as c3a;
     Same as Counter Rotate
     ''',
       paths:[
-          CounterRotateLeft_4_m2.changeBeats(5).changehands(Hands.LEFT),
+          CounterRotateLeft(4,-2).changeBeats(5).changehands(Hands.LEFT),
 
-          CounterRotateRight_0_m2.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(5).changehands(Hands.RIGHT),
+          CounterRotateRight(2,0).changeBeats(5).changehands(Hands.RIGHT),
 
-          CounterRotateLeft_m2_4.changeBeats(5).changehands(Hands.LEFT)
+          CounterRotateLeft(-2,4).changeBeats(5).changehands(Hands.LEFT)
       ]),
 
     AnimatedCall('Concentric Box Transfer',
@@ -1190,8 +1190,7 @@ import '../c3a/mini_chase.dart' as c3a;
       tam.title == 'Concentric Bounce the Boys').first.xref(title: 'Concentric Bounce the Boys').xref(group: 'Concentric (C-2)'),
     c2.CircleToAWave.where((tam) =>
       tam.title == 'Concentric Circle to a Wave').first.xref(title: 'Concentric Circle to a Wave').xref(group: 'Concentric (C-2)'),
-    c2.CrissCrossYourNeighbor.where((tam) =>
-      tam.title == 'Concentric Criss Cross Your Neighbor').first.xref(title: 'Concentric Criss Cross Your Neighbor').xref(group: 'Concentric (C-2)'),
+    c2.CrissCrossYourNeighbor.findCall('Concentric Criss Cross Your Neighbor').xref(title: 'Concentric Criss Cross Your Neighbor').xref(group: 'Concentric (C-2)'),
     c2.PeelToADiamond.where((tam) =>
       tam.title == 'Concentric Peel to a Diamond').first.xref(title: 'Concentric Peel to a Diamond').xref(group: 'Concentric (C-2)'),
     c2.CrossTheK.where((tam) =>

@@ -22,6 +22,7 @@ import 'package:flutter/gestures.dart' as fg;
 import 'package:flutter/material.dart' as fm;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/animated_call.dart';
 
 import '../sequencer/sequencer_model.dart';
 import '../beat_notifier.dart';
@@ -46,18 +47,16 @@ class AnimationState extends fm.ChangeNotifier {
 void _startModel(fm.BuildContext context, TamState tamState, TitleModel? titleModel) {
   final model = pp.Provider.of<DanceModel>(context,listen:false);
   var callEntry = callIndex.firstWhere((element) => element.link == tamState.link);
-  var tamList = callEntry.calls
+  var tamList = flattenAnimatedCallList(callEntry.calls)
       .where((it) => DebugSwitch.showHiddenAnimations.enabled || !it.noDisplay).toList();
   var tam = tamList[0];
   if (tamState.animnum >= 0 && tamState.animnum < tamList.length)
     tam = tamList[tamState.animnum];
   else if (tamState.animname != null)
     tam = tamList.firstWhere((it) {
-      var fullname = it.title;
-      if (it.group.isEmpty && it.from.isNotBlank)
-        fullname += 'from' + it.from;
-      fullname = fullname.replaceAll('[^a-zA-Z0-9]'.r, '');
-      return fullname == tamState.animname;
+      return it.title == tamState.animname &&
+          isSame(it.group, tamState.animgroup) &&
+          isSame(it.from, tamState.animfrom);
     },orElse: () => tam);
   model.setAnimatedCall(tam, geometryType: Geometry.fromString(Settings.geometry).geometry);
   if (titleModel != null)

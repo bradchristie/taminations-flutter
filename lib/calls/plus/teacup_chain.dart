@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Teacup Chain',
       formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 1,
+        isGenderSpecific: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(-0.75,-1.0) +
           CastRight.scale(0.75,0.75) +
@@ -78,6 +79,7 @@ import '../../moves.dart';
     AnimatedCall('Teacup Chain',
       formation:Formation('Normal Lines'),
       from:'Normal Lines',fractions:'10;8.5;13',difficulty: 3,
+        isGenderSpecific: true,
       paths:[
           Stand.changeBeats(4) +
           CastRight.scale(0.75,0.75) +
@@ -130,6 +132,7 @@ import '../../moves.dart';
     AnimatedCall('All Ladies Center, Teacup Chain',
       formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 2,
+        isGenderSpecific: true,
       paths:[
           DodgeRight.changeBeats(5).scale(0.875,0.875) +
           Stand +
@@ -183,6 +186,7 @@ import '../../moves.dart';
     AnimatedCall('All Ladies Right, Teacup Chain',
       formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 2,
+        isGenderSpecific: true,
       paths:[
           QuarterLeft.changeBeats(2).skew(-0.75,-1.0) +
           CastRight.scale(0.75,0.75) +
@@ -235,6 +239,7 @@ import '../../moves.dart';
           BelleWheel.scale(1.0,0.875)
       ]),
 
+    /*  Not mentioned in the definition, so hold off on these ...
     AnimatedCall('Beer Mug Chain',
       formation:Formation('Static Square'),
       from:'Static Square',fractions:'7;7;10',difficulty: 3,
@@ -350,5 +355,7 @@ import '../../moves.dart';
           QuarterLeft.changeBeats(3).skew(0.75,-0.75) +
           BelleReverseWheel.scale(1.0,0.875)
       ]),
+
+     */
   ];
 

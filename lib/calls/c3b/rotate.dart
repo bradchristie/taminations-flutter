@@ -63,16 +63,16 @@ import '../../moves.dart';
       group:' ',fractions:'1.5',
       paths:[
           QuarterLeft.skew(0.0,-1.0) +
-          CounterRotateLeft_5_1.changeBeats(4).changehands(Hands.LEFT),
+          CounterRotateLeft(5,1).changeBeats(4).changehands(Hands.LEFT),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateLeft_1_5.changeBeats(4).changehands(Hands.LEFT),
+          CounterRotateLeft(1,5).changeBeats(4).changehands(Hands.LEFT),
 
           QuarterLeft.skew(0.0,-1.0) +
-          CounterRotateLeft_3_m1.changeBeats(4).changehands(Hands.BOTH),
+          CounterRotateLeft(3,-1).changeBeats(4).changehands(Hands.BOTH),
 
           QuarterLeft.skew(0.0,1.0) +
-          CounterRotateLeft_m1_3.changeBeats(4).changehands(Hands.BOTH)
+          CounterRotateLeft(-1,3).changeBeats(4).changehands(Hands.BOTH)
       ]),
 
     AnimatedCall('Reverse Single Rotate 1/4',
@@ -80,16 +80,16 @@ import '../../moves.dart';
       group:' ',fractions:'1.5',
       paths:[
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateRight_1_m5.changeBeats(4).changehands(Hands.RIGHT),
+          CounterRotateRight(1,-5).changeBeats(4).changehands(Hands.RIGHT),
 
           QuarterRight.skew(0.0,1.0) +
-          CounterRotateRight_5_m1.changeBeats(4).changehands(Hands.RIGHT),
+          CounterRotateRight(5,-1).changeBeats(4).changehands(Hands.RIGHT),
 
           QuarterRight.skew(0.0,-1.0) +
-          CounterRotateRight_m1_m3.changeBeats(4).changehands(Hands.BOTH),
+          CounterRotateRight(-1,-3).changeBeats(4).changehands(Hands.BOTH),
 
           QuarterRight.skew(0.0,1.0) +
-          CounterRotateRight_3_1.changeBeats(4).changehands(Hands.BOTH)
+          CounterRotateRight(3,1).changeBeats(4).changehands(Hands.BOTH)
       ]),
 
     AnimatedCall('Split Single Rotate 1/4',
@@ -97,16 +97,16 @@ import '../../moves.dart';
       group:' ',fractions:'1.5',
       paths:[
           QuarterLeft +
-          CounterRotateLeft_2_0.changeBeats(2).changehands(Hands.LEFT),
+          CounterRotateLeft(2,0).changeBeats(2).changehands(Hands.LEFT),
 
           QuarterLeft +
-          CounterRotateLeft_0_2.changeBeats(2).changehands(Hands.LEFT),
+          CounterRotateLeft(0,2).changeBeats(2).changehands(Hands.LEFT),
 
           QuarterRight +
-          CounterRotateLeft_0_2.changeBeats(2).changehands(Hands.LEFT),
+          CounterRotateLeft(0,2).changeBeats(2).changehands(Hands.LEFT),
 
           QuarterRight +
-          CounterRotateLeft_2_0.changeBeats(2).changehands(Hands.LEFT)
+          CounterRotateLeft(2,0).changeBeats(2).changehands(Hands.LEFT)
       ]),
   ];
 

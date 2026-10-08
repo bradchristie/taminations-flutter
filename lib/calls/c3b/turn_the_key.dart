@@ -29,19 +29,19 @@ import '../../moves.dart';
       from:'Right-Hand Waves',parts:'3;5',
       paths:[
           SwingRight +
-          CounterRotateLeft_m1_3.changeBeats(5) +
+          CounterRotateLeft(-1,3).changeBeats(5) +
           HingeRight,
 
           SwingRight +
-          CounterRotateRight_5_m1.changeBeats(5) +
+          CounterRotateRight(5,-1).changeBeats(5) +
           HingeRight,
 
           SwingRight +
-          CounterRotateRight_1_m5.changeBeats(5) +
+          CounterRotateRight(1,-5).changeBeats(5) +
           HingeRight,
 
           SwingRight +
-          CounterRotateLeft_3_m1.changeBeats(5) +
+          CounterRotateLeft(3,-1).changeBeats(5) +
           HingeRight
       ]),
 
@@ -50,19 +50,19 @@ import '../../moves.dart';
       from:'Left-Hand Waves',parts:'3;5',
       paths:[
           SwingLeft +
-          CounterRotateRight_3_1.changeBeats(5) +
+          CounterRotateRight(3,1).changeBeats(5) +
           HingeLeft,
 
           SwingLeft +
-          CounterRotateLeft_1_5.changeBeats(5) +
+          CounterRotateLeft(1,5).changeBeats(5) +
           HingeLeft,
 
           SwingLeft +
-          CounterRotateLeft_5_1.changeBeats(5) +
+          CounterRotateLeft(5,1).changeBeats(5) +
           HingeLeft,
 
           SwingLeft +
-          CounterRotateRight_m1_m3.changeBeats(5) +
+          CounterRotateRight(-1,-3).changeBeats(5) +
           HingeLeft
       ]),
 
@@ -81,11 +81,11 @@ import '../../moves.dart';
           LeadRight,
 
           FlipLeft +
-          CounterRotateRight_m1_m3.changeBeats(5) +
+          CounterRotateRight(-1,-3).changeBeats(5) +
           QuarterLeft.skew(-1.0,1.0),
 
           SwingLeft +
-          CounterRotateRight_3_1.changeBeats(5) +
+          CounterRotateRight(3,1).changeBeats(5) +
           HingeLeft,
 
           SwingLeft +
@@ -104,11 +104,11 @@ import '../../moves.dart';
           HingeRight,
 
           SwingRight +
-          CounterRotateRight_5_m1.changeBeats(4) +
+          CounterRotateRight(5,-1).changeBeats(4) +
           HingeRight,
 
           RunRight +
-          CounterRotateRight_1_m5.changeBeats(4) +
+          CounterRotateRight(1,-5).changeBeats(4) +
           LeadRight,
 
           FlipLeft +
@@ -127,11 +127,11 @@ import '../../moves.dart';
           LeadRight,
 
           FlipLeft +
-          CounterRotateLeft_1_5.changeBeats(4) +
+          CounterRotateLeft(1,5).changeBeats(4) +
           QuarterLeft.skew(-1.0,1.0),
 
           SwingLeft +
-          CounterRotateLeft_5_1.changeBeats(4) +
+          CounterRotateLeft(5,1).changeBeats(4) +
           HingeLeft,
 
           SwingLeft +
@@ -145,7 +145,7 @@ import '../../moves.dart';
       from:'3 and 1 Lines #4',parts:'3;5',
       paths:[
           RunRight +
-          CounterRotateLeft_m1_3.changeBeats(5).changehands(Hands.LEFT) +
+          CounterRotateLeft(-1,3).changeBeats(5).changehands(Hands.LEFT) +
           LeadRight,
 
           FlipLeft +
@@ -159,7 +159,7 @@ import '../../moves.dart';
           HingeRight,
 
           SwingRight +
-          CounterRotateLeft_3_m1.changeBeats(5).changehands(Hands.LEFT) +
+          CounterRotateLeft(3,-1).changeBeats(5).changehands(Hands.LEFT) +
           HingeRight
       ]),
 
@@ -168,7 +168,7 @@ import '../../moves.dart';
       from:'3 and 1 Lines #5',parts:'3;5',
       paths:[
           SwingRight +
-          CounterRotateLeft_m1_3.changeBeats(5).changehands(Hands.LEFT) +
+          CounterRotateLeft(-1,3).changeBeats(5).changehands(Hands.LEFT) +
           HingeRight,
 
           SwingRight +
@@ -182,7 +182,7 @@ import '../../moves.dart';
           QuarterLeft.skew(-1.0,1.0),
 
           RunRight +
-          CounterRotateLeft_3_m1.changeBeats(5).changehands(Hands.LEFT) +
+          CounterRotateLeft(3,-1).changeBeats(5).changehands(Hands.LEFT) +
           LeadRight
       ]),
 
@@ -196,11 +196,11 @@ import '../../moves.dart';
           HingeLeft,
 
           SwingLeft +
-          CounterRotateLeft_1_5.changeBeats(4) +
+          CounterRotateLeft(1,5).changeBeats(4) +
           HingeLeft,
 
           FlipLeft +
-          CounterRotateLeft_5_1.changeBeats(4) +
+          CounterRotateLeft(5,1).changeBeats(4) +
           QuarterLeft.skew(-1.0,1.0),
 
           RunRight +
@@ -219,11 +219,11 @@ import '../../moves.dart';
           QuarterLeft.skew(-1.0,1.0),
 
           RunRight +
-          CounterRotateRight_5_m1.changeBeats(4) +
+          CounterRotateRight(5,-1).changeBeats(4) +
           LeadRight,
 
           SwingRight +
-          CounterRotateRight_1_m5.changeBeats(4) +
+          CounterRotateRight(1,-5).changeBeats(4) +
           HingeRight,
 
           SwingRight +
@@ -237,7 +237,7 @@ import '../../moves.dart';
       from:'3 and 1 Lines #8',parts:'3;5',
       paths:[
           FlipLeft +
-          CounterRotateRight_3_1.changeBeats(5) +
+          CounterRotateRight(3,1).changeBeats(5) +
           QuarterLeft.skew(-1.0,1.0),
 
           RunRight +
@@ -251,7 +251,7 @@ import '../../moves.dart';
           HingeLeft,
 
           SwingLeft +
-          CounterRotateRight_m1_m3.changeBeats(5) +
+          CounterRotateRight(-1,-3).changeBeats(5) +
           HingeLeft
       ]),
 
@@ -305,19 +305,19 @@ import '../../moves.dart';
       from:'Right-Hand Waves',parts:'3;3',
       paths:[
           SwingRight +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           HingeRight.scale(0.5,1.0),
 
           SwingRight +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0) +
           HingeRight.scale(0.5,1.0),
 
           SwingRight +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT).skew(-1.0,0.0) +
           HingeRight.scale(0.5,1.0),
 
           SwingRight +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0) +
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT).skew(1.0,0.0) +
           HingeRight.scale(0.5,1.0)
       ]),
 
@@ -326,19 +326,19 @@ import '../../moves.dart';
       from:'Left-Hand Waves',parts:'3;3',
       paths:[
           SwingLeft +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT).skew(1.0,0.0) +
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.LEFT).skew(1.0,0.0) +
           HingeLeft.scale(0.5,1.0),
 
           SwingLeft +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0) +
+          CounterRotateLeft(0,2).changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0) +
           HingeLeft.scale(0.5,1.0),
 
           SwingLeft +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT).skew(1.0,0.0) +
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.LEFT).skew(1.0,0.0) +
           HingeLeft.scale(0.5,1.0),
 
           SwingLeft +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0) +
+          CounterRotateLeft(0,2).changeBeats(3).changehands(Hands.LEFT).skew(-1.0,0.0) +
           HingeLeft.scale(0.5,1.0)
       ]),
 
@@ -347,19 +347,19 @@ import '../../moves.dart';
       from:'Right-Hand Columns',parts:'3;3',
       paths:[
           SwingRight.scale(0.5,1.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
           HingeRight,
 
           SwingRight.scale(0.5,1.0) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           HingeRight,
 
           SwingRight.scale(0.5,1.0) +
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT).skew(0.0,1.0) +
           HingeRight,
 
           SwingRight.scale(0.5,1.0) +
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT).skew(0.0,-1.0) +
           HingeRight
       ]),
 
@@ -368,19 +368,19 @@ import '../../moves.dart';
       from:'Left-Hand Columns',parts:'3;3',
       paths:[
           SwingLeft.scale(0.5,1.0) +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.0) +
+          CounterRotateLeft(0,2).changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.0) +
           HingeLeft,
 
           SwingLeft.scale(0.5,1.0) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
           HingeLeft,
 
           SwingLeft.scale(0.5,1.0) +
-          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.0) +
+          CounterRotateLeft(0,2).changeBeats(3).changehands(Hands.LEFT).skew(0.0,1.0) +
           HingeLeft,
 
           SwingLeft.scale(0.5,1.0) +
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.LEFT).skew(0.0,-1.0) +
           HingeLeft
       ]),
 

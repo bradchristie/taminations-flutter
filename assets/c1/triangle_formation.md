@@ -77,7 +77,7 @@ Various formations, especially a Galaxy, contain triangles that may be
 identified by the formation of their “base”. A Wave-Based Triangle has
 the dancers in the base usually in a Mini-Wave (also possible: a
 Couple). A Tandem-Based Triangle has the dancers in the base usually in
-a tandem (also possible: Facing or Back-to-Back dancers).
+a Tandem (also possible: Facing or Back-to-Back dancers).
 
 > 
 > ![alt](triangle_5a.png)
@@ -93,4 +93,4 @@ Examples of various Triangle Circulates:
 > ![alt](triangle_6d.png)
 > 
 
-###### @ Copyright 1983, 1986-1988, 1995-2024 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+###### @ Copyright 1983, 1986-1988, 1995-2026 Bill Davis, John Sybalsky and CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

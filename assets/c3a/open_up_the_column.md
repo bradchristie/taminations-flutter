@@ -4,10 +4,10 @@
 
 From Columns: #1 dancers [Trail Off](../a2/trail_off.md) and
 [Roll](../plus/anything_and_roll.md)
-as #2 dancers [Circulate](../b1/circulate.md),
+as #2 dancers [Circulate](../ms/circulate.md),
 [Peel Off](../plus/peel_off.md)
 and [Roll](../plus/anything_and_roll.md)
-as #3 and #4 dancers [Circulate](../b1/circulate.md) and
+as #3 and #4 dancers [Circulate](../ms/circulate.md) and
 Centers [Cast Off 3/4](../ms/cast_off_three_quarters.md);
 all [Extend](../b2/extend.md).
 Ends in Parallel Waves.

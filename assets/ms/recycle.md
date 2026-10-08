@@ -29,7 +29,7 @@ establish a couple handhold once they are approximately facing the same directio
 
 ### Comments
 
-The [Facing Couples Rule](../b2/facing_couples_rule.md) does not apply.
+The [Facing Couples Rule](facing_couples_rule.md) does not apply.
 From Facing Couples, the call Recycle has a different
 definition that is not part of the Mainstream program.
 
@@ -39,4 +39,4 @@ the Centers walk almost a full circle to finish
 a small step back from where they started and beside the dancer
 they followed.
 
-###### @ Copyright 1994, 2000-2020 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.
+© 1994, 2000-2026 by CALLERLAB Inc., The International Association of Square Dance Callers. Permission to reprint, republish, and create derivative works without royalty is hereby granted, provided this notice appears. Publication on the Internet of derivative works without royalty is hereby granted provided this notice appears. Permission to quote parts or all of this document without royalty is hereby granted, provided this notice is included. Information contained herein shall not be changed nor revised in any derivation or publication.

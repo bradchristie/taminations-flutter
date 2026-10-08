@@ -2,9 +2,9 @@
 # Something New
 
 From Columns: #1 and #2 dancers [Couple Up](../c3a/couple_up.md)
-as #3 dancers 1/2 [Circulate](../b1/circulate.md)
-and [U-Turn Back](../b1/turn_back.md)
-as #4 dancers [Circulate](../b1/circulate.md) and Veer Out.
+as #3 dancers 1/2 [Circulate](../ms/circulate.md)
+and [U-Turn Back](../ms/turn_back.md)
+as #4 dancers [Circulate](../ms/circulate.md) and Veer Out.
 Ends in a 1/4 Tag.
 
 > 

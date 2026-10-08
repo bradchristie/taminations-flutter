@@ -1,0 +1,86 @@
+/*
+
+  Taminations Square Dance Animations
+  Copyright (C) 2026 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+import '../common.dart';
+
+class SwingThru extends Action with CallWithParts, ActivesOnly, IsLeft, IsGrand {
+
+  @override int numberOfParts = 2;
+  @override LevelData get level => isGrand ? LevelData.PLUS : LevelData.MS;
+  @override var help = '''Swing Thru is a 2-part call:
+  1.  Trade with the right hand
+  2.  Trade with the left hand''';
+  @override var helplink = 'b2/swing_thru';
+
+  SwingThru(super.name);
+
+  List<Dancer> _dancersWhoCanDoBothParts(CallContext ctx) {
+    var whoCan = <Dancer>[];
+    for (var d in ctx.dancers) {
+      var dl = ctx.dancerToRight(d);
+      var dr = ctx.dancerToLeft(d);
+      if (dl != null && ctx.isInWave(d,dl) &&
+          dr != null && ctx.isInWave(d,dr))
+        whoCan.add(d);
+    }
+    return whoCan;
+  }
+
+  @override
+   void performPart1(CallContext ctx) {
+    ctx.applyFacingCouplesRule(isLeft: isLeft);
+    var canDoBoth = _dancersWhoCanDoBothParts(ctx);
+    ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),(ctx2) {
+      for (var d in ctx2.actives.copy()) {
+        if (!canDoBoth.contains(d)) {
+          var d2 = isLeft
+              ? ctx.dancerToLeft(d)
+              : ctx.dancerToRight(d);
+          if (!canDoBoth.contains(d2))
+            d.data.active = false;
+        }
+      }
+      if (ctx2.actives.isEmpty)
+        throw CallError('No dancer can do part 1 of Swing Thru');
+      ctx2.applyCalls('Trade');
+    });
+  }
+
+  @override
+   void performPart2(CallContext ctx) {
+    var canDoBoth = _dancersWhoCanDoBothParts(ctx);
+    ctx.subContext(ctx.dancersHoldingSameHands(isRight: isLeft, isGrand: isGrand),
+            (ctx2) {
+        for (var d in ctx2.actives.copy()) {
+          if (!canDoBoth.contains(d)) {
+          var d2 = isLeft
+              ? ctx.dancerToRight(d)
+              : ctx.dancerToLeft(d);
+          if (!canDoBoth.contains(d2))
+            d.data.active = false;
+        }
+      }
+      if (ctx2.actives.isEmpty)
+        throw CallError('Noone to do part 2 of Swing Thru');
+      ctx2.applyCalls('Trade');
+            });
+  }
+
+}

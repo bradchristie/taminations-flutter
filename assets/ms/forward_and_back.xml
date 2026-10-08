@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE tamination SYSTEM "../src/tamination.dtd">
+<!--
+
+  Taminations Square Dance Animations
+  Copyright (C) 2026 Brad Christie
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<tamination title="Forward and Back">
+
+  <tam title="Forward and Back" from="Facing Couples"
+       formation="Facing Couples Compact">
+    <path>
+      <move select="Forward" hands="right" beats="2" scaleX="0.7" />
+      <move select="Back" hands="right" beats="2" scaleX="0.7"/>
+    </path>
+    <path>
+      <move select="Forward" hands="left" beats="2" scaleX="0.7"/>
+      <move select="Back" hands="left" beats="2" scaleX="0.7"/>
+    </path>
+  </tam>
+
+  <tam title="Forward and Back"
+       from="Lines"
+       formation="Normal Lines">
+    <path>
+      <move select="Forward" hands="right" beats="2" />
+      <move select="Back" hands="right" beats="2" />
+    </path>
+    <path>
+      <move select="Forward" hands="both" beats="2" />
+      <move select="Back" hands="both" beats="2" />
+    </path>
+    <path>
+      <move select="Forward" hands="both" beats="2" />
+      <move select="Back" hands="both" beats="2" />
+    </path>
+    <path>
+      <move select="Forward" hands="left" beats="2" />
+      <move select="Back" hands="left" beats="2" />
+    </path>
+  </tam>
+
+  <tam title="Heads Forward and Back" from="Static Square"
+       formation="Static Square" group=" ">
+    <path>
+      <move select="Forward 2" hands="right" beats="4" />
+      <move select="Back 2" hands="right" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 2" hands="left" beats="4" />
+      <move select="Back 2" hands="left" beats="4" />
+    </path>
+    <path/>
+    <path/>
+  </tam>
+
+  <tam title="Sides Forward and Back" from="Static Square"
+       formation="Static Square" display="none">
+    <path/>
+    <path/>
+    <path>
+      <move select="Forward 2" hands="right" beats="4" />
+      <move select="Back 2" hands="right" beats="4" />
+    </path>
+    <path>
+      <move select="Forward 2" hands="left" beats="4" />
+      <move select="Back 2" hands="left" beats="4" />
+    </path>
+  </tam>
+
+</tamination>

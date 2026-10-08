@@ -265,9 +265,9 @@ import '../../moves.dart';
       group:' ',
       paths:[
           Forward_2 +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
           Forward_2,
 
           EighthRight.changeBeats(3) +
@@ -275,9 +275,9 @@ import '../../moves.dart';
           EighthRight.changeBeats(3).skew(1.414,1.414),
 
           Forward_2 +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
           Forward_2,
 
           EighthRight.changeBeats(3).skew(0.0,-2.0) +
@@ -403,9 +403,9 @@ import '../../moves.dart';
           EighthLeft.changeBeats(3).skew(1.414,-1.414),
 
           Forward_2 +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
-          CounterRotateLeft_2_0.changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
+          CounterRotateLeft(2,0).changehands(Hands.LEFT) +
           Forward_2,
 
           EighthLeft.changeBeats(3).skew(0.0,2.0) +
@@ -413,9 +413,9 @@ import '../../moves.dart';
           EighthLeft.changeBeats(3),
 
           Forward_2 +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
-          CounterRotateLeft_0_2.changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
+          CounterRotateLeft(0,2).changehands(Hands.LEFT) +
           Forward_2
       ]),
 

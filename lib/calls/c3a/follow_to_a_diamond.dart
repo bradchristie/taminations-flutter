@@ -210,13 +210,13 @@ import '../../moves.dart';
           Forward_2,
 
           Forward_2 +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
-          CounterRotateRight_0_m2.changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
+          CounterRotateRight(0,-2).changehands(Hands.RIGHT) +
           LeadRight.changeBeats(3).scale(2.0,2.0),
 
           Forward_2 +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
-          CounterRotateRight_2_0.changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
+          CounterRotateRight(2,0).changehands(Hands.RIGHT) +
           Forward_2.changeBeats(1.5) +
           QuarterRight.changeBeats(1.5).skew(2.0,0.0)
       ]),

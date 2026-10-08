@@ -30,9 +30,9 @@ import '../../moves.dart';
       paths:[
           Forward_3,
 
-          CounterRotateRight_0_m2.changeBeats(3).skew(-1.0,0.0),
+          CounterRotateRight(0,-2).changeBeats(3).skew(-1.0,0.0),
 
-          CounterRotateRight_2_0.changeBeats(3).skew(1.0,0.0),
+          CounterRotateRight(2,0).changeBeats(3).skew(1.0,0.0),
 
           RunRight.skew(-1.0,0.0)
       ]),
@@ -43,9 +43,9 @@ import '../../moves.dart';
       paths:[
           RunLeft.skew(-1.0,0.0),
 
-          CounterRotateLeft_2_0.changeBeats(3).skew(1.0,0.0),
+          CounterRotateLeft(2,0).changeBeats(3).skew(1.0,0.0),
 
-          CounterRotateLeft_0_2.changeBeats(3).skew(-1.0,0.0),
+          CounterRotateLeft(0,2).changeBeats(3).skew(-1.0,0.0),
 
           Forward_3
       ]),
@@ -56,9 +56,9 @@ import '../../moves.dart';
       paths:[
           RunRight,
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT),
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT),
 
           Forward_2.changeBeats(3)
       ]),
@@ -69,9 +69,9 @@ import '../../moves.dart';
       paths:[
           Forward_2.changeBeats(3),
 
-          CounterRotateLeft_0_2.changeBeats(3).changehands(Hands.LEFT),
+          CounterRotateLeft(0,2).changeBeats(3).changehands(Hands.LEFT),
 
-          CounterRotateLeft_2_0.changeBeats(3).changehands(Hands.LEFT),
+          CounterRotateLeft(2,0).changeBeats(3).changehands(Hands.LEFT),
 
           RunLeft
       ]),
@@ -87,9 +87,9 @@ import '../../moves.dart';
       paths:[
           RunRight.scale(0.5,1.0),
 
-          CounterRotateRight_0_m2.changeBeats(3).changehands(Hands.RIGHT),
+          CounterRotateRight(0,-2).changeBeats(3).changehands(Hands.RIGHT),
 
-          CounterRotateRight_2_0.changeBeats(3).changehands(Hands.RIGHT),
+          CounterRotateRight(2,0).changeBeats(3).changehands(Hands.RIGHT),
 
           Forward_2.changeBeats(3)
       ]),
@@ -105,9 +105,9 @@ import '../../moves.dart';
       paths:[
           RunLeft.scale(0.5,1.0),
 
-          CounterRotateLeft_0_2.changeBeats(3),
+          CounterRotateLeft(0,2).changeBeats(3),
 
-          CounterRotateLeft_2_0.changeBeats(3),
+          CounterRotateLeft(2,0).changeBeats(3),
 
           Forward_2.changeBeats(3)
       ]),

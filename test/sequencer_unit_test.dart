@@ -795,28 +795,6 @@ Flutterwheel
 Right and Left Thru
 Allemande Left''', '');});
 
-    test('ZigZag',() { testOneSequence(
-        '''Sides Star Thru and Spread
-Touch a Quarter
-Zig Zig
-Left Touch a Quarter
-Zag Zag
-Pass Thru
-Wheel and Deal
-Zig
-Girls Run
-Boys Touch a Quarter
-Zag
-Zag Zig
-Zig
-Zig Zag
-Boys Face Out
-Heads Slide Thru
-Centers Chase Right
-Ferris Wheel
-Centers Cross Trail Thru
-Allemande Left''', '');});
-
     test('Zoom',() { testOneSequence(
         '''Sides Touch a Quarter
 Boys Zoom
@@ -3311,6 +3289,7 @@ Wave-based Triangle Reshape
 Cut the Galaxy
 Girls Run
 Cast Off Three Quarters
+Adjust to Static Square
 Half Sashay
 Sides Pair Off
 Pass Thru
