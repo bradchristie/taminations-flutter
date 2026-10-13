@@ -28,13 +28,19 @@ import 'bezier.dart';
 import 'hands.dart';
 import 'matrix.dart';
 
+
+class MyBezier {
+  const MyBezier(List<Vector> points);
+}
+
+
 class Movement extends Cloneable<Movement> {
 
-  double beats;
-  int hands;
-  Bezier btranslate;
-  Bezier brotate;
-  bool fromCall;  // for sequencer
+  final double beats;
+  final int hands;
+  final Bezier btranslate;
+  final Bezier brotate;
+  final bool fromCall;  // for sequencer
 
   /// Constructor for a movement where the dancer does not face the direction
   ///   of travel.  Two Bezier curves are used, one for travel and one for
@@ -44,7 +50,7 @@ class Movement extends Cloneable<Movement> {
   /// @param hands  One of the const ints above
   /// @param btranslate  Bezier curve for movement
   /// @param brotate  Bezier curve for facing direction, can be same as btranslate
-  Movement(this.beats, this.hands,
+  const Movement(this.beats, this.hands,
       this.btranslate, this.brotate, {this.fromCall=true});
 
   /// Construct a Movement from the attributes of an XML movement
@@ -70,7 +76,7 @@ class Movement extends Cloneable<Movement> {
     return Movement(beats,hands,bt,br);
   }
 
-  factory Movement.fromData({
+   Movement.fromData({
     required double beats,
     int hands = Hands.NOHANDS,
     required double cx1,
@@ -84,12 +90,19 @@ class Movement extends Cloneable<Movement> {
     double cy4 = 0.0,
     double x4 = 0.0,
     double y4 = 0.0
-  }) {
-    final bt = Bezier([[0.0,0.0].v,[cx1,cy1].v,[cx2,cy2].v,[x2,y2].v]);
-    final br = cx3 < 0.0 ? bt :
-        Bezier([[0.0,0.0].v,[cx3,0.0].v,[cx4,cy4].v,[x4,y4].v]);
-    return Movement(beats,hands,bt,br);
-  }
+  }) : this(beats,hands,
+       Bezier([Vector(0,0),Vector(cx1,cy1),Vector(cx2,cy2),Vector(x2,y2)]),
+  cx3 < 0.0
+      ?  Bezier([Vector(0,0),Vector(cx1,cy1),Vector(cx2,cy2),Vector(x2,y2)])
+      :  Bezier([Vector(0,0),Vector(cx3,0),Vector(cx4,cy4),Vector(x4,y4)])
+  );
+
+  const Movement.fromData2(
+      double beats,
+      int hands,
+      Bezier bt,
+      [Bezier? br]
+      ) : this(beats,hands,bt,br ?? bt);
 
   //  Construct a Movement that can move from one point to another
   //  point along a straight line, and can turn a specific angle,

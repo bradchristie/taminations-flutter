@@ -815,7 +815,7 @@ class CallContext {
     //  Some calls alter the callstack, so save and restore
     final saveCallstack = callstack.copy();
     for (final d in dancers) {
-      d.path.clear();
+      d.path = Path();
     }
     analyze();
     canDoYourPart = tryDoYourPart;
@@ -905,7 +905,6 @@ class CallContext {
       {double maxOffset = 6.1, double delta = 0.05}) {
     //  Make sure newly added animations are finished
     for (var d in dancers) {
-      d.path.recalculate();
       d.animateToEnd();
     }
     MappingContext? bestMapping;

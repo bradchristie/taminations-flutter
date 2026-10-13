@@ -1,7 +1,7 @@
 /*
 
   Taminations Square Dance Animations
-  Copyright (C) 2024 Brad Christie
+  Copyright (C) 2026 Brad Christie
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -20,17 +20,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart' as fm;
 import 'package:provider/provider.dart' as pp;
+import 'package:taminations/call_entry.dart';
+import 'package:taminations/sequencer/sequencer_model.dart';
 
-import 'dart:async';
-
-import '../call_entry.dart';
-import '../call_index.dart';
 import '../common_flutter.dart';
 import '../pages/calls_page.dart';
 import '../pages/page.dart';
-import 'call_context.dart';
-import 'call_error.dart';
-import 'sequencer_model.dart';
+import 'sequencer_calls_model.dart';
 
 class SequencerCallsPage extends fm.StatelessWidget {
 
@@ -46,225 +42,97 @@ class SequencerCallsFrame extends fm.StatefulWidget {
   _SequencerCallsFrameState createState() => _SequencerCallsFrameState();
 }
 
-class SequencerCallsModel extends fm.ChangeNotifier {
-
-  var callsSelected = <CallEntry>[];
-  SequencerModel? _sequencerModel;
-  bool filterByFormation = true;
-
-  final _levelsSelected = <LevelData,bool>{
-    LevelData.MS : false,
-    LevelData.PLUS : false,
-    LevelData.A1 : false,
-    LevelData.A2 : false,
-    LevelData.C1 : false,
-    LevelData.C2 : false,
-    LevelData.C3A : false,
-    LevelData.C3B : false
-  };
-  bool levelSelected(LevelData level) => _levelsSelected[level]!;
-
-  Timer? _debounce;
-
-  void attachSequencerModel(SequencerModel model) {
-    _sequencerModel = model;
-    model.addListener(_onSequencerChanged);
-  }
-
-  bool _rebuildCancelled = false;
-
-  void _onSequencerChanged() {
-    //  Debounce: wait for animation to finish before starting probes.
-    _debounce?.cancel();
-    _rebuildCancelled = true;  // cancel any in-progress async rebuild
-    _debounce = Timer(const Duration(milliseconds: 600), _rebuildCallListAsync);
-  }
-
-  void _rebuildCallList() => _rebuildCallListAsync();
-
-  Future<void> _rebuildCallListAsync() async {
-    _rebuildCancelled = false;
-    final byLevel = callIndex.where((element) =>
-        _levelsSelected[LevelData.find(element.link)] ?? false).toList();
-    if (!filterByFormation || _sequencerModel == null) {
-      callsSelected = byLevel;
-      notifyListeners();
-      return;
-    }
-    //  Probe calls in small batches, yielding between each batch
-    //  so the UI thread can render animation frames in between.
-    const batchSize = 5;
-    final result = <CallEntry>[];
-    for (var i = 0; i < byLevel.length; i += batchSize) {
-      if (_rebuildCancelled) return;  // a new call came in, abort
-      final batch = byLevel.skip(i).take(batchSize);
-      for (final entry in batch) {
-        if (_canApplyCall(entry.title))
-          result.add(entry);
-      }
-      //  Yield to the event loop so animation frames can be rendered
-      await Future.delayed(Duration.zero);
-    }
-    if (_rebuildCancelled) return;
-    callsSelected = result;
-    notifyListeners();
-  }
-
-  //  Designator prefixes to try when a plain call fails.
-  //  This handles calls like 'Wheel Thru' that require 'Heads' or 'Sides'.
-  static const _designators = [
-    'Heads', 'Sides', 'Boys', 'Girls', 'Centers', 'Ends',
-    'Leaders', 'Trailers', 'Beaus', 'Belles',
-  ];
-
-  void _probeCall(String callName) {
-    final ctx = _sequencerModel!.contextFromCurrentFormation();
-    ctx.interpretCall(callName);
-    ctx.performCall(tryDoYourPart: false);
-    if (!RegExp(r'move in|step|gnat|back\s*(up|away)', caseSensitive: false)
-        .hasMatch(callName))
-      ctx.adjustForSquaredSetConvention();
-    ctx.checkCenters();
-    ctx.animateToEnd();
-    ctx.matchStandardFormation();
-    if (ctx.isCollision())
-      throw CallError('Collision');
-  }
-
-  bool _canApplyCall(String callName) {
-    //  First try the plain call
-    try {
-      _probeCall(callName);
-      return true;
-    } on CallError {
-      // fall through
-    } catch (_) {
-      // fall through
-    }
-    //  Plain call failed — try with designator prefixes.
-    //  If any variant works, the call is valid from this formation.
-    for (final prefix in _designators) {
-      try {
-        _probeCall('$prefix $callName');
-        return true;
-      } on CallError {
-        // keep trying
-      } catch (_) {
-        // keep trying
-      }
-    }
-    return false;
-  }
-
-  void setSelected(LevelData level, bool value) {
-    if (_levelsSelected[level] != value) {
-      _levelsSelected[level] = value;
-      _rebuildCallList();
-    }
-  }
-
-  void toggleFormationFilter() {
-    filterByFormation = !filterByFormation;
-    _rebuildCallList();
-  }
-
-  @override
-  void dispose() {
-    _debounce?.cancel();
-    _sequencerModel?.removeListener(_onSequencerChanged);
-    super.dispose();
-  }
-
-}
-
 
 class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
 
   final callsModel = SequencerCallsModel();
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    final sequencerModel = pp.Provider.of<SequencerModel>(context, listen: false);
-    callsModel.attachSequencerModel(sequencerModel);
-  }
+  var scrollController = fm.ScrollController();
 
   @override
   fm.Widget build(fm.BuildContext context) {
+    scrollController = fm.ScrollController();
     return pp.ChangeNotifierProvider.value(
       value: callsModel,
-      child: pp.Consumer<SequencerCallsModel>(
-        builder: (context,_,__) {
-          return fm.Column(children: [
-              fm.Expanded(child: fm.GridView.builder(
-                gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200,
-                    mainAxisSpacing: 1,
-                    childAspectRatio: 8
-                ),
-                itemCount: callsModel.callsSelected.length,
-                itemBuilder: (_,index) =>
-                fm.Container(
-                child: fm.Material(
-                //  Color the item according the the level
-                color: LevelData.find(callsModel.callsSelected[index].link)!.color,
-                child: fm.Text(callsModel.callsSelected[index].title,
-                    style: fm.TextStyle(fontSize: 16))
-                )
-                )
+      child: pp.Consumer<SequencerModel>(
+          builder: (context, model, _) {
+            callsModel.setSequencerModel(model);
+            callsModel.computeValidCalls();
+            return pp.Consumer<SequencerCallsModel>(
+                builder: (context, _, _) {
+                  return fm.Column(children: [
+                    fm.Expanded(
+                      child: fm.Container(
+                        color: Color.LIGHTGRAY,
+                        child: fm.Scrollbar(
+                            controller: scrollController,
+                            thumbVisibility: TamUtils.platform().matches('web|windows'.r),
+                            thickness: 16,
+                            child: fm.GridView.builder(
+                                gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
+                                    maxCrossAxisExtent: 20,
+                                    mainAxisSpacing: 1,
+                                    childAspectRatio: 0.1
+                                ),
+                                controller: scrollController,
+                                scrollDirection: fm.Axis.horizontal,
+                                padding: fm.EdgeInsets.fromLTRB(0, 0, 0, 20),
+                                itemCount: callsModel.callsSelected.length,
+                                itemBuilder: (_, index) => itemBuilder(callsModel, callsModel.callsSelected[index])
 
-              )),
-            fm.Row(children: [
-              fm.Expanded(
-                child: fm.InkWell(
-                  onTap: () => callsModel.toggleFormationFilter(),
-                  child: fm.Container(
-                    color: callsModel.filterByFormation
-                        ? fm.Colors.lightGreen.shade200
-                        : fm.Colors.grey.shade300,
-                    padding: fm.EdgeInsets.symmetric(vertical: 6, horizontal: 8),
-                    child: fm.Row(children: [
-                      fm.Icon(
-                        callsModel.filterByFormation
-                            ? fm.Icons.filter_alt
-                            : fm.Icons.filter_alt_off,
-                        size: 18,
+                            )),
                       ),
-                      fm.SizedBox(width: 4),
-                      fm.Expanded(
-                        child: AutoSizeText(
-                          callsModel.filterByFormation
-                              ? 'Valid from formation'
-                              : 'Show all calls',
-                          maxLines: 1,
-                          minFontSize: 8,
-                          style: fm.TextStyle(fontSize: 14),
-                        ),
-                      ),
+                    ),
+                    fm.Row(children: [
+                      _LevelCheckbox(LevelData.MS),
+                      _LevelCheckbox(LevelData.C1)
                     ]),
-                  ),
-                ),
-              ),
-            ]),
-            fm.Row(children: [
-              _LevelCheckbox(LevelData.MS),
-              _LevelCheckbox(LevelData.C1)
-            ]),
-            fm.Row(children: [
-              _LevelCheckbox(LevelData.PLUS),
-              _LevelCheckbox(LevelData.C2)
-            ]),
-            fm.Row(children: [
-              _LevelCheckbox(LevelData.A1),
-              _LevelCheckbox(LevelData.C3A)
-            ]),
-            fm.Row(children: [
-              _LevelCheckbox(LevelData.A2),
-              _LevelCheckbox(LevelData.C3B)
-            ]),
-          ]);
-        } ),
+                    fm.Row(children: [
+                      _LevelCheckbox(LevelData.PLUS),
+                      _LevelCheckbox(LevelData.C2)
+                    ]),
+                    fm.Row(children: [
+                      _LevelCheckbox(LevelData.A1),
+                      _LevelCheckbox(LevelData.C3A)
+                    ]),
+                    fm.Row(children: [
+                      _LevelCheckbox(LevelData.A2),
+                      _LevelCheckbox(LevelData.C3B)
+                    ]),
+                  ]);
+                }
+            );
+          }),
     );
+  }
+
+  fm.Widget itemBuilder(SequencerCallsModel callModel, CallEntry entry) {
+    if (callModel.validCalls.contains(entry.title)) {
+      return fm.Container(
+        child: fm.Material(
+          color: LevelData.find(entry.link)!.color,
+          child: fm.InkWell(
+            onTap: () {
+              print(entry.title);
+              callModel.sequencerModel?.loadOneCall(entry.title);
+            },
+            child: fm.Text(entry.title,style: fm.TextStyle(
+                fontSize: 16,
+              color: Color.RED
+            ))
+          )
+        )
+      );
+    } else {
+      return fm.Container(
+        child: fm.Material(
+          color: LevelData.find(entry.link)!.color,
+          child: fm.Text(entry.title,style: fm.TextStyle(
+              fontSize: 16,
+            color: Color.GRAY
+          )),
+        ),
+      );
+    }
   }
 
 }
