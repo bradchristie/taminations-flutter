@@ -25,22 +25,22 @@ import '../../moves.dart';
   final List<AnimatedCall> AnythingAndCross = [
 
     AnimatedCall('Cross',
-      formation:Formation('Box RH'),
+      formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
       paths:[
-          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(3.0,2.0) +
+          ExtendRight.changeBeats(2).changehands(Hands.LEFT).scale(2.0,2.0) +
           Forward,
 
           Stand.changeBeats(3).changehands(0)
       ]),
 
     AnimatedCall('Cross',
-      formation:Formation('Box LH'),
+      formation:Formation('Box LH Compact'),
       from:'Left-Hand Box',
       paths:[
           Stand.changeBeats(3).changehands(0),
 
-          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(3.0,2.0) +
+          ExtendLeft.changeBeats(2).changehands(Hands.RIGHT).scale(2.0,2.0) +
           Forward
       ]),
 
