@@ -27,6 +27,7 @@ import '../../moves.dart';
     AnimatedCall('Turn Thru',
       formation:Formation('Facing Couples Compact'),
       from:'Facing Couples',
+      notForSequencer: true,
       paths:[
           ExtendLeft.scale(1.5,0.5) +
           SwingRight.changeBeats(2).changehands(Hands.GRIPRIGHT).scale(0.5,0.5) +
@@ -40,6 +41,7 @@ import '../../moves.dart';
     AnimatedCall('Turn Thru',
       formation:Formation('Box RH Compact'),
       from:'Right-Hand Box',
+      notForSequencer: true,
       paths:[
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
@@ -53,6 +55,7 @@ import '../../moves.dart';
     AnimatedCall('Turn Thru',
       formation:Formation('Wave RH'),
       from:'Right-Hand Wave',difficulty: 2,
+      notForSequencer: true,
       paths:[
           HingeRight.scale(0.75,1.0) +
           HingeRight.scale(0.75,0.75) +
