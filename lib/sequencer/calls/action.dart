@@ -38,7 +38,6 @@ class Action extends CodedCall {
       d.path += path;
     }
     for (var d in ctx.dancers) {
-      d.path.recalculate();
       d.animateToEnd();
     }
   }

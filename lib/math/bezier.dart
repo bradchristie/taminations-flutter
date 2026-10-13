@@ -27,12 +27,14 @@ import '../extensions.dart';
 import 'matrix.dart';
 import 'vector.dart';
 
-class Bezier extends CubicBezier implements Cloneable<Bezier> {
+class Bezier implements Cloneable<Bezier> {
 
-  Bezier(List<Vector> points) : super(points.v2);
+  /// The start point, end point and control points of the Bézier curve.
+  final List<Vector> points;
+  const Bezier(this.points);
 
   @override
-  Bezier clone() => Bezier(points.v);
+  Bezier clone() => Bezier(points);
 
   //  Constructor from 4 points along the curve
   //  at times 0, 1/3, 2/3, 1
@@ -67,12 +69,43 @@ class Bezier extends CubicBezier implements Cloneable<Bezier> {
   Vector get cp1 => Vector(cx1,cy1);
   Vector get cp2 => Vector(cx2,cy2);
   Vector get p2 => Vector(x2,y2);
+  Vector get startPoint => points.first;
+  Vector get endPoint => points.last;
+
+  Vector pointAt(double t) {
+    final t2 = t * t;
+    final mt = 1.0 - t;
+    final mt2 = mt * mt;
+
+    final a = mt2 * mt;
+    final b = mt2 * t * 3;
+    final c = mt * t2 * 3;
+    final d = t * t2;
+
+    return startPoint.scale(a,a) +
+        points[1].scale(b,b) +
+        points[2].scale(c,c) +
+        points[3].scale(d,d);
+  }
+
 
   double angle(double t) {
-    var v = derivativeAt(t);
-    return atan2(v.y,v.x);
+
+    var cx = 3.0*(cx1-x1);
+    var bx = 3.0*(cx2-cx1) - cx;
+    var ax = x2 - x1 - cx - bx;
+
+    var cy = 3.0*(cy1-y1);
+    var by = 3.0*(cy2-cy1) - cy;
+    var ay = y2 - y1 - cy - by;
+
+    var dxt = cx + t*(2.0*bx + t*3.0*ax);
+    var dyt = cy + t*(2.0*by + t*3.0*ay);
+
+    return atan2(dyt,dxt);
   }
-  Matrix translate(double t) => Matrix.getTranslation(pointAt(t).v);
+
+  Matrix translate(double t) => Matrix.getTranslation(pointAt(t));
   Matrix rotate(double t) => Matrix.getRotation(angle(t));
 
   //  Return turn direction at end of curve
@@ -98,13 +131,16 @@ class Bezier extends CubicBezier implements Cloneable<Bezier> {
   ]);
 
   Bezier skew(double x, double y) => Bezier([
-    points[0].v,
-    points[1].v,
+    points[0],
+    points[1],
     Vector(points[2].x+x,points[2].y+y),
     Vector(points[3].x+x,points[3].y+y)
   ]);
 
-  Bezier clip(double fraction) => (leftSubcurveAt(fraction) as CubicBezier).bz;
+//  Bezier clip(double fraction) => (leftSubcurveAt(fraction) as CubicBezier).bz;
+  Bezier clip(double fraction) =>
+      Bezier.fromPoints(pointAt(0), pointAt(fraction/3),
+          pointAt(fraction*2/3), pointAt(fraction));
 
 }
 

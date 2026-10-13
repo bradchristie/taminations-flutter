@@ -42,61 +42,49 @@ extension PathList on List<Path> {
 
 class Path implements Cloneable<Path> {
 
-  String name = '';
-  List<Movement> movelist = [];
-  List<Matrix> _transformlist = [];
+  final String name;
+  final List<Movement> movelist;
   //  By default roll is computed from the last movement of the path.
   //  But it can be overridden by setting this to another value
   //  with the changeRoll method.
-  Rolling roll = Rolling.ANY;
+  final Rolling roll;
   //  Sometimes an inactive dancer will move slightly because of
   //  square breathing.
-  bool isJustBreathing = false;
+  final bool isJustBreathing;
 
   bool get isEmpty => movelist.isEmpty;
 
-  Path([List<Movement>? moves, this.name='']) {
-    movelist = moves == null ? [] : moves.toList();
-    recalculate();
-  }
+  const Path([
+    this.movelist = const [],
+    this.name='',
+    this.roll=Rolling.ANY,
+    this.isJustBreathing=false]);
 
-  void recalculate() {
+  List<Matrix> computeTransformList() {
     var tx = Matrix.getIdentity();
-    _transformlist = movelist.map((it) {
+    var transformlist = movelist.map((it) {
       tx = tx * it.translate();
       tx = tx * it.rotate();
       return tx.clone();
     }).toList();
+    return transformlist;
   }
 
-  Path.fromMovement(Movement m) {
-    movelist = [m.clone()];
-    recalculate();
-  }
+  Path.fromMovement(Movement m) : this([m.clone()]);
 
-  Path.fromPath(Path p) {
-    movelist = p.movelist.map((m) => m.clone()).toList();
-    roll = p.roll;
-    isJustBreathing = p.isJustBreathing;
-    recalculate();
-  }
+  Path.fromPath(Path p) : this(
+      p.movelist.map((m) => m.clone()).toList(),
+      '',p.roll,p.isJustBreathing);
 
-  Path.fromPaths(List<Path> plist) {
-    movelist = plist.expand((p) => p.movelist).toList();
-  }
+  Path.fromPaths(List<Path> plist) :
+    this(plist.expand((p) => p.movelist).toList());
 
   @override
   Path clone() => Path.fromPath(this);
 
-  void clear() {
-    movelist = [];
-    recalculate();
-  }
-
   Path add(dynamic mp) {
     if (mp is Path) {
-      var newPath = Path(movelist + mp.movelist);
-      newPath.roll = mp.roll;
+      var newPath = Path(movelist + mp.movelist,'',mp.roll);
       return newPath;
     } else if (mp is Movement) {
       return Path(movelist.copy()..add(mp));
@@ -107,14 +95,12 @@ class Path implements Cloneable<Path> {
 
   Movement pop() {
     var m = movelist.removeLast();
-    recalculate();
     return m;
   }
 
   Movement? shift() {
     if (movelist.isNotEmpty) {
       var m = movelist.removeAt(0);
-      recalculate();
       return m;
     }
     return null;
@@ -122,13 +108,15 @@ class Path implements Cloneable<Path> {
 
   Path unshift(Movement m) {
     movelist.insert(0,m);
-    recalculate();
     return this;
   }
 
   Path reflect() => Path(movelist.map((it) => it.reflect()).toList());
 
   double get beats => movelist.map((it) => it.beats).fold(0.0, (previousValue, element) => previousValue + element);
+
+  Path rename(String newname) =>
+      Path(movelist,newname,roll,isJustBreathing);
 
   Path changeBeats(double newbeats) {
     var factor = newbeats / beats;
@@ -144,17 +132,9 @@ class Path implements Cloneable<Path> {
   Path scale(double x, double y) =>
     Path(movelist.map((it) => it.scale(x, y)).toList());
 
-  Path changeRoll(Rolling r) {
-    var newPath = clone();
-    newPath.roll = r;
-    return newPath;
-  }
+  Path changeRoll(Rolling r) => Path(movelist,name,r,isJustBreathing);
 
-  Path justBreathing() {
-    var newPath = clone();
-    newPath.isJustBreathing = true;
-    return newPath;
-  }
+  Path justBreathing() => Path(movelist,name,roll,true);
 
   Path clip(double beat) {
     var newpath = clone();
@@ -174,7 +154,6 @@ class Path implements Cloneable<Path> {
       var skewed = clone();
       var last = skewed.movelist.removeLast();
       skewed.movelist.add(last.skew(x,y));
-      skewed.recalculate();
       return skewed;
     }
     return this;
@@ -187,7 +166,6 @@ class Path implements Cloneable<Path> {
       var skewed = clone();
       var last = skewed.movelist.removeLast();
       skewed.movelist.add(last.skewFromEnd(x, y));
-      skewed.recalculate();
       return skewed;
     }
     return this;
@@ -198,7 +176,6 @@ class Path implements Cloneable<Path> {
       var skewed = clone();
       var first = skewed.movelist.removeAt(0);
       skewed.movelist.insert(0, first.skew(x,y).twist(angle ?? 0.0));
-      skewed.recalculate();
       return skewed;
     }
     return this;
@@ -212,12 +189,13 @@ class Path implements Cloneable<Path> {
   Matrix animate(double b) {
     var bv = b;
     var tx = Matrix.getIdentity();
+    var transformlist = computeTransformList();
     //  Apply all completed movements
     Movement? m;
     for (var i=0; i<movelist.length; i++) {
       m = movelist[i];
       if (bv > m.beats) {
-        tx = _transformlist[i];
+        tx = transformlist[i];
         bv -= m.beats;
         m = null;
       } else {

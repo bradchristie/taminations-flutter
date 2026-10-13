@@ -20,6 +20,7 @@
 
 abstract class Cloneable<T> {
 
+  const Cloneable();
   T clone();
 
 }

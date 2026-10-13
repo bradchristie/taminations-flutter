@@ -1948,7 +1948,6 @@ class Formation {
       return Formation.fromName(name);
     var f = Formation._internal(name, dancers, asymmetric: asymmetric);
     if (name.isNotBlank) {
-      //formations.add(f);
       formationIndex[f.name] = f;
     }
     return f;
