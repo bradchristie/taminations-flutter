@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class LoopAndHalfTag extends SplitCall {
+class LoopAndHalfTag extends Action with SplitCall {
 
   @override var level = LevelData.PLUS;
 

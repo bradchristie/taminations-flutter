@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Weave extends SplitCall {
+class Weave extends Action with SplitCall {
 
   @override var level = LevelData.C1;
 

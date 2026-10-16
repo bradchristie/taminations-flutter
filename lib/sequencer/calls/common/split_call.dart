@@ -26,9 +26,7 @@ import '../common/select_location.dart';
 //  Classes that inherit from this will generally not have their
 //  own methods for performing calls with 6 or 8 dancers.
 //  The formation is split and the call performed on each side.
-abstract class SplitCall extends Action {
-
-  SplitCall(super.name);
+mixin SplitCall on Action {
 
   //  If the length is too long for this split side,
   //  compact in that direction
@@ -37,62 +35,57 @@ abstract class SplitCall extends Action {
       ctx.adjustToFormation(Formation('Compact Wave RH'));
   }
 
+  void _performOneSplit(CallContext ctx, String splitWhere) {
+    var splitAmount = ctx.dancers.length ~/ 2;
+    var unSplitName = name.replaceFirst('Split', '');
+    ctx.selectContext(SelectLocation('$splitWhere $splitAmount'), (ctx3) {
+      ctx3.dancers.center();
+      //  Use applyCalls here instead of super.performCall
+      //  so it can pick up AnimatedCall in addition to CodedCall
+      ctx3.applyCalls(unSplitName);
+      var b = ctx3.bounds();
+      if (splitWhere=='Near' || splitWhere=='Far')
+        _checkLength(ctx3, b.y, b.x);
+      else
+        _checkLength(ctx3, b.x, b.y);
+    });
+
+  }
+
   @override
   void performCall(CallContext ctx) {
-    var splitAmount = ctx.dancers.length ~/ 2;
-    var splitName = name.replaceFirst('Split', '');
     if (ctx.dancers.length > 4) {
       try {
         //  First try splitting on the horizontal axis into
         //  Near and Far groups.
         //  Use a subcontext so if this fails it doesn't mess up our context
         ctx.subContext(ctx.dancers, (ctx2) {
-          ctx2.selectContext(SelectLocation('Near $splitAmount'), (ctx3) {
-            ctx3.dancers.center();
-            ctx3.applyCalls(splitName);
-            var b = ctx3.bounds();
-            _checkLength(ctx3, b.y, b.x);
-          });
-          ctx2.selectContext(SelectLocation('Far $splitAmount'), (ctx3) {
-            ctx3.dancers.center();
-            ctx3.applyCalls(splitName);
-            var b = ctx3.bounds();
-            _checkLength(ctx3, b.y, b.x);
-          });
+          _performOneSplit(ctx2,'Near');
+          _performOneSplit(ctx2,'Far');
         });
       } on CallError {
         //  That didn't work, so try splitting on the vertical axis
         //  into Left and Right groups
         try {
           ctx.subContext(ctx.dancers, (ctx2) {
-            ctx2.selectContext(SelectLocation('Left $splitAmount'), (ctx3) {
-              ctx3.dancers.center();
-              ctx3.applyCalls(splitName);
-              var b = ctx3.bounds();
-              _checkLength(ctx3, b.x, b.y);
-            });
-            ctx2.selectContext(SelectLocation('Right $splitAmount'), (ctx3) {
-              ctx3.dancers.center();
-              ctx3.applyCalls(splitName);
-              var b = ctx3.bounds();
-              _checkLength(ctx3, b.x, b.y);
-            });
+            _performOneSplit(ctx2,'Left');
+            _performOneSplit(ctx2,'Right');
           });
         } on CallError {
-          throw FormationNotFoundError(splitName);
+          throw FormationNotFoundError(name);
         }
       }
-
-
-
-    } else
+    } else {
+      //  We have 4 or fewer dancers
       super.performCall(ctx);
+    }
   }
 
   //  Derived classes need to implement this method
   //  working with the dancers from each split side
   @override
   Path performOne(Dancer d, CallContext ctx) {
+    print('performOne called on split call');
     throw FormationNotFoundError(name);
   }
 

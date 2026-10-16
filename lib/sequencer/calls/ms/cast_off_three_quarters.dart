@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class CastOffThreeQuarters extends SplitCall {
+class CastOffThreeQuarters extends Action with SplitCall {
 
   @override var level = LevelData.MS;
   @override var help = '''Cast Off (fraction)

@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class FollowThru extends SplitCall {
+class FollowThru extends Action with SplitCall {
 
   @override var level = LevelData.C1;
 

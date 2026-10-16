@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class FollowToADiamond extends SplitCall {
+class FollowToADiamond extends Action with SplitCall {
 
   @override var level = LevelData.C1;
 

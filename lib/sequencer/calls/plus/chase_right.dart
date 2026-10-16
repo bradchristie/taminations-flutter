@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class ChaseRight extends SplitCall {
+class ChaseRight extends Action with SplitCall {
 
   @override var level = LevelData.PLUS;
 

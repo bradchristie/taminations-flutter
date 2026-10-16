@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class ExplodeTheWave extends SplitCall {
+class ExplodeTheWave extends Action with SplitCall {
 
   @override var level = LevelData.PLUS;
 

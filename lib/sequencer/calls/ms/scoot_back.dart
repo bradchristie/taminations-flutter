@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class ScootBack extends SplitCall {
+class ScootBack extends Action with SplitCall {
 
   @override var level = LevelData.MS;
 

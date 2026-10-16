@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class Drop extends SplitCall with ActivesOnly {
+class Drop extends Action with SplitCall, ActivesOnly {
 
   Drop(super.name);
 

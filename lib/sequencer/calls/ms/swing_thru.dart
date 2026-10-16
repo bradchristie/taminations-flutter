@@ -45,6 +45,8 @@ class SwingThru extends Action with CallWithParts, ActivesOnly, IsLeft, IsGrand 
 
   @override
    void performPart1(CallContext ctx) {
+    if (ctx.isSquare())
+      throw FormationNotFoundError(name);
     ctx.applyFacingCouplesRule(isLeft: isLeft);
     var canDoBoth = _dancersWhoCanDoBothParts(ctx);
     ctx.subContext(ctx.dancersHoldingSameHands(isRight: !isLeft, isGrand: isGrand),(ctx2) {
@@ -78,7 +80,7 @@ class SwingThru extends Action with CallWithParts, ActivesOnly, IsLeft, IsGrand 
         }
       }
       if (ctx2.actives.isEmpty)
-        throw CallError('Noone to do part 2 of Swing Thru');
+        throw CallError('No one to do part 2 of Swing Thru');
       ctx2.applyCalls('Trade');
             });
   }

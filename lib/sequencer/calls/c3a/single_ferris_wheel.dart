@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class SingleFerrisWheel extends SplitCall {
+class SingleFerrisWheel extends Action with SplitCall {
 
   @override var level = LevelData.C3A;
 

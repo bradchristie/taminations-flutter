@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class Crossfire extends SplitCall {
+class Crossfire extends Action with SplitCall {
 
   @override var level = LevelData.PLUS;
 

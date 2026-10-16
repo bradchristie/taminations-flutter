@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class FanTheTop extends SplitCall {
+class FanTheTop extends Action with SplitCall {
 
   @override var level = LevelData.PLUS;
 

@@ -38,6 +38,8 @@ class Touch extends Action with IsLeft {
 
   @override
   void performCall(CallContext ctx) {
+    if (ctx.isSquare())
+      throw FormationNotFoundError(name);
     //  Check for 'Step to a Left-Hand Wave'
     if (name.contains('left'.ri))
       isLeft = true;

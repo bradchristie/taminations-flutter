@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class ReachOut extends SplitCall {
+class ReachOut extends Action with SplitCall {
 
   @override var level = LevelData.C3A;
 

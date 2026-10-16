@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class ChaseTheHalfTag extends SplitCall {
+class ChaseTheHalfTag extends Action with SplitCall {
 
   @override var level = LevelData.C3A;
   ChaseTheHalfTag(super.name);

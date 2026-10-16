@@ -21,7 +21,7 @@
 import '../../../moves.dart';
 import '../common.dart';
 
-class Substitute extends SplitCall {
+class Substitute extends Action with SplitCall {
 
   @override var level = LevelData.C1;
   @override var helplink = 'c1/substitute';

@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class SplitCounterRotate extends SplitCall {
+class SplitCounterRotate extends Action with SplitCall {
 
   @override final level = LevelData.A2;
   @override var helplink = 'a2/box_counter_rotate';

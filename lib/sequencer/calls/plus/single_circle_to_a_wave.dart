@@ -20,7 +20,7 @@
 
 import '../common.dart';
 
-class SingleCircleToAWave extends SplitCall {
+class SingleCircleToAWave extends Action with SplitCall {
 
   SingleCircleToAWave(super.name);
 

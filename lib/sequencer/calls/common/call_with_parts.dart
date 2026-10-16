@@ -21,6 +21,15 @@
 import '../common.dart';
 import '../xml_call.dart';
 
+//  Mixin for calls with parts that can be
+//  modified at Challenge levels
+//
+//  This class overrides performCall() to perform all
+//  the parts of the call.
+//  If other mixins also override performCall() tney
+//  should be ordered in the parent class with clause
+//  after this class,
+
 mixin CallWithParts on Action {
 
   //  Classes with parts will override this

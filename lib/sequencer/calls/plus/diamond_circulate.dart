@@ -22,7 +22,7 @@ import '../../../math/bezier.dart';
 import '../../../moves.dart';
 import '../common.dart';
 
-class DiamondCirculate extends SplitCall with ActivesOnly {
+class DiamondCirculate extends Action with SplitCall, ActivesOnly {
 
   @override var level = LevelData.PLUS;
   @override var help = 'In addition to Twin Diamonds and Point-to-Point'
