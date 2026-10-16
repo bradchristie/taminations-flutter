@@ -39,9 +39,7 @@ class Words {
 
   //  Read data at start of program
   static bool init() {
-
     //  Add words in each call to set of all words
-    print('in Words.init');
     if (words.length < 50) {
       for (var data in callIndex) {
         var dataWords = data.title.replaceAll('\\W'.r, ' ').split('\\s+'.r).map((w) => w.toLowerCase());
@@ -49,7 +47,6 @@ class Words {
       }
       print(words.map((w)=>'\'$w\'').join(','));
     }
-    print('Words.init 2');
     //  Build index of normalized animated calls for sequencer
     if (normalizedCallIndex.isEmpty) {
       for (var data in callIndex) {
@@ -62,7 +59,6 @@ class Words {
         }
       }
     }
-    print('out Words.init');
     return true;
   }
 

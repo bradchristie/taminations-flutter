@@ -37,6 +37,6 @@ class CallNotFoundError extends  CallError {
 class FormationNotFoundError extends CallError {
 
   FormationNotFoundError(String call)
-      : super('No animation for $call from that formation.');
+      : super('No animation for $call from this formation.');
 
 }
