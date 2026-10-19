@@ -112,7 +112,6 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
           color: LevelData.find(entry.link)!.color,
           child: fm.InkWell(
             onTap: () {
-              print(entry.title);
               callModel.sequencerModel?.loadOneCall(entry.title);
             },
             child: fm.Text(entry.title,style: fm.TextStyle(

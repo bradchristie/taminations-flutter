@@ -20,16 +20,17 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.112 built 2026-09-21
+## Taminations version 1.6.113 built 2026-10-19
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Update Mainstream calls with the new definitions
-* Rearrange some animations to match the new programs
+* Slightly faster startup
 * Sequencer:
-  - Fix some calls that were showing the incorrect level
+  - Add Swing Right-Hand Lady and Promenade
+  - Calls frame: compute possible calls and enable click to select
+  - Fix some calls when used with t-bones or offset boxes
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)
