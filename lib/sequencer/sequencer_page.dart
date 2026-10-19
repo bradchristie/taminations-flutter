@@ -108,7 +108,7 @@ class _SequencerPageState extends fm.State<SequencerPage> {
       ],
       child: Page(
         child: pp.Consumer2<TitleModel,Settings>(
-            builder: (context,titleModel,settings,_) {
+            builder: (context,titleModel,_,_) {
               //  Setting the formation here if also set above
               //  can clobber calls passed in by the URL
               if (!formationSetByState)
