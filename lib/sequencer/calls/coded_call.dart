@@ -22,6 +22,8 @@
 import '../../extensions.dart';
 import '../normalize_call.dart';
 import 'plus/pair_off.dart';
+import 'plus/flip_the_diamond.dart';
+import 'plus/cut_the_diamond.dart';
 import 'ms/double_pass.dart';
 import 'c1/recycle.dart';
 import 'a1/as_couples.dart';
@@ -447,6 +449,7 @@ abstract class CodedCall extends Call {
     'CrossRun'.ri: (name) => CrossRun(name),
     'CrossTheK'.ri: (name) => CrossTheK(name),
     'CrossTradeAndWheel'.ri: (name) => CrossTradeAndWheel(name),
+    'CutTheDiamond'.ri: (name) => CutTheDiamond(name),
 
     'Debug.*'.ri: (name) => SetDebugSwitch(name),
     'Delight|Dilemma'.ri: (name) => Delight_Dilemma(name),
@@ -486,6 +489,7 @@ abstract class CodedCall extends Call {
     'Flip'.ri: (name) => Flip(name),
     'Flip(In|Out|Left|Right)?'.ri: (name) => FlipDirection(name),
     'FlipBack'.ri: (name) => FlipBack(name),
+    'FlipTheDiamond'.ri: (name) => FlipTheDiamond(name),
     'Fold'.ri: (name) => Fold(name),
     'FollowThru'.ri: (name) => FollowThru(name),
     'FollowToADiamond'.ri: (name) => FollowToADiamond(name),

@@ -85,7 +85,6 @@ mixin SplitCall on Action {
   //  working with the dancers from each split side
   @override
   Path performOne(Dancer d, CallContext ctx) {
-    print('performOne called on split call');
     throw FormationNotFoundError(name);
   }
 

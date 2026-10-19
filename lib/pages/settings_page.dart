@@ -40,8 +40,8 @@ class SettingsFrame extends fm.StatelessWidget {
 
   @override
   fm.Widget build(fm.BuildContext context) {
-    return pp.Consumer2<Settings,TitleModel>(
-        builder: (context, settings, titleModel, child) {
+    return pp.Consumer<TitleModel>(
+        builder: (context, titleModel, child) {
           titleModel.title = 'Settings';
           return fm.Container(
               color: Color.LIGHTGREY,
