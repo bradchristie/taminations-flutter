@@ -66,7 +66,7 @@ class PracticeModel {
     var randomCall = levelCalls[Random().nextInt(levelCalls.length)]
         .where((tam) => !tam.noDisplay).toList();
     //  But if specific call requested, use that
-    if (appState.link != null) {
+    if (Settings.practiceSpecific && appState.link != null) {
       var calls = callIndex.where((call) => call.link == appState.link).first.calls;
       randomCall = flattenAnimatedCallList(calls);
     }
