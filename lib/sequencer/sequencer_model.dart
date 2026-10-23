@@ -52,6 +52,13 @@ class SequencerModel extends fm.ChangeNotifier {
   String helplink = '';
   double animateFrom = 0.0;
 
+  static const formationMap = {
+    'Facing Couples' : 'Facing Couples Compact',
+    'Normal Lines' : 'Normal Lines Compact',
+    'Ocean Waves' : 'Ocean Waves RH BGGB Compact',
+    'Two-Faced Lines' : 'Two-Faced Lines RH Compact',
+  };
+
   SequencerModel([fm.BuildContext? context]) :
         animation = SequencerDanceModel(context) {
     animation.addListener(() {
@@ -62,6 +69,7 @@ class SequencerModel extends fm.ChangeNotifier {
   }
 
   void setStartingFormation(String formation) {
+    formation = formationMap[formation] ?? formation;
     if (formation != _startingFormation) {
       _startingFormation = formation;
       reset();
