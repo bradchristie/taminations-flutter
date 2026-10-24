@@ -113,6 +113,8 @@ class _CallsFrameState extends fm.State<CallsFrame> {
           color: Color.LIGHTGRAY,
           child: fm.Column(
             children: [
+
+              //  Input field to search calls
               fm.TextField(
                 decoration: fm.InputDecoration.collapsed(
                   filled: true,
@@ -128,35 +130,14 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                 },
               ),
 
-/*
-              if (tamState.level == 'Plus' || tamState.level == 'Mainstream')
-                fm.Row(
-                  children: [
-                    fm.Container(
-                      color: Color.FLOOR,
-                      alignment: fm.Alignment.centerLeft,
-                      padding: fm.EdgeInsets.fromLTRB(20, 10, 20, 10),
-                      child:
-                        Button(newCallsOnly
-                            ? 'Show All Calls'
-                            : 'Show New Calls Only',
-                            onPressed: () {
-                              setState(() {
-                                newCallsOnly = !newCallsOnly;
-                              });
-                            }
-                        )
-                    ),
-                  ],
-                ),
-*/
-
+              //  Grid or list of calls
               fm.Expanded(
                 //  Test to see if we are landscape or portrait
                 //  Landscape gets a grid, portrait gets a list
                 child: fm.OrientationBuilder(
                   builder: (context, orientation) {
                     if (fm.MediaQuery.of(context).orientation == fm.Orientation.landscape) {
+                      var scaler = fm.MediaQuery.of(context).textScaler;
                       return fm.Container(
                         child: fm.Scrollbar(
                           controller: scrollController,
@@ -167,7 +148,7 @@ class _CallsFrameState extends fm.State<CallsFrame> {
                             scrollDirection: fm.Axis.horizontal,
                             padding: fm.EdgeInsets.fromLTRB(0, 0, 0, 20),
                             gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 40,
+                              maxCrossAxisExtent: scaler.scale(40),
                               mainAxisSpacing: 1,
                               childAspectRatio: 0.1,
                             ),

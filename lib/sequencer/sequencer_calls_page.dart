@@ -51,6 +51,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
   @override
   fm.Widget build(fm.BuildContext context) {
     scrollController = fm.ScrollController();
+    var scaler = fm.MediaQuery.of(context).textScaler;
     return pp.ChangeNotifierProvider.value(
       value: callsModel,
       child: pp.Consumer<SequencerModel>(
@@ -69,7 +70,7 @@ class _SequencerCallsFrameState extends fm.State<SequencerCallsFrame> {
                             thickness: 16,
                             child: fm.GridView.builder(
                                 gridDelegate: fm.SliverGridDelegateWithMaxCrossAxisExtent(
-                                    maxCrossAxisExtent: 20,
+                                    maxCrossAxisExtent: scaler.scale(20),
                                     mainAxisSpacing: 1,
                                     childAspectRatio: 0.1
                                 ),
