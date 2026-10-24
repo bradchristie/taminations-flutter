@@ -121,15 +121,17 @@ class CopyImageButton extends fm.StatelessWidget {
   fm.Widget build(fm.BuildContext context) {
     return pp.Consumer<DanceModel>(
         builder: (context,danceModel,_) {
-          return Button('Copy Image', onPressed: () async {
-            var msg = await danceModel.copyImageToClipboard();
-            fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
-                backgroundColor: Color.BLUE,
-                duration: Duration(seconds: 2),
-                content: fm.Text(msg,
-                    style: GoogleFonts.roboto(fontSize: 20))
-            ));
-          });
+          return fm.Expanded(
+            child: Button('Copy', onPressed: () async {
+              var msg = await danceModel.copyImageToClipboard();
+              fm.ScaffoldMessenger.of(context).showSnackBar(fm.SnackBar(
+                  backgroundColor: Color.BLUE,
+                  duration: Duration(seconds: 2),
+                  content: fm.Text(msg,
+                      style: GoogleFonts.roboto(fontSize: 20))
+              ));
+            }),
+          );
         }
     );
   }

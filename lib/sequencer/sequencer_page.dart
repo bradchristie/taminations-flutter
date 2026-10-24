@@ -145,14 +145,12 @@ class _SequencerPageState extends fm.State<SequencerPage> {
                       color: fm.Colors.black,
                     ),
                   ),
-                  //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                   ResizableChild(child: SequencerAnimationFrame(),
                     divider: ResizableDivider(
                       thickness: 5.0,
                       color: fm.Colors.black,
                     ),
                   ),
-                  //fm.VerticalDivider(color: Color.BLACK, width: 2.0,),
                   //  Dummy title model to intercept titles we don't want to show
                   ResizableChild(
                     child: pp.ChangeNotifierProvider(
