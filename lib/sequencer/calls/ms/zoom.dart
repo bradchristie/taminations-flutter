@@ -53,6 +53,8 @@ class Zoom extends Action with ActivesOnly {
         throw CallError('Trailer of dancer $d is not active' );
       if (ctx.dancerInBack(d2) == d)
         throw CallError('Cannot call $name from back-to-back dancers');
+      if (!d2.data.trailer)
+        throw CallError('Cannot $name from here');
       var dist = d.distanceTo(d2);
       return c.changeBeats(2.0).skew(-dist/2,0.0).scale(1.0,s) +
           (name == 'Zoom'
@@ -62,6 +64,8 @@ class Zoom extends Action with ActivesOnly {
       var d2 = ctx.dancerInFront(d).throwIfNull(CallError('Dancer $d cannot $name'));
       if (!d2.data.active)
         throw CallError('Leader of dancer $d is not active' );
+      if (!d2.data.leader)
+        throw CallError('Cannot $name from here');
       var dist = d.distanceTo(d2);
       var offset = ctx.dancerInFront(d2) == d ? 0.5 : 0.0;
       return (name == 'Zoom' )
