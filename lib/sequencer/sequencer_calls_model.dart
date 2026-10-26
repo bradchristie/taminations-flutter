@@ -68,7 +68,7 @@ class SequencerCallsModel extends fm.ChangeNotifier {
       var calls = callsSelected.map((c)=>c.title).toList();
       var ctx = sequencerModel!.contextFromCurrentFormation();
       var myDancers = ctx.dancers.map((d) => d.clone()).toList();
-      var canApply = _ApplyCallContext(myDancers, calls);
+      var canApply = _ApplyCallContext(myDancers, calls, _levelsSelected);
       validCalls = await compute(_canApplyCall,canApply);
       notifyListeners();
     }
@@ -80,9 +80,10 @@ class _ApplyCallContext {
 
   List<Dancer> dancers;
   List<String> callNames;
+  Map<LevelData,bool> validLevels;
   Map<String,List<AnimatedCall>> normalizedCallIndex = {};
 
-  _ApplyCallContext(this.dancers, this.callNames) {
+  _ApplyCallContext(this.dancers, this.callNames, this.validLevels) {
     normalizedCallIndex = Words.normalizedCallIndex;
   }
 
@@ -113,6 +114,13 @@ void _probeCall(String call, _ApplyCallContext actx) {
     var ctx = CallContext.fromDancers(actx.dancers);
     ctx.interpretCall(call);
     ctx.performCall(tryDoYourPart: false);
+    //  Some calls listed for a level can only be done
+    //  with the current formation at a higher level
+    //  for example, Linear Cycle is Plus from waves
+    //  but A-1 from lines.
+    //  Check that this has not happened
+    if (!(actx.validLevels[ctx.level] ?? false))
+      throw CallError('Incorrect level');
     if (!RegExp(r'move in|step|gnat|back\s*(up|away)', caseSensitive: false)
         .hasMatch(call))
       ctx.adjustForSquaredSetConvention();
