@@ -457,6 +457,9 @@ class CallContext {
   void interpretCall(String calltext,
       {bool noAction = false, bool skipFirstXML = false}) {
     calltext = _cleanupCall(calltext);
+    //  Sanity check to prevent program from locking up on a huge text paste
+    if (calltext.length > 120)
+      throw CallError('Input too long');
     CallError err = CallNotFoundError(calltext);
     //  Clear out any previous paths from incomplete parsing
     for (var d in dancers) {
