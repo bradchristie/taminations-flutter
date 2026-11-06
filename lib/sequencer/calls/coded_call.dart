@@ -582,7 +582,11 @@ abstract class CodedCall extends Call {
     'Percolate'.ri: (name) => Percolate(name),
     'PerkUp'.ri: (name) => PerkUp(name),
     'Phantom.+'.ri: (name) => Phantom(name),
-    'Plenty'.ri: (name) => Plenty(name),
+    //  See note for Little above
+    '(Outside|Point)?(Out|In|Left|Right|(Go)?(Forward|AsYouAre))?Plenty'.ri:
+        (name) => Plenty(name),
+    'Plenty(Outside|Point)(Go|Face)?(In|Out|Left|Right|(Forward|AsYouAre))?'.ri:
+        (name) => Plenty(name),
     'Point'.ri: (name) => Points(name),
     'Prefer(the)($specifier)+'.ri: (name) => Prefer(name),
     'Promenade(Home)?'.ri: (name) => PromenadeHome(name),

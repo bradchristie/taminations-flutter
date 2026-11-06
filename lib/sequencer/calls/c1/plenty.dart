@@ -44,14 +44,32 @@ The number of Split Circulates can be changed with Turn the Star (fraction)''';
 
   @override
    void performPart1(CallContext ctx) {
+    //  Figure out which way the outside dancers turn
+    var turn = 'Face Right';
+    if (name.startsWith('Left') || name.endsWith('Left'))
+      turn = 'Face Left';
+    else if (name.startsWith('Right') || name.endsWith('Right'))
+      turn = 'Face Right';
+    else if (name.startsWith('In') || name.endsWith('In'))
+      turn = 'Face In';
+    else if (name.startsWith('Out') || name.endsWith('Out'))
+      turn = 'Face Out';
+    else if (name.endsWith('Forward') || name.endsWith('As You Are'))
+      turn = '';
+
     ctx.applyCalls('Center 4 Step and Fold '
-        'While Outer 4 Face Right and Counter Rotate');
+        'While Outer 4 $turn and Counter Rotate');
     ctx.adjustToFormation(Formation('Normal Lines Compact'));
   }
 
   @override
-   void performPart2(CallContext ctx) {
-    ctx.applyCalls(starTurns);
+  void performPart2(CallContext ctx) {
+    try {
+      ctx.applyCalls(starTurns);
+    } on CallError catch (_) {
+      //  error doing Split Circulate, dancers not in appropriate boxes
+      throw CallError('Unable to do Plenty from this formation.');
+    }
   }
 
   @override
