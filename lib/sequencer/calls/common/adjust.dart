@@ -46,7 +46,8 @@ Formations you can use include
 
   @override
   void performCall(CallContext ctx) {
-    var fname = name.replaceFirst('Adjust to( an?)? '.ri, '' );
+    var fnameUser = name.replaceFirst('Adjust to( an?)? '.ri, '' );
+    var fname = Formation.formationMap[fnameUser] ?? fnameUser;
     var formation = Formation(fname);
     var ctx2 = CallContext.fromFormation(formation);
     var isSubset = ctx2.dancers.length > ctx.dancers.length;
@@ -55,9 +56,9 @@ Formations you can use include
       _ => 180
     };
     var mapping = ctx.matchFormations(ctx2,sexy:false,fuzzy:true,rotate:rotate,handholds:false,subformation: isSubset, maxError : 3.0, delta: 0.3, maxAngle: 0.5)
-        ?? thrower(CallError('Unable to match formation to $fname'));
+        ?? thrower(CallError('Unable to match formation to $fnameUser'));
     if (!ctx.adjustToFormationMatch(mapping!.match))
-      throw CallError('No adjustment to $fname needed.');
+      throw CallError('No adjustment to $fnameUser needed.');
     ctx.dancers.forEach((d) { d.path = d.path.setFromCall(true); });
     ctx.noSnap(recurse: false);
   }

@@ -34,6 +34,19 @@ class Formation {
   final bool asymmetric;
   final List<Dancer> dancers;
 
+  //  Convert formation names in common usage
+  //  to the specific formation below
+  //  For use in Adjust, setStartingFormation, matchStandardFormation
+  static const formationMap = {
+    'Facing Couples' : 'Facing Couples Compact',
+    'Normal Lines' : 'Normal Lines Compact',
+    'Lines' : 'Normal Lines Compact',
+    'Ocean Waves' : 'Ocean Waves RH BGGB Compact',
+    'Waves' : 'Ocean Waves RH BGGB Compact',
+    'Two-Faced Lines' : 'Two-Faced Lines RH Compact',
+  };
+
+
   static final List<Formation> formations = [
 
     Formation('Facing Dancers', dancers:[
