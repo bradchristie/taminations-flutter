@@ -49,14 +49,12 @@ class DancePainter extends fm.CustomPainter  {
   var hasParts = false;
   var hasCalls = false;
   String partstr = '';
-  Map<Dancer,fm.Path> paths = {};
 
   //  Create the painter by passing the animation beater
   //  This will make it repaint every animation frame whenever
   //  the beater is ticking
   DancePainter(this.model) : super(repaint:model.beater) {
     _prevbeat = 0; // model.beater.beat;
-    computePaths();
   }
 
   @override
@@ -101,22 +99,6 @@ class DancePainter extends fm.CustomPainter  {
         (d.location - hhloc).length < 0.5 );
   }
 
-  // Compute points of paths for drawing path
-  void computePaths() {
-    for (var d in model.dancers) {
-      d.animate(0);
-      var loc = d.location;
-      var path = fm.Path();
-      path.moveTo(loc.x, loc.y);
-      for (var beat = 0.1; beat <= d.beats; beat += 0.1) {
-        d.animate(beat);
-        loc = d.location;
-        path.lineTo(loc.x, loc.y);
-      }
-      paths[d] = path;
-    }
-  }
-
   ///   Draw the entire Dancer's path as a translucent colored line
   /// @param c  Canvas to draw to
   void drawPath(fm.Canvas c, Dancer d) {
@@ -125,7 +107,7 @@ class DancePainter extends fm.CustomPainter  {
       ..color = d.drawColor.withAlpha(128)
       ..style = fm.PaintingStyle.stroke
       ..strokeWidth = 0.1;
-    c.drawPath(paths[d]!, p);
+    c.drawPath(d.computePath(), p);
   }
 
   /// Updates dancers positions based on the passage of realtime.

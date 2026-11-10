@@ -44,6 +44,7 @@ class Path implements Cloneable<Path> {
 
   final String name;
   final List<Movement> movelist;
+  List<Matrix> transformlist = [];
   //  By default roll is computed from the last movement of the path.
   //  But it can be overridden by setting this to another value
   //  with the changeRoll method.
@@ -54,19 +55,21 @@ class Path implements Cloneable<Path> {
 
   bool get isEmpty => movelist.isEmpty;
 
-  const Path([
+  Path([
     this.movelist = const [],
     this.name='',
     this.roll=Rolling.ANY,
     this.isJustBreathing=false]);
 
   List<Matrix> computeTransformList() {
-    var tx = Matrix.getIdentity();
-    var transformlist = movelist.map((it) {
-      tx = tx * it.translate();
-      tx = tx * it.rotate();
-      return tx.clone();
-    }).toList();
+    if (transformlist.isEmpty && movelist.isNotEmpty) {
+      var tx = Matrix.getIdentity();
+      transformlist = movelist.map((it) {
+        tx = tx * it.translate();
+        tx = tx * it.rotate();
+        return tx.clone();
+      }).toList();
+    }
     return transformlist;
   }
 

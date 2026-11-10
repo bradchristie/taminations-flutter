@@ -38,6 +38,8 @@
 
 */
 
+import 'package:flutter/material.dart' as fm;
+import 'package:flutter/painting.dart';
 import 'dart:math';
 
 import 'cloneable.dart';
@@ -218,7 +220,9 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
 
   //  Computed
   Matrix starttx;
-  Path path;
+  Path _path;
+  Path get path => _path;
+  set path(Path p) { _path = p; pathpath = null; }
   int hands = Hands.NOHANDS;
   Matrix tx = Matrix.getIdentity();
   double get beats => path.beats;
@@ -239,6 +243,7 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
   bool get hidden => (gender == Gender.PHANTOM) && !Settings.phantoms;
   bool showPath = false;
   var name = '';  // for sequencer
+  fm.Path? pathpath;
 
   static void shuffleNames() {
     _boyNames.shuffle();
@@ -256,7 +261,7 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
     this.fillColor=Color.GRAY,
     geometryType = Geometry.SQUARE,
     this.clonedFrom})
-      : path = Path(moves),
+      : _path = Path(moves),
         geometry = Geometry(geometryType),
         starttx = startPosition
   {
@@ -457,13 +462,31 @@ class Dancer implements Comparable<Dancer>, Cloneable<Dancer> {
     return a - starttx.location.angle;
   }
 
-
-
   //  Note that this takes an angle in degrees
   Dancer rotateStartAngle(double angle) {
     starttx = starttx * Matrix.getRotation(angle.toRadians);
     tx = starttx.clone();
     return this;
   }
+
+  // Compute points of paths for drawing path
+  fm.Path computePath() {
+    if (pathpath == null) {
+      var savetx = tx;
+      animate(0);
+      var loc = location;
+      var path = fm.Path();
+      path.moveTo(loc.x, loc.y);
+      for (var beat = 0.1; beat <= beats; beat += 0.1) {
+        animate(beat);
+        loc = location;
+        path.lineTo(loc.x, loc.y);
+      }
+      pathpath = path;
+      tx = savetx;
+    }
+    return pathpath!;
+  }
+
 
 }

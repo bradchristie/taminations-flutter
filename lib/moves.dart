@@ -22,7 +22,7 @@ import 'common_dart.dart';
 import 'dart:math';
 import 'math/bezier.dart';
 
-const Path Stand = Path([
+final Path Stand = Path([
       Movement.fromData2(1, Hands.BOTH,
           Bezier([Vector(0,0),Vector(0,0),Vector(0,0),Vector(0,0)]))]);
 final Path StandAhead = Path([
