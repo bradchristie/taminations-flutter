@@ -39,7 +39,6 @@
 */
 
 import 'package:flutter/material.dart' as fm;
-import 'package:flutter/painting.dart';
 import 'dart:math';
 
 import 'cloneable.dart';
