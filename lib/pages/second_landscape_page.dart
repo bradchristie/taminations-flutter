@@ -18,7 +18,7 @@
 
 */
 
-import 'package:flutter/material.dart' as fm;
+import 'package:material_ui/material_ui.dart' as fm;
 import 'package:flutter_resizable_container/flutter_resizable_container.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart' as pp;

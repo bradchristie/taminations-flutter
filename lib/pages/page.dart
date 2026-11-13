@@ -17,7 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-import 'package:flutter/material.dart' as fm;
+import 'package:material_ui/material_ui.dart' as fm;
 import 'package:provider/provider.dart' as pp;
 
 import '../common_flutter.dart';

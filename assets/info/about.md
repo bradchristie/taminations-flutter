@@ -20,17 +20,15 @@ Call pronunciations provided by
 
 ---
 
-## Taminations version 1.6.114 built 2026-10-26
+## Taminations version 1.6.115 built 2026-11-11
 Copyright 2026 by Brad Christie.  
 This is free software, and you are welcome to modify and redistribute it
 under the terms of the [GNU GPL license](http://www.gnu.org/licenses/gpl.html).  
 
 ## What's New
-* Fix Practice choosing a random call
-* Fix display issues with a large system font
 * Sequencer:
-  - Fix editing abbreviations
-  - Calls frame: improve check for valid calls
+  - Fix slowdown drawing animations of long sequences
+  - Enable Plenty from diamonds with points going forward
 
 For a detailed history of changes, view the
 [Git log](https://github.com/bradchristie/taminations-flutter/commits/main)

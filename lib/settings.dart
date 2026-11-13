@@ -18,7 +18,7 @@
 
 */
 
-import 'package:flutter/material.dart' as fm;
+import 'package:material_ui/material_ui.dart' as fm;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shared_preferences/util/legacy_to_async_migration_util.dart';
 
